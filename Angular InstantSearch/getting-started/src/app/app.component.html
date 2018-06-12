@@ -13,7 +13,7 @@
         <ng-template let-hits="hits">
           <ol class="ais-Hits-list">
             <li *ngFor="let hit of hits" class="ais-Hits-item">
-              <img src="{{hit.image}}" align="left" />
+              <img src="{{hit.image}}" alt="{{hit.name}}" align="left" />
               <div class="hit-name">
                 <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
               </div>
