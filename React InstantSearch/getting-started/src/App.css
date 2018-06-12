@@ -21,7 +21,7 @@ body {
 }
 
 .ais-InstantSearch {
-  width: 960px;
+  max-width: 960px;
   overflow: hidden;
   margin: 0 auto;
 }
