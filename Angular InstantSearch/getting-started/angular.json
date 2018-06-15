@@ -23,7 +23,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/angular-instantsearch/bundles/instantsearch.min.css",
               "node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css",
               "src/styles.css"
             ],
