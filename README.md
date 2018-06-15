@@ -10,6 +10,7 @@ Those links are live demos from [CodeSandbox](https://codesandbox.io/), directly
 
 - InstantSearch.js
   - [Getting started](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/InstantSearch.js/getting-started)
+  - [Extending widgets](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/InstantSearch.js/extending-widgets)
 - React InstantSearch
   - [Getting started](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/React%20InstantSearch/getting-started)
 - Angular InstantSearch
