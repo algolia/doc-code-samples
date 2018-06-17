@@ -1,5 +1,5 @@
 {
-  "name": "angular-extending-widgets",
+  "name": "angular-getting-sorting",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -22,7 +22,7 @@
     "@angular/router": "^6.0.3",
     "angular-instantsearch": "^2.0.1",
     "core-js": "^2.5.4",
-    "instantsearch.js": "2.8.0",
+    "lodash": "4.17.10",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
