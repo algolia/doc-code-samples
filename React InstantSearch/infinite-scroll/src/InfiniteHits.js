@@ -12,7 +12,7 @@ class InfiniteHits extends Component {
 
   sentinel = null;
 
-  onReachThreshold = entries => {
+  onSentinelIntersection = entries => {
     const { hasMore, refine } = this.props;
 
     entries.forEach(entry => {
@@ -23,7 +23,7 @@ class InfiniteHits extends Component {
   };
 
   componentDidMount() {
-    this.observer = new IntersectionObserver(this.onReachThreshold);
+    this.observer = new IntersectionObserver(this.onSentinelIntersection);
 
     this.observer.observe(this.sentinel);
   }
