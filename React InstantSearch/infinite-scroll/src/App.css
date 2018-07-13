@@ -11,27 +11,22 @@ body {
   margin-top: 1em;
 }
 
-.left-panel {
-  float: left;
-  width: 250px;
-}
-
-.right-panel {
-  margin-left: 260px;
-}
-
 .ais-InstantSearch {
   max-width: 960px;
   overflow: hidden;
   margin: 0 auto;
 }
 
-.ais-Hits-item {
+.ais-InfiniteHits-item {
   margin-bottom: 1em;
   width: calc(50% - 1rem);
 }
 
-.ais-Hits-item img {
+.ais-InfiniteHits-sentinel {
+  width: 100%;
+}
+
+.ais-InfiniteHits-item img {
   margin-right: 1em;
 }
 

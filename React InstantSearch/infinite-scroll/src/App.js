@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import {
-  InstantSearch,
-  Hits,
-  SearchBox,
-  Highlight,
-  Configure,
-} from 'react-instantsearch-dom';
-import PropTypes from 'prop-types';
+import { InstantSearch, SearchBox, Configure } from 'react-instantsearch-dom';
+import InfiniteHits from './InfiniteHits';
 import './App.css';
 
 class App extends Component {
@@ -19,32 +13,13 @@ class App extends Component {
           apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
           indexName="demo_ecommerce"
         >
-          <Configure hitsPerPage={8} />
+          <Configure hitsPerPage={16} />
           <SearchBox />
-          <Hits hitComponent={Hit} />
+          <InfiniteHits minHitsPerPage={16} />
         </InstantSearch>
       </div>
     );
   }
 }
-
-function Hit(props) {
-  return (
-    <div>
-      <img src={props.hit.image} align="left" alt={props.hit.name} />
-      <div className="hit-name">
-        <Highlight attribute="name" hit={props.hit} />
-      </div>
-      <div className="hit-description">
-        <Highlight attribute="description" hit={props.hit} />
-      </div>
-      <div className="hit-price">${props.hit.price}</div>
-    </div>
-  );
-}
-
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-};
 
 export default App;
