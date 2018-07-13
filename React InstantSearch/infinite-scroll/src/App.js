@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="ais-InstantSearch">
-        <h1>React InstantSearch e-commerce demo</h1>
+        <h1>React InstantSearch infinite scroll demo</h1>
         <InstantSearch
           appId="B1G2GM9NG0"
           apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
