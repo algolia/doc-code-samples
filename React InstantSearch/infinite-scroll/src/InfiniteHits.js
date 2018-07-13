@@ -6,17 +6,17 @@ import Hit from './Hit';
 class InfiniteHits extends Component {
   static propTypes = {
     hits: PropTypes.arrayOf(PropTypes.object).isRequired,
-    minHitsPerPage: PropTypes.number.isRequired,
+    hasMore: PropTypes.bool.isRequired,
     refine: PropTypes.func.isRequired,
   };
 
   sentinel = null;
 
   onReachThreshold = entries => {
-    const { hits, minHitsPerPage, refine } = this.props;
+    const { hasMore, refine } = this.props;
 
     entries.forEach(entry => {
-      if (entry.isIntersecting && hits.length >= minHitsPerPage) {
+      if (entry.isIntersecting && hasMore) {
         refine();
       }
     });
