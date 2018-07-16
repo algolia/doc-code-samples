@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   InstantSearch,
   Index,
+  Configure,
   Hits,
   SearchBox,
   Highlight,
@@ -25,6 +26,7 @@ class App extends Component {
           <h2>
             index: <code>instant_search</code>
           </h2>
+          <Configure hitsPerPage={8} />
           <Hits hitComponent={Hit} />
         </Index>
 
@@ -32,6 +34,7 @@ class App extends Component {
           <h2>
             index: <code>bestbuy</code>
           </h2>
+          <Configure hitsPerPage={16} />
           <Hits hitComponent={Hit} />
         </Index>
       </InstantSearch>
