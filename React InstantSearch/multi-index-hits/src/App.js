@@ -23,17 +23,13 @@ class App extends Component {
         <SearchBox />
 
         <Index indexName="instant_search">
-          <h2>
-            index: <code>instant_search</code>
-          </h2>
+          <h2>index: instant_search</h2>
           <Configure hitsPerPage={8} />
           <Hits hitComponent={Hit} />
         </Index>
 
         <Index indexName="bestbuy">
-          <h2>
-            index: <code>bestbuy</code>
-          </h2>
+          <h2>index: bestbuy</h2>
           <Configure hitsPerPage={16} />
           <Hits hitComponent={Hit} />
         </Index>
