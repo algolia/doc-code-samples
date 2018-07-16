@@ -1,0 +1,14 @@
+h1 {
+  margin-bottom: 1rem;
+}
+
+em {
+  background: cyan;
+  font-style: normal;
+}
+
+.ais-InstantSearch__root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
