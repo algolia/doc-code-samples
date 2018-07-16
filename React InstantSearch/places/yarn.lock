@@ -5819,9 +5819,9 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-react-instantsearch-core@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-core/-/react-instantsearch-core-5.2.0.tgz#2340b72f1c3770838104b68369c35d3babbdd378"
+react-instantsearch-core@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-core/-/react-instantsearch-core-5.2.2.tgz#37177e0ad71bb9dfaf11c87af89315a45594a443"
   dependencies:
     algoliasearch-helper "^2.26.0"
     lodash "^4.17.4"
@@ -5836,16 +5836,16 @@ react-instantsearch-dom-maps@5.2.0:
     react-lifecycles-compat "^3.0.4"
     scriptjs "^2.5.8"
 
-react-instantsearch-dom@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-dom/-/react-instantsearch-dom-5.2.0.tgz#255ff61b959da86f5b81984d1ec8f850301ea721"
+react-instantsearch-dom@5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-dom/-/react-instantsearch-dom-5.2.2.tgz#cc8c23c61b45a74d04414a69f54a80f5fda3f783"
   dependencies:
     algoliasearch "^3.27.1"
     algoliasearch-helper "^2.26.0"
     classnames "^2.2.5"
     lodash "^4.17.4"
     prop-types "^15.5.10"
-    react-instantsearch-core "^5.2.0"
+    react-instantsearch-core "^5.2.2"
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
