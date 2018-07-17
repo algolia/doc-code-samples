@@ -14,17 +14,17 @@ const VirtalSearchBox = connectSearchBox(() => null);
 
 class App extends Component {
   state = {
-    value: '',
+    query: '',
   };
 
-  onValueChange = value => {
+  onQueryChange = query => {
     this.setState(() => ({
-      value,
+      query,
     }));
   };
 
   render() {
-    const { value } = this.state;
+    const { query } = this.state;
 
     return (
       <div className="container">
@@ -36,7 +36,7 @@ class App extends Component {
           onSearchStateChange={this.onAutoCompleteStateChange}
         >
           <Configure hitsPerPage={5} />
-          <AutoComplete onValueChange={this.onValueChange} />
+          <AutoComplete onQueryChange={this.onQueryChange} />
         </InstantSearch>
 
         <InstantSearch
@@ -44,7 +44,7 @@ class App extends Component {
           apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
           indexName="demo_ecommerce"
         >
-          <VirtalSearchBox defaultRefinement={value} />
+          <VirtalSearchBox defaultRefinement={query} />
           <Hits hitComponent={Hit} />
         </InstantSearch>
       </div>

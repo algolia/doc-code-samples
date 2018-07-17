@@ -8,34 +8,20 @@ class AutoComplete extends Component {
     hits: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentRefinement: PropTypes.string.isRequired,
     refine: PropTypes.func.isRequired,
-    onValueChange: PropTypes.func.isRequired,
+    onQueryChange: PropTypes.func.isRequired,
   };
-
-  timeoutId = null;
 
   state = {
     value: this.props.currentRefinement,
   };
 
-  componentWillUnmount() {
-    window.clearTimeout(this.timeoutId);
-  }
-
   onChange = (_, { newValue }) => {
-    this.setState({
-      value: newValue,
-    });
-
-    const delay = newValue ? 500 : 0;
-    window.clearTimeout(this.timeoutId);
-    this.timeoutId = window.setTimeout(() => {
-      this.props.onValueChange(newValue);
-    }, delay);
+    this.setState({ value: newValue });
+    this.props.onQueryChange(newValue);
   };
 
   onSuggestionSelected = (_, { suggestionValue }) => {
-    window.clearTimeout(this.timeoutId);
-    this.props.onValueChange(suggestionValue);
+    this.props.onQueryChange(suggestionValue);
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
