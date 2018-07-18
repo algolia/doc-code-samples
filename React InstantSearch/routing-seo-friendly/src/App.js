@@ -13,6 +13,10 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 const DEBOUNCE_TIME = 700;
+const searchClient = algoliasearch(
+  'latency',
+  '6be0576ff61c053d5f9a3225e2a90f76'
+);
 
 const createURL = state => {
   const brands =
@@ -90,10 +94,7 @@ class App extends Component {
     return (
       <div className="container">
         <InstantSearch
-          searchClient={algoliasearch(
-            'latency',
-            '6be0576ff61c053d5f9a3225e2a90f76'
-          )}
+          searchClient={searchClient}
           indexName="instant_search"
           searchState={this.state.searchState}
           onSearchStateChange={this.onSearchStateChange}
