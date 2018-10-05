@@ -14,20 +14,16 @@ import './App.css';
 
 class App extends Component {
   static propTypes = {
-    apiKey: PropTypes.string.isRequired,
+    searchClient: PropTypes.object.isRequired,
   };
 
   render() {
-    const { apiKey } = this.props;
+    const { searchClient } = this.props;
 
     return (
       <div className="ais-InstantSearch">
         <h1>React InstantSearch e-commerce demo</h1>
-        <InstantSearch
-          appId="B1G2GM9NG0"
-          apiKey={apiKey}
-          indexName="demo_ecommerce"
-        >
+        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
           <div className="left-panel">
             <ClearRefinements />
             <h2>Brands</h2>
