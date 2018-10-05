@@ -9,43 +9,37 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="shortcut icon" href="./favicon.png">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch-theme-algolia.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch-theme-algolia.min.css">
   <link rel="stylesheet" href="./src/index.css">
   <link rel="stylesheet" href="./src/app.css">
 
-  <title>secured-api-keys</title>
+  <title>ais-ecommerce-demo-app</title>
 </head>
 
 <body>
-  <header class="header">
-    <h1 class="header-title">
-      <a href="/">secured-api-keys</a>
-    </h1>
-    <p class="header-subtitle">
-      using
-      <a href="https://community.algolia.com/instantsearch.js/">
-        InstantSearch.js
-      </a>
-    </p>
-  </header>
+  <div class="ais-InstantSearch">
+    <h1>InstantSearch.js e-commerce demo</h1>
 
-  <div class="container">
-    <div class="search-panel">
-      <div class="search-panel__results">
-        <div id="searchbox"></div>
-        <div id="hits"></div>
-      </div>
+    <div class="left-panel">
+      <div id="current-refined-values"></div>
+
+      <h2>Brands</h2>
+      <div id="brand-list"></div>
     </div>
 
-    <div id="pagination"></div>
+    <div class="right-panel">
+      <div id="searchbox" class="ais-SearchBox"></div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
   </div>
 
   <script>
     window.SERVER_DATA = __SERVER_DATA__;
   </script>
   <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.30.0/dist/algoliasearchLite.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0"></script>
   <script src="./src/app.js"></script>
 </body>
 
