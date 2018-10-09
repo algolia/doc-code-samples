@@ -1,0 +1,32 @@
+h1 {
+  margin-bottom: 1rem;
+}
+
+em {
+  background: cyan;
+  font-style: normal;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.ais-hits {
+  margin-top: 1em;
+}
+
+.ais-Hits-item {
+  margin-bottom: 2em;
+}
+
+.hit-name {
+  margin-bottom: 0.5em;
+}
+
+.hit-description {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 0.5em;
+}
