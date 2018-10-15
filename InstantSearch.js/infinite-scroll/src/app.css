@@ -1,0 +1,42 @@
+body {
+  padding: 1em;
+}
+
+em {
+  font-style: normal;
+  background-color: cyan;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ais-SearchBox {
+  margin: 1em 0;
+}
+
+.ais-Hits-item {
+  margin-bottom: 1em;
+  width: calc(50% - 1rem);
+}
+
+.ais-Hits-item img {
+  margin-right: 1em;
+}
+
+.hit-name {
+  margin-bottom: 0.5em;
+}
+
+.hit-description {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 0.5em;
+}
