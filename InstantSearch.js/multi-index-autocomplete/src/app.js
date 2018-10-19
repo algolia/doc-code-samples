@@ -22,6 +22,9 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
         optgroupValueField: 'id',
         highlight: false,
         onType: refine,
+        onBlur() {
+          refine(this.getValue());
+        },
         onChange: refine,
         score() {
           return function() {
