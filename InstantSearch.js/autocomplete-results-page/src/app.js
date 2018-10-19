@@ -16,9 +16,13 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
         options: [],
         valueField: 'name',
         labelField: 'name',
-        searchField: 'name',
         highlight: false,
         onType: refine,
+        score() {
+          return function() {
+            return 1;
+          };
+        },
         onChange(value) {
           onSelectChange(value);
           refine(value);
