@@ -18,6 +18,9 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
         labelField: 'name',
         highlight: false,
         onType: refine,
+        onBlur() {
+          refine(this.getValue());
+        },
         score() {
           return function() {
             return 1;
