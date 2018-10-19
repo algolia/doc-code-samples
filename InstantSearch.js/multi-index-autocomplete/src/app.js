@@ -17,13 +17,17 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
         options: [],
         labelField: 'name',
         valueField: 'name',
-        searchField: 'name',
         optgroupField: 'section',
         optgroupLabelField: 'name',
         optgroupValueField: 'id',
         highlight: false,
         onType: refine,
         onChange: refine,
+        score() {
+          return function() {
+            return 1;
+          };
+        },
         render: {
           option: hit => `
             <div class="hit">${hit._highlightResult.name.value}</div>
