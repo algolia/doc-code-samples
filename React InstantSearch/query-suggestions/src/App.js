@@ -53,14 +53,10 @@ class App extends Component {
           indexName="instant_search_demo_query_suggestions"
         >
           <Configure hitsPerPage={5} />
-          <div className="search-panel">
-            <div className="search-panel__results">
-              <Autocomplete
-                onSuggestionSelected={this.onQueryChange}
-                onSuggestionCleared={this.onSuggestionCleared}
-              />
-            </div>
-          </div>
+          <Autocomplete
+            onSuggestionSelected={this.onQueryChange}
+            onSuggestionCleared={this.onSuggestionCleared}
+          />
         </InstantSearch>
 
         <InstantSearch searchClient={searchClient} indexName="instant_search">
@@ -71,11 +67,7 @@ class App extends Component {
             defaultRefinement={categories}
           />
 
-          <div className="search-panel">
-            <div className="search-panel__results">
-              <Hits hitComponent={Hit} />
-            </div>
-          </div>
+          <Hits hitComponent={Hit} />
         </InstantSearch>
       </div>
     );
