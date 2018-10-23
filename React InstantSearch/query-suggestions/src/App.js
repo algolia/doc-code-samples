@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
   Configure,
   Hits,
-  Highlight,
   connectSearchBox,
   connectRefinementList,
 } from 'react-instantsearch-dom';
 import Autocomplete from './Autocomplete';
+import Hit from './Hit';
 import './App.css';
 
 const searchClient = algoliasearch(
@@ -82,17 +81,5 @@ class App extends Component {
     );
   }
 }
-
-function Hit(props) {
-  return (
-    <div>
-      <Highlight attribute="name" hit={props.hit} />
-    </div>
-  );
-}
-
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-};
 
 export default App;
