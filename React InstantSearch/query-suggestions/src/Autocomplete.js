@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Highlight, connectAutoComplete } from 'react-instantsearch-dom';
 import AutoSuggest from 'react-autosuggest';
 
-class AutoComplete extends Component {
+class Autocomplete extends Component {
   static propTypes = {
     hits: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentRefinement: PropTypes.string.isRequired,
@@ -139,4 +139,4 @@ class AutoComplete extends Component {
   }
 }
 
-export default connectAutoComplete(AutoComplete);
+export default connectAutoComplete(Autocomplete);
