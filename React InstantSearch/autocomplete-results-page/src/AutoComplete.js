@@ -8,7 +8,8 @@ class AutoComplete extends Component {
     hits: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentRefinement: PropTypes.string.isRequired,
     refine: PropTypes.func.isRequired,
-    onQueryChange: PropTypes.func.isRequired,
+    onSuggestionSelected: PropTypes.func.isRequired,
+    onSuggestionCleared: PropTypes.func.isRequired,
   };
 
   state = {
@@ -16,12 +17,13 @@ class AutoComplete extends Component {
   };
 
   onChange = (_, { newValue }) => {
-    this.setState({ value: newValue });
-    this.props.onQueryChange(newValue);
-  };
+    if (!newValue) {
+      this.props.onSuggestionCleared();
+    }
 
-  onSuggestionSelected = (_, { suggestionValue }) => {
-    this.props.onQueryChange(suggestionValue);
+    this.setState({
+      value: newValue,
+    });
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
@@ -41,7 +43,7 @@ class AutoComplete extends Component {
   }
 
   render() {
-    const { hits } = this.props;
+    const { hits, onSuggestionSelected } = this.props;
     const { value } = this.state;
 
     const inputProps = {
@@ -55,7 +57,7 @@ class AutoComplete extends Component {
         suggestions={hits}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        onSuggestionSelected={this.onSuggestionSelected}
+        onSuggestionSelected={onSuggestionSelected}
         getSuggestionValue={this.getSuggestionValue}
         renderSuggestion={this.renderSuggestion}
         inputProps={inputProps}

@@ -17,10 +17,16 @@ class App extends Component {
     query: '',
   };
 
-  onQueryChange = query => {
-    this.setState(() => ({
-      query,
-    }));
+  onSuggestionSelected = (_, { suggestion }) => {
+    this.setState({
+      query: suggestion.name,
+    });
+  };
+
+  onSuggestionCleared = () => {
+    this.setState({
+      query: '',
+    });
   };
 
   render() {
@@ -36,7 +42,10 @@ class App extends Component {
           onSearchStateChange={this.onAutoCompleteStateChange}
         >
           <Configure hitsPerPage={5} />
-          <AutoComplete onQueryChange={this.onQueryChange} />
+          <AutoComplete
+            onSuggestionSelected={this.onSuggestionSelected}
+            onSuggestionCleared={this.onSuggestionCleared}
+          />
         </InstantSearch>
 
         <InstantSearch
