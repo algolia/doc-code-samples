@@ -1,109 +1,83 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
-  Hits,
-  SearchBox,
-  Pagination,
-  Highlight,
-  Index,
   Configure,
+  Hits,
+  Highlight,
+  connectSearchBox,
   connectRefinementList,
 } from 'react-instantsearch-dom';
-import PropTypes from 'prop-types';
-
+import Autocomplete from './Autocomplete';
 import './App.css';
-import SuggestionHits from './SuggestionHits';
 
 const searchClient = algoliasearch(
   'latency',
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
+const VirtualSearchBox = connectSearchBox(() => null);
 const VirtualRefinementList = connectRefinementList(() => null);
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchState: {},
-      query: '',
-      category: null,
-    };
-    this.setQuery = this.setQuery.bind(this);
-    this.onSearchStateChange = this.onSearchStateChange.bind(this);
-  }
+  state = {
+    query: '',
+    categories: [],
+  };
 
-  setQuery(queryNext, categoryNext) {
-    const { query, category, ...searchState } = this.state.searchState; // eslint-disable-line no-unused-vars
-    if (searchState.indices && searchState.indices.instant_search) {
-      searchState.indices.instant_search.page = 0;
-    }
+  onQueryChange = (_, { suggestion }) => {
+    const [
+      category,
+    ] = suggestion.instant_search.facets.exact_matches.categories;
+
     this.setState({
-      query: queryNext,
-      searchState,
-      category: categoryNext,
-      displaySuggestions: false,
+      query: suggestion.query,
+      categories: category.value !== 'ALL_CATEGORIES' ? [category.value] : [],
     });
-  }
+  };
 
-  onSearchStateChange(searchState) {
-    this.setState({ searchState });
-  }
+  onSuggestionCleared = () => {
+    this.setState({
+      query: '',
+      categories: [],
+    });
+  };
 
   render() {
+    const { query, categories } = this.state;
+
     return (
-      <div>
-        <header className="header">
-          <h1 className="header-title">
-            <a href="/">react-querysuggestions</a>
-          </h1>
-          <p className="header-subtitle">
-            using{' '}
-            <a href="https://github.com/algolia/react-instantsearch">
-              React InstantSearch
-            </a>
-          </p>
-        </header>
-
-        <div className="container">
-          <InstantSearch
-            searchClient={searchClient}
-            indexName="instant_search"
-            onSearchStateChange={this.onSearchStateChange}
-            searchState={this.state.searchState}
-          >
-            <div className="search-panel">
-              <div className="search-panel__results">
-                <SearchBox
-                  className="searchbox"
-                  placeholder=""
-                  defaultRefinement={this.state.query}
-                />
-
-                <Index indexName="instant_search_demo_query_suggestions">
-                  <Configure hitsPerPage={5} />
-                  <Configure page={0} />
-                  <SuggestionHits onPressItem={this.setQuery} />
-                </Index>
-
-                <Index indexName="instant_search">
-                  <VirtualRefinementList
-                    attribute="categories"
-                    defaultRefinement={
-                      this.state.category ? [this.state.category] : []
-                    }
-                  />
-                  <Hits hitComponent={Hit} />
-                </Index>
-
-                <div className="pagination">
-                  <Pagination />
-                </div>
-              </div>
+      <div className="container">
+        <InstantSearch
+          searchClient={searchClient}
+          indexName="instant_search_demo_query_suggestions"
+        >
+          <Configure hitsPerPage={5} />
+          <div className="search-panel">
+            <div className="search-panel__results">
+              <Autocomplete
+                onSuggestionSelected={this.onQueryChange}
+                onSuggestionCleared={this.onSuggestionCleared}
+              />
             </div>
-          </InstantSearch>
-        </div>
+          </div>
+        </InstantSearch>
+
+        <InstantSearch searchClient={searchClient} indexName="instant_search">
+          <Configure hitsPerPage={16} />
+          <VirtualSearchBox defaultRefinement={query} />
+          <VirtualRefinementList
+            attribute="categories"
+            defaultRefinement={categories}
+          />
+
+          <div className="search-panel">
+            <div className="search-panel__results">
+              <Hits hitComponent={Hit} />
+            </div>
+          </div>
+        </InstantSearch>
       </div>
     );
   }
