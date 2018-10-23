@@ -16,17 +16,52 @@ class AutoComplete extends Component {
     value: this.props.currentRefinement,
   };
 
-  createMostReleventHitForAllCategories(hit) {
+  isSuggestionHasCategories(suggestion) {
+    return (
+      suggestion.instant_search &&
+      suggestion.instant_search.facets &&
+      suggestion.instant_search.facets.exact_matches &&
+      suggestion.instant_search.facets.exact_matches.categories &&
+      suggestion.instant_search.facets.exact_matches.categories.length
+    );
+  }
+
+  normalizeSuggestionCategories(suggestions) {
+    return suggestions.map(suggestion => {
+      const context = suggestion.instant_search || {};
+      const facets = context.facets || {};
+      const matches = facets.exact_matches || {};
+      const categories = matches.categories || [];
+
+      return {
+        ...suggestion,
+        // eslint-disable-next-line
+        instant_search: {
+          ...context,
+          facets: {
+            ...facets,
+            // eslint-disable-next-line
+            exact_matches: {
+              ...matches,
+              categories,
+            },
+          },
+        },
+      };
+    });
+  }
+
+  createMostRelevantSuggestionForAllCategories(suggestion) {
     return {
-      ...hit,
+      ...suggestion,
       // eslint-disable-next-line
       instant_search: {
-        ...hit.instant_search,
+        ...suggestion.instant_search,
         facets: {
-          ...hit.instant_search.facets,
+          ...suggestion.instant_search.facets,
           // eslint-disable-next-line
           exact_matches: {
-            ...hit.instant_search.facets.exact_matches,
+            ...suggestion.instant_search.facets.exact_matches,
             categories: [{ value: 'ALL_CATEGORIES' }],
           },
         },
@@ -61,12 +96,15 @@ class AutoComplete extends Component {
 
     return (
       <span>
-        <Highlight attribute="query" hit={hit} tagName="mark" /> in{' '}
-        <i>
-          {category.value !== 'ALL_CATEGORIES'
-            ? category.value
-            : 'All categories'}
-        </i>
+        <Highlight attribute="query" hit={hit} tagName="mark" />
+        {category && (
+          <i>
+            in{' '}
+            {category.value === 'ALL_CATEGORIES'
+              ? 'All categories'
+              : category.value}
+          </i>
+        )}
       </span>
     );
   }
@@ -81,14 +119,15 @@ class AutoComplete extends Component {
       value,
     };
 
-    const [hit] = hits;
-    const hitWithAllCategories = hit
-      ? [this.createMostReleventHitForAllCategories(hit)]
-      : [];
+    const suggestions = this.normalizeSuggestionCategories(hits);
+    const suggestionsWithAllCategories =
+      suggestions[0] && this.isSuggestionHasCategories(suggestions[0])
+        ? [this.createMostRelevantSuggestionForAllCategories(suggestions[0])]
+        : [];
 
     return (
       <AutoSuggest
-        suggestions={hitWithAllCategories.concat(hits)}
+        suggestions={[...suggestionsWithAllCategories, ...suggestions]}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         onSuggestionSelected={onSuggestionSelected}

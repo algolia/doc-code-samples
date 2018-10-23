@@ -32,7 +32,8 @@ class App extends Component {
 
     this.setState({
       query: suggestion.query,
-      categories: category.value !== 'ALL_CATEGORIES' ? [category.value] : [],
+      categories:
+        category && category.value !== 'ALL_CATEGORIES' ? [category.value] : [],
     });
   };
 
