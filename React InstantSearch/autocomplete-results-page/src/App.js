@@ -7,7 +7,7 @@ import {
   Highlight,
   connectSearchBox,
 } from 'react-instantsearch-dom';
-import AutoComplete from './AutoComplete';
+import Autocomplete from './Autocomplete';
 import './App.css';
 
 const VirtalSearchBox = connectSearchBox(() => null);
@@ -39,10 +39,9 @@ class App extends Component {
           appId="B1G2GM9NG0"
           apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
           indexName="demo_ecommerce"
-          onSearchStateChange={this.onAutoCompleteStateChange}
         >
           <Configure hitsPerPage={5} />
-          <AutoComplete
+          <Autocomplete
             onSuggestionSelected={this.onSuggestionSelected}
             onSuggestionCleared={this.onSuggestionCleared}
           />
