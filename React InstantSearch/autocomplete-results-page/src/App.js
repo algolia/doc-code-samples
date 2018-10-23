@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
   Configure,
@@ -11,6 +12,11 @@ import Autocomplete from './Autocomplete';
 import './App.css';
 
 const VirtalSearchBox = connectSearchBox(() => null);
+
+const searchClient = algoliasearch(
+  'B1G2GM9NG0',
+  'aadef574be1f9252bb48d4ea09b5cfe5'
+);
 
 class App extends Component {
   state = {
@@ -35,11 +41,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>React InstantSearch - Results page with autocomplete</h1>
-        <InstantSearch
-          appId="B1G2GM9NG0"
-          apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
-          indexName="demo_ecommerce"
-        >
+        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
           <Configure hitsPerPage={5} />
           <Autocomplete
             onSuggestionSelected={this.onSuggestionSelected}
@@ -47,11 +49,7 @@ class App extends Component {
           />
         </InstantSearch>
 
-        <InstantSearch
-          appId="B1G2GM9NG0"
-          apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
-          indexName="demo_ecommerce"
-        >
+        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
           <VirtalSearchBox defaultRefinement={query} />
           <Hits hitComponent={Hit} />
         </InstantSearch>

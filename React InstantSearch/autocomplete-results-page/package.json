@@ -9,6 +9,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
+    "algoliasearch": "3.30.0",
     "react": "16.4.1",
     "react-autosuggest": "9.3.4",
     "react-dom": "16.4.1",
