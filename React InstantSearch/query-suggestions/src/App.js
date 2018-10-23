@@ -25,7 +25,7 @@ class App extends Component {
     categories: [],
   };
 
-  onQueryChange = (_, { suggestion }) => {
+  onSuggestionSelected = (_, { suggestion }) => {
     const [
       category,
     ] = suggestion.instant_search.facets.exact_matches.categories;
@@ -54,7 +54,7 @@ class App extends Component {
         >
           <Configure hitsPerPage={5} />
           <Autocomplete
-            onSuggestionSelected={this.onQueryChange}
+            onSuggestionSelected={this.onSuggestionSelected}
             onSuggestionCleared={this.onSuggestionCleared}
           />
         </InstantSearch>
