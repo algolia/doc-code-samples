@@ -43,6 +43,15 @@
                     >
                       Click
                     </button>
+                    <button
+                      @click="
+                        insightsConversion({
+                          objectID: item.objectID,
+                        })
+                      "
+                    >
+                      Convert
+                    </button>
                     <h1><ais-highlight :hit="item" attribute="name" /></h1>
                     <p><ais-highlight :hit="item" attribute="description" /></p>
                   </template>
@@ -77,6 +86,11 @@ export default {
       window.aa('click', {
         objectID,
         position,
+      });
+    },
+    insightsConversion({ objectID }) {
+      window.aa('conversion', {
+        objectID,
       });
     },
   },
