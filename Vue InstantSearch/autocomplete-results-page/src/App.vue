@@ -85,9 +85,6 @@ export default {
     indicesToSuggestions(indices) {
       return indices.map(({ hits }) => ({ data: hits }));
     },
-    test(event) {
-      console.log(event)
-    }
   },
 };
 </script>
