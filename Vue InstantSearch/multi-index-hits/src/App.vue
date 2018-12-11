@@ -50,7 +50,6 @@ import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
 
 export default {
-  components: { AppMenuSelect },
   data() {
     return {
       searchClient: algoliasearch(
