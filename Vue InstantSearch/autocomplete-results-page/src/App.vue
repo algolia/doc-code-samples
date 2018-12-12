@@ -51,7 +51,8 @@
         <ais-hits>
           <div slot="item" slot-scope="{ item }">
             <ais-highlight :hit="item" attribute="name" v-if="item.name" />
-            <strong>$ {{ item.price }}</strong> <img :src="item.image" />
+            <strong>$ {{ item.price }}</strong>
+            <img :src="item.image" />
           </div>
         </ais-hits>
         <ais-pagination />
@@ -170,5 +171,9 @@ body {
 
 .autosuggest__results_item-highlighted {
   background-color: rgba(0, 0, 0, 0.24);
+}
+
+.ais-Hits-item img {
+  max-width: 100%;
 }
 </style>
