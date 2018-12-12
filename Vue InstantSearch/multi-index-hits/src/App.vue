@@ -29,8 +29,8 @@
         :search-client="searchClient"
         index-name="instant_search"
       >
-        <ais-configure :query="query" />
         <ais-configure
+          :query="query"
           :restrictSearchableAttributes="['name']"
           :hitsPerPage="8"
         />
