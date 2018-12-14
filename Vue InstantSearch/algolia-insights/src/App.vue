@@ -28,7 +28,14 @@
           </div>
 
           <div class="search-panel__results">
-            <ais-search-box placeholder="Search here…" class="searchbox" />
+            <!-- <app-debounced-search-box
+              placeholder="Search here…"
+              class="searchbox"
+              :delay="1000"
+            /> -->
+            <ais-search-box />
+            <app-refresh />
+            <app-loading-indicator />
             <ais-state-results>
               <template slot-scope="{ page, hitsPerPage }">
                 <ais-hits>
@@ -70,11 +77,33 @@
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
 import AppInsights from './components/Insights.js';
+import AppLoadingIndicator from './components/LoadingIndicator.vue';
+import AppDebouncedSearchBox from './components/DebouncedSearchBox.vue';
+import AppRefresh from './components/Refresh.vue';
+// import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
+// import { simple as simpleMapping } from 'instantsearch.js/es/lib/stateMappings';
+
+// const router = historyRouter();
+// const _write = router.write.bind(router);
+// router.write = args => {
+//   _write(args);
+//   const page = router.createURL(args);
+//   window.ga('send', 'pageView', page);
+// };
 
 export default {
-  components: { AppInsights },
+  components: {
+    AppInsights,
+    AppDebouncedSearchBox,
+    AppLoadingIndicator,
+    AppRefresh,
+  },
   data() {
     return {
+      // routing: {
+      //   router,
+      //   stateMapping: simpleMapping(),
+      // },
       searchClient: algoliasearch(
         'latency',
         '6be0576ff61c053d5f9a3225e2a90f76'
