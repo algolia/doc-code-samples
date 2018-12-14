@@ -36,9 +36,13 @@ export default {
       type: this.type,
       container: this.input,
     });
+
+    this.instance.on('change', e => {
+      this.$emit('change', e);
+    });
   },
   beforeDestroy() {
-    // if you had any "this.instance.on", also call "off" here
+    this.instance.off('change');
     this.instance.destroy();
   },
   watch: {

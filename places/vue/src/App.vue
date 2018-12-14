@@ -5,11 +5,13 @@
       :api-key="apiKey"
       :app-id="appId"
       :key="`${appId}-${apiKey}`"
+      @change="suggestion = $event.suggestion"
     />
     <button @click="toggleType">Toggle <code>type</code> ({{ type }})</button>
     <button @click="toggleApiKey">
       Toggle <code>apiKey</code> ({{ apiKey }} - {{ appId }})
     </button>
+    <pre>{{ suggestion }}</pre>
   </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
   components: { AppPlaces },
   data() {
     return {
+      suggestion: undefined,
       appId: undefined,
       apiKey: undefined,
       type: 'city',
