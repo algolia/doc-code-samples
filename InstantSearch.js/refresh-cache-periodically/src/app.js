@@ -19,7 +19,7 @@ search.addWidget(
 search.addWidget(
   instantsearch.widgets.refinementList({
     container: '#brand-list',
-    attributeName: 'brand',
+    attribute: 'brand',
   })
 );
 
@@ -28,7 +28,7 @@ search.addWidget(
     container: '#hits',
     templates: {
       item: `
-        <div class="ais-Hits-item">
+        <div>
           <header class="hit-name">
             {{{_highlightResult.name.value}}}
           </header>
