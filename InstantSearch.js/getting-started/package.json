@@ -9,6 +9,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
+    "@types/algoliasearch": "3.30.1",
     "babel-eslint": "8.2.3",
     "eslint": "4.19.1",
     "eslint-config-algolia": "13.1.0",
@@ -17,5 +18,8 @@
     "eslint-plugin-prettier": "2.6.0",
     "parcel-bundler": "1.8.1",
     "prettier": "1.13.5"
+  },
+  "dependencies": {
+    "algoliasearch": "3.31.0"
   }
 }

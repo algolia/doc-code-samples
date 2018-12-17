@@ -1,8 +1,8 @@
 /* global instantsearch */
+import algoliasearch from 'algoliasearch/lite';
 
 const search = instantsearch({
-  appId: 'B1G2GM9NG0',
-  apiKey: 'aadef574be1f9252bb48d4ea09b5cfe5',
+  searchClient: algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5'),
   indexName: 'demo_ecommerce',
 });
 
@@ -13,15 +13,15 @@ search.addWidget(
 );
 
 search.addWidget(
-  instantsearch.widgets.currentRefinedValues({
-    container: '#current-refined-values',
+  instantsearch.widgets.currentRefinements({
+    container: '#current-refinements',
   })
 );
 
 search.addWidget(
   instantsearch.widgets.refinementList({
     container: '#brand-list',
-    attributeName: 'brand',
+    attribute: 'brand',
   })
 );
 
@@ -30,15 +30,15 @@ search.addWidget(
     container: '#hits',
     templates: {
       item: `
-        <div class="ais-Hits-item">
-          <header class="hit-name">
-            {{{_highlightResult.name.value}}}
-          </header>
-          <img src="{{image}}" align="left" />
-          <p class="hit-description">
-            {{{_highlightResult.description.value}}}
-          </p>
-          <p class="hit-price">\${{price}}</p>
+        <div>
+          <img src="{{image}}" align="left" alt="{{name}}" />
+          <div class="hit-name">
+            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}}}
+          </div>
+          <div class="hit-description">
+            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}}}
+          </div>
+          <div class="hit-price">\${{price}}</div>
         </div>
       `,
     },
