@@ -1,9 +1,8 @@
-/* global instantsearch */
-import algoliasearch from 'algoliasearch/lite';
+/* global instantsearch algoliasearch */
 
 const search = instantsearch({
-  searchClient: algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5'),
   indexName: 'demo_ecommerce',
+  searchClient: algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5'),
 });
 
 search.addWidget(
@@ -13,8 +12,8 @@ search.addWidget(
 );
 
 search.addWidget(
-  instantsearch.widgets.currentRefinements({
-    container: '#current-refinements',
+  instantsearch.widgets.clearRefinements({
+    container: '#clear-refinements',
   })
 );
 
