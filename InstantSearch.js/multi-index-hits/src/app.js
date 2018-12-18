@@ -20,18 +20,19 @@ subIndex.addWidget(
   instantsearch.widgets.hits({
     container: '#hits-best-buy',
     templates: {
-      item: '{{{ _highlightResult.name.value }}}',
+      item:
+        '{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}',
     },
   })
 );
 
 const mainIndex = instantsearch({
   indexName: 'instant_search',
+  searchClient,
   searchFunction(helper) {
     subIndex.helper.setQuery(helper.state.query).search();
     helper.search();
   },
-  searchClient,
 });
 
 mainIndex.addWidget(
@@ -43,7 +44,6 @@ mainIndex.addWidget(
 mainIndex.addWidget(
   instantsearch.widgets.searchBox({
     container: '#searchbox',
-    autofocus: false,
   })
 );
 
@@ -51,7 +51,8 @@ mainIndex.addWidget(
   instantsearch.widgets.hits({
     container: '#hits-instant-search',
     templates: {
-      item: '{{{ _highlightResult.name.value }}}',
+      item:
+        '{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}',
     },
   })
 );
