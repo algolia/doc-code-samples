@@ -33,7 +33,7 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
         },
         render: {
           option: hit => `
-            <div class="hit">${hit._highlightResult.name.value}</div>
+          <div class="hit">${instantsearch.highlight({ attribute: 'name', hit })}</div>
           `,
         },
         optgroups,
