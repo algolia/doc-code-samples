@@ -28,16 +28,16 @@ search.addWidget(
     container: '#hits',
     templates: {
       item: `
-        <div>
-          <header class="hit-name">
-            {{{_highlightResult.name.value}}}
-          </header>
-          <img src="{{image}}" align="left" />
-          <p class="hit-description">
-            {{{_highlightResult.description.value}}}
-          </p>
-          <p class="hit-price">\${{price}}</p>
-        </div>
+      <div>
+        <header class="hit-name">
+          {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
+        </header>
+        <img src="{{image}}" align="left" />
+        <p class="hit-description">
+          {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
+        </p>
+        <p class="hit-price">\${{price}}</p>
+      </div>
       `,
     },
   })
