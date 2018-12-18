@@ -102,7 +102,7 @@ const search = instantsearch({
 
 search.addWidget(
   virtualRefinementList({
-    attributeName: 'categories',
+    attribute: 'categories',
   })
 );
 
@@ -117,12 +117,12 @@ search.addWidget(
     container: '#hits',
     templates: {
       item: `
-        <div class="ais-Hits-item">
+        <div>
           <header class="hit-name">
-            {{{_highlightResult.name.value}}}
+            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
           </header>
           <p class="hit-description">
-            {{{_highlightResult.description.value}}}
+            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
           </p>
         </div>
       `,
