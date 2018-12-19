@@ -33,11 +33,11 @@ const infiniteHits = instantsearch.connectors.connectInfiniteHits(
           `<li>
             <div class="ais-Hits-item">
               <header class="hit-name">
-                ${hit._highlightResult.name.value}
+                ${instantsearch.highlight({ attribute: 'name', hit })}
               </header>
               <img src="${hit.image}" align="left" />
               <p class="hit-description">
-                ${hit._highlightResult.description.value}
+                ${instantsearch.highlight({ attribute: 'description', hit })}
               </p>
               <p class="hit-price">$${hit.price}</p>
             </div>
