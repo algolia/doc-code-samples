@@ -18,15 +18,15 @@ search.addWidget(
 );
 
 search.addWidget(
-  instantsearch.widgets.currentRefinedValues({
-    container: '#current-refined-values',
+  instantsearch.widgets.currentRefinements({
+    container: '#current-refinements',
   })
 );
 
 search.addWidget(
   instantsearch.widgets.refinementList({
     container: '#brand-list',
-    attributeName: 'brand',
+    attribute: 'brand',
   })
 );
 
@@ -35,13 +35,13 @@ search.addWidget(
     container: '#hits',
     templates: {
       item: `
-        <div class="ais-Hits-item">
+        <div>
           <header class="hit-name">
-            {{{_highlightResult.name.value}}}
+            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
           </header>
           <img src="{{image}}" align="left" />
           <p class="hit-description">
-            {{{_highlightResult.description.value}}}
+            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
           </p>
           <p class="hit-price">\${{price}}</p>
         </div>
