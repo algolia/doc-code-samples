@@ -11,7 +11,10 @@
     </header>
 
     <div class="container">
-      <ais-instant-search :search-client="searchClient" index-name="demo_ecommerce">
+      <ais-instant-search
+        :search-client="searchClient"
+        index-name="demo_ecommerce"
+      >
         <div class="search-panel">
           <div class="search-panel__filters">
             <ais-refinement-list attribute="categories" searchable />
@@ -43,7 +46,7 @@ export default {
     return {
       searchClient: algoliasearch(
         'B1G2GM9NG0',
-        'aadef574be1f9252bb48d4ea09b5cfe5',
+        'aadef574be1f9252bb48d4ea09b5cfe5'
       ),
     };
   },

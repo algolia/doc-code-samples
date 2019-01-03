@@ -51,8 +51,7 @@
         <ais-hits>
           <div slot="item" slot-scope="{ item }">
             <ais-highlight :hit="item" attribute="name" v-if="item.name" />
-            <strong>$ {{ item.price }}</strong>
-            <img :src="item.image" />
+            <strong>$ {{ item.price }}</strong> <img :src="item.image" />
           </div>
         </ais-hits>
         <ais-pagination />
