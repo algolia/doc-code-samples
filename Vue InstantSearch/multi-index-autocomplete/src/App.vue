@@ -22,8 +22,8 @@
         <ais-autocomplete
           :indices="[
             {
-              value: 'airbnb',
-              label: 'Airbnb',
+              value: 'bestbuy',
+              label: 'Bestbuy',
             },
           ]"
         >
@@ -79,7 +79,8 @@ export default {
       return indices.map(({ hits }) => ({
         data: hits.map(hit => {
           // make sure the shape is the same in both indices
-          hit.image = hit.image || hit.thumbnail_url;
+          hit.price = hit.price || hit.salePrice;
+
           return hit;
         }),
       }));

@@ -11,7 +11,7 @@
     </header>
 
     <div class="container">
-      <ais-instant-search :search-client="searchClient" index-name="airbnb">
+      <ais-instant-search :search-client="searchClient" index-name="bestbuy">
         <ais-search-box v-model="query" />
         <ais-configure
           :restrictSearchableAttributes="['name']"
@@ -20,7 +20,7 @@
         <ais-hits>
           <template slot="item" slot-scope="{ item }">
             <h3><ais-highlight :hit="item" attribute="name" /></h3>
-            <img :src="item.thumbnail_url" />
+            <img :src="item.image" />
           </template>
         </ais-hits>
       </ais-instant-search>
