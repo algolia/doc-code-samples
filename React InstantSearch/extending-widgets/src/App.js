@@ -1,3 +1,4 @@
+import algoliasearch from 'algoliasearch/lite';
 import React, { Component } from 'react';
 import {
   InstantSearch,
@@ -11,16 +12,17 @@ import PropTypes from 'prop-types';
 import MenuSelect from './MenuSelect';
 import './App.css';
 
+const searchClient = algoliasearch(
+  'B1G2GM9NG0',
+  'aadef574be1f9252bb48d4ea09b5cfe5'
+);
+
 class App extends Component {
   render() {
     return (
       <div className="ais-InstantSearch">
         <h1>React InstantSearch e-commerce demo</h1>
-        <InstantSearch
-          appId="B1G2GM9NG0"
-          apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
-          indexName="demo_ecommerce"
-        >
+        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
           <div className="left-panel">
             <ClearRefinements />
             <h2>Brands</h2>
