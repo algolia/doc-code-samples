@@ -9,7 +9,7 @@ $script(
     );
 
     const search = instantsearch({
-      indexName: 'airbnb',
+      indexName: 'airports',
       searchClient,
     });
 

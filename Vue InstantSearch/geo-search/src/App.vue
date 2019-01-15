@@ -11,7 +11,7 @@
     </header>
 
     <div class="container">
-      <ais-instant-search :search-client="searchClient" index-name="airbnb">
+      <ais-instant-search :search-client="searchClient" index-name="airports">
         <ais-search-box placeholder="Search here…" class="searchbox" />
         <app-map />
       </ais-instant-search>

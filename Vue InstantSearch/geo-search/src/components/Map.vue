@@ -8,7 +8,7 @@
       <googlemaps-marker
         v-for="item of state.items"
         :key="item.objectID"
-        :title="item.name"
+        :title="item.city"
         :position="item._geoloc"
       />
     </googlemaps-map>
@@ -23,7 +23,7 @@ export default {
   mixins: [createWidgetMixin({ connector: connectGeoSearch })],
   data() {
     return {
-      zoom: 12,
+      zoom: 8,
     };
   },
   computed: {
