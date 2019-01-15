@@ -28,7 +28,9 @@ export default {
   },
   computed: {
     center() {
-      return this.state.items[0]._geoloc;
+      return this.state.items.length !== 0
+        ? this.state.items[0]._geoloc
+        : { lat: 48.864716, lng: 2.349014 };
     },
   },
 };
