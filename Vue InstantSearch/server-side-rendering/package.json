@@ -1,0 +1,32 @@
+{
+  "name": "ssr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "ssr:build": "vue-cli-service ssr:build",
+    "ssr:serve": "vue-cli-service ssr:serve",
+    "ssr:start": "cross-env NODE_ENV=production vue-cli-service ssr:serve --mode production"
+  },
+  "dependencies": {
+    "algoliasearch": "^3.32.0",
+    "instantsearch.css": "^7.1.0",
+    "vue": "^2.5.21",
+    "vue-instantsearch": "^2.0.0-beta.2",
+    "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.16"
+  },
+  "devDependencies": {
+    "@akryum/vue-cli-plugin-ssr": "^0.4.0",
+    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-service": "^3.0.5",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.21"
+  }
+}
