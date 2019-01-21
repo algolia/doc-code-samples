@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css"
+    />
+    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="./src/app.css" />
+
+    <title>geo-search-hits</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="header-title"><a href="/">geo-search-hits</a></h1>
+      <p class="header-subtitle">
+        using
+        <a href="https://community.algolia.com/instantsearch.js/">
+          InstantSearch.js
+        </a>
+      </p>
+    </header>
+
+    <div class="container">
+      <div class="search-panel">
+        <div class="search-panel__results">
+          <div id="searchbox"></div>
+          <div id="maps"></div>
+        </div>
+      </div>
+
+      <div id="pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3.32.0/algoliasearchLite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.0.0"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
