@@ -12,7 +12,7 @@
 
 <div class="container">
   <ais-instantsearch [config]="configSuggestions">
-    <ais-configure [searchParameters]="{hitsPerPage: 3}"></ais-configure>
+    <ais-configure [searchParameters]="{hitsPerPage: 5}"></ais-configure>
     <div class="search-box">
       <app-autocomplete (onQuerySuggestionClick)="setQuery($event)"></app-autocomplete>
     </div>

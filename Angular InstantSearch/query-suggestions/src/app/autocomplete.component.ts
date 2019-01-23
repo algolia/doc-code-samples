@@ -26,10 +26,14 @@ import { connectAutocomplete } from "instantsearch.js/es/connectors";
           <mat-option
             *ngFor="let hit of index.hits"
             [value]="hit.query"
-            (click)="this.onQuerySuggestionClick.emit(hit.query)"
+            (click)="this.onQuerySuggestionClick.emit({query: hit.query, category: hasCategory(hit) ? getCategory(hit) : null })"
           >
             {{ hit.query }}
-              {{hit.instant_search.facets.exact_matches.categories | json}}
+            <span>
+              in
+              <em *ngIf="hasCategory(hit)"> {{ getCategory(hit) }} </em>
+              <em *ngIf="!hasCategory(hit)"> All categories </em>
+            </span>
           </mat-option>
         </div>
       </mat-autocomplete>
@@ -50,6 +54,21 @@ export class AutocompleteComponent extends BaseWidget {
     public instantSearchParent
   ) {
     super("AutocompleteComponent");
+  }
+
+  hasCategory(hit) {
+    return (
+      hit.instant_search &&
+      hit.instant_search.facets &&
+      hit.instant_search.facets.exact_matches &&
+      hit.instant_search.facets.exact_matches.categories &&
+      hit.instant_search.facets.exact_matches.categories.length
+    );
+  }
+
+  getCategory(hit) {
+    const [category] = hit.instant_search.facets.exact_matches.categories;
+    return category.value;
   }
 
   public handleChange($event: KeyboardEvent) {
