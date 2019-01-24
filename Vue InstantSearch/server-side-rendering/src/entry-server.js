@@ -19,7 +19,11 @@ export default context => {
           }
         })
       )
-        .then(components => instantsearch.findRoot({ components, context }))
+        .then(() => {
+          context.algoliaState = instantsearch.getState();
+
+          resolve(app);
+        })
         .then(() => resolve(app));
     }, reject);
   });
