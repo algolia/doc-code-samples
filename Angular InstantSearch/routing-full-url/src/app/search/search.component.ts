@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
 import { history as historyRouter } from "instantsearch.js/es/lib/routers";
 
 @Component({
@@ -7,11 +6,6 @@ import { history as historyRouter } from "instantsearch.js/es/lib/routers";
   templateUrl: "./search.component.html"
 })
 export class SearchComponent {
-    constructor(
-        private route: ActivatedRoute,
-    ) {
-
-    }
   config = {
     appId: "B1G2GM9NG0",
     apiKey: "aadef574be1f9252bb48d4ea09b5cfe5",
@@ -40,7 +34,6 @@ export class SearchComponent {
             "p",
             routeState.p
           ];
-          // console.log('>>>>>>>>', `${baseUrl}search/${routeStateArray.join("/")}`)
 
           return `${baseUrl}search/${routeStateArray.join("/")}`;
         },
@@ -83,16 +76,4 @@ export class SearchComponent {
       }
     }
   };
-  ngOnInit() {
-    console.log('>>>>>>>>>>>>>>>>>>>')
-    //   window.paramMap  = this.route.paramMap
-    // window.route  = this.route
-    console.log(this.route.snapshot.paramMap)
-
-    console.log('>>>>>>>>>>>>>>>>>>>')
-    // this.hero$ = this.route.paramMap.pipe(
-    //     switchMap((params: ParamMap) =>
-    //         this.service.getHero(params.get('id')))
-    // );
-  }
 }
