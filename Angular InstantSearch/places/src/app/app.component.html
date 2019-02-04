@@ -1,0 +1,19 @@
+<header class="header">
+    <h1 class="header-title">
+        <a href="/">infinite-scroll</a>
+    </h1>
+    <p class="header-subtitle">
+        using
+        <a href="https://github.com/algolia/angular-instantsearch">
+            Angular InstantSearch
+        </a>
+    </p>
+</header>
+
+<div class="container">
+
+    <button (click)="increment()">toggle</button> {{visible}}
+    <!--<div class="results" *ngIf="visible % 2">-->
+    <app-places type="country" increment="{{visible}}" [increment_]="visible"  (onChange)="onSuggestion($event)" (onClear)="onClear($event)"></app-places>
+    <!--</div>-->
+</div>

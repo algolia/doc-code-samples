@@ -1,0 +1,20 @@
+<header class="header">
+  <h1 class="header-title">
+    <a href="/">multi-index-autocomplete</a>
+  </h1>
+  <p class="header-subtitle">
+    using
+    <a href="https://github.com/algolia/angular-instantsearch">
+      Angular InstantSearch
+    </a>
+  </p>
+</header>
+
+<div class="container">
+  <ais-instantsearch [config]="config">
+    <ais-configure [searchParameters]="{hitsPerPage: 3}"></ais-configure>
+    <div class="container">
+      <app-autocomplete></app-autocomplete>
+    </div>
+  </ais-instantsearch>
+</div>

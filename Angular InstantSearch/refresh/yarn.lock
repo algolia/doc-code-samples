@@ -3542,7 +3542,7 @@ instantsearch.css@^7.0.0:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.1.0.tgz#49264d2bdc3d6c1f6395812ce9422ed1e987fccb"
   integrity sha512-QL3iJTYG5NAP4LiZCojPg/m3dOELTNipq2FZ1IHFNZBTOsZCYQpFdI1UFB70oLijsHoq5WMBIG3ETbIzhcoDPQ==
 
-instantsearch.js@2.8.0, instantsearch.js@^2.8.0:
+instantsearch.js@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-2.8.0.tgz#852fea74da13e6d554c1ecefe9b653e6f78584d2"
   integrity sha512-n99rwiZv4Qauigk3YygoAoEmBzZUS/bw5eUIXdW3cRbLKB3xa7TGBx6UUnoGXkDVYDPFUSmyffjuiqPmH0c6jA==
