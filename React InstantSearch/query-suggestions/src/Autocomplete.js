@@ -99,6 +99,7 @@ class Autocomplete extends Component {
         <Highlight attribute="query" hit={hit} tagName="mark" />
         {category && (
           <i>
+            {' '}
             in{' '}
             {category.value === 'ALL_CATEGORIES'
               ? 'All categories'
