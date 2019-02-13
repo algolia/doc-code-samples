@@ -1,0 +1,64 @@
+<div class="ais-InstantSearch">
+  <h1>Angular InstantSearch e-commerce demo</h1>
+  <ais-instantsearch [config]="config">
+    <div class="left-panel">
+      <ais-current-refinements></ais-current-refinements>
+      <h2>Brands</h2>
+      <ais-refinement-list attribute="brand"></ais-refinement-list>
+      <ais-configure
+        [searchParameters]="{ hitsPerPage: 8, clickAnalytics: true }"
+      ></ais-configure>
+    </div>
+    <div class="right-panel">
+      <ais-search-box></ais-search-box>
+      <ais-hits>
+        <ng-template let-hits="hits" let-results="results">
+          <ol class="ais-Hits-list">
+            <li *ngFor="let hit of hits; index as i" class="ais-Hits-item">
+              <img src="{{ hit.image }}" alt="{{ hit.name }}" align="left" />
+              <div class="hit-name">
+                <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
+              </div>
+              <div class="hit-description">
+                <ais-highlight
+                  attribute="description"
+                  [hit]="hit"
+                ></ais-highlight>
+              </div>
+              <div class="hit-price">${{ hit.price }}</div>
+              <button
+                class="btn"
+                (click)="
+                  clickedObjectIDsAfterSearch({
+                    eventName: 'Add to Cart',
+                    index: 'instant_search',
+                    queryID: results.queryID,
+                    objectIDs: [hit.objectID],
+                    positions: [results.hitsPerPage * results.page + i + 1]
+                  })
+                "
+              >
+                Favorite
+              </button>
+              &nbsp;
+              <button
+                class="btn"
+                (click)="
+                  convertedObjectIDsAfterSearch({
+                    eventName: 'Add to Cart',
+                    index: 'instant_search',
+                    queryID: results.queryID,
+                    objectIDs: [hit.objectID]
+                  })
+                "
+              >
+                Add to cart
+              </button>
+            </li>
+          </ol>
+        </ng-template>
+      </ais-hits>
+      <ais-pagination></ais-pagination>
+    </div>
+  </ais-instantsearch>
+</div>
