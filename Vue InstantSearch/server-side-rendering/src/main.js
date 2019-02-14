@@ -18,7 +18,7 @@ export async function createApp({
   const router = createRouter();
   const { instantsearch, rootMixin } = createInstantSearch({
     searchClient,
-    indexName: 'movies',
+    indexName: 'instant_search',
   });
 
   await beforeApp({
