@@ -13,7 +13,10 @@ jobs:
 
     steps:
       - checkout
-      - run: echo $(ls -1 "<< parameters.path >>")
+      - run: |
+          cd "<< parameters.path >>"
+          yarn
+          yarn build
 
 workflows:
   version: 2.1
