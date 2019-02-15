@@ -41,7 +41,9 @@ workflows:
       - build:
           path: "Angular InstantSearch/loading-indicator"
       - build:
-          path: "Angular InstantSearch/manipulating-lists"
+          path: "Angular InstantSearch/manipulating-lists/filtering"
+      - build:
+          path: "Angular InstantSearch/manipulating-lists/sorting"
       - build:
           path: "Angular InstantSearch/multi-index-autocomplete"
       - build:
