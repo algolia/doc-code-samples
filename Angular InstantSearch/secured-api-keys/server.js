@@ -39,7 +39,7 @@ app.get("/", async (_, res) => {
   res.send(indexWithServerData);
 });
 
-const PORT = 8080;
+const PORT = 3000;
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
