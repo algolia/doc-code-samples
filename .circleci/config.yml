@@ -14,10 +14,6 @@ commands:
           yarn build
 jobs:
   build:
-    parameters:
-      path:
-        type: string
-        default: ""
     docker:
       - image: circleci/node:9
 
@@ -26,3 +22,45 @@ jobs:
     steps:
       - build_project:
           path: "Angular InstantSearch/loading-indicator"
+      - build_project:
+          path: "Angular InstantSearch/loading-indicator"
+      - build_project:
+          path: "Angular InstantSearch/algolia-insights"
+      - build_project:
+          path: "Angular InstantSearch/autocomplete-results-page"
+      - build_project:
+          path: "Angular InstantSearch/debounced-search-box"
+      - build_project:
+          path: "Angular InstantSearch/extending-widgets"
+      - build_project:
+          path: "Angular InstantSearch/geo-search"
+      - build_project:
+          path: "Angular InstantSearch/getting-started"
+      - build_project:
+          path: "Angular InstantSearch/infinite-scroll"
+      - build_project:
+          path: "Angular InstantSearch/loading-indicator"
+      - build_project:
+          path: "Angular InstantSearch/manipulating-lists/filtering"
+      - build_project:
+          path: "Angular InstantSearch/manipulating-lists/sorting"
+      - build_project:
+          path: "Angular InstantSearch/multi-index-autocomplete"
+      - build_project:
+          path: "Angular InstantSearch/multi-index-hits"
+      - build_project:
+          path: "Angular InstantSearch/places"
+      - build_project:
+          path: "Angular InstantSearch/query-suggestions"
+      - build_project:
+          path: "Angular InstantSearch/refresh"
+      - build_project:
+          path: "Angular InstantSearch/routing-angular-router"
+      - build_project:
+          path: "Angular InstantSearch/routing-basic"
+      - build_project:
+          path: "Angular InstantSearch/routing-full-url"
+      - build_project:
+          path: "Angular InstantSearch/routing-state-mapping"
+      - build_project:
+          path: "Angular InstantSearch/secured-api-keys"
