@@ -98,6 +98,42 @@ jobs:
       - build_project:
            path: "React InstantSearch/secured-api-keys"
 
+  build_vanilla_projects:
+    executor: node9
+    steps:
+      - checkout
+      - build_project:
+           path: "InstantSearch.js/autocomplete-results-page"
+      - build_project:
+           path: "InstantSearch.js/geo-search-control"
+      - build_project:
+           path: "InstantSearch.js/geo-search-custom-marker"
+      - build_project:
+           path: "InstantSearch.js/geo-search-hits"
+      - build_project:
+           path: "InstantSearch.js/getting-started"
+      - build_project:
+           path: "InstantSearch.js/infinite-scroll"
+      - build_project:
+           path: "InstantSearch.js/multi-index-autocomplete"
+      - build_project:
+           path: "InstantSearch.js/multi-index-hits"
+      - build_project:
+           path: "InstantSearch.js/places"
+      - build_project:
+           path: "InstantSearch.js/query-suggestions"
+      - build_project:
+           path: "InstantSearch.js/refresh-cache-periodically"
+      - build_project:
+           path: "InstantSearch.js/refresh-cache-user-action"
+      - build_project:
+           path: "InstantSearch.js/routing-basic"
+      - build_project:
+           path: "InstantSearch.js/routing-seo-friendly"
+      - build_project:
+           path: "InstantSearch.js/routing-user-friendly"
+      - build_project:
+           path: "InstantSearch.js/secured-api-keys"
 
 workflows:
   version: 2.1
@@ -105,3 +141,4 @@ workflows:
     jobs:
       - build_angular_projects
       - build_react_projects
+      - build_vanilla_projects
