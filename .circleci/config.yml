@@ -20,4 +20,5 @@ workflows:
   version: 2.1
   build_all:
     jobs:
-      - build
+      - build:
+          path: "Angular InstantSearch/loading-indicator"
