@@ -26,3 +26,39 @@ workflows:
           path: "Angular InstantSearch/loading-indicator"
       - build:
           path: "Angular InstantSearch/algolia-insights"
+      - build:
+          path: "Angular InstantSearch/autocomplete-results-page"
+      - build:
+          path: "Angular InstantSearch/debounced-search-box"
+      - build:
+          path: "Angular InstantSearch/extending-widgets"
+      - build:
+          path: "Angular InstantSearch/geo-search"
+      - build:
+          path: "Angular InstantSearch/getting-started"
+      - build:
+          path: "Angular InstantSearch/infinite-scroll"
+      - build:
+          path: "Angular InstantSearch/loading-indicator"
+      - build:
+          path: "Angular InstantSearch/manipulating-lists"
+      - build:
+          path: "Angular InstantSearch/multi-index-autocomplete"
+      - build:
+          path: "Angular InstantSearch/multi-index-hits"
+      - build:
+          path: "Angular InstantSearch/places"
+      - build:
+          path: "Angular InstantSearch/query-suggestions"
+      - build:
+          path: "Angular InstantSearch/refresh"
+      - build:
+          path: "Angular InstantSearch/routing-angular-router"
+      - build:
+          path: "Angular InstantSearch/routing-basic"
+      - build:
+          path: "Angular InstantSearch/routing-full-url"
+      - build:
+          path: "Angular InstantSearch/routing-state-mapping"
+      - build:
+          path: "Angular InstantSearch/secured-api-keys"
