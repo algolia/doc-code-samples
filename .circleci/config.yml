@@ -1,4 +1,10 @@
 version: 2.1
+
+executors:
+  node9:
+    docker:
+      - image: circleci/node:9
+
 commands:
   build_project:
     description: "Building << path >>..."
@@ -7,21 +13,17 @@ commands:
         type: string
         default: ""
     steps:
-      - checkout
-      - run: |
-          cd "<< parameters.path >>"
-          yarn
-          yarn build
+      - run:
+          name: "Building << parameters.path >>"
+          command: |
+            cd "<< parameters.path >>"
+            yarn
+            yarn build
 jobs:
-  build:
-    docker:
-      - image: circleci/node:9
-
-    working_directory: ~/repo/
-
+  build_angular_projects:
+    executor: node9
     steps:
-      - build_project:
-          path: "Angular InstantSearch/loading-indicator"
+      - checkout
       - build_project:
           path: "Angular InstantSearch/loading-indicator"
       - build_project:
@@ -64,3 +66,42 @@ jobs:
           path: "Angular InstantSearch/routing-state-mapping"
       - build_project:
           path: "Angular InstantSearch/secured-api-keys"
+
+  build_react_projects:
+    executor: node9
+    steps:
+      - checkout
+      - build_project:
+           path: "React InstantSearch/autocomplete-mentions"
+      - build_project:
+           path: "React InstantSearch/autocomplete-results-page"
+      - build_project:
+           path: "React InstantSearch/extending-widgets"
+      - build_project:
+           path: "React InstantSearch/getting-started"
+      - build_project:
+           path: "React InstantSearch/infinite-scroll"
+      - build_project:
+           path: "React InstantSearch/multi-index-autocomplete"
+      - build_project:
+           path: "React InstantSearch/multi-index-hits"
+      - build_project:
+           path: "React InstantSearch/places"
+      - build_project:
+           path: "React InstantSearch/query-suggestions"
+      - build_project:
+           path: "React InstantSearch/routing-basic"
+      - build_project:
+           path: "React InstantSearch/routing-seo-friendly"
+      - build_project:
+           path: "React InstantSearch/routing-user-friendly"
+      - build_project:
+           path: "React InstantSearch/secured-api-keys"
+
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - build_angular_projects
+      - build_react_projects
