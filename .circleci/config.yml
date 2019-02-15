@@ -6,7 +6,6 @@ jobs:
       path:
         type: string
         default: ""
-    parallelism: 3
     docker:
       - image: circleci/node:9
 
