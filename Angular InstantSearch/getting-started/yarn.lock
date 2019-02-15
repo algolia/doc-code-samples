@@ -436,9 +436,18 @@ ajv@~6.4.0:
     json-schema-traverse "^0.3.0"
     uri-js "^3.0.2"
 
-algoliasearch-helper@2.26.0, algoliasearch-helper@^2.26.0:
+algoliasearch-helper@2.26.0:
   version "2.26.0"
   resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-2.26.0.tgz#cb784b692a5aacf17062493cb0b94f6d60d30d0f"
+  dependencies:
+    events "^1.1.1"
+    lodash "^4.17.5"
+    qs "^6.5.1"
+    util "^0.10.3"
+
+algoliasearch-helper@^2.26.1:
+  version "2.26.1"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-2.26.1.tgz#75bd34f095e852d1bda483b8ebfb83c3c6e2852c"
   dependencies:
     events "^1.1.1"
     lodash "^4.17.5"
@@ -465,9 +474,9 @@ algoliasearch@3.27.0:
     semver "^5.1.0"
     tunnel-agent "^0.6.0"
 
-algoliasearch@^3.27.0:
-  version "3.27.1"
-  resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-3.27.1.tgz#e1af42b97dbf44a2dd3a8c907be99c0c34e48414"
+algoliasearch@^3.29.0:
+  version "3.32.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-3.32.0.tgz#5818168c26ff921bd0346a919071bac928b747ce"
   dependencies:
     agentkeepalive "^2.2.0"
     debug "^2.6.8"
@@ -497,15 +506,15 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular-instantsearch@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-2.0.1.tgz#97fe56adf7a1d4caa97b4ee80bf61ab29bd8f384"
+angular-instantsearch@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-2.2.1.tgz#dba0bde9786e957bf62272b00c02f4633c52a98e"
   dependencies:
-    algoliasearch "^3.27.0"
-    algoliasearch-helper "^2.26.0"
+    algoliasearch "^3.29.0"
+    algoliasearch-helper "^2.26.1"
     instantsearch.css "^7.0.0"
     instantsearch.js "^2.8.0"
-    lodash-es "^4.17.4"
+    lodash "^4.17.10"
     nouislider "^10.0.0"
     querystring-es3 "^0.2.1"
     tslib "^1.7.1"
@@ -3774,10 +3783,6 @@ locate-path@^2.0.0:
   dependencies:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
-
-lodash-es@^4.17.4:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
 
 lodash.assign@^4.2.0:
   version "4.2.0"

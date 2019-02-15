@@ -20,7 +20,7 @@
     "@angular/platform-browser": "6.0.4",
     "@angular/platform-browser-dynamic": "6.0.4",
     "@angular/router": "6.0.4",
-    "angular-instantsearch": "2.0.1",
+    "angular-instantsearch": "2.2.1",
     "core-js": "2.5.7",
     "express": "^4.16.4",
     "rxjs": "6.2.0",
