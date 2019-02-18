@@ -1,10 +1,4 @@
 import { Component } from "@angular/core";
-import * as algoliasearch from "algoliasearch";
-
-const searchClient = algoliasearch(
-  "latency",
-  "6be0576ff61c053d5f9a3225e2a90f76"
-);
 
 @Component({
   selector: "app-root",
@@ -12,21 +6,10 @@ const searchClient = algoliasearch(
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  public config = {
-    indexName: "instant_search",
-    searchClient
-  };
-
-  public visible = 0;
-  increment() {
-    this.visible++
-  }
   onSuggestion($event) {
-    console.log($event)
+    console.log($event);
   }
   onClear($event) {
-    console.log($event)
+    console.log($event);
   }
-
-  public searchParameters = { query: "" };
 }

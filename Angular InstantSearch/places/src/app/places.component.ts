@@ -24,8 +24,6 @@ export class PlacesComponent implements AfterViewInit, OnDestroy {
   @Output() onClear? = new EventEmitter();
 
   @Input() type: string;
-  @Input() increment: string;
-  @Input() increment_: number;
 
   ngAfterViewInit() {
     this.instance = places({
