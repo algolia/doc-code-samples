@@ -28,7 +28,7 @@ const createURL = state => {
     !state.query &&
     state.page === 1 &&
     state.refinementList.brand &&
-    state.refinementList.brand.length > 0;
+    state.refinementList.brand.length === 0;
 
   if (isDefaultRoute) {
     return '';
