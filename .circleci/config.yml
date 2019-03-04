@@ -97,6 +97,8 @@ jobs:
            path: "React InstantSearch/routing-user-friendly"
       - build_project:
            path: "React InstantSearch/secured-api-keys"
+      - build_project:
+           path: "React InstantSearch/algolia-insights"
 
   build_vanilla_projects:
     executor: node9
