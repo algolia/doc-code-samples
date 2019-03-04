@@ -44,3 +44,15 @@ body {
   font-size: 14px;
   margin-bottom: 0.5em;
 }
+
+.hit-action {
+  margin-top: 1em;
+  color: #fff;
+  background-color: #0096db;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease-out;
+}

@@ -2,14 +2,16 @@ import algoliasearch from 'algoliasearch/lite';
 import React, { Component } from 'react';
 import {
   InstantSearch,
-  Hits,
   SearchBox,
   Pagination,
   Highlight,
   ClearRefinements,
   RefinementList,
   Configure,
+  connectStateResults,
+  connectHits,
 } from 'react-instantsearch-dom';
+
 import PropTypes from 'prop-types';
 import './App.css';
 
@@ -28,11 +30,11 @@ class App extends Component {
             <ClearRefinements />
             <h2>Brands</h2>
             <RefinementList attribute="brand" />
-            <Configure hitsPerPage={8} />
+            <Configure hitsPerPage={8} clickAnalytics />
           </div>
           <div className="right-panel">
             <SearchBox />
-            <Hits hitComponent={Hit} />
+            <CustomHits />
             <Pagination />
           </div>
         </InstantSearch>
@@ -41,17 +43,60 @@ class App extends Component {
   }
 }
 
-function Hit(props) {
+const CustomHits = connectHits(
+  connectStateResults(({ hits, searchResults }) => (
+    <div className="ais-Hits">
+      <ul className="ais-Hits-list">
+        {hits.map((hit, index) => (
+          <li className="ais-Hits-item" key={hit.objectID}>
+            <Hit hit={hit} searchResults={searchResults} index={index} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))
+);
+
+function Hit({ hit, index, searchResults }) {
   return (
     <div>
-      <img src={props.hit.image} align="left" alt={props.hit.name} />
+      <img src={hit.image} align="left" alt={hit.name} />
       <div className="hit-name">
-        <Highlight attribute="name" hit={props.hit} />
+        <Highlight attribute="name" hit={hit} />
       </div>
       <div className="hit-description">
-        <Highlight attribute="description" hit={props.hit} />
+        <Highlight attribute="description" hit={hit} />
       </div>
-      <div className="hit-price">${props.hit.price}</div>
+      <div className="hit-price">${hit.price}</div>
+      <button
+        className="hit-action"
+        onClick={() => {
+          window.aa('clickedObjectIDsAfterSearch', {
+            index: 'demo_ecommerce',
+            eventName: 'Add to favorite',
+            queryID: searchResults.queryID,
+            objectIDs: [hit.objectID],
+            positions: [
+              searchResults.hitsPerPage * searchResults.page + index + 1,
+            ],
+          });
+        }}
+      >
+        Send click
+      </button>{' '}
+      <button
+        className="hit-action"
+        onClick={() => {
+          window.aa('convertedObjectIDsAfterSearch', {
+            index: 'demo_ecommerce',
+            eventName: 'Add to basket',
+            queryID: searchResults.queryID,
+            objectIDs: [hit.objectID],
+          });
+        }}
+      >
+        Send conversion
+      </button>
     </div>
   );
 }
