@@ -7668,7 +7668,7 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-autosuggest@^1.7.3:
+vue-autosuggest@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/vue-autosuggest/-/vue-autosuggest-1.7.3.tgz#692c4d02a426d82f487ba5c5553439f18a943cc7"
   integrity sha512-5l92YKDUrnxMkcJz6HVn1XvgECR3kj5VXj2u5lu7Ph73eyacgQXDhAcApCyVRGlfNvln4Yrd8eFJKDxcSqZTgw==
