@@ -364,20 +364,15 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.43.tgz#8d3281a33c92a56038b05d9460a65bc1dcd5735b"
   integrity sha512-5m5W13HR2k3cu88mpzlnPBBv5+GyMHtj4F0P83RG4mqoC0AYVYHVMHfF3SgwKNtqEZiZQASMxU92QsLEekKcnw==
 
-"@types/node@^6.0.46":
-  version "6.0.112"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.112.tgz#0f37473b1d1ecd30c8bf57215ef4fb558f99cc86"
-  integrity sha512-HnekQWq9t3Gl5aBYYi8sGyOWm85M5ub2llMrpQkRY94eJEUhsUr8qYNaeefv22cxxm+D67a+5zIzpl+dpFxdjQ==
-
 "@types/q@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-0.0.32.tgz#bd284e57c84f1325da702babfc82a5328190c0c5"
   integrity sha1-vShOV8hPEyXacCur/IKlMoGQwMU=
 
-"@types/selenium-webdriver@^2.53.35", "@types/selenium-webdriver@~2.53.39":
-  version "2.53.43"
-  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-2.53.43.tgz#2de3d718819bc20165754c4a59afb7e9833f6707"
-  integrity sha512-UBYHWph6P3tutkbXpW6XYg9ZPbTKjw/YC2hGG1/GEvWwTbvezBUv3h+mmUFw79T3RFPnmedpiXdOBbXX+4l0jg==
+"@types/selenium-webdriver@^3.0.0":
+  version "3.0.15"
+  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.15.tgz#024c24051c3798e9a0cf5cceb1c893140df1bc31"
+  integrity sha512-5nh8/K2u9p4bk95GGCJB7KBvewaB0TUziZ9DTr+mR2I6RoO4OJVqx7rxK83hs2J1tomwtCGkhiW+Dy8EUnfB+Q==
 
 "@types/source-list-map@*":
   version "0.1.2"
@@ -589,11 +584,6 @@ acorn@^6.0.5:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
-
-adm-zip@0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.4.4.tgz#a61ed5ae6905c3aea58b3a657d25033091052736"
-  integrity sha1-ph7VrmkFw66lizplfSUDMJEFJzY=
 
 adm-zip@^0.4.7:
   version "0.4.11"
@@ -1329,6 +1319,13 @@ browserslist@^4.4.1:
     caniuse-lite "^1.0.30000939"
     electron-to-chromium "^1.3.113"
     node-releases "^1.1.8"
+
+browserstack@^1.5.1:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/browserstack/-/browserstack-1.5.2.tgz#17d8bb76127a1cc0ea416424df80d218f803673f"
+  integrity sha512-+6AFt9HzhKykcPF79W6yjEUJcdvZOV0lIXdkORXMJftGrDl0OKWqRF4GHqpDNkxiceDT/uB7Fb/aDwktvXX7dg==
+  dependencies:
+    https-proxy-agent "^2.2.1"
 
 buffer-from@^1.0.0:
   version "1.1.0"
@@ -5867,15 +5864,15 @@ protoduck@^5.0.1:
   dependencies:
     genfun "^5.0.0"
 
-protractor@5.3.2:
-  version "5.3.2"
-  resolved "https://registry.yarnpkg.com/protractor/-/protractor-5.3.2.tgz#b8278f3131d9d52fa1172ed0f7fec03085fbe0ce"
-  integrity sha512-pw4uwwiy5lHZjIguxNpkEwJJa7hVz+bJsvaTI+IbXlfn2qXwzbF8eghW/RmrZwE2sGx82I8etb8lVjQ+JrjejA==
+protractor@5.4.2:
+  version "5.4.2"
+  resolved "https://registry.yarnpkg.com/protractor/-/protractor-5.4.2.tgz#329efe37f48b2141ab9467799be2d4d12eb48c13"
+  integrity sha512-zlIj64Cr6IOWP7RwxVeD8O4UskLYPoyIcg0HboWJL9T79F1F0VWtKkGTr/9GN6BKL+/Q/GmM7C9kFVCfDbP5sA==
   dependencies:
-    "@types/node" "^6.0.46"
     "@types/q" "^0.0.32"
-    "@types/selenium-webdriver" "~2.53.39"
+    "@types/selenium-webdriver" "^3.0.0"
     blocking-proxy "^1.0.0"
+    browserstack "^1.5.1"
     chalk "^1.1.3"
     glob "^7.0.3"
     jasmine "2.8.0"
@@ -5885,7 +5882,7 @@ protractor@5.3.2:
     saucelabs "^1.5.0"
     selenium-webdriver "3.6.0"
     source-map-support "~0.4.0"
-    webdriver-js-extender "^1.0.0"
+    webdriver-js-extender "2.1.0"
     webdriver-manager "^12.0.6"
 
 proxy-addr@~2.0.3:
@@ -6457,11 +6454,6 @@ sax@0.5.x:
   resolved "https://registry.yarnpkg.com/sax/-/sax-0.5.8.tgz#d472db228eb331c2506b0e8c15524adb939d12c1"
   integrity sha1-1HLbIo6zMcJQaw6MFVJK25OdEsE=
 
-sax@0.6.x:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/sax/-/sax-0.6.1.tgz#563b19c7c1de892e09bfc4f2fc30e3c27f0952b9"
-  integrity sha1-VjsZx8HeiS4Jv8Ty/DDjwn8JUrk=
-
 sax@>=0.6.0, sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -6504,7 +6496,7 @@ select-hose@^2.0.0:
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
   integrity sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
 
-selenium-webdriver@3.6.0:
+selenium-webdriver@3.6.0, selenium-webdriver@^3.0.1:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-3.6.0.tgz#2ba87a1662c020b8988c981ae62cb2a01298eafc"
   integrity sha512-WH7Aldse+2P5bbFBO4Gle/nuQOdVwpHMTL6raL3uuBj/vPG07k6uzt3aiahu352ONBr5xXh0hDlM3LhtXPOC4Q==
@@ -6513,17 +6505,6 @@ selenium-webdriver@3.6.0:
     rimraf "^2.5.4"
     tmp "0.0.30"
     xml2js "^0.4.17"
-
-selenium-webdriver@^2.53.2:
-  version "2.53.3"
-  resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-2.53.3.tgz#d29ff5a957dff1a1b49dc457756e4e4bfbdce085"
-  integrity sha1-0p/1qVff8aG0ncRXdW5OS/vc4IU=
-  dependencies:
-    adm-zip "0.4.4"
-    rimraf "^2.2.8"
-    tmp "0.0.24"
-    ws "^1.0.1"
-    xml2js "0.4.4"
 
 selfsigned@^1.9.1:
   version "1.10.3"
@@ -7328,11 +7309,6 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tmp@0.0.24:
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.24.tgz#d6a5e198d14a9835cc6f2d7c3d9e302428c8cf12"
-  integrity sha1-1qXhmNFKmDXMby18PZ4wJCjIzxI=
-
 tmp@0.0.30:
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.30.tgz#72419d4a8be7d6ce75148fd8b324e593a711c2ed"
@@ -7743,13 +7719,13 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-webdriver-js-extender@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/webdriver-js-extender/-/webdriver-js-extender-1.0.0.tgz#81c533a9e33d5bfb597b4e63e2cdb25b54777515"
-  integrity sha1-gcUzqeM9W/tZe05j4s2yW1R3dRU=
+webdriver-js-extender@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/webdriver-js-extender/-/webdriver-js-extender-2.1.0.tgz#57d7a93c00db4cc8d556e4d3db4b5db0a80c3bb7"
+  integrity sha512-lcUKrjbBfCK6MNsh7xaY2UAUmZwe+/ib03AjVOpFobX4O7+83BUveSrLfU0Qsyb1DaKJdQRbuU+kM9aZ6QUhiQ==
   dependencies:
-    "@types/selenium-webdriver" "^2.53.35"
-    selenium-webdriver "^2.53.2"
+    "@types/selenium-webdriver" "^3.0.0"
+    selenium-webdriver "^3.0.1"
 
 webdriver-manager@^12.0.6:
   version "12.0.6"
@@ -7980,26 +7956,10 @@ ws@1.1.2:
     options ">=0.0.5"
     ultron "1.0.x"
 
-ws@^1.0.1:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.5.tgz#cbd9e6e75e09fc5d2c90015f21f0c40875e0dd51"
-  integrity sha512-o3KqipXNUdS7wpQzBHSe180lBGO60SoK0yVo3CYJgb2MkobuWuBX6dhkYP5ORCLd55y+SaflMOV5fqAB53ux4w==
-  dependencies:
-    options ">=0.0.5"
-    ultron "1.0.x"
-
 wtf-8@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wtf-8/-/wtf-8-1.0.0.tgz#392d8ba2d0f1c34d1ee2d630f15d0efb68e1048a"
   integrity sha1-OS2LotDxw00e4tYw8V0O+2jhBIo=
-
-xml2js@0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.4.tgz#3111010003008ae19240eba17497b57c729c555d"
-  integrity sha1-MREBAAMAiuGSQOuhdJe1fHKcVV0=
-  dependencies:
-    sax "0.6.x"
-    xmlbuilder ">=1.0.0"
 
 xml2js@^0.4.17:
   version "0.4.19"
@@ -8008,11 +7968,6 @@ xml2js@^0.4.17:
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
-
-xmlbuilder@>=1.0.0:
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-10.0.0.tgz#c64e52f8ae097fe5fd46d1c38adaade071ee1b55"
-  integrity sha512-7RWHlmF1yU/E++BZkRQTEv8ZFAhZ+YHINUAxiZ5LQTKRQq//igpiY8rh7dJqPzgb/IzeC5jH9P7OaCERfM9DwA==
 
 xmlbuilder@~9.0.1:
   version "9.0.7"
