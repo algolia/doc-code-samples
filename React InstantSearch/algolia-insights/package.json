@@ -23,6 +23,6 @@
     "eslint-plugin-prettier": "2.7.0",
     "eslint-plugin-react": "7.12.4",
     "prettier": "1.16.4",
-    "prop-types": "15.6.1"
+    "prop-types": "15.7.2"
   }
 }
