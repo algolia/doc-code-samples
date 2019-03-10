@@ -13,7 +13,7 @@
     "antd": "3.7.0",
     "react": "16.4.1",
     "react-dom": "16.8.2",
-    "react-instantsearch-dom": "5.2.2",
+    "react-instantsearch-dom": "5.4.0",
     "react-scripts": "1.1.4"
   },
   "devDependencies": {

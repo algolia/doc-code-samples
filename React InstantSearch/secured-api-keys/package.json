@@ -13,7 +13,7 @@
     "express": "4.16.3",
     "react": "16.4.1",
     "react-dom": "16.8.2",
-    "react-instantsearch-dom": "5.2.0",
+    "react-instantsearch-dom": "5.4.0",
     "react-scripts": "1.1.4"
   },
   "devDependencies": {
