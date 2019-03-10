@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "algoliasearch": "3.30.0",
-    "instantsearch.css": "7.1.0",
+    "instantsearch.css": "7.1.1",
     "vue": "2.5.17",
     "vue-autosuggest": "1.7.3",
     "vue-instantsearch": "2.0.0-beta.1"
