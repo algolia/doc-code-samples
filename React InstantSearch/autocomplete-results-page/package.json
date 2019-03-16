@@ -14,7 +14,7 @@
     "react-autosuggest": "9.4.3",
     "react-dom": "16.8.2",
     "react-instantsearch-dom": "5.4.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.5"
   },
   "devDependencies": {
     "eslint": "4.19.1",
