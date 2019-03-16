@@ -4092,10 +4092,10 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.6.tgz#0101211baa70c4bca4a0f63f2206e97b7dfaf258"
   integrity sha512-lQe48YPsMJAig+yngZ87Lus+NF+3mtu7DVOBu6b/gHO1YpKwIj5AWjZ/TOS7i46HD/UixzWb1zeWDZfGZ3iYcg==
 
-parcel-bundler@1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/parcel-bundler/-/parcel-bundler-1.12.0.tgz#b6ef8165004c05c4d411a75e3be54c619675f5ac"
-  integrity sha512-nPmOp5eTeYXEp/tEqZmDBtCjIzm1MjeufWprsLnYUQKCdBMG5LMfKuhq0n8Cvzeti9bMHJXXi4WRkA5ER6nIlA==
+parcel-bundler@1.12.2:
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/parcel-bundler/-/parcel-bundler-1.12.2.tgz#5736afcbeee80a488bb946fd53ba52d1c5786960"
+  integrity sha512-jgT72i0za+EAgnxPBhXOKKlEQtTa4BfYdhe2jzulnT7785v/zHZMCI6qw3oD/Cju850OZcSubIE3U8Bt8Lzw9w==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
