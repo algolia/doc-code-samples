@@ -11,8 +11,8 @@
   "dependencies": {
     "algoliasearch": "3.29.0",
     "express": "4.16.4",
-    "react": "16.4.1",
-    "react-dom": "16.8.2",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
     "react-instantsearch-dom": "5.4.0",
     "react-scripts": "1.1.5"
   },
