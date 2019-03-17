@@ -13,7 +13,7 @@
     "algoliasearch": "3.32.0",
     "instantsearch.css": "7.1.1",
     "vue": "2.5.22",
-    "vue-instantsearch": "2.0.0",
+    "vue-instantsearch": "2.0.1",
     "vue-router": "3.0.2",
     "vue-server-renderer": "2.5.22"
   },

@@ -4296,17 +4296,17 @@ instantsearch.css@7.1.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.1.1.tgz#64fa9f07ff39ab088b00cd3f0fa3ea697d2215f7"
   integrity sha512-8+2FLbZk9uK+VRFJ4tXByMNX9KTsPOrY/nkw4oe+8HH+jcHoVMQkUdxbFu7mSUHUdZjh5kK9Xk8IQau1Sy+VKw==
 
-instantsearch.js@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-3.1.1.tgz#ab545da6b9b137ffdd90480b1610c8d09055a0ea"
-  integrity sha512-vQw84UX7sM5Tnv5L2cOngi98FafiweWASY+i56On5jiNR8sTnjcF1G+Xy30I3Bdh2LeWv9lCWKOt8AU9nkaltw==
+instantsearch.js@^3.1.1:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-3.2.0.tgz#9569ff137a68a4d8d5e16c8d7cb815dd838f3a3f"
+  integrity sha512-WVvszJWJalI3xkd5dlbPbm5Jgp9I+XctrS/CV5e2IejT53ggiqbuLc4tpjlmqbsD0TZZqflSfTEbdQRarctQGg==
   dependencies:
     algoliasearch-helper "^2.26.0"
     classnames "^2.2.5"
     events "^1.1.0"
     hogan.js "^3.0.2"
     lodash "^4.17.5"
-    preact "^8.2.7"
+    preact "^8.3.0"
     preact-compat "^3.18.0"
     preact-rheostat "^2.1.1"
     prop-types "^15.5.10"
@@ -6466,10 +6466,15 @@ preact-transition-group@^1.1.1:
   resolved "https://registry.yarnpkg.com/preact-transition-group/-/preact-transition-group-1.1.1.tgz#f0a49327ea515ece34ea2be864c4a7d29e5d6e10"
   integrity sha1-8KSTJ+pRXs406ivoZMSn0p5dbhA=
 
-preact@^8.2.5, preact@^8.2.7:
+preact@^8.2.5:
   version "8.3.1"
   resolved "https://registry.yarnpkg.com/preact/-/preact-8.3.1.tgz#ed34f79d09edc5efd32a378a3416ef5dc531e3ac"
   integrity sha512-s8H1Y8O9e+mOBo3UP1jvWqArPmjCba2lrrGLlq/0kN1XuIINUbYtf97iiXKxCuG3eYwmppPKnyW2DBrNj/TuTg==
+
+preact@^8.3.0:
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-8.4.2.tgz#1263b974a17d1ea80b66590e41ef786ced5d6a23"
+  integrity sha512-TsINETWiisfB6RTk0wh3/mvxbGRvx+ljeBccZ4Z6MPFKgu/KFGyf2Bmw3Z/jlXhL5JlNKY6QAbA9PVyzIy9//A==
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -8137,13 +8142,13 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
   integrity sha512-AA86yKZ5uOKz87/q1UpngEXhbRkaYg1b7HMMVRobNV1IVKqZe8oLIzo6iMocVwZXnYitlGwf2k4ZRLOZlS8oPQ==
 
-vue-instantsearch@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-2.0.0.tgz#3dd9b694d1f60b7ec261a62eead1b2c2613a1ce2"
-  integrity sha512-Wt4tp38R8++8mJy4gbEooPro97ngY8wF4w8pvPdzRuKeaq6HbfHrCBFHBOcFklT7kIi/q5fUuVwn6YkfpPoMrw==
+vue-instantsearch@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-2.0.1.tgz#36cf3392e6c3742d943b9a8eebfc90f8b8af66d3"
+  integrity sha512-q1NMvX9HybRASsh4phsW7jR4p53ZxUkAOheBFmeg/On212FwXp8tshUoHvrVagFMb3ATiqUkKD+REa3MaGqncQ==
   dependencies:
     algoliasearch-helper "^2.26.1"
-    instantsearch.js "^3.1.0"
+    instantsearch.js "^3.1.1"
 
 vue-loader@^15.6.4:
   version "15.7.0"

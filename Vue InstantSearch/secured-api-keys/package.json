@@ -13,7 +13,7 @@
     "express": "4.16.4",
     "instantsearch.css": "7.1.1",
     "vue": "2.5.17",
-    "vue-instantsearch": "2.0.0"
+    "vue-instantsearch": "2.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.5.1",
