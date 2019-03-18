@@ -30,8 +30,8 @@ class App extends Component {
           <Hits hitComponent={Hit} />
         </Index>
 
-        <Index indexName="bestbuy">
-          <h2>index: bestbuy</h2>
+        <Index indexName="instant_search_price_desc">
+          <h2>index: instant_search_price_desc</h2>
           <Configure hitsPerPage={16} />
           <Hits hitComponent={Hit} />
         </Index>
