@@ -22,8 +22,8 @@
         <ais-autocomplete
           :indices="[
             {
-              value: 'bestbuy',
-              label: 'Bestbuy',
+              value: 'instant_search_price_desc',
+              label: 'Price (desc)',
             },
           ]"
         >
@@ -77,12 +77,7 @@ export default {
     },
     indicesToSuggestions(indices) {
       return indices.map(({ hits }) => ({
-        data: hits.map(hit => {
-          // make sure the shape is the same in both indices
-          hit.price = hit.price || hit.salePrice;
-
-          return hit;
-        }),
+        data: hits,
       }));
     },
   },
