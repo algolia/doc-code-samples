@@ -23,7 +23,7 @@
     "eslint-config-algolia": "13.2.3",
     "eslint-config-prettier": "2.10.0",
     "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-prettier": "2.7.0",
+    "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.4",
     "prettier": "1.16.4",
     "react-native-scripts": "1.14.1"
