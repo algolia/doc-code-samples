@@ -11,7 +11,10 @@
     </header>
 
     <div class="container">
-      <ais-instant-search :search-client="searchClient" index-name="bestbuy">
+      <ais-instant-search
+        :search-client="searchClient"
+        index-name="instant_search_price_desc"
+      >
         <ais-search-box v-model="query" />
         <ais-configure
           :restrictSearchableAttributes="['name']"
