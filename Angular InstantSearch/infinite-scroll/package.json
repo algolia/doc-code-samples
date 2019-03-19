@@ -20,7 +20,7 @@
     "@angular/platform-browser": "6.1.10",
     "@angular/platform-browser-dynamic": "6.1.10",
     "@angular/router": "6.1.10",
-    "@trademe/ng-defer-load": "2.0.0",
+    "@trademe/ng-defer-load": "3.0.0",
     "algoliasearch": "3.30.0",
     "angular-instantsearch": "3.0.0-beta.0",
     "instantsearch.js":"3.2.0",

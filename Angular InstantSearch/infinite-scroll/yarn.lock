@@ -319,10 +319,10 @@
     semver "5.6.0"
     semver-intersect "1.4.0"
 
-"@trademe/ng-defer-load@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@trademe/ng-defer-load/-/ng-defer-load-2.0.0.tgz#f0554ef2b809b7337790fb8d6e68fd48426105b7"
-  integrity sha512-7/EO4U9itUY4sRwJn0cxndo5o2rZrRJl40nnRoZ2a7U7ER2VqW7WiuUXywPp9BSDZ3pCI5Ctp09uS8xl8hIJeQ==
+"@trademe/ng-defer-load@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@trademe/ng-defer-load/-/ng-defer-load-3.0.0.tgz#e87d784af364bcd13c2d812e0ade5f9afaa8cb1d"
+  integrity sha512-120YsZ/g6hiB11mBK0PmCNjX38dS1kuti9s/zVqoNrUcAfPQy2g++RIQUYTHDijFYIdMW3EeOvLr9XjtHX7eTw==
 
 "@types/algoliasearch@3.27.8":
   version "3.27.8"
