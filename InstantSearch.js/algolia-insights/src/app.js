@@ -80,7 +80,7 @@ search.start();
 document.addEventListener('click', e => {
   if (e.target.matches('.button-click')) {
     window.aa('clickedObjectIDsAfterSearch', {
-      index: search.indexName,
+      index: 'demo_ecommerce',
       eventName: 'click-result',
       objectIDs: [e.target.getAttribute('data-algolia-objectid')],
       queryID: e.target.getAttribute('data-algolia-queryid'),
@@ -89,7 +89,7 @@ document.addEventListener('click', e => {
     });
   } else if (e.target.matches('.button-conversion')) {
     aa('convertedObjectIDsAfterSearch', {
-      index: search.indexName,
+      index: 'demo_ecommerce',
       eventName: 'conversion',
       queryID: e.target.getAttribute('data-algolia-queryid'),
       objectIDs: [e.target.getAttribute('data-algolia-objectid')],
