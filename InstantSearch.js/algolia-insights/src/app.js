@@ -84,8 +84,8 @@ document.addEventListener('click', e => {
       eventName: 'click-result',
       objectIDs: [e.target.getAttribute('data-algolia-objectid')],
       queryID: e.target.getAttribute('data-algolia-queryid'),
-      positions: [parseInt(e.target.getAttribute('data-algolia-position'))],
       // parseInt because getAttribute always returns a string
+      positions: [parseInt(e.target.getAttribute('data-algolia-position'))],
     });
   } else if (e.target.matches('.button-conversion')) {
     aa('convertedObjectIDsAfterSearch', {
