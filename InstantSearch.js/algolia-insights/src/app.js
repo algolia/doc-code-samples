@@ -77,7 +77,7 @@ search.addWidget(
 
 search.start();
 
-document.addEventListener('click', e => {
+document.getElementById('hits').addEventListener('click', e => {
   if (e.target.matches('.button-click')) {
     window.aa('clickedObjectIDsAfterSearch', {
       index: 'demo_ecommerce',
