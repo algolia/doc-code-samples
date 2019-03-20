@@ -20,7 +20,7 @@
     "@angular/platform-browser": "6.1.10",
     "@angular/platform-browser-dynamic": "6.1.10",
     "@angular/router": "6.1.10",
-    "@trademe/ng-defer-load": "2.0.0",
+    "@trademe/ng-defer-load": "3.0.0",
     "algoliasearch": "3.30.0",
     "angular-instantsearch": "3.0.0-beta.0",
     "instantsearch.js":"3.2.0",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.13.6",
-    "@angular/cli": "6.2.9",
+    "@angular/cli": "7.3.6",
     "@angular/compiler-cli": "6.1.10",
     "@angular/language-service": "6.1.10",
     "@types/algoliasearch": "3.27.8",
@@ -47,7 +47,7 @@
     "karma-jasmine-html-reporter": "0.2.2",
     "prettier": "1.16.4",
     "protractor": "5.4.2",
-    "ts-node": "7.0.1",
+    "ts-node": "8.0.3",
     "tslint": "5.14.0",
     "typescript": "2.7.2"
   }

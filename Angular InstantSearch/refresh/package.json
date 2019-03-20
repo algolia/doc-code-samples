@@ -30,7 +30,7 @@
     "@angular/compiler-cli": "6.1.10",
     "@angular-devkit/build-angular": "0.13.6",
     "typescript": "2.7.2",
-    "@angular/cli": "6.2.9",
+    "@angular/cli": "7.3.6",
     "@angular/language-service": "6.1.10",
     "@types/jasmine": "3.3.11",
     "@types/jasminewd2": "2.0.6",
@@ -44,7 +44,7 @@
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "0.2.2",
     "protractor": "5.4.2",
-    "ts-node": "5.0.1",
+    "ts-node": "8.0.3",
     "tslint": "5.14.0"
   }
 }
