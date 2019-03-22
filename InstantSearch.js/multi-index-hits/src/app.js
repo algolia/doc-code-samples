@@ -6,7 +6,7 @@ const searchClient = algoliasearch(
 );
 
 const subIndex = instantsearch({
-  indexName: 'bestbuy',
+  indexName: 'instant_search_price_desc',
   searchClient,
 });
 
@@ -18,7 +18,7 @@ subIndex.addWidget(
 
 subIndex.addWidget(
   instantsearch.widgets.hits({
-    container: '#hits-best-buy',
+    container: '#hits-instant-search-price-desc',
     templates: {
       item:
         '{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}',

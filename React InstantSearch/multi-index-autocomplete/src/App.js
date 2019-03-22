@@ -24,7 +24,7 @@ class App extends Component {
         />
 
         <Index indexName="instant_search" />
-        <Index indexName="bestbuy" />
+        <Index indexName="instant_search_price_desc" />
       </InstantSearch>
     );
   }

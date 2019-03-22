@@ -33,7 +33,9 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
         },
         render: {
           option: hit => `
-          <div class="hit">${instantsearch.highlight({ attribute: 'name', hit })}</div>
+          <div class="hit">
+            ${instantsearch.highlight({ attribute: 'name', hit })}
+          </div>
           `,
         },
         optgroups,
@@ -79,7 +81,12 @@ search.addWidget(
 search.addWidget(
   autocomplete({
     container: $('#autocomplete'),
-    indices: [{ value: 'bestbuy', label: 'bestbuy' }],
+    indices: [
+      {
+        value: 'instant_search_price_desc',
+        label: 'instant_search_price_desc',
+      },
+    ],
   })
 );
 
