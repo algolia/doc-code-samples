@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "places.js": "1.16.1",
-    "vue": "2.6.9"
+    "vue": "2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.5.1",
@@ -19,6 +19,6 @@
     "babel-eslint": "10.0.1",
     "eslint": "5.10.0",
     "eslint-plugin-vue": "5.2.2",
-    "vue-template-compiler": "2.6.9"
+    "vue-template-compiler": "2.6.10"
   }
 }
