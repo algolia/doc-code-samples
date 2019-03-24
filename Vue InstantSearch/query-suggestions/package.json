@@ -11,7 +11,7 @@
     "algoliasearch": "3.30.0",
     "instantsearch.css": "7.1.1",
     "vue": "2.6.10",
-    "vue-autosuggest": "1.8.2",
+    "vue-autosuggest": "1.8.3",
     "vue-instantsearch": "2.0.1"
   },
   "devDependencies": {

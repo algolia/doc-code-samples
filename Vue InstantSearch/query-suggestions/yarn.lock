@@ -8120,10 +8120,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-autosuggest@1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/vue-autosuggest/-/vue-autosuggest-1.8.2.tgz#9162d5685be4ec47b3a74fc84a9a580cf8dfcd27"
-  integrity sha512-zqHxI4YkUxYg2BJwi3WPcaK3+CHqNNOcKrl5LIo5IpKAV08S9w3AHiOs8Hs+yb/NdhDA9d4FryuNDN/5O9C12w==
+vue-autosuggest@1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/vue-autosuggest/-/vue-autosuggest-1.8.3.tgz#dcce3d3ed90441c9788b6d18b2e67e5b9d4cad52"
+  integrity sha512-I5vQA/UHMcQMyMqNQwmbl+iiFYyg20a2Nx4zjx7MLZ93GRnL1Pclwc6FgLWCJ7u/1mvKpgphsgrS2QGe1cAM0w==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
