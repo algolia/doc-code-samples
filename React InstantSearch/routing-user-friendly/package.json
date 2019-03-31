@@ -14,7 +14,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-instantsearch-dom": "5.4.0",
-    "react-router-dom": "4.4.0",
+    "react-router-dom": "5.0.0",
     "react-scripts": "1.1.5"
   },
   "devDependencies": {
