@@ -15,7 +15,7 @@
     "vue-observe-visibility": "0.4.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "3.5.3",
+    "@vue/cli-plugin-babel": "3.5.4",
     "@vue/cli-plugin-eslint": "3.5.1",
     "@vue/cli-service": "3.5.3",
     "@vue/eslint-config-prettier": "4.0.1",
