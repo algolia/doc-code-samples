@@ -176,6 +176,13 @@ jobs:
       - build_project:
          path: "Vue InstantSearch/server-side-rendering"
 
+  build_autocomplete_projects:
+    executor: node9
+    steps:
+      - checkout
+      - build_project:
+          path: "Autocomplete.js/algolia-insights"
+
 workflows:
   version: 2.1
   build:
