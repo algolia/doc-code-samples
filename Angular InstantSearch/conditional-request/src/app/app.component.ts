@@ -8,7 +8,7 @@ const algoliaClient = algoliasearch(
 
 const searchClient = {
   search(requests) {
-    if (requests.every(({ params }) => Boolean(params.query) === false)) {
+    if (requests.every(({ params }) => !params.query)) {
       return Promise.resolve({
         results: requests.map(() => ({
           hits: [],
