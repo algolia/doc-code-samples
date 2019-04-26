@@ -52,6 +52,10 @@ class App extends Component {
           <InstantSearch searchClient={searchClient} indexName="instant_search">
             <div className="search-panel">
               <div className="search-panel__results">
+                <p>
+                  The request is only triggered once the query is not empty.
+                </p>
+
                 <SearchBox
                   className="searchbox"
                   translations={{
