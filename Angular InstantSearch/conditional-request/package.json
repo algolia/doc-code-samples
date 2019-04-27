@@ -21,7 +21,7 @@
     "@angular/router": "6.1.10",
     "@trademe/ng-defer-load": "3.0.0",
     "algoliasearch": "3.30.0",
-    "angular-instantsearch": "3.0.0-beta.0",
+    "angular-instantsearch": "3.0.0-beta.1",
     "instantsearch.js": "3.4.0",
     "core-js": "2.6.5",
     "rxjs": "6.3.3",
