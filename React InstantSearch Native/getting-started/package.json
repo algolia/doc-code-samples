@@ -11,7 +11,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "algoliasearch": "3.28.0",
+    "algoliasearch": "3.32.1",
     "expo": "27.1.1",
     "prop-types": "15.7.2",
     "react": "16.8.6",
