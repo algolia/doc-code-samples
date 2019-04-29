@@ -319,11 +319,6 @@
     semver "5.6.0"
     semver-intersect "1.4.0"
 
-"@types/algoliasearch@3.27.8":
-  version "3.27.8"
-  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-3.27.8.tgz#16833bb41390bca0fc9d8acd196bb51104d3b8e4"
-  integrity sha512-o4+3mfNRWfEtfh4KGZPSENhnS2dBpERidb97Puf0remweQUqDAiY+NL8dxeIn9Oi8JDhabtGWx3NUkb5iLCApw==
-
 "@types/jasmine@*":
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.3.7.tgz#52f2bfe8d2995d4756585d2328c97fbb0fec66e3"
