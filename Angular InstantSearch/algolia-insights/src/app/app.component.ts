@@ -1,6 +1,12 @@
 import { Component } from "@angular/core";
+import algoliasearch from "algoliasearch/lite";
 
 declare var aa: (eventName: string, props: object) => void;
+
+const searchClient = algoliasearch(
+  "B1G2GM9NG0",
+  "aadef574be1f9252bb48d4ea09b5cfe5"
+);
 
 @Component({
   selector: "app-root",
@@ -9,15 +15,14 @@ declare var aa: (eventName: string, props: object) => void;
 })
 export class AppComponent {
   config = {
-    appId: "B1G2GM9NG0",
-    apiKey: "aadef574be1f9252bb48d4ea09b5cfe5",
-    indexName: "demo_ecommerce"
+    indexName: "demo_ecommerce",
+    searchClient
   };
 
   clickedObjectIDsAfterSearch(props) {
-    aa('clickedObjectIDsAfterSearch', props)
+    aa("clickedObjectIDsAfterSearch", props);
   }
   convertedObjectIDsAfterSearch(props) {
-    aa('convertedObjectIDsAfterSearch', props)
+    aa("convertedObjectIDsAfterSearch", props);
   }
 }
