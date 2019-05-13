@@ -12,7 +12,11 @@ const router = instantsearch.routers.history({
   windowTitle({ category, q }) {
     const query = q ? `Results for "${q}"` : 'Search';
 
-    return [category, query].filter(Boolean).join(' – ');
+    if (category) {
+      return [category, query].join(' – ');
+    }
+
+    return query;
   },
   createURL({ qsModule, routeState, location }) {
     const { protocol, hostname, port = '', hash } = location;
