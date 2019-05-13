@@ -56,7 +56,7 @@ const stateMapping = {
       brands:
         uiState.refinementList &&
         uiState.refinementList.brand &&
-        uiState.refinementList.brand.join(','),
+        uiState.refinementList.brand.join('|'),
     };
   },
   routeToState(routeState) {
@@ -67,7 +67,7 @@ const stateMapping = {
         categories: routeState.category,
       },
       refinementList: {
-        brand: routeState.brands && routeState.brands.split(','),
+        brand: routeState.brands && routeState.brands.split('|'),
       },
     };
   },
