@@ -31,15 +31,27 @@ search.addWidget(
   })
 );
 
+const categoryMenu = instantsearch.widgets.panel({
+  templates: {
+    header: 'Category',
+  },
+})(instantsearch.widgets.menu);
+
 search.addWidget(
-  instantsearch.widgets.menu({
+  categoryMenu({
     container: '#menu',
     attribute: 'categories',
   })
 );
 
+const brandList = instantsearch.widgets.panel({
+  templates: {
+    header: 'Brand',
+  },
+})(instantsearch.widgets.refinementList);
+
 search.addWidget(
-  instantsearch.widgets.refinementList({
+  brandList({
     container: '#refinement-list',
     attribute: 'brand',
   })
