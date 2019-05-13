@@ -10,7 +10,7 @@
     "start": "cross-env NODE_ENV=production vue-cli-service ssr:serve --mode production"
   },
   "dependencies": {
-    "algoliasearch": "3.32.0",
+    "algoliasearch": "3.32.1",
     "instantsearch.css": "7.3.1",
     "vue": "2.6.10",
     "vue-instantsearch": "2.0.1",
@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@akryum/vue-cli-plugin-ssr": "0.5.0",
-    "@vue/cli-plugin-babel": "3.7.0",
-    "@vue/cli-plugin-eslint": "3.7.0",
-    "@vue/cli-service": "3.7.0",
+    "@vue/cli-plugin-babel": "3.6.0",
+    "@vue/cli-plugin-eslint": "3.6.0",
+    "@vue/cli-service": "3.6.0",
     "@vue/eslint-config-prettier": "4.0.1",
     "babel-eslint": "10.0.1",
     "eslint": "5.12.0",

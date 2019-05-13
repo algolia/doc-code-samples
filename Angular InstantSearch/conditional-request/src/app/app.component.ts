@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as algoliasearch from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
 
 const algoliaClient = algoliasearch(
   'latency',

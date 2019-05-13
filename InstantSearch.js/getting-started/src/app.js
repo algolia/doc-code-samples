@@ -32,10 +32,10 @@ search.addWidget(
         <div>
           <img src="{{image}}" align="left" alt="{{name}}" />
           <div class="hit-name">
-            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}}}
+            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
           </div>
           <div class="hit-description">
-            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}}}
+            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
           </div>
           <div class="hit-price">\${{price}}</div>
         </div>

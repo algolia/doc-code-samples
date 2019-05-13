@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import * as algoliasearch from "algoliasearch";
+import algoliasearch from "algoliasearch/lite";
 
 const searchClient = algoliasearch(
   "B1G2GM9NG0",
@@ -21,7 +21,7 @@ export class AppComponent {
     query: ""
   };
 
-  public setQuery({ query } : {query: string}) {
+  public setQuery({ query }: { query: string }) {
     this.searchParameters.query = query;
   }
 }

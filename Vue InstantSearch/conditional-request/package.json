@@ -9,15 +9,15 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "algoliasearch": "3.32.0",
+    "algoliasearch": "3.32.1",
     "core-js": "2.6.5",
     "vue": "2.6.10",
     "vue-instantsearch": "2.0.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "3.7.0",
-    "@vue/cli-plugin-eslint": "3.7.0",
-    "@vue/cli-service": "3.7.0",
+    "@vue/cli-plugin-babel": "3.6.0",
+    "@vue/cli-plugin-eslint": "3.6.0",
+    "@vue/cli-service": "3.6.0",
     "babel-eslint": "10.0.1",
     "eslint": "5.16.0",
     "eslint-config-algolia": "13.3.0",

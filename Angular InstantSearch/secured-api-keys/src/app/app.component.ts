@@ -1,4 +1,10 @@
 import { Component } from "@angular/core";
+import algoliasearch from "algoliasearch/lite";
+
+const searchClient = algoliasearch(
+  "B1G2GM9NG0",
+  (window as any).SERVER_DATA.ALGOLIA_API_KEY
+);
 
 @Component({
   selector: "app-root",
@@ -7,8 +13,7 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   config = {
-    appId: "B1G2GM9NG0",
-    apiKey: (window as any).SERVER_DATA.ALGOLIA_API_KEY,
+    searchClient,
     indexName: "demo_ecommerce"
   };
 }
