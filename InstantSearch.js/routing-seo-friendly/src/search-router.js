@@ -36,7 +36,7 @@ const router = instantsearch.routers.history({
     const routeStateString = location.pathname.split('/')[1];
     const category = getCategoryName(routeStateString.split('/')[0]);
     const queryParameters = qsModule.parse(location.search.slice(1));
-    const { q = '', p = 1, brands = 'all' } = queryParameters;
+    const { q = '', p, brands } = queryParameters;
 
     return {
       q: decodeURIComponent(q),
@@ -50,14 +50,13 @@ const router = instantsearch.routers.history({
 const stateMapping = {
   stateToRoute(uiState) {
     return {
-      q: uiState.query || '',
-      p: uiState.page || 1,
-      category: (uiState.menu && uiState.menu.categories) || '',
+      q: uiState.query,
+      p: uiState.page,
+      category: uiState.menu && uiState.menu.categories,
       brands:
-        (uiState.refinementList &&
-          uiState.refinementList.brand &&
-          uiState.refinementList.brand.join(',')) ||
-        '',
+        uiState.refinementList &&
+        uiState.refinementList.brand &&
+        uiState.refinementList.brand.join(','),
     };
   },
   routeToState(routeState) {
@@ -68,11 +67,7 @@ const stateMapping = {
         categories: routeState.category,
       },
       refinementList: {
-        brand:
-          (routeState.brands &&
-            routeState.brands !== 'all' &&
-            routeState.brands.split(',')) ||
-          [],
+        brand: routeState.brands && routeState.brands.split(','),
       },
     };
   },
