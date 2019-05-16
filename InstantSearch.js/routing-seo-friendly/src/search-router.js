@@ -24,13 +24,19 @@ const router = instantsearch.routers.history({
     const pathname = routeState.category
       ? `/${getCategorySlug(routeState.category)}/`
       : '';
+    const queryParameters = {};
 
-    const searchState = {};
-    if (routeState.q) searchState.q = encodeURIComponent(routeState.q);
-    if (routeState.p !== 1) searchState.p = routeState.p;
-    if (routeState.brands) searchState.brands = routeState.brands;
+    if (routeState.q) {
+      queryParameters.q = encodeURIComponent(routeState.q);
+    }
+    if (routeState.p !== 1) {
+      queryParameters.p = routeState.p;
+    }
+    if (routeState.brands) {
+      queryParameters.brands = encodeURIComponent(routeState.brands);
+    }
 
-    const queryString = qsModule.stringify(searchState, {
+    const queryString = qsModule.stringify(queryParameters, {
       addQueryPrefix: true,
     });
 
