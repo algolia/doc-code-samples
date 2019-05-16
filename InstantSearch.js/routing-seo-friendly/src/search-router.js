@@ -52,7 +52,7 @@ const router = instantsearch.routers.history({
       q: decodeURIComponent(q),
       p,
       category: decodeURIComponent(category),
-      brands,
+      brands: decodeURIComponent(brands),
     };
   },
 });
