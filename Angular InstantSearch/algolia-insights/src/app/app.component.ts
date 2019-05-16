@@ -16,13 +16,7 @@ const searchClient = algoliasearch(
 export class AppComponent {
   config = {
     indexName: "demo_ecommerce",
-    searchClient
+    searchClient,
+    insightsClient: aa
   };
-
-  clickedObjectIDsAfterSearch(props) {
-    aa("clickedObjectIDsAfterSearch", props);
-  }
-  convertedObjectIDsAfterSearch(props) {
-    aa("convertedObjectIDsAfterSearch", props);
-  }
 }
