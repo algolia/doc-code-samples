@@ -13,7 +13,7 @@ const router = instantsearch.routers.history({
     const query = q ? `Results for "${q}"` : 'Search';
 
     if (category) {
-      return [category, query].join(' – ');
+      return `${category} – ${query}`;
     }
 
     return query;
