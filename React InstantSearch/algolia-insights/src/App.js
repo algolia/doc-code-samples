@@ -8,8 +8,8 @@ import {
   ClearRefinements,
   RefinementList,
   Configure,
-  connectStateResults,
-  connectHits,
+  Hits,
+  connectHitInsights,
 } from 'react-instantsearch-dom';
 
 import PropTypes from 'prop-types';
@@ -19,6 +19,8 @@ const searchClient = algoliasearch(
   'B1G2GM9NG0',
   'aadef574be1f9252bb48d4ea09b5cfe5'
 );
+
+const HitWithInsights = connectHitInsights(window.aa)(Hit);
 
 class App extends Component {
   render() {
@@ -34,7 +36,7 @@ class App extends Component {
           </div>
           <div className="right-panel">
             <SearchBox />
-            <CustomHits />
+            <Hits hitComponent={HitWithInsights} />
             <Pagination />
           </div>
         </InstantSearch>
@@ -43,21 +45,7 @@ class App extends Component {
   }
 }
 
-const CustomHits = connectHits(
-  connectStateResults(({ hits, searchResults }) => (
-    <div className="ais-Hits">
-      <ul className="ais-Hits-list">
-        {hits.map((hit, index) => (
-          <li className="ais-Hits-item" key={hit.objectID}>
-            <Hit hit={hit} searchResults={searchResults} index={index} />
-          </li>
-        ))}
-      </ul>
-    </div>
-  ))
-);
-
-function Hit({ hit, index, searchResults }) {
+function Hit({ hit, insights }) {
   return (
     <div>
       <img src={hit.image} align="left" alt={hit.name} />
@@ -71,14 +59,8 @@ function Hit({ hit, index, searchResults }) {
       <button
         className="hit-action"
         onClick={() => {
-          window.aa('clickedObjectIDsAfterSearch', {
-            index: 'demo_ecommerce',
+          insights('clickedObjectIDsAfterSearch', {
             eventName: 'Add to favorite',
-            queryID: searchResults.queryID,
-            objectIDs: [hit.objectID],
-            positions: [
-              searchResults.hitsPerPage * searchResults.page + index + 1,
-            ],
           });
         }}
       >
@@ -87,11 +69,8 @@ function Hit({ hit, index, searchResults }) {
       <button
         className="hit-action"
         onClick={() => {
-          window.aa('convertedObjectIDsAfterSearch', {
-            index: 'demo_ecommerce',
+          insights('convertedObjectIDsAfterSearch', {
             eventName: 'Add to basket',
-            queryID: searchResults.queryID,
-            objectIDs: [hit.objectID],
           });
         }}
       >
