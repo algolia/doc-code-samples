@@ -319,10 +319,10 @@
     semver "5.6.0"
     semver-intersect "1.4.0"
 
-"@types/algoliasearch@3.30.8":
-  version "3.30.8"
-  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-3.30.8.tgz#f7004bd905e61f7f56b0e6da2744ebd4dbafc87c"
-  integrity sha512-Lzf9kcLtFJe9gAu6lqc0/RR/yiQy7LfWXZYpZVaXUGsJ1t+ifyAiH/iPpXhslDqS11A6JiPKBeQTuG0/VtPLdA==
+"@types/algoliasearch@3.30.11":
+  version "3.30.11"
+  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-3.30.11.tgz#05520d79c80555145109d38d9d466ad1fead4775"
+  integrity sha512-fkQ3wDIy/7rIWXvtrNVARsOZhacuIglrgFkK6Pjr1nPTPCag1m9wKi04tSqe5xFg6pVn9y5s/4w+9JW/seA2xQ==
 
 "@types/jasmine@*":
   version "3.3.7"
@@ -638,10 +638,10 @@ algoliasearch-helper@^2.26.0, algoliasearch-helper@^2.26.1:
     qs "^6.5.1"
     util "^0.10.3"
 
-algoliasearch@3.32.1:
-  version "3.32.1"
-  resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-3.32.1.tgz#605f8a2c17ab8da2af4456110f4d0a02b384e3d0"
-  integrity sha512-NaaHMboU9tKwrU3aim7LlzSDqKb+1TGaC+Lx3NOttSnuMHbPpaf+7LtJL4KlosbRWEwqb9t5wSYMVDrPTH2dNA==
+algoliasearch@3.33.0:
+  version "3.33.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-3.33.0.tgz#83b541124ebb0db54643009d4e660866b3177cdf"
+  integrity sha512-9DaVmOd7cvcZeYyV0BWAeJHVWJmgOL2DNUEBY/DTR4MzD1wCWs4Djl7LAlfvkGwGBdRHZCG+l0HA1572w3T8zg==
   dependencies:
     agentkeepalive "^2.2.0"
     debug "^2.6.9"

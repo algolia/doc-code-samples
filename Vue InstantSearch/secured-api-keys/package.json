@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "algoliasearch": "3.32.1",
+    "algoliasearch": "3.33.0",
     "express": "4.16.4",
     "instantsearch.css": "7.3.1",
     "vue": "2.6.10",
