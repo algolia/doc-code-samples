@@ -39,6 +39,7 @@ function Hit({ hit, insights }) {
 
 Hit.propTypes = {
   hit: PropTypes.object.isRequired,
+  insights: PropTypes.func.isRequired,
 };
 
 export const HitWithInsights = connectHitInsights(window.aa)(Hit);
