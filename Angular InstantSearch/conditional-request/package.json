@@ -20,10 +20,10 @@
     "@angular/platform-browser-dynamic": "6.1.10",
     "@angular/router": "6.1.10",
     "@trademe/ng-defer-load": "3.0.0",
-    "algoliasearch": "3.32.1",
+    "algoliasearch": "3.33.0",
     "angular-instantsearch": "3.0.0-beta.1",
     "instantsearch.js": "3.4.0",
-    "core-js": "2.6.5",
+    "core-js": "2.6.7",
     "rxjs": "6.3.3",
     "zone.js": "0.9.1"
   },
@@ -43,7 +43,7 @@
     "karma-coverage-istanbul-reporter": "2.0.5",
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "0.2.2",
-    "prettier": "1.17.0",
+    "prettier": "1.17.1",
     "ts-node": "8.1.0",
     "tslint": "5.16.0",
     "typescript": "2.7.2"
