@@ -33,11 +33,15 @@ const router = instantsearch.routers.history({
       queryParameters.p = routeState.p;
     }
     if (routeState.brands) {
-      queryParameters.brands = encodeURIComponent(routeState.brands);
+      queryParameters.brands = routeState.brands
+        .split('|')
+        .map(encodeURIComponent)
+        .join('|');
     }
 
     const queryString = qsModule.stringify(queryParameters, {
       addQueryPrefix: true,
+      encode: false,
     });
 
     return `${protocol}//${hostname}${portWithPrefix}${pathname}${queryString}${hash}`;
