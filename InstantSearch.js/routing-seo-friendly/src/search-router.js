@@ -1,11 +1,11 @@
 /* global instantsearch */
 
 function getCategorySlug(name) {
-  return name.replace(/\s/g, '-');
+  return name.replace(/\s/g, '+');
 }
 
 function getCategoryName(slug) {
-  return slug.replace(/-/g, ' ');
+  return slug.replace(/\+/g, ' ');
 }
 
 const router = instantsearch.routers.history({
