@@ -18,11 +18,16 @@ const router = instantsearch.routers.history({
 
     return queryTitle;
   },
+
   createURL({ qsModule, routeState, location }) {
-    const { protocol, hostname, port = '', hash } = location;
-    const portWithPrefix = port === '' ? '' : `:${port}`;
-    const pathname = routeState.category
-      ? `/${getCategorySlug(routeState.category)}/`
+    let baseUrl = location.href.split('/search/')[0];
+
+    if (baseUrl[baseUrl.length - 1] !== '/') {
+      baseUrl += '/';
+    }
+
+    const categoryPath = routeState.category
+      ? `${getCategorySlug(routeState.category)}/`
       : '';
     const queryParameters = {};
 
@@ -41,19 +46,25 @@ const router = instantsearch.routers.history({
       arrayFormat: 'repeat',
     });
 
-    return `${protocol}//${hostname}${portWithPrefix}${pathname}${queryString}${hash}`;
+    return `${baseUrl}search/${categoryPath}${queryString}`;
   },
+
   parseURL({ qsModule, location }) {
-    const routeStateString = location.pathname.split('/')[1];
-    const category = getCategoryName(routeStateString.split('/')[0]);
-    const queryParameters = qsModule.parse(location.search.slice(1));
-    const { query = '', page, brands } = queryParameters;
+    const pathnameMatches = location.pathname.match(/search\/(.*?)\/?$/);
+    const category = getCategoryName(
+      (pathnameMatches && pathnameMatches[1]) || ''
+    );
+    const { query = '', page, brands = [] } = qsModule.parse(
+      location.search.slice(1)
+    );
+    // `qs` does not return an array when there's a single value.
+    const allBrands = Array.isArray(brands) ? brands : [brands];
 
     return {
       query: decodeURIComponent(query),
       page,
+      brands: allBrands.map(decodeURIComponent),
       category: decodeURIComponent(category),
-      brands: brands && brands.map(decodeURIComponent),
     };
   },
 });
@@ -63,10 +74,11 @@ const stateMapping = {
     return {
       query: uiState.query,
       page: uiState.page,
-      category: uiState.menu && uiState.menu.categories,
       brands: uiState.refinementList && uiState.refinementList.brand,
+      category: uiState.menu && uiState.menu.categories,
     };
   },
+
   routeToState(routeState) {
     return {
       query: routeState.query,
