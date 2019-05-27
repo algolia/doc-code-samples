@@ -12,7 +12,11 @@
     <div class="right-panel">
       <ais-search-box></ais-search-box>
       <ais-hits>
-        <ng-template let-hits="hits" let-results="results">
+        <ng-template
+          let-hits="hits"
+          let-results="results"
+          let-insights="insights"
+        >
           <ol class="ais-Hits-list">
             <li *ngFor="let hit of hits; index as i" class="ais-Hits-item">
               <img src="{{ hit.image }}" alt="{{ hit.name }}" align="left" />
@@ -29,12 +33,9 @@
               <button
                 class="btn"
                 (click)="
-                  clickedObjectIDsAfterSearch({
+                  insights('clickedObjectIDsAfterSearch', {
                     eventName: 'Add to Cart',
-                    index: 'instant_search',
-                    queryID: results.queryID,
-                    objectIDs: [hit.objectID],
-                    positions: [results.hitsPerPage * results.page + i + 1]
+                    objectIDs: [hit.objectID]
                   })
                 "
               >
@@ -44,10 +45,8 @@
               <button
                 class="btn"
                 (click)="
-                  convertedObjectIDsAfterSearch({
+                  insights('convertedObjectIDsAfterSearch', {
                     eventName: 'Add to Cart',
-                    index: 'instant_search',
-                    queryID: results.queryID,
                     objectIDs: [hit.objectID]
                   })
                 "
