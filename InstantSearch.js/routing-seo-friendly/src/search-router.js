@@ -58,7 +58,7 @@ const router = instantsearch.routers.history({
       location.search.slice(1)
     );
     // `qs` does not return an array when there's a single value.
-    const allBrands = Array.isArray(brands) ? brands : [brands];
+    const allBrands = Array.isArray(brands) ? brands : [brands].filter(Boolean);
 
     return {
       query: decodeURIComponent(query),
