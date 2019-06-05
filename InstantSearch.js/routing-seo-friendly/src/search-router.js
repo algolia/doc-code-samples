@@ -1,11 +1,17 @@
 /* global instantsearch */
 
 function getCategorySlug(name) {
-  return name.replace(/\s/g, '+');
+  return name
+    .split(' ')
+    .map(encodeURIComponent)
+    .join('+');
 }
 
 function getCategoryName(slug) {
-  return slug.replace(/\+/g, ' ');
+  return slug
+    .split('+')
+    .map(decodeURIComponent)
+    .join(' ');
 }
 
 const router = instantsearch.routers.history({
