@@ -1,5 +1,9 @@
 /* global instantsearch */
 
+// Returns a slug from the category name.
+// Spaces are replaced by "+" to make
+// the URL easier to read and other
+// characters are encoded.
 function getCategorySlug(name) {
   return name
     .split(' ')
@@ -7,6 +11,9 @@ function getCategorySlug(name) {
     .join('+');
 }
 
+// Returns a name from the category slug.
+// The "+" are replaced by spaces and other
+// characters are decoded.
 function getCategoryName(slug) {
   return slug
     .split('+')
