@@ -1,11 +1,30 @@
 /* global instantsearch */
 
+const encodedCategories = {
+  Cameras: 'Cameras & Camcorders',
+  Cars: 'Car Electronics & GPS',
+  Phones: 'Cell Phones',
+  TV: 'TV & Home Theater',
+};
+
+const decodedCategories = Object.keys(encodedCategories).reduce((acc, key) => {
+  const newKey = encodedCategories[key];
+  const newValue = key;
+
+  return {
+    ...acc,
+    [newKey]: newValue,
+  };
+}, {});
+
 // Returns a slug from the category name.
 // Spaces are replaced by "+" to make
 // the URL easier to read and other
 // characters are encoded.
 function getCategorySlug(name) {
-  return name
+  const encodedName = decodedCategories[name] || name;
+
+  return encodedName
     .split(' ')
     .map(encodeURIComponent)
     .join('+');
@@ -15,7 +34,9 @@ function getCategorySlug(name) {
 // The "+" are replaced by spaces and other
 // characters are decoded.
 function getCategoryName(slug) {
-  return slug
+  const decodedSlug = encodedCategories[slug] || slug;
+
+  return decodedSlug
     .split('+')
     .map(decodeURIComponent)
     .join(' ');
