@@ -127,9 +127,9 @@ const stateMapping = {
   },
 };
 
-const searchRouter = {
+const searchRouting = {
   router,
   stateMapping,
 };
 
-export default searchRouter;
+export default searchRouting;

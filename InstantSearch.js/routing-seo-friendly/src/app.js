@@ -1,5 +1,5 @@
 /* global instantsearch algoliasearch */
-import searchRouter from './search-router';
+import searchRouting from './search-routing';
 
 const searchClient = algoliasearch(
   'latency',
@@ -9,7 +9,7 @@ const searchClient = algoliasearch(
 const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
-  routing: searchRouter,
+  routing: searchRouting,
 });
 
 search.addWidget(
