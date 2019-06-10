@@ -54,11 +54,7 @@ const router = instantsearch.routers.history({
   },
 
   createURL({ qsModule, routeState, location }) {
-    let baseUrl = location.href.split('/search/')[0];
-
-    if (baseUrl[baseUrl.length - 1] !== '/') {
-      baseUrl += '/';
-    }
+    const baseUrl = location.href.match(/^(.*?)\/search/)[1];
 
     const categoryPath = routeState.category
       ? `${getCategorySlug(routeState.category)}/`
@@ -80,7 +76,7 @@ const router = instantsearch.routers.history({
       arrayFormat: 'repeat',
     });
 
-    return `${baseUrl}search/${categoryPath}${queryString}`;
+    return `${baseUrl}/search/${categoryPath}${queryString}`;
   },
 
   parseURL({ qsModule, location }) {
