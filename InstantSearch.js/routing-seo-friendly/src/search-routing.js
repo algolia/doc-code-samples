@@ -98,7 +98,7 @@ const router = instantsearch.routers.history({
       query: decodeURIComponent(query),
       page,
       brands: allBrands.map(decodeURIComponent),
-      category: decodeURIComponent(category),
+      category,
     };
   },
 });
