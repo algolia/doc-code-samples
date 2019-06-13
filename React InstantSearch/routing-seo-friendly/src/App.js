@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {
   InstantSearch,
   Hits,
   SearchBox,
+  Menu,
   RefinementList,
   Pagination,
   Highlight,
+  Panel,
+  ClearRefinements,
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch';
 import qs from 'qs';
@@ -18,118 +21,171 @@ const searchClient = algoliasearch(
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
-const createURL = state => {
-  const brands =
-    state.refinementList &&
-    state.refinementList.brand &&
-    state.refinementList.brand.join('~');
+const encodedCategories = {
+  Cameras: 'Cameras & Camcorders',
+  Cars: 'Car Electronics & GPS',
+  Phones: 'Cell Phones',
+  TV: 'TV & Home Theater',
+};
 
+const decodedCategories = Object.keys(encodedCategories).reduce((acc, key) => {
+  const newKey = encodedCategories[key];
+  const newValue = key;
+
+  return {
+    ...acc,
+    [newKey]: newValue,
+  };
+}, {});
+
+// Returns a slug from the category name.
+// Spaces are replaced by "+" to make
+// the URL easier to read and other
+// characters are encoded.
+function getCategorySlug(name) {
+  const encodedName = decodedCategories[name] || name;
+
+  return encodedName
+    .split(' ')
+    .map(encodeURIComponent)
+    .join('+');
+}
+
+// Returns a name from the category slug.
+// The "+" are replaced by spaces and other
+// characters are decoded.
+function getCategoryName(slug) {
+  const decodedSlug = encodedCategories[slug] || slug;
+
+  return decodedSlug
+    .split('+')
+    .map(decodeURIComponent)
+    .join(' ');
+}
+
+const createURL = state => {
   const isDefaultRoute =
     !state.query &&
     state.page === 1 &&
     state.refinementList.brand &&
-    state.refinementList.brand.length === 0;
+    state.refinementList.brand.length === 0 &&
+    state.menu &&
+    !state.menu.categories;
 
   if (isDefaultRoute) {
     return '';
   }
 
-  const queryParams = qs.stringify({
-    q: state.query,
-    p: state.page,
+  const categoryPath = state.menu.categories
+    ? `${getCategorySlug(state.menu.categories)}/`
+    : '';
+  const queryParameters = {};
+
+  if (state.query) {
+    queryParameters.query = encodeURIComponent(state.query);
+  }
+  if (state.page !== 1) {
+    queryParameters.page = state.page;
+  }
+  if (state.refinementList.brand) {
+    queryParameters.brands = state.refinementList.brand.map(encodeURIComponent);
+  }
+
+  const queryString = qs.stringify(queryParameters, {
+    addQueryPrefix: true,
+    arrayFormat: 'repeat',
   });
 
-  return `/search${brands ? `/brands/${brands}` : ''}?${queryParams}`;
+  return `/search/${categoryPath}${queryString}`;
 };
 
-const searchStateToUrl = (props, searchState) =>
+const searchStateToUrl = searchState =>
   searchState ? createURL(searchState) : '';
 
 const urlToSearchState = location => {
-  const [, brand] = location.pathname.split('/brands/');
-  const routeState = qs.parse(location.search.slice(1));
+  const pathnameMatches = location.pathname.match(/search\/(.*?)\/?$/);
+  const category = getCategoryName(
+    (pathnameMatches && pathnameMatches[1]) || ''
+  );
+  const { query = '', page = 1, brands = [] } = qs.parse(
+    location.search.slice(1)
+  );
+  // `qs` does not return an array when there's a single value.
+  const allBrands = Array.isArray(brands) ? brands : [brands].filter(Boolean);
 
-  const searchState = {
-    query: routeState.q,
-    refinementList: {
-      brand: (brand && brand.split('~')) || [],
+  return {
+    query: decodeURIComponent(query),
+    page,
+    menu: {
+      categories: decodeURIComponent(category),
     },
-    page: routeState.p || 1,
+    refinementList: {
+      brand: allBrands.map(decodeURIComponent),
+    },
   };
-
-  return searchState;
 };
 
-class App extends Component {
-  state = {
-    searchState: urlToSearchState(this.props.location),
-    lastLocation: this.props.location,
-  };
-
-  static getDerivedStateFromProps(props, state) {
-    if (props.location !== state.lastLocation) {
-      return {
-        searchState: urlToSearchState(props.location),
-        lastLocation: props.location,
-      };
-    }
-
-    return null;
-  }
-
-  onSearchStateChange = searchState => {
-    clearTimeout(this.debouncedSetState);
-
-    this.debouncedSetState = setTimeout(() => {
-      this.props.history.push(
-        searchStateToUrl(this.props, searchState),
-        searchState
-      );
-    }, DEBOUNCE_TIME);
-
-    this.setState({ searchState });
-  };
-
-  render() {
-    return (
-      <div className="container">
-        <InstantSearch
-          searchClient={searchClient}
-          indexName="instant_search"
-          searchState={this.state.searchState}
-          onSearchStateChange={this.onSearchStateChange}
-          createURL={createURL}
-        >
-          <div className="search-panel">
-            <div className="search-panel__filters">
-              <RefinementList attribute="brand" />
-            </div>
-
-            <div className="search-panel__results">
-              <SearchBox className="searchbox" placeholder="Search" />
-              <Hits hitComponent={Hit} />
-
-              <div className="pagination">
-                <Pagination />
-              </div>
-            </div>
-          </div>
-        </InstantSearch>
-      </div>
-    );
-  }
-}
-
-function Hit(props) {
-  return (
-    <div>
-      <Highlight attribute="name" hit={props.hit} />
-    </div>
-  );
-}
+const Hit = ({ hit }) => (
+  <div>
+    <Highlight attribute="name" hit={hit} />
+  </div>
+);
 
 Hit.propTypes = {
   hit: PropTypes.object.isRequired,
+};
+
+const App = ({ location, history }) => {
+  const [searchState, setSearchState] = useState(urlToSearchState(location));
+  const [debouncedSetState, setDebouncedSetState] = useState(null);
+
+  const onSearchStateChange = updatedSearchState => {
+    clearTimeout(debouncedSetState);
+
+    setDebouncedSetState(
+      setTimeout(() => {
+        history.push(searchStateToUrl(updatedSearchState), updatedSearchState);
+      }, DEBOUNCE_TIME)
+    );
+
+    setSearchState(updatedSearchState);
+  };
+
+  return (
+    <div className="container">
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="instant_search"
+        searchState={searchState}
+        onSearchStateChange={onSearchStateChange}
+        createURL={createURL}
+      >
+        <div className="search-panel">
+          <div className="search-panel__filters">
+            <ClearRefinements />
+
+            <Panel header="Category">
+              <Menu attribute="categories" />
+            </Panel>
+
+            <Panel header="Brand">
+              <RefinementList attribute="brand" />
+            </Panel>
+          </div>
+
+          <div className="search-panel__results">
+            <SearchBox className="searchbox" placeholder="Search" />
+
+            <Hits hitComponent={Hit} />
+
+            <div className="pagination">
+              <Pagination />
+            </div>
+          </div>
+        </div>
+      </InstantSearch>
+    </div>
+  );
 };
 
 App.propTypes = {
