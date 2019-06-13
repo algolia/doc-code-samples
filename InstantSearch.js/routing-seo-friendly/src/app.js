@@ -19,6 +19,12 @@ search.addWidget(
 );
 
 search.addWidget(
+  instantsearch.widgets.clearRefinements({
+    container: '#clear-refinements',
+  })
+);
+
+search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
