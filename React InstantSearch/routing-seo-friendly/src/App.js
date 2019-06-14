@@ -166,7 +166,7 @@ const App = ({ location, history }) => {
               <Menu attribute="categories" />
             </Panel>
 
-            <Panel header="Brand">
+            <Panel header="Brands">
               <RefinementList attribute="brand" />
             </Panel>
           </div>
