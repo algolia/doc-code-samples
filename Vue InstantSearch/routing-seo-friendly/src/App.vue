@@ -2,7 +2,7 @@
   <div>
     <header class="header">
       <h1 class="header-title">
-        <a href="/">SEO-friendly routing</a>
+        <a href="/">SEO-friendly URLs</a>
       </h1>
       <p class="header-subtitle">
         using
