@@ -52,7 +52,7 @@ search.addWidget(
 
 const brandList = instantsearch.widgets.panel({
   templates: {
-    header: 'Brand',
+    header: 'Brands',
   },
 })(instantsearch.widgets.refinementList);
 
