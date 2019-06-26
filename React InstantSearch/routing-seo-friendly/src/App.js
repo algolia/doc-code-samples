@@ -67,8 +67,8 @@ const createURL = state => {
   const isDefaultRoute =
     !state.query &&
     state.page === 1 &&
-    state.refinementList.brand.length === 0 &&
-    !state.menu.categories;
+    (state.refinementList && state.refinementList.brand.length === 0) &&
+    (state.menu && !state.menu.categories);
 
   if (isDefaultRoute) {
     return '';
