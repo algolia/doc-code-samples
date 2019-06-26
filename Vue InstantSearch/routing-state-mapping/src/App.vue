@@ -41,6 +41,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
+import { simple as simpleMapping } from 'instantsearch.js/es/lib/stateMappings';
 import 'instantsearch.css/themes/algolia-min.css';
 
 export default {
@@ -52,27 +53,7 @@ export default {
       ),
       routing: {
         router: historyRouter(),
-        stateMapping: {
-          stateToRoute(uiState) {
-            return {
-              query: uiState.query,
-              brands:
-                uiState.refinementList &&
-                uiState.refinementList.brand &&
-                uiState.refinementList.brand.join('~'),
-              page: uiState.page,
-            };
-          },
-          routeToState(routeState) {
-            return {
-              query: routeState.query,
-              refinementList: {
-                brand: routeState.brands && routeState.brands.split('~'),
-              },
-              page: routeState.page,
-            };
-          },
-        },
+        stateMapping: simpleMapping(),
       },
     };
   },
