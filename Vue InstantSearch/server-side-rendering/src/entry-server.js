@@ -21,10 +21,10 @@ export default context => {
       )
         .then(() => {
           context.algoliaState = instantsearch.getState();
-
-          resolve(app);
         })
-        .then(() => resolve(app));
+        .then(() => {
+          resolve(app);
+        });
     }, reject);
   });
 };
