@@ -9,7 +9,7 @@ import { IndexComponent } from "./index/index.component";
 
 const appRoutes: Routes = [
   {
-    path: "search/q/:query/brands/:brands/p/:page",
+    path: "search/:category",
     component: SearchComponent
   },
   { path: "", component: IndexComponent }
