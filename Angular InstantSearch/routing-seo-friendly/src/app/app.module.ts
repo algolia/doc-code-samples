@@ -8,10 +8,8 @@ import { SearchComponent } from "./search/search.component";
 import { IndexComponent } from "./index/index.component";
 
 const appRoutes: Routes = [
-  {
-    path: "search/:category",
-    component: SearchComponent
-  },
+  { path: "search", component: SearchComponent },
+  { path: "search/:category", component: SearchComponent },
   { path: "", component: IndexComponent }
 ];
 

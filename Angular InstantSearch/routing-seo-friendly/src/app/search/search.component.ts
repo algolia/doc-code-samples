@@ -78,7 +78,7 @@ export class SearchComponent {
         parseURL({ qsModule, location }) {
           const pathnameMatches = location.pathname.match(/search\/(.*?)\/?$/);
           const category = getCategoryName(
-            decodeURIComponent(pathnameMatches && pathnameMatches[1]) || ""
+            decodeURIComponent(pathnameMatches && pathnameMatches[1] || "")
           );
           const { query = "", page, brands = [] } = qsModule.parse(
             location.search.slice(1)
