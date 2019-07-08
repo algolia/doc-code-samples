@@ -702,10 +702,10 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular-instantsearch@3.0.0-beta.1:
-  version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-3.0.0-beta.1.tgz#2c991021aabc21dccc3f39252da996740c424b3f"
-  integrity sha512-5V6F725D/BOHgEs8QmkZzpyEY+p4/+GI9Z/JG9p9CI9LLmU6fT7CZo4ovISbKfMKCVudq2+sDneDxynJPNyG5g==
+angular-instantsearch@3.0.0-beta.2:
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-3.0.0-beta.2.tgz#0d59ec3aa7410f3eff1dd85571d28e1ef73b19d6"
+  integrity sha512-7GEiv9+mg8RA4yp5kgCqIwy2NYIHxNd+sPnbwrDOtL2lSi6jBWaieU1/0796gLWbXDRU5kNZTtdymdDjWS/Q0w==
   dependencies:
     algoliasearch "^3.29.0"
     algoliasearch-helper "^2.26.1"
