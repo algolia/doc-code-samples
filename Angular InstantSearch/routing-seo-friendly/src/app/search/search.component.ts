@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { history as historyRouter } from "instantsearch.js/es/lib/routers";
 import algoliasearch from "algoliasearch/lite";
 
@@ -33,6 +34,7 @@ const searchClient = algoliasearch(
   templateUrl: "./search.component.html"
 })
 export class SearchComponent {
+  constructor(private route: ActivatedRoute) {}
   config = {
     indexName: "demo_ecommerce",
     searchClient,
@@ -48,10 +50,7 @@ export class SearchComponent {
           return queryTitle;
         },
 
-        createURL({ qsModule, routeState, location }) {
-          const urlParts = location.href.match(/^(.*?)\/search/);
-          const baseUrl = `${urlParts ? urlParts[1] : ""}/`;
-
+        createURL({ qsModule, routeState }) {
           const categoryPath = routeState.category
             ? `${getCategorySlug(routeState.category)}/`
             : "";
@@ -72,21 +71,17 @@ export class SearchComponent {
             arrayFormat: "repeat"
           });
 
-          return `${baseUrl}search/${categoryPath}${queryString}`;
+          return `/search/${categoryPath}${queryString}`;
         },
 
-        parseURL({ qsModule, location }) {
-          const pathnameMatches = location.pathname.match(/search\/(.*?)\/?$/);
+        parseURL: () => {
+          const { params, queryParams } = this.route.snapshot;
           const category = getCategoryName(
-            decodeURIComponent(pathnameMatches && pathnameMatches[1] || "")
+            decodeURIComponent(params.category || "")
           );
-          const { query = "", page, brands = [] } = qsModule.parse(
-            location.search.slice(1)
-          );
-          // `qs` does not return an array when there's a single value.
-          const allBrands = Array.isArray(brands)
-            ? brands
-            : [brands].filter(Boolean);
+          const { query = "", page, brands = [] } = queryParams;
+          // brands is not an array when there's a single value.
+          const allBrands = [].concat(brands);
 
           return {
             query: decodeURIComponent(query),
