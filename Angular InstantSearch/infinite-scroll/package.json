@@ -23,8 +23,8 @@
     "@trademe/ng-defer-load": "3.0.1",
     "algoliasearch": "3.33.0",
     "angular-instantsearch": "3.0.0-beta.2",
-    "instantsearch.js": "3.4.0",
     "core-js": "2.6.7",
+    "instantsearch.js": "3.4.0",
     "rxjs": "6.3.3",
     "zone.js": "0.9.1"
   },
@@ -33,6 +33,7 @@
     "@angular/cli": "7.3.8",
     "@angular/compiler-cli": "6.1.10",
     "@angular/language-service": "6.1.10",
+    "@types/algoliasearch": "3.30.13",
     "@types/jasmine": "3.3.12",
     "@types/jasminewd2": "2.0.6",
     "@types/node": "8.10.47",
