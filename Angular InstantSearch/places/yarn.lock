@@ -319,11 +319,6 @@
     semver "5.6.0"
     semver-intersect "1.4.0"
 
-"@types/algoliasearch@3.30.12":
-  version "3.30.12"
-  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-3.30.12.tgz#3270ba642107f00cd743c29b8cae30c92a043dba"
-  integrity sha512-IiJ4/GP3NEFWZkZhF5/cPxIZNzAitLdZnMpo5KlWLcNL567LHDHG2NOZLwXzRrTuxNa1zmqZJKEDWHnw8kp3Ng==
-
 "@types/jasmine@*":
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.3.7.tgz#52f2bfe8d2995d4756585d2328c97fbb0fec66e3"
@@ -637,27 +632,6 @@ algoliasearch-helper@^2.26.0, algoliasearch-helper@^2.26.1:
     lodash "^4.17.5"
     qs "^6.5.1"
     util "^0.10.3"
-
-algoliasearch@3.33.0:
-  version "3.33.0"
-  resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-3.33.0.tgz#83b541124ebb0db54643009d4e660866b3177cdf"
-  integrity sha512-9DaVmOd7cvcZeYyV0BWAeJHVWJmgOL2DNUEBY/DTR4MzD1wCWs4Djl7LAlfvkGwGBdRHZCG+l0HA1572w3T8zg==
-  dependencies:
-    agentkeepalive "^2.2.0"
-    debug "^2.6.9"
-    envify "^4.0.0"
-    es6-promise "^4.1.0"
-    events "^1.1.0"
-    foreach "^2.0.5"
-    global "^4.3.2"
-    inherits "^2.0.1"
-    isarray "^2.0.1"
-    load-script "^1.0.0"
-    object-keys "^1.0.11"
-    querystring-es3 "^0.2.1"
-    reduce "^1.0.1"
-    semver "^5.1.0"
-    tunnel-agent "^0.6.0"
 
 algoliasearch@^3.29.0, algoliasearch@^3.31.0:
   version "3.32.0"
@@ -2005,7 +1979,7 @@ debug@*, debug@^4.1.0, debug@^4.1.1:
   dependencies:
     ms "^2.1.1"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
