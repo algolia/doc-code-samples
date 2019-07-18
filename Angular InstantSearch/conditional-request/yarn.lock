@@ -324,6 +324,11 @@
   resolved "https://registry.yarnpkg.com/@trademe/ng-defer-load/-/ng-defer-load-3.0.1.tgz#902000ead4359c6757184b1724d62837f0d8a849"
   integrity sha512-K1PrEnm6iEtWEEoPUUqlfytFmfWxtHweG+Y13h/UROVFTSOheSGAvLx9VFujJWafy3OWX8pL3S5pL45MCKbsvg==
 
+"@types/algoliasearch@3.30.13":
+  version "3.30.13"
+  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-3.30.13.tgz#5a499513b7cea86ca8f606a2ffe810294aa667e0"
+  integrity sha512-6ioKTecYPbUMMKnA4IEjh18eA/OfWS28Er9FafsHaz8P4HJXnEd9FTCanad5nWx9Ox8uXHN4XcY985yB2bbx6g==
+
 "@types/jasmine@*":
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.3.7.tgz#52f2bfe8d2995d4756585d2328c97fbb0fec66e3"
@@ -6944,10 +6949,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
-  integrity sha512-p5TCYZDAO0m4G344hD+wx/LATebLWZNkkh2asWUFqSsD2OrDNhbAHuSjobrmsUmdzjJjEeZVU9g1h3O6vpstnw==
+typescript@2.8.4:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.4.tgz#0b1db68e6bdfb0b767fa2ab642136a35b059b199"
+  integrity sha512-IIU5cN1mR5J3z9jjdESJbnxikTrEz3lzAw/D0Tf45jHpBp55nY31UkUvmVHoffCfKHTqJs3fCLPDxknQTTFegQ==
 
 typescript@3.2.4:
   version "3.2.4"
