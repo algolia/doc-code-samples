@@ -84,6 +84,8 @@ jobs:
       - build_project:
            path: "React InstantSearch/multi-index-autocomplete"
       - build_project:
+           path: "React InstantSearch/multi-index-autocomplete-with-insights"
+      - build_project:
            path: "React InstantSearch/multi-index-hits"
       - build_project:
            path: "React InstantSearch/places"
