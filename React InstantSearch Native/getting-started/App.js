@@ -73,13 +73,15 @@ class App extends React.Component {
             onSearchStateChange={this.onSearchStateChange}
           >
             <VirtualRefinementList attribute="brand" />
+
             <Filters
               isModalOpen={isModalOpen}
               searchClient={searchClient}
-              toggleModal={this.toggleModal}
               searchState={searchState}
+              toggleModal={this.toggleModal}
               onSearchStateChange={this.onSearchStateChange}
             />
+
             <SearchBox />
             <Button
               title="Filters"
