@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { history as historyRouter } from "instantsearch.js/es/lib/routers";
-import algoliasearch from "algoliasearch/lite";
+import * as algoliasearch from "algoliasearch/lite";
 
 // Returns a slug from the category name.
 // Spaces are replaced by "+" to make
