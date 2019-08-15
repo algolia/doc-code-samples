@@ -61,7 +61,7 @@ jobs:
       - build_project:
           path: "Angular InstantSearch/routing-basic"
       - build_project:
-          path: "Angular InstantSearch/routing-full-url"
+          path: "Angular InstantSearch/routing-seo-friendly"
       - build_project:
           path: "Angular InstantSearch/routing-state-mapping"
       - build_project:
