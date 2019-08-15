@@ -9,7 +9,7 @@ import {
   SimpleChanges,
   ViewChild
 } from "@angular/core";
-import places from "places.js";
+import * as places from "places.js";
 
 @Component({
   selector: "app-places",
