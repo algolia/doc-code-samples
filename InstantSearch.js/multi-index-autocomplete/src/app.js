@@ -5,18 +5,17 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
     const { container } = widgetParams;
 
     if (isFirstRendering) {
-      const optgroups = indices.map((index, idx) => ({
-        $order: idx,
-        id: index.index,
-        name: index.index,
-      }));
-
       container.html('<select id="ais-autocomplete"></select>');
 
       container.find('select').selectize({
         options: [],
         labelField: 'name',
         valueField: 'name',
+        optgroups: indices.map((index, idx) => ({
+          $order: idx,
+          id: index.indexId,
+          name: index.indexId,
+        })),
         optgroupField: 'section',
         optgroupLabelField: 'name',
         optgroupValueField: 'id',
@@ -33,12 +32,11 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
         },
         render: {
           option: hit => `
-          <div class="hit">
-            ${instantsearch.highlight({ attribute: 'name', hit })}
-          </div>
+            <div class="hit">
+              ${instantsearch.highlight({ attribute: 'name', hit })}
+            </div>
           `,
         },
-        optgroups,
       });
 
       return;
@@ -48,16 +46,17 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
 
     select.selectize.clearOptions();
     indices.forEach(index => {
-      if (index.results) {
-        index.results.hits.forEach(hit =>
+      if (index.hits.length) {
+        index.hits.forEach(hit =>
           select.selectize.addOption(
             Object.assign({}, hit, {
-              section: index.index,
+              section: index.indexId,
             })
           )
         );
       }
     });
+
     select.selectize.refreshOptions(select.selectize.isOpen);
   }
 );
@@ -72,22 +71,16 @@ const search = instantsearch({
   searchClient,
 });
 
-search.addWidget(
+search.addWidgets([
+  instantsearch.widgets.index({ indexName: 'instant_search_price_desc' }),
+
   instantsearch.widgets.configure({
     hitsPerPage: 3,
-  })
-);
+  }),
 
-search.addWidget(
   autocomplete({
     container: $('#autocomplete'),
-    indices: [
-      {
-        value: 'instant_search_price_desc',
-        label: 'instant_search_price_desc',
-      },
-    ],
-  })
-);
+  }),
+]);
 
 search.start();
