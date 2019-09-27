@@ -64,55 +64,42 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
   }
 );
 
-const suggestions = instantsearch({
-  indexName: 'instant_search_demo_query_suggestions',
-  searchClient,
-});
-
-suggestions.addWidget(
-  instantsearch.widgets.configure({
-    hitsPerPage: 5,
-  })
-);
-
-suggestions.addWidget(
-  autocomplete({
-    container: $('#autocomplete'),
-    onSelectChange({ query, category }) {
-      // eslint-disable-next-line
-      search.helper
-        .setQuery(query)
-        .removeDisjunctiveFacetRefinement('categories');
-
-      if (category) {
-        // eslint-disable-next-line
-        search.helper.addDisjunctiveFacetRefinement('categories', category);
-      }
-
-      // eslint-disable-next-line
-      search.helper.search();
-    },
-  })
-);
-
 const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
 });
 
-search.addWidget(
+search.addWidgets([
+  instantsearch.widgets
+    .index({ indexName: 'instant_search_demo_query_suggestions' })
+    .addWidgets([
+      instantsearch.widgets.configure({
+        hitsPerPage: 5,
+      }),
+      autocomplete({
+        container: $('#autocomplete'),
+        onSelectChange({ query, category }) {
+          search.helper
+            .setQuery(query)
+            .removeDisjunctiveFacetRefinement('categories');
+
+          if (category) {
+            search.helper.addDisjunctiveFacetRefinement('categories', category);
+          }
+
+          search.helper.search();
+        },
+      }),
+    ]),
+
   virtualRefinementList({
     attribute: 'categories',
-  })
-);
+  }),
 
-search.addWidget(
   instantsearch.widgets.configure({
     hitsPerPage: 10,
-  })
-);
+  }),
 
-search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -127,8 +114,7 @@ search.addWidget(
         </div>
       `,
     },
-  })
-);
+  }),
+]);
 
-suggestions.start();
 search.start();
