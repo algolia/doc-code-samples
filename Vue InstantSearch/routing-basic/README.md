@@ -1,4 +1,4 @@
-# vue-instantsearch-routing-full-url
+# vue-instantsearch-routing-basic
 
 ## Project setup
 ```
