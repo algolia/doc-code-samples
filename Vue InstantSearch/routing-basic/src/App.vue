@@ -1,12 +1,12 @@
 <template>
   <div>
     <header class="header">
-      <h1 class="header-title"><a href="/">Vue InstantSearch v2 starter</a></h1>
+      <h1 class="header-title">
+        <a href="/">Basic URLs</a>
+      </h1>
       <p class="header-subtitle">
         using
-        <a href="https://github.com/algolia/vue-instantsearch">
-          Vue InstantSearch
-        </a>
+        <a href="https://github.com/algolia/vue-instantsearch">Vue InstantSearch</a>
       </p>
     </header>
 
@@ -18,19 +18,37 @@
       >
         <div class="search-panel">
           <div class="search-panel__filters">
-            <ais-refinement-list attribute="brand" searchable />
+            <ais-clear-refinements/>
+
+            <ais-panel>
+              <template slot="header">Category</template>
+
+              <ais-menu attribute="categories"/>
+            </ais-panel>
+
+            <ais-panel>
+              <template slot="header">Brands</template>
+
+              <ais-refinement-list attribute="brand"/>
+            </ais-panel>
           </div>
 
           <div class="search-panel__results">
-            <ais-search-box placeholder="Search here…" class="searchbox" />
+            <ais-search-box placeholder="Search here…" class="searchbox"/>
             <ais-hits>
               <template slot="item" slot-scope="{ item }">
-                <h1><ais-highlight :hit="item" attribute="name" /></h1>
-                <p><ais-highlight :hit="item" attribute="description" /></p>
+                <h1>
+                  <ais-highlight :hit="item" attribute="name"/>
+                </h1>
+                <p>
+                  <ais-highlight :hit="item" attribute="description"/>
+                </p>
               </template>
             </ais-hits>
 
-            <div class="pagination"><ais-pagination /></div>
+            <div class="pagination">
+              <ais-pagination/>
+            </div>
           </div>
         </div>
       </ais-instant-search>
@@ -41,6 +59,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
+import { simple as stateMapping } from 'instantsearch.js/es/lib/stateMappings';
 import 'instantsearch.css/themes/algolia-min.css';
 
 export default {
@@ -52,27 +71,7 @@ export default {
       ),
       routing: {
         router: historyRouter(),
-        stateMapping: {
-          stateToRoute(uiState) {
-            return {
-              query: uiState.query,
-              brands:
-                uiState.refinementList &&
-                uiState.refinementList.brand &&
-                uiState.refinementList.brand.join('~'),
-              page: uiState.page,
-            };
-          },
-          routeToState(routeState) {
-            return {
-              query: routeState.query,
-              refinementList: {
-                brand: routeState.brands && routeState.brands.split('~'),
-              },
-              page: routeState.page,
-            };
-          },
-        },
+        stateMapping: stateMapping(),
       },
     };
   },
@@ -138,6 +137,10 @@ body {
 .search-panel__filters {
   flex: 1;
   margin-right: 1em;
+}
+
+.search-panel__filters > div {
+  margin-bottom: 2rem;
 }
 
 .search-panel__results {
