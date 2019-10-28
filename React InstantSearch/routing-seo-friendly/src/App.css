@@ -46,6 +46,10 @@ em {
   flex: 1;
 }
 
+.search-panel__filters > div {
+  margin-bottom: 2rem;
+}
+
 .search-panel__results {
   flex: 3;
 }

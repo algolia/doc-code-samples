@@ -4,11 +4,12 @@ import {
   EventEmitter,
   Input,
   OnDestroy,
+  OnChanges,
   Output,
   SimpleChanges,
   ViewChild
 } from "@angular/core";
-import places from "places.js";
+import * as places from "places.js";
 
 @Component({
   selector: "app-places",
@@ -16,7 +17,7 @@ import places from "places.js";
     <input #input type="search" placeholder="Where are we going?" />
   `
 })
-export class PlacesComponent implements AfterViewInit, OnDestroy {
+export class PlacesComponent implements AfterViewInit, OnDestroy, OnChanges {
   private instance = null;
 
   @ViewChild("input") input;
@@ -41,9 +42,10 @@ export class PlacesComponent implements AfterViewInit, OnDestroy {
     });
   }
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.type) {
-      const { currentValue } = changes.type;
-      this.instance.configure({ type: currentValue });
+    if (changes.type && this.instance) {
+      this.instance.configure({
+        type: changes.type.currentValue,
+      });
     }
   }
   ngOnDestroy() {
