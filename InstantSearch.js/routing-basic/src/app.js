@@ -13,6 +13,12 @@ search.addWidget(
 );
 
 search.addWidget(
+  instantsearch.widgets.clearRefinements({
+    container: '#clear-refinements',
+  })
+);
+
+search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -25,8 +31,27 @@ search.addWidget(
   })
 );
 
+const categoryMenu = instantsearch.widgets.panel({
+  templates: {
+    header: 'Category',
+  },
+})(instantsearch.widgets.menu);
+
 search.addWidget(
-  instantsearch.widgets.refinementList({
+  categoryMenu({
+    container: '#menu',
+    attribute: 'categories',
+  })
+);
+
+const brandList = instantsearch.widgets.panel({
+  templates: {
+    header: 'Brands',
+  },
+})(instantsearch.widgets.refinementList);
+
+search.addWidget(
+  brandList({
     container: '#refinement-list',
     attribute: 'brand',
   })

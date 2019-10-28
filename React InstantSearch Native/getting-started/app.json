@@ -1,5 +1,7 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "name": "ais-ecommerce-demo-app",
+    "slug": "ais-ecommerce-demo-app",
+    "sdkVersion": "32.0.0"
   }
 }

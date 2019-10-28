@@ -10,6 +10,11 @@
 
 .search-panel__filters {
   flex: 1;
+  margin-right: 2rem;
+}
+
+.search-panel__filters > div {
+  margin-bottom: 2rem;
 }
 
 .search-panel__results {
