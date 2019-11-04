@@ -102,24 +102,29 @@ const router = instantsearch.routers.history({
 
 const stateMapping = {
   stateToRoute(uiState) {
+    // refer to uiState docs for details: https://www.algolia.com/doc/api-reference/widgets/ui-state/js/
     return {
-      query: uiState.query,
-      page: uiState.page,
-      brands: uiState.refinementList && uiState.refinementList.brand,
-      category: uiState.menu && uiState.menu.categories,
+      query: uiState.instant_search.query,
+      page: uiState.instant_search.page,
+      brands: uiState.instant_search.refinementList && uiState.instant_search.refinementList.brand,
+      category: uiState.instant_search.menu && uiState.instant_search.menu.categories,
     };
   },
 
   routeToState(routeState) {
+    // refer to uiState docs for details: https://www.algolia.com/doc/api-reference/widgets/ui-state/js/
     return {
-      query: routeState.query,
-      page: routeState.page,
-      menu: {
-        categories: routeState.category,
-      },
-      refinementList: {
-        brand: routeState.brands,
-      },
+      // eslint-disable-next-line camelcase
+      instant_search: {
+        query: routeState.query,
+        page: routeState.page,
+        menu: {
+          categories: routeState.category,
+        },
+        refinementList: {
+          brand: routeState.brands,
+        },
+      }
     };
   },
 };
