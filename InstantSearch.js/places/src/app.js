@@ -1,4 +1,4 @@
-/* global instantsearch algoliasearch $script placesInstantsearchWidget */
+/* global instantsearch algoliasearch $script places */
 
 $script(
   'https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyBawL8VbstJDdU5397SUX7pEt9DslAwWgQ',
@@ -14,8 +14,9 @@ $script(
     });
 
     search.addWidget(
-      placesInstantsearchWidget({
+      instantsearch.widgets.places({
         container: '#searchbox',
+        placesReference: window.places,
       })
     );
 
