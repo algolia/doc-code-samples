@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "server": "npm run build && node server.js",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -13,7 +14,7 @@
     "express": "4.17.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-instantsearch-dom": "5.7.0",
+    "react-instantsearch-dom": "6.0.0",
     "react-scripts": "1.1.5"
   },
   "devDependencies": {
