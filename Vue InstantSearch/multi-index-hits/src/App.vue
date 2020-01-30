@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header">
-      <h1 class="header-title"><a href="/">Vue InstantSearch v2 starter</a></h1>
+      <h1 class="header-title"><a href="/">Multi index</a></h1>
       <p class="header-subtitle">
         using
         <a href="https://github.com/algolia/vue-instantsearch">
@@ -26,23 +26,15 @@
             <img :src="item.image" />
           </template>
         </ais-hits>
-      </ais-instant-search>
-      <hr />
-      <ais-instant-search
-        :search-client="searchClient"
-        index-name="instant_search"
-      >
-        <ais-configure
-          :query="query"
-          :restrictSearchableAttributes="['name']"
-          :hitsPerPage="8"
-        />
-        <ais-hits>
-          <template slot="item" slot-scope="{ item }">
-            <h3><ais-highlight :hit="item" attribute="name" /></h3>
-            <img :src="item.image" />
-          </template>
-        </ais-hits>
+        <hr />
+        <ais-index :search-client="searchClient" index-name="instant_search">
+          <ais-hits>
+            <template slot="item" slot-scope="{ item }">
+              <h3><ais-highlight :hit="item" attribute="name" /></h3>
+              <img :src="item.image" />
+            </template>
+          </ais-hits>
+        </ais-index>
       </ais-instant-search>
     </div>
   </div>
@@ -59,7 +51,6 @@ export default {
         'latency',
         '6be0576ff61c053d5f9a3225e2a90f76'
       ),
-      query: '',
     };
   },
 };
