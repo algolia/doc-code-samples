@@ -17,7 +17,7 @@
       >
         <ais-configure :clickAnalytics="true" />
         <ais-state-results>
-          <template slot-scope="{ queryID }">
+          <template slot-scope="{ results: { queryID } }">
             <app-insights :query-id="queryID" />
           </template>
         </ais-state-results>
@@ -29,35 +29,31 @@
 
           <div class="search-panel__results">
             <ais-search-box placeholder="Search here…" class="searchbox" />
-            <ais-state-results>
-              <template slot-scope="{ page, hitsPerPage }">
-                <ais-hits>
-                  <template slot="item" slot-scope="{ item, index }">
-                    <button
-                      @click="
-                        insightsClick({
-                          objectID: item.objectID,
-                          position: hitsPerPage * page + index + 1,
-                        })
-                      "
-                    >
-                      Click
-                    </button>
-                    <button
-                      @click="
-                        insightsConversion({
-                          objectID: item.objectID,
-                        })
-                      "
-                    >
-                      Convert
-                    </button>
-                    <h1><ais-highlight :hit="item" attribute="name" /></h1>
-                    <p><ais-highlight :hit="item" attribute="description" /></p>
-                  </template>
-                </ais-hits>
+            <ais-hits>
+              <template slot="item" slot-scope="{ item }">
+                <button
+                  @click="
+                    insightsClick({
+                      objectID: item.objectID,
+                      position: item.__position,
+                    })
+                  "
+                >
+                  Click
+                </button>
+                <button
+                  @click="
+                    insightsConversion({
+                      objectID: item.objectID,
+                    })
+                  "
+                >
+                  Convert
+                </button>
+                <h1><ais-highlight :hit="item" attribute="name" /></h1>
+                <p><ais-highlight :hit="item" attribute="description" /></p>
               </template>
-            </ais-state-results>
+            </ais-hits>
             <div class="pagination"><ais-pagination /></div>
           </div>
         </div>
