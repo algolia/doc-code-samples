@@ -69,13 +69,10 @@ const suggestions = instantsearch({
   searchClient,
 });
 
-suggestions.addWidget(
+suggestions.addWidgets([
   instantsearch.widgets.configure({
     hitsPerPage: 5,
-  })
-);
-
-suggestions.addWidget(
+  }),
   autocomplete({
     container: $('#autocomplete'),
     onSelectChange({ query, category }) {
@@ -92,27 +89,21 @@ suggestions.addWidget(
       // eslint-disable-next-line
       search.helper.search();
     },
-  })
-);
+  }),
+]);
 
 const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
 });
 
-search.addWidget(
+search.addWidgets([
   virtualRefinementList({
     attribute: 'categories',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.configure({
     hitsPerPage: 10,
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -127,8 +118,8 @@ search.addWidget(
         </div>
       `,
     },
-  })
-);
+  }),
+]);
 
 suggestions.start();
 search.start();
