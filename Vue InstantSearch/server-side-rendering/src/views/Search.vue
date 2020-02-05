@@ -4,22 +4,9 @@
     <ais-stats />
     <ais-refinement-list attribute="brand" />
     <ais-hits>
-      <template
-        slot="item"
-        slot-scope="{ item }"
-      >
-        <p>
-          <ais-highlight
-            attribute="name"
-            :hit="item"
-          />
-        </p>
-        <p>
-          <ais-highlight
-            attribute="brand"
-            :hit="item"
-          />
-        </p>
+      <template slot="item" slot-scope="{ item }">
+        <p><ais-highlight attribute="name" :hit="item" /></p>
+        <p><ais-highlight attribute="brand" :hit="item" /></p>
       </template>
     </ais-hits>
     <ais-pagination />
@@ -67,5 +54,3 @@ export default {
   },
 };
 </script>
-
-
