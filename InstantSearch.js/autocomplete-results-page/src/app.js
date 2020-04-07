@@ -45,38 +45,15 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
   }
 );
 
-const suggestions = instantsearch({
-  indexName: 'demo_ecommerce',
-  searchClient,
-});
-
-suggestions.addWidget(
-  instantsearch.widgets.configure({
-    hitsPerPage: 5,
-  })
-);
-
-suggestions.addWidget(
-  autocomplete({
-    container: $('#autocomplete'),
-    onSelectChange(value) {
-      search.helper.setQuery(value).search();
-    },
-  })
-);
-
 const search = instantsearch({
   indexName: 'demo_ecommerce',
   searchClient,
 });
 
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.configure({
     hitsPerPage: 10,
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -91,8 +68,25 @@ search.addWidget(
         </div>
       `,
     },
-  })
-);
+  }),
+]);
+
+const suggestions = instantsearch({
+  indexName: 'demo_ecommerce',
+  searchClient,
+});
+
+suggestions.addWidgets([
+  instantsearch.widgets.configure({
+    hitsPerPage: 5,
+  }),
+  autocomplete({
+    container: $('#autocomplete'),
+    onSelectChange(value) {
+      search.helper.setQuery(value).search();
+    },
+  }),
+]);
 
 suggestions.start();
 search.start();

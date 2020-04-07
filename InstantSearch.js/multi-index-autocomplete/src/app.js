@@ -72,13 +72,10 @@ const search = instantsearch({
   searchClient,
 });
 
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.configure({
     hitsPerPage: 3,
-  })
-);
-
-search.addWidget(
+  }),
   autocomplete({
     container: $('#autocomplete'),
     indices: [
@@ -87,7 +84,7 @@ search.addWidget(
         label: 'instant_search_price_desc',
       },
     ],
-  })
-);
+  }),
+]);
 
 search.start();

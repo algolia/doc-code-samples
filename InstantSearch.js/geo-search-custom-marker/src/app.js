@@ -15,13 +15,10 @@ injectScript(
       searchClient,
     });
 
-    search.addWidget(
+    search.addWidgets([
       instantsearch.widgets.searchBox({
         container: '#searchbox',
-      })
-    );
-
-    search.addWidget(
+      }),
       instantsearch.widgets.geoSearch({
         container: '#maps',
         googleReference: window.google,
@@ -32,8 +29,8 @@ injectScript(
             </span>
           `,
         },
-      })
-    );
+      }),
+    ]);
 
     search.start();
   }
