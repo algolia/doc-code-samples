@@ -1,4 +1,5 @@
 /* global instantsearch algoliasearch */
+
 import searchRouting from './search-routing';
 
 const searchClient = algoliasearch(
@@ -6,25 +7,31 @@ const searchClient = algoliasearch(
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
+const categoryMenu = instantsearch.widgets.panel({
+  templates: {
+    header: 'Category',
+  },
+})(instantsearch.widgets.menu);
+
+const brandList = instantsearch.widgets.panel({
+  templates: {
+    header: 'Brands',
+  },
+})(instantsearch.widgets.refinementList);
+
 const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
   routing: searchRouting,
 });
 
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.searchBox({
     container: '#searchbox',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.clearRefinements({
     container: '#clear-refinements',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -34,39 +41,18 @@ search.addWidget(
         </div>
       `,
     },
-  })
-);
-
-const categoryMenu = instantsearch.widgets.panel({
-  templates: {
-    header: 'Category',
-  },
-})(instantsearch.widgets.menu);
-
-search.addWidget(
+  }),
   categoryMenu({
     container: '#menu',
     attribute: 'categories',
-  })
-);
-
-const brandList = instantsearch.widgets.panel({
-  templates: {
-    header: 'Brands',
-  },
-})(instantsearch.widgets.refinementList);
-
-search.addWidget(
+  }),
   brandList({
     container: '#refinement-list',
     attribute: 'brand',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.pagination({
     container: '#pagination',
-  })
-);
+  }),
+]);
 
 search.start();

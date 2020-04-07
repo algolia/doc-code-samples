@@ -57,16 +57,13 @@ const search = instantsearch({
   searchClient,
 });
 
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.searchBox({
     container: '#searchbox',
-  })
-);
-
-search.addWidget(
+  }),
   infiniteHits({
     container: document.querySelector('#hits'),
-  })
-);
+  }),
+]);
 
 search.start();

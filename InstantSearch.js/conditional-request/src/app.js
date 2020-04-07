@@ -12,7 +12,7 @@ const searchClient = {
         results: requests.map(() => ({
           hits: [],
           nbHits: 0,
-          processingTimeMS: 0,
+          nbPages: 0,
         })),
       });
     }
@@ -26,13 +26,10 @@ const search = instantsearch({
   searchClient,
 });
 
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.searchBox({
     container: '#searchbox',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -48,13 +45,10 @@ search.addWidget(
         </article>
       `,
     },
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.pagination({
     container: '#pagination',
-  })
-);
+  }),
+]);
 
 search.start();

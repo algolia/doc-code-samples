@@ -15,20 +15,17 @@ injectScript(
       searchClient,
     });
 
-    search.addWidget(
+    search.addWidgets([
       instantsearch.widgets.searchBox({
         container: '#searchbox',
-      })
-    );
-
-    search.addWidget(
+      }),
       instantsearch.widgets.geoSearch({
         container: '#maps',
         googleReference: window.google,
         enableRefineControl: true,
         enableRefineOnMapMove: false,
-      })
-    );
+      }),
+    ]);
 
     search.start();
   }

@@ -6,33 +6,20 @@ const search = instantsearch({
   insightsClient: window.aa,
 });
 
-
 search.addWidgets([
   instantsearch.widgets.configure({
     clickAnalytics: true,
   }),
-]);
-
-search.addWidget(
   instantsearch.widgets.searchBox({
     container: '#searchbox',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.clearRefinements({
     container: '#clear-refinements',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.refinementList({
     container: '#brand-list',
     attribute: 'brand',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -59,13 +46,10 @@ search.addWidget(
         </div>
       `,
     },
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.pagination({
     container: '#pagination',
-  })
-);
+  }),
+]);
 
 search.start();
