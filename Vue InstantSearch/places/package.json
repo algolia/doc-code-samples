@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "places.js": "1.16.4",
-    "vue": "2.6.10"
+    "vue": "2.6.10",
+    "vue-instantsearch": "3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.6.0",
