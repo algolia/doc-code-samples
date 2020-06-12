@@ -5,26 +5,17 @@ const search = instantsearch({
   searchClient: algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5'),
 });
 
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.searchBox({
     container: '#searchbox',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.clearRefinements({
     container: '#clear-refinements',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.refinementList({
     container: '#brand-list',
     attribute: 'brand',
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
@@ -41,13 +32,10 @@ search.addWidget(
         </div>
       `,
     },
-  })
-);
-
-search.addWidget(
+  }),
   instantsearch.widgets.pagination({
     container: '#pagination',
-  })
-);
+  }),
+]);
 
 search.start();

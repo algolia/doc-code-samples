@@ -1,4 +1,4 @@
-/* global instantsearch algoliasearch $script places */
+/* global instantsearch algoliasearch $script */
 
 $script(
   'https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyBawL8VbstJDdU5397SUX7pEt9DslAwWgQ',
@@ -13,19 +13,16 @@ $script(
       searchClient,
     });
 
-    search.addWidget(
+    search.addWidgets([
       instantsearch.widgets.places({
         container: '#searchbox',
         placesReference: window.places,
-      })
-    );
-
-    search.addWidget(
+      }),
       instantsearch.widgets.geoSearch({
         container: '#maps',
         googleReference: window.google,
-      })
-    );
+      }),
+    ]);
 
     search.start();
   }

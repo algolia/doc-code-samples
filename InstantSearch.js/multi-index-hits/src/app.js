@@ -10,21 +10,18 @@ const subIndex = instantsearch({
   searchClient,
 });
 
-subIndex.addWidget(
+subIndex.addWidgets([
   instantsearch.widgets.configure({
     hitsPerPage: 16,
-  })
-);
-
-subIndex.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits-instant-search-price-desc',
     templates: {
       item:
         '{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}',
     },
-  })
-);
+  }),
+]);
 
 const mainIndex = instantsearch({
   indexName: 'instant_search',
@@ -35,27 +32,21 @@ const mainIndex = instantsearch({
   },
 });
 
-mainIndex.addWidget(
+mainIndex.addWidgets([
   instantsearch.widgets.configure({
     hitsPerPage: 8,
-  })
-);
-
-mainIndex.addWidget(
+  }),
   instantsearch.widgets.searchBox({
     container: '#searchbox',
-  })
-);
-
-mainIndex.addWidget(
+  }),
   instantsearch.widgets.hits({
     container: '#hits-instant-search',
     templates: {
       item:
         '{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}',
     },
-  })
-);
+  }),
+]);
 
 subIndex.start();
 mainIndex.start();
