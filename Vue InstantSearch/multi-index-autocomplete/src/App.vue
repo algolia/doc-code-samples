@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header">
-      <h1 class="header-title"><a href="/">Vue InstantSearch v2 starter</a></h1>
+      <h1 class="header-title"><a href="/">Multi index Autocomplete</a></h1>
       <p class="header-subtitle">
         using
         <a href="https://github.com/algolia/vue-instantsearch">
@@ -19,14 +19,8 @@
           :hitsPerPage="5"
           :restrictSearchableAttributes="['name']"
         />
-        <ais-autocomplete
-          :indices="[
-            {
-              value: 'instant_search_price_desc',
-              label: 'Price (desc)',
-            },
-          ]"
-        >
+        <ais-index index-name="instant_search_price_desc" />
+        <ais-autocomplete>
           <template slot-scope="{ currentRefinement, indices, refine }">
             <vue-autosuggest
               :suggestions="indicesToSuggestions(indices)"
@@ -66,7 +60,6 @@ export default {
         'latency',
         '6be0576ff61c053d5f9a3225e2a90f76'
       ),
-      query: '',
     };
   },
   methods: {

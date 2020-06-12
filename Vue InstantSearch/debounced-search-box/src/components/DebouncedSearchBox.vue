@@ -32,7 +32,6 @@ export default {
         return this.localQuery;
       },
       set(val) {
-        console.log('set', val, this.timerId);
         this.localQuery = val;
         if (this.timerId) {
           clearTimeout(this.timerId);

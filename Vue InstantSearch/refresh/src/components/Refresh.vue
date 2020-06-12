@@ -14,7 +14,6 @@ const connectRefresh = (
   },
 
   render({ instantSearchInstance }) {
-    // console.log(arguments[0])
     const refresh = instantSearchInstance.refresh.bind(instantSearchInstance);
     renderFn({ refresh }, false);
   },
@@ -25,7 +24,6 @@ const connectRefresh = (
 });
 
 export default {
-  name: 'AisStateResults',
   mixins: [createWidgetMixin({ connector: connectRefresh })],
   methods: {
     refresh() {

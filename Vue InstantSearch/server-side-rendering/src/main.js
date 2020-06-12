@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
 import { createRouter } from './router';
-import { createInstantSearch } from 'vue-instantsearch';
+import { createServerRootMixin } from 'vue-instantsearch';
 import algoliasearch from 'algoliasearch/lite';
+import qs from 'qs';
 
 const searchClient = algoliasearch(
   'latency',
@@ -14,20 +15,95 @@ Vue.config.productionTip = false;
 export async function createApp({
   beforeApp = () => {},
   afterApp = () => {},
+  context,
 } = {}) {
   const router = createRouter();
-  const { instantsearch, rootMixin } = createInstantSearch({
-    searchClient,
-    indexName: 'instant_search',
-  });
 
   await beforeApp({
     router,
-    instantsearch,
   });
 
   const app = new Vue({
-    mixins: [rootMixin],
+    mixins: [
+      createServerRootMixin({
+        indexName: 'instant_search',
+        searchClient,
+        routing: {
+          router: {
+            read() {
+              const url = context
+                ? context.url
+                : typeof window.location === 'object'
+                ? window.location.href
+                : '';
+              const search = url.slice(url.indexOf('?'));
+
+              return qs.parse(search, {
+                ignoreQueryPrefix: true,
+              });
+            },
+            write(routeState) {
+              const query = qs.stringify(routeState, {
+                addQueryPrefix: true,
+              });
+
+              if (typeof history === 'object') {
+                history.pushState(routeState, null, query);
+              }
+            },
+            createURL(routeState) {
+              const query = qs.stringify(routeState, {
+                addQueryPrefix: true,
+              });
+
+              return query;
+            },
+            onUpdate(callback) {
+              if (typeof window !== 'object') {
+                return;
+              }
+              // TODO: handle vue route changes
+              this._onPopState = event => {
+                if (this.writeTimer) {
+                  window.clearTimeout(this.writeTimer);
+                  this.writeTimer = undefined;
+                }
+
+                const routeState = event.state;
+
+                // At initial load, the state is read from the URL without update.
+                // Therefore the state object is not available.
+                // In this case, we fallback and read the URL.
+                if (!routeState) {
+                  callback(this.read());
+                } else {
+                  callback(routeState);
+                }
+              };
+
+              window.addEventListener('popstate', this._onPopState);
+            },
+            dispose() {
+              if (this._onPopState && typeof window == 'object') {
+                window.removeEventListener('popstate', this._onPopState);
+              }
+
+              // we purposely don't write on dispose, to prevent double entries on navigation
+              // TODO: this should be an option in the real router
+            },
+          },
+        },
+      }),
+    ],
+    serverPrefetch() {
+      return this.instantsearch.findResultsState(this);
+    },
+    beforeMount() {
+      if (typeof window === 'object' && window.__ALGOLIA_STATE__) {
+        this.instantsearch.hydrate(window.__ALGOLIA_STATE__);
+        delete window.__ALGOLIA_STATE__;
+      }
+    },
     router,
     render: h => h(App),
   });
@@ -35,7 +111,6 @@ export async function createApp({
   const result = {
     app,
     router,
-    instantsearch,
   };
 
   await afterApp(result);

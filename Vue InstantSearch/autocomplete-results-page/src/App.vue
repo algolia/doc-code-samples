@@ -15,38 +15,35 @@
         :search-client="searchClient"
         index-name="demo_ecommerce"
       >
-        <ais-configure
-          :hitsPerPage="5"
-          :restrictSearchableAttributes="['name']"
-        />
-        <ais-autocomplete>
-          <template slot-scope="{ currentRefinement, indices, refine }">
-            <vue-autosuggest
-              :suggestions="indicesToSuggestions(indices)"
-              @selected="onSelect"
-              :input-props="{
-                style: 'width: 100%',
-                onInputChange: refine,
-                placeholder: 'Search here…',
-              }"
-            >
-              <template slot-scope="{ suggestion }">
-                <ais-highlight
-                  :hit="suggestion.item"
-                  attribute="name"
-                  v-if="suggestion.item.name"
-                />
-                <strong>$ {{ suggestion.item.price }}</strong>
-                <img :src="suggestion.item.image" />
-              </template>
-            </vue-autosuggest>
-          </template>
-        </ais-autocomplete>
-      </ais-instant-search>
-      <ais-instant-search
-        :search-client="searchClient"
-        index-name="demo_ecommerce"
-      >
+        <ais-index index-name="demo_ecommerce">
+          <ais-configure
+            :hitsPerPage="5"
+            :restrictSearchableAttributes="['name']"
+          />
+          <ais-autocomplete>
+            <template slot-scope="{ currentRefinement, indices, refine }">
+              <vue-autosuggest
+                :suggestions="indicesToSuggestions(indices)"
+                @selected="onSelect"
+                :input-props="{
+                  style: 'width: 100%',
+                  onInputChange: refine,
+                  placeholder: 'Search here…',
+                }"
+              >
+                <template slot-scope="{ suggestion }">
+                  <ais-highlight
+                    :hit="suggestion.item"
+                    attribute="name"
+                    v-if="suggestion.item.name"
+                  />
+                  <strong>$ {{ suggestion.item.price }}</strong>
+                  <img :src="suggestion.item.image" />
+                </template>
+              </vue-autosuggest>
+            </template>
+          </ais-autocomplete>
+        </ais-index>
         <ais-configure :query="query" />
         <ais-hits>
           <div slot="item" slot-scope="{ item }">

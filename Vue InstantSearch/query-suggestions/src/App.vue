@@ -13,55 +13,56 @@
     <div class="container">
       <ais-instant-search
         :search-client="searchClient"
-        index-name="instant_search_demo_query_suggestions"
-      >
-        <ais-configure :hitsPerPage="5" />
-        <ais-autocomplete>
-          <template slot-scope="{ currentRefinement, indices, refine }">
-            <vue-autosuggest
-              :suggestions="indicesToSuggestions(indices)"
-              @selected="onSelect"
-              :input-props="{
-                style: 'width: 100%',
-                onInputChange: refine,
-                placeholder: 'Search here…',
-              }"
-            >
-              <template slot-scope="{ suggestion }">
-                <span>
-                  <ais-highlight attribute="query" :hit="suggestion.item" />
-                  <span>
-                    <em>
-                      in
-                      <span v-if="suggestion.item.category">
-                        {{ suggestion.item.category.value }}
-                      </span>
-                      <span v-else> All categories </span>
-                    </em>
-                  </span>
-                </span>
-              </template>
-            </vue-autosuggest>
-          </template>
-        </ais-autocomplete>
-      </ais-instant-search>
-      <ais-instant-search
-        :search-client="searchClient"
         index-name="instant_search"
       >
+        <ais-index index-name="instant_search_demo_query_suggestions">
+          <ais-configure :hitsPerPage="5" />
+          <ais-autocomplete>
+            <template
+              slot-scope="{ currentRefinement, indices, refine, ...args }"
+            >
+              <vue-autosuggest
+                :suggestions="indicesToSuggestions(indices, args)"
+                @selected="onSelect"
+                :input-props="{
+                  style: 'width: 100%',
+                  onInputChange: refine,
+                  placeholder: 'Search here…',
+                }"
+              >
+                <template slot-scope="{ suggestion }">
+                  <span>
+                    <ais-highlight attribute="query" :hit="suggestion.item" />
+                    <span>
+                      <em>
+                        in
+                        <span v-if="suggestion.item.category">
+                          {{ suggestion.item.category.value }}
+                        </span>
+                        <span v-else> All categories </span>
+                      </em>
+                    </span>
+                  </span>
+                </template>
+              </vue-autosuggest>
+            </template>
+          </ais-autocomplete>
+        </ais-index>
         <ais-current-refinements />
-        <ais-configure
-          :query="query"
-          :disjunctiveFacets="['categories']"
-          :disjunctiveFacetsRefinements="disjunctiveFacetsRefinements"
-        />
-        <ais-hits>
-          <div slot="item" slot-scope="{ item }">
-            <ais-highlight :hit="item" attribute="name" />
-            <strong>$ {{ item.price }}</strong> <img :src="item.image" />
-          </div>
-        </ais-hits>
-        <ais-pagination />
+        <ais-index index-name="instant_search">
+          <ais-configure
+            :query="query"
+            :disjunctiveFacets="['categories']"
+            :disjunctiveFacetsRefinements="disjunctiveFacetsRefinements"
+          />
+          <ais-hits>
+            <div slot="item" slot-scope="{ item }">
+              <ais-highlight :hit="item" attribute="name" />
+              <strong>$ {{ item.price }}</strong> <img :src="item.image" />
+            </div>
+          </ais-hits>
+          <ais-pagination />
+        </ais-index>
       </ais-instant-search>
     </div>
   </div>
@@ -95,20 +96,25 @@ export default {
       }
     },
     indicesToSuggestions(indices) {
-      return indices.map(({ hits }) => ({
-        data: hits.map(hit => {
-          const [category] =
-            (hit.instant_search &&
-              hit.instant_search.facets.exact_matches.categories) ||
-            [];
+      return indices
+        .filter(
+          ({ indexName }) =>
+            indexName === 'instant_search_demo_query_suggestions'
+        )
+        .map(({ hits }) => ({
+          data: hits.map(hit => {
+            const [category] =
+              (hit.instant_search &&
+                hit.instant_search.facets.exact_matches.categories) ||
+              [];
 
-          return {
-            ...hit,
-            category,
-            name: hit.query,
-          };
-        }),
-      }));
+            return {
+              ...hit,
+              category,
+              name: hit.query,
+            };
+          }),
+        }));
     },
   },
 };

@@ -93,24 +93,26 @@ export default {
         stateMapping: {
           stateToRoute(uiState) {
             return {
-              q: uiState.query || '',
+              q: uiState.instant_search.query || '',
               brands:
-                (uiState.refinementList &&
-                  uiState.refinementList.brand &&
-                  uiState.refinementList.brand.join('~')) ||
+                (uiState.instant_search.refinementList &&
+                  uiState.instant_search.refinementList.brand &&
+                  uiState.instant_search.refinementList.brand.join('~')) ||
                 'all',
-              p: uiState.page || 1,
+              p: uiState.instant_search.page || 1,
             };
           },
           routeToState(routeState) {
             if (routeState.brands === 'all') routeState.brands = undefined;
 
             return {
-              query: routeState.q,
-              refinementList: {
-                brand: routeState.brands && routeState.brands.split('~'),
+              instant_search: {
+                query: routeState.q,
+                refinementList: {
+                  brand: routeState.brands && routeState.brands.split('~'),
+                },
+                page: routeState.p,
               },
-              page: routeState.p,
             };
           },
         },

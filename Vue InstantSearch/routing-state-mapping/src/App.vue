@@ -55,21 +55,23 @@ export default {
         stateMapping: {
           stateToRoute(uiState) {
             return {
-              query: uiState.query,
+              query: uiState.instant_search.query,
               brands:
-                uiState.refinementList &&
-                uiState.refinementList.brand &&
-                uiState.refinementList.brand.join('~'),
-              page: uiState.page,
+                uiState.instant_search.refinementList &&
+                uiState.instant_search.refinementList.brand &&
+                uiState.instant_search.refinementList.brand.join('~'),
+              page: uiState.instant_search.page,
             };
           },
           routeToState(routeState) {
             return {
-              query: routeState.query,
-              refinementList: {
-                brand: routeState.brands && routeState.brands.split('~'),
+              instant_search: {
+                query: routeState.query,
+                refinementList: {
+                  brand: routeState.brands && routeState.brands.split('~'),
+                },
+                page: routeState.page,
               },
-              page: routeState.page,
             };
           },
         },
