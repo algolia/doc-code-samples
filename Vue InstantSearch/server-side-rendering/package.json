@@ -18,7 +18,7 @@
     "vue-server-renderer": "2.6.10"
   },
   "devDependencies": {
-    "@akryum/vue-cli-plugin-ssr": "0.5.0",
+    "@akryum/vue-cli-plugin-ssr": "0.6.0",
     "@vue/cli-plugin-babel": "3.6.0",
     "@vue/cli-plugin-eslint": "3.6.0",
     "@vue/cli-service": "3.6.0",
