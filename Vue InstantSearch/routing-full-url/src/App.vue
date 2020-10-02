@@ -43,6 +43,112 @@ import algoliasearch from 'algoliasearch/lite';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
 import 'instantsearch.css/themes/algolia-min.css';
 
+// Returns a slug from the category name.
+// Spaces are replaced by "+" to make
+// the URL easier to read and other
+// characters are encoded.
+function getCategorySlug(name) {
+  return name.split(' ').map(encodeURIComponent).join('+');
+}
+
+// Returns a name from the category slug.
+// The "+" are replaced by spaces and other
+// characters are decoded.
+function getCategoryName(slug) {
+  return slug.split('+').map(decodeURIComponent).join(' ');
+}
+
+const routing = {
+  router: historyRouter({
+    windowTitle({ category, query }) {
+      const queryTitle = query ? `Results for "${query}"` : 'Search';
+
+      if (category) {
+        return `${category} – ${queryTitle}`;
+      }
+
+      return queryTitle;
+    },
+
+    createURL({ qsModule, routeState, location }) {
+      const urlParts = location.href.match(/^(.*?)\/search/);
+      const baseUrl = `${urlParts ? urlParts[1] : ''}/`;
+
+      const categoryPath = routeState.category
+        ? `${getCategorySlug(routeState.category)}/`
+        : '';
+      const queryParameters = {};
+
+      if (routeState.query) {
+        queryParameters.query = encodeURIComponent(routeState.query);
+      }
+      if (routeState.page !== 1) {
+        queryParameters.page = routeState.page;
+      }
+      if (routeState.brands) {
+        queryParameters.brands = routeState.brands.map(encodeURIComponent);
+      }
+
+      const queryString = qsModule.stringify(queryParameters, {
+        addQueryPrefix: true,
+        arrayFormat: 'repeat',
+      });
+
+      return `${baseUrl}search/${categoryPath}${queryString}`;
+    },
+
+    parseURL({ qsModule, location }) {
+      const pathnameMatches = location.pathname.match(/search\/(.*?)\/?$/);
+      const category = getCategoryName(
+        (pathnameMatches && pathnameMatches[1]) || ''
+      );
+      const { query = '', page, brands = [] } = qsModule.parse(
+        location.search.slice(1)
+      );
+      // `qs` does not return an array when there's a single value.
+      const allBrands = Array.isArray(brands)
+        ? brands
+        : [brands].filter(Boolean);
+
+      return {
+        query: decodeURIComponent(query),
+        page,
+        brands: allBrands.map(decodeURIComponent),
+        category,
+      };
+    },
+  }),
+
+  stateMapping: {
+    stateToRoute(uiState) {
+      const indexUiState = uiState['instant_search'] || {};
+
+      return {
+        query: indexUiState.query,
+        page: indexUiState.page,
+        brands:
+          indexUiState.refinementList && indexUiState.refinementList.brand,
+        category: indexUiState.menu && indexUiState.menu.categories,
+      };
+    },
+
+    routeToState(routeState) {
+      return {
+        instant_search: {
+          query: routeState.query,
+          page: routeState.page,
+          menu: {
+            categories: routeState.category,
+          },
+          refinementList: {
+            brand: routeState.brands,
+          },
+        },
+      };
+    },
+  },
+};
+
 export default {
   data() {
     return {
@@ -50,73 +156,7 @@ export default {
         'latency',
         '6be0576ff61c053d5f9a3225e2a90f76'
       ),
-      routing: {
-        router: historyRouter({
-          windowTitle(routeState) {
-            return `Website / Find ${routeState.q} in ${
-              routeState.brands
-            } brands`;
-          },
-          createURL({ routeState, location }) {
-            let baseUrl = location.href.split('/search/')[0];
-            if (
-              !routeState.q &&
-              routeState.brands === 'all' &&
-              routeState.p === 1
-            )
-              return baseUrl;
-            if (baseUrl[baseUrl.length - 1] !== '/') baseUrl += '/';
-            let routeStateArray = [
-              'q',
-              encodeURIComponent(routeState.q),
-              'brands',
-              encodeURIComponent(routeState.brands),
-              'p',
-              routeState.p,
-            ];
-
-            return `${baseUrl}search/${routeStateArray.join('/')}`;
-          },
-          parseURL({ location }) {
-            let routeStateString = location.href.split('/search/')[1];
-            if (routeStateString === undefined) return {};
-            const routeStateValues = routeStateString.match(
-              /^q\/(.*?)\/brands\/(.*?)\/p\/(.*?)$/
-            );
-            return {
-              q: decodeURIComponent(routeStateValues[1]),
-              brands: decodeURIComponent(routeStateValues[2]),
-              p: routeStateValues[3],
-            };
-          },
-        }),
-        stateMapping: {
-          stateToRoute(uiState) {
-            return {
-              q: uiState.instant_search.query || '',
-              brands:
-                (uiState.instant_search.refinementList &&
-                  uiState.instant_search.refinementList.brand &&
-                  uiState.instant_search.refinementList.brand.join('~')) ||
-                'all',
-              p: uiState.instant_search.page || 1,
-            };
-          },
-          routeToState(routeState) {
-            if (routeState.brands === 'all') routeState.brands = undefined;
-
-            return {
-              instant_search: {
-                query: routeState.q,
-                refinementList: {
-                  brand: routeState.brands && routeState.brands.split('~'),
-                },
-                page: routeState.p,
-              },
-            };
-          },
-        },
-      },
+      routing,
     };
   },
 };
