@@ -1,89 +1,109 @@
-/* global $ instantsearch algoliasearch */
+/* global instantsearch algoliasearch */
 
-const autocomplete = instantsearch.connectors.connectAutocomplete(
-  ({ indices, refine, widgetParams }, isFirstRendering) => {
-    const { container } = widgetParams;
-
-    if (isFirstRendering) {
-      const optgroups = indices.map((index, idx) => ({
-        $order: idx,
-        id: index.index,
-        name: index.index,
-      }));
-
-      container.html('<select id="ais-autocomplete"></select>');
-
-      container.find('select').selectize({
-        options: [],
-        labelField: 'name',
-        valueField: 'name',
-        optgroupField: 'section',
-        optgroupLabelField: 'name',
-        optgroupValueField: 'id',
-        highlight: false,
-        onType: refine,
-        onBlur() {
-          refine(this.getValue());
-        },
-        onChange: refine,
-        score() {
-          return function() {
-            return 1;
-          };
-        },
-        render: {
-          option: hit => `
-          <div class="hit">
-            ${instantsearch.highlight({ attribute: 'name', hit })}
-          </div>
-          `,
-        },
-        optgroups,
-      });
-
-      return;
-    }
-
-    const [select] = container.find('select');
-
-    select.selectize.clearOptions();
-    indices.forEach(index => {
-      if (index.results) {
-        index.results.hits.forEach(hit =>
-          select.selectize.addOption(
-            Object.assign({}, hit, {
-              section: index.index,
-            })
-          )
-        );
-      }
-    });
-    select.selectize.refreshOptions(select.selectize.isOpen);
-  }
-);
+const { autocomplete } = window['@algolia/autocomplete-js'];
+const { connectAutocomplete } = instantsearch.connectors;
+const { index, configure, hits } = instantsearch.widgets;
+const highlight = instantsearch.highlight;
 
 const searchClient = algoliasearch(
   'latency',
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
+const createAutocompleteSearchBox = () => {
+  let suggestions;
+  let autocompleteSearch;
+  let prevQuery;
+
+  return connectAutocomplete((props, isFirstRender) => {
+    const { container } = props.widgetParams;
+
+    suggestions = props.indices.reduce(
+      (acc, current) => acc.concat(current.hits),
+      []
+    );
+
+    if (isFirstRender) {
+      autocompleteSearch = autocomplete({
+        container,
+        initialState: {
+          query: props.currentRefinement,
+        },
+        onStateChange({ state }) {
+          if (state.query !== prevQuery) {
+            props.refine(state.query);
+            prevQuery = state.query;
+          }
+        },
+        onSubmit({ state }) {
+          props.refine(state.query);
+        },
+        getSources() {
+          return [
+            {
+              getInputValue({ suggestion }) {
+                return suggestion.name;
+              },
+              getSuggestions() {
+                return suggestions;
+              },
+              onSelect({ suggestion }) {
+                props.refine(suggestion.name);
+              },
+              templates: {
+                item({ item }) {
+                  return `
+                    <div class="autocomplete-item">
+                      <svg viewBox="0 0 18 18" width="16" height="16">
+                        <path d="M13.14 13.14L17 17l-3.86-3.86A7.11 7.11 0 1 1 3.08 3.08a7.11 7.11 0 0 1 10.06 10.06z" stroke="currentColor" stroke-width="1.78" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+
+                      <div>
+                        <span>${highlight({
+                          hit: item,
+                          attribute: 'name',
+                        })}</span>
+                      </div>
+                    </div>
+                `;
+                },
+              },
+            },
+          ];
+        },
+      });
+    } else {
+      autocompleteSearch.refresh();
+    }
+  });
+};
+
 const search = instantsearch({
-  indexName: 'instant_search',
   searchClient,
+  indexName: 'instant_search',
+  routing: true,
 });
 
+const autocompleteSearchBox = createAutocompleteSearchBox();
+
 search.addWidgets([
-  instantsearch.widgets.configure({
+  index({ indexName: 'instant_search_price_desc' }),
+  configure({
     hitsPerPage: 3,
   }),
-  autocomplete({
-    container: $('#autocomplete'),
-    indices: [
-      {
-        value: 'instant_search_price_desc',
-        label: 'instant_search_price_desc',
-      },
-    ],
+  autocompleteSearchBox({
+    container: '#autocomplete',
+  }),
+  hits({
+    container: '#hits',
+    templates: {
+      item: `
+        <article>
+          <h1>{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</h1>
+          <p>{{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}</p>
+        </article>
+      `,
+    },
   }),
 ]);
 
