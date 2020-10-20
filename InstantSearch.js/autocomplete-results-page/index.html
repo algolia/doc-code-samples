@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="shortcut icon" href="./favicon.png" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"
+    />
 
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="shortcut icon" href="./favicon.png">
+    <title>autocomplete-results-page</title>
+  </head>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/algolia.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/css/selectize.css">
-  <link rel="stylesheet" href="./src/index.css">
-  <link rel="stylesheet" href="./src/app.css">
+  <body>
+    <div class="container">
+      <h1>InstantSearch.js - Results page with an autocomplete</h1>
+      <div id="autocomplete"></div>
+      <div id="hits"></div>
+    </div>
 
-  <title>autocomplete-results-page</title>
-</head>
-
-<body>
-  <div class="container">
-    <h1>InstantSearch.js - Results page with an autocomplete</h1>
-    <div id="autocomplete"></div>
-    <div id="hits"></div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/js/standalone/selectize.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4"></script>
-  <script src="./src/app.js"></script>
-</body>
-
+    <script src="src/index.js"></script>
+  </body>
 </html>
