@@ -9,16 +9,16 @@ export const predefinedItems = {
         getSuggestions() {
           return [
             {
-              title: "GitHub repository",
-              url: "https://github.com/algolia/autocomplete.js/tree/next",
+              title: 'GitHub repository',
+              url: 'https://github.com/algolia/autocomplete.js/tree/next',
             },
             {
-              title: "Documentation website",
-              url: "https://algolia-autocomplete.netlify.app",
+              title: 'Documentation website',
+              url: 'https://algolia-autocomplete.netlify.app',
             },
             {
-              title: "Algolia",
-              url: "https://www.algolia.com",
+              title: 'Algolia',
+              url: 'https://www.algolia.com',
             },
           ];
         },
