@@ -2,21 +2,24 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-core":
-  version "1.0.0-alpha.33"
-  resolved "https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-core#30974e59a4baa9ee8b0d02535cc9cfb4c5e7a52d"
+"@algolia/autocomplete-core@^1.0.0-alpha.34":
+  version "1.0.0-alpha.34"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.34.tgz#29abd7f23d490eeb47a02961121fb54cceddaa33"
+  integrity sha512-a7+YKEoTfLDgL/eat/EuZoz8aui2K2yYvWzojLKfn1nq58sbuU2snXc+Nc3RmdgOAN2SzUIucmeRtLLmx4sVwQ==
 
-"@algolia/autocomplete-js@https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-js":
-  version "1.0.0-alpha.33"
-  resolved "https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-js#6d954f4a4279ff064b4787c4f8f020adcf20c670"
+"@algolia/autocomplete-js@1.0.0-alpha.34":
+  version "1.0.0-alpha.34"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-js/-/autocomplete-js-1.0.0-alpha.34.tgz#2a219d320983d468460ea45ecf4d00c16491b303"
+  integrity sha512-+wRkZAkExuynYJSWYkwax6MWLTkzhDbzSpJ5tCn1t0NekI3w7+qJisVyx+2RnhAWF0DsidZR9/iK95PcXV5ujA==
   dependencies:
-    "@algolia/autocomplete-core" "https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-core"
-    "@algolia/autocomplete-preset-algolia" "https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-preset-algolia"
+    "@algolia/autocomplete-core" "^1.0.0-alpha.34"
+    "@algolia/autocomplete-preset-algolia" "^1.0.0-alpha.34"
     "@algolia/client-search" "4.5.1"
 
-"@algolia/autocomplete-preset-algolia@https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-preset-algolia":
-  version "1.0.0-alpha.33"
-  resolved "https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-preset-algolia#00780043999972629f9c39981e50b7f45b78a3b9"
+"@algolia/autocomplete-preset-algolia@^1.0.0-alpha.34":
+  version "1.0.0-alpha.34"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.34.tgz#e7eda5ca37ae92dc928f47b5bfe1a57f2ae6316c"
+  integrity sha512-jcIkcvI7o4HRff+8ht2oN7lDRj3ZYao91XM+S8svfYG0h9ksTt/BTVifqfCwRTJoTq1/0f3hGctQaUAegr4nLw==
   dependencies:
     "@algolia/client-search" "4.5.1"
     algoliasearch "4.5.1"

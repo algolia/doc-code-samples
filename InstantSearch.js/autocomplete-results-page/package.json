@@ -8,7 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@algolia/autocomplete-js": "https://pkg.csb.dev/algolia/autocomplete.js/commit/d6de51b1/@algolia/autocomplete-js",
+    "@algolia/autocomplete-js": "1.0.0-alpha.34",
     "algoliasearch": "4.5.1",
     "instantsearch.js": "4.8.3"
   },
