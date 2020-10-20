@@ -1,6 +1,6 @@
-import { createRecentSearchesPlugin } from "@algolia/autocomplete-plugin-recent-searches";
+import { createRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 const orgRecentSearches = createRecentSearchesPlugin({
-  key: "RECENT_SEARCH",
+  key: 'RECENT_SEARCH',
   limit: 5,
 });
 
@@ -13,6 +13,10 @@ export const recentSearches = {
       templates: {
         ...source.templates,
         header() {
+          if (source.getSuggestions().length === 0) {
+            return '';
+          }
+
           return `
             <div class="aa-RecentSearchesHeader">
               <p>Recent Searches</p>
