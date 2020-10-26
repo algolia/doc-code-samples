@@ -1,125 +1,191 @@
-/* global $ instantsearch algoliasearch */
+import { autocomplete } from '@algolia/autocomplete-js';
+import algoliasearch from 'algoliasearch/lite';
+import instantsearch from 'instantsearch.js';
+import { highlight } from 'instantsearch.js/es/helpers';
+import {
+  connectAutocomplete,
+  connectSearchBox,
+  connectRefinementList,
+} from 'instantsearch.js/es/connectors';
+import {
+  configure,
+  index,
+  hits,
+  refinementList,
+} from 'instantsearch.js/es/widgets';
 
 const searchClient = algoliasearch(
   'latency',
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
-const virtualRefinementList = instantsearch.connectors.connectRefinementList(
-  () => null
-);
+function createAutocompleteSearchBox() {
+  const autocompleteRef = { current: null };
+  const indicesRef = { current: [] };
 
-const autocomplete = instantsearch.connectors.connectAutocomplete(
-  ({ indices, refine, widgetParams }, isFirstRendering) => {
-    const { container, onSelectChange } = widgetParams;
+  return connectAutocomplete(
+    (
+      { currentRefinement, indices, instantSearchInstance, widgetParams },
+      isFirstRender
+    ) => {
+      indicesRef.current = indices || [];
 
-    if (isFirstRendering) {
-      container.html('<select id="ais-autocomplete"></select>');
+      if (isFirstRender) {
+        const { setUiState } = instantSearchInstance;
 
-      container.find('select').selectize({
-        options: [],
-        valueField: 'query',
-        labelField: 'query',
-        highlight: false,
-        onType: refine,
-        onBlur() {
-          refine(this.getValue());
-        },
-        onChange(value) {
-          refine(value);
-          onSelectChange({
-            category: this.getOption(value).data('category'),
-            query: value,
-          });
-        },
-        score() {
-          return function() {
-            return 1;
-          };
-        },
-        render: {
-          option(item) {
-            // prettier-ignore
-            const [category] = item.instant_search.facets.exact_matches.categories;
-
-            return `
-              <div class="option" data-category="${category.value}">
-                ${item.query} in <i>${category.value}</i>
-              </div>
-            `;
+        autocompleteRef.current = autocomplete({
+          container: widgetParams.container,
+          placeholder: widgetParams.placeholder,
+          openOnFocus: true,
+          initialState: {
+            query: currentRefinement,
           },
-        },
-      });
+          onStateChange({ prevState, state }) {
+            if (
+              prevState.query !== state.query ||
+              prevState.isOpen !== state.isOpen
+            ) {
+              setUiState(prevUiState => {
+                return {
+                  ...prevUiState,
+                  ...indicesRef.current.reduce(
+                    (indicesUiState, currentIndex) => {
+                      return {
+                        ...indicesUiState,
+                        [currentIndex.indexName]: {
+                          query: state.query,
+                        },
+                      };
+                    },
+                    {}
+                  ),
+                };
+              });
+            }
+          },
+          onSubmit({ state }) {
+            setUiState(prevUiState => {
+              return {
+                ...prevUiState,
+                instant_search: {
+                  ...prevUiState.instant_search,
+                  query: state.query,
+                  refinementList: {
+                    categories: [],
+                  },
+                },
+              };
+            });
+          },
+          getSources() {
+            return indicesRef.current.map(currentIndex => {
+              return {
+                getInputValue({ suggestion }) {
+                  return suggestion.query;
+                },
+                getSuggestions() {
+                  return currentIndex.hits;
+                },
+                onSelect({ suggestion }) {
+                  setUiState(prevUiState => {
+                    return {
+                      ...prevUiState,
+                      instant_search: {
+                        ...prevUiState.instant_search,
+                        query: suggestion.query,
+                        refinementList: {
+                          categories: suggestion.instant_search.facets.exact_matches.categories.map(
+                            x => x.value
+                          ),
+                        },
+                      },
+                    };
+                  });
+                },
+                templates: {
+                  item({ item }) {
+                    const categories = item.instant_search.facets.exact_matches.categories.map(
+                      x => x.value
+                    );
 
-      return;
-    }
+                    return `
+                      <div class="autocomplete-item">
+                        <svg viewBox="0 0 18 18" width="16" height="16">
+                          <path d="M13.14 13.14L17 17l-3.86-3.86A7.11 7.11 0 1 1 3.08 3.08a7.11 7.11 0 0 1 10.06 10.06z" stroke="currentColor" stroke-width="1.78" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
 
-    const [select] = container.find('select');
+                        <div class="autocomplete-item-content">
+                          <span>${highlight({
+                            hit: item,
+                            attribute: 'query',
+                          })}</span>
 
-    select.selectize.clearOptions();
-    indices.forEach(index => {
-      index.results.hits.forEach(hit => select.selectize.addOption(hit));
-    });
-    select.selectize.refreshOptions(select.selectize.isOpen);
-  }
-);
-
-const suggestions = instantsearch({
-  indexName: 'instant_search_demo_query_suggestions',
-  searchClient,
-});
-
-suggestions.addWidgets([
-  instantsearch.widgets.configure({
-    hitsPerPage: 5,
-  }),
-  autocomplete({
-    container: $('#autocomplete'),
-    onSelectChange({ query, category }) {
-      // eslint-disable-next-line
-      search.helper
-        .setQuery(query)
-        .removeDisjunctiveFacetRefinement('categories');
-
-      if (category) {
-        // eslint-disable-next-line
-        search.helper.addDisjunctiveFacetRefinement('categories', category);
+                          <div class="item-info">
+                            in <span class="item-category">${categories.join(
+                              ', '
+                            )}</span>
+                          </div>
+                        </div>
+                      </div>
+                    `;
+                  },
+                },
+              };
+            });
+          },
+        });
+      } else if (autocompleteRef.current) {
+        autocompleteRef.current.refresh();
       }
-
-      // eslint-disable-next-line
-      search.helper.search();
-    },
-  }),
-]);
+    }
+  );
+}
 
 const search = instantsearch({
-  indexName: 'instant_search',
   searchClient,
+  indexName: 'instant_search',
 });
 
+const autocompleteSearchBox = createAutocompleteSearchBox();
+const virtualSearchBox = connectSearchBox(() => {});
+const virtualRefinementList = connectRefinementList(() => {});
+
 search.addWidgets([
+  index({
+    indexName: 'instant_search_demo_query_suggestions',
+  }).addWidgets([
+    // You can add other Query Suggestions indices:
+    // index({
+    //   indexName: "instant_search_demo_query_suggestions"
+    // }),
+    configure({
+      hitsPerPage: 5,
+    }),
+    // We need to add a refinement list with the same attribute as the parent index
+    // to reset the filter and to search suggestions in all categories.
+    virtualRefinementList({
+      attribute: 'categories',
+    }),
+    autocompleteSearchBox({
+      container: '#autocomplete',
+      placeholder: 'Search products',
+    }),
+  ]),
+  virtualSearchBox({}),
   virtualRefinementList({
     attribute: 'categories',
   }),
-  instantsearch.widgets.configure({
-    hitsPerPage: 10,
-  }),
-  instantsearch.widgets.hits({
+  hits({
     container: '#hits',
     templates: {
       item: `
-        <div>
-          <header class="hit-name">
-            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
-          </header>
-          <p class="hit-description">
-            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
-          </p>
-        </div>
+        <article>
+          <h1>{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</h1>
+          <p>{{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}</p>
+        </article>
       `,
     },
   }),
 ]);
 
-suggestions.start();
 search.start();
