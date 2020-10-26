@@ -1,13 +1,13 @@
 import { createRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
-const orgRecentSearches = createRecentSearchesPlugin({
+const originalRecentSearches = createRecentSearchesPlugin({
   key: 'RECENT_SEARCH',
   limit: 5,
 });
 
 export const recentSearches = {
-  ...orgRecentSearches,
+  ...originalRecentSearches,
   getSources(params) {
-    const sources = orgRecentSearches.getSources(params);
+    const sources = originalRecentSearches.getSources(params);
     return sources.map((source) => ({
       ...source,
       templates: {
