@@ -7,12 +7,7 @@ import {
   connectSearchBox,
   connectRefinementList,
 } from 'instantsearch.js/es/connectors';
-import {
-  configure,
-  index,
-  hits,
-  refinementList,
-} from 'instantsearch.js/es/widgets';
+import { configure, index, hits } from 'instantsearch.js/es/widgets';
 
 const searchClient = algoliasearch(
   'latency',
