@@ -33,13 +33,13 @@
 
 .autocomplete-item-content {
   display: flex;
+  grid-gap: 0.5rem;
   align-items: center;
-  margin-left: 0.5rem;
 }
 
 .item-info {
   font-size: 0.9rem;
-  margin-left: 0.25rem;
+  padding-left: 1.5rem;
   color: #666;
 }
 

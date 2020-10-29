@@ -84,13 +84,38 @@ function createAutocompleteSearchBox() {
                   return suggestion.query;
                 },
                 getSuggestions() {
-                  return currentIndex.hits;
+                  return currentIndex.hits.reduce((acc, current, i) => {
+                    const itemCategories = current.instant_search.facets.exact_matches.categories.map(
+                      x => x.value
+                    );
+
+                    const categories =
+                      i === 0 && itemCategories.length > 0
+                        ? [itemCategories[0]]
+                        : [];
+
+                    const itemWithoutCategories = {
+                      query: current.query,
+                      categories: [],
+                      ...current,
+                    };
+
+                    const items = categories.map(category => {
+                      return {
+                        query: current.query,
+                        categories: [category],
+                        ...current,
+                      };
+                    });
+
+                    acc.push(itemWithoutCategories, ...items);
+
+                    return acc;
+                  }, []);
                 },
                 onSelect({ suggestion }) {
                   setUiState(prevUiState => {
-                    const category = suggestion.instant_search.facets.exact_matches.categories.map(
-                      x => x.value
-                    )[0];
+                    const category = suggestion.categories[0];
 
                     return {
                       ...prevUiState,
@@ -108,31 +133,31 @@ function createAutocompleteSearchBox() {
                 },
                 templates: {
                   item({ item }) {
-                    const category = item.instant_search.facets.exact_matches.categories.map(
-                      x => x.value
-                    )[0];
+                    const category = item.categories[0];
+
+                    if (category) {
+                      return `
+                        <div class="autocomplete-item">
+                          <div class="autocomplete-item-content">
+                            <div class="item-info">
+                              in <span class="item-category">${category}</span>
+                            </div>
+                          </div>
+                        </div>
+                      `;
+                    }
 
                     return `
                       <div class="autocomplete-item">
-                        <svg viewBox="0 0 18 18" width="16" height="16">
-                          <path d="M13.14 13.14L17 17l-3.86-3.86A7.11 7.11 0 1 1 3.08 3.08a7.11 7.11 0 0 1 10.06 10.06z" stroke="currentColor" stroke-width="1.78" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-
                         <div class="autocomplete-item-content">
+                          <svg viewBox="0 0 18 18" width="16" height="16">
+                            <path d="M13.14 13.14L17 17l-3.86-3.86A7.11 7.11 0 1 1 3.08 3.08a7.11 7.11 0 0 1 10.06 10.06z" stroke="currentColor" stroke-width="1.78" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+
                           <span>${highlight({
                             hit: item,
                             attribute: 'query',
                           })}</span>
-
-                          ${
-                            category
-                              ? `
-                          <div class="item-info">
-                            in <span class="item-category">${category}</span>
-                          </div>
-                          `
-                              : ''
-                          }
                         </div>
                       </div>
                     `;
