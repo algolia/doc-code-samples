@@ -5,9 +5,14 @@ import { highlight } from 'instantsearch.js/es/helpers';
 import {
   connectAutocomplete,
   connectSearchBox,
-  connectRefinementList,
+  connectHierarchicalMenu,
 } from 'instantsearch.js/es/connectors';
-import { configure, index, hits } from 'instantsearch.js/es/widgets';
+import {
+  configure,
+  index,
+  hits,
+  hierarchicalMenu,
+} from 'instantsearch.js/es/widgets';
 
 const searchClient = algoliasearch(
   'latency',
@@ -65,8 +70,8 @@ function createAutocompleteSearchBox() {
                 instant_search: {
                   ...prevUiState.instant_search,
                   query: state.query,
-                  refinementList: {
-                    categories: [],
+                  hierarchicalMenu: {
+                    'hierarchicalCategories.lvl0': [],
                   },
                 },
               };
@@ -83,15 +88,19 @@ function createAutocompleteSearchBox() {
                 },
                 onSelect({ suggestion }) {
                   setUiState(prevUiState => {
+                    const category = suggestion.instant_search.facets.exact_matches.categories.map(
+                      x => x.value
+                    )[0];
+
                     return {
                       ...prevUiState,
                       instant_search: {
                         ...prevUiState.instant_search,
                         query: suggestion.query,
-                        refinementList: {
-                          categories: suggestion.instant_search.facets.exact_matches.categories.map(
-                            x => x.value
-                          ),
+                        hierarchicalMenu: {
+                          'hierarchicalCategories.lvl0': category
+                            ? [category]
+                            : [],
                         },
                       },
                     };
@@ -99,9 +108,9 @@ function createAutocompleteSearchBox() {
                 },
                 templates: {
                   item({ item }) {
-                    const categories = item.instant_search.facets.exact_matches.categories.map(
+                    const category = item.instant_search.facets.exact_matches.categories.map(
                       x => x.value
-                    );
+                    )[0];
 
                     return `
                       <div class="autocomplete-item">
@@ -115,11 +124,15 @@ function createAutocompleteSearchBox() {
                             attribute: 'query',
                           })}</span>
 
+                          ${
+                            category
+                              ? `
                           <div class="item-info">
-                            in <span class="item-category">${categories.join(
-                              ', '
-                            )}</span>
+                            in <span class="item-category">${category}</span>
                           </div>
+                          `
+                              : ''
+                          }
                         </div>
                       </div>
                     `;
@@ -143,7 +156,7 @@ const search = instantsearch({
 
 const autocompleteSearchBox = createAutocompleteSearchBox();
 const virtualSearchBox = connectSearchBox(() => {});
-const virtualRefinementList = connectRefinementList(() => {});
+const virtualHierarchicalMenu = connectHierarchicalMenu(() => {});
 
 search.addWidgets([
   index({
@@ -158,8 +171,11 @@ search.addWidgets([
     }),
     // We need to add a refinement list with the same attribute as the parent index
     // to reset the filter and to search suggestions in all categories.
-    virtualRefinementList({
-      attribute: 'categories',
+    virtualHierarchicalMenu({
+      attributes: [
+        'hierarchicalCategories.lvl0',
+        'hierarchicalCategories.lvl1',
+      ],
     }),
     autocompleteSearchBox({
       container: '#autocomplete',
@@ -167,8 +183,9 @@ search.addWidgets([
     }),
   ]),
   virtualSearchBox({}),
-  virtualRefinementList({
-    attribute: 'categories',
+  hierarchicalMenu({
+    container: '#categories',
+    attributes: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1'],
   }),
   hits({
     container: '#hits',
