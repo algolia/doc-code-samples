@@ -93,18 +93,20 @@ function createAutocompleteSearchBox() {
                       },
                     ];
 
-                    // We only add the category items to the first suggestion.
+                    // We only add the category item to the first suggestion.
                     if (i === 0) {
                       const categories = current.instant_search.facets.exact_matches.categories.map(
                         x => x.value
                       );
                       const firstLevelCategory = categories[0];
 
-                      items.push({
-                        query: current.query,
-                        category: firstLevelCategory,
-                        ...current,
-                      });
+                      if (firstLevelCategory) {
+                        items.push({
+                          query: current.query,
+                          category: firstLevelCategory,
+                          ...current,
+                        });
+                      }
                     }
 
                     acc.push(...items);
