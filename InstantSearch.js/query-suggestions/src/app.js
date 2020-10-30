@@ -85,46 +85,43 @@ function createAutocompleteSearchBox() {
                 },
                 getSuggestions() {
                   return currentIndex.hits.reduce((acc, current, i) => {
-                    const itemCategories = current.instant_search.facets.exact_matches.categories.map(
-                      x => x.value
-                    );
-
-                    const categories =
-                      i === 0 && itemCategories.length > 0
-                        ? [itemCategories[0]]
-                        : [];
-
-                    const itemWithoutCategories = {
-                      query: current.query,
-                      categories: [],
-                      ...current,
-                    };
-
-                    const items = categories.map(category => {
-                      return {
+                    const items = [
+                      {
                         query: current.query,
-                        categories: [category],
+                        category: null,
                         ...current,
-                      };
-                    });
+                      },
+                    ];
 
-                    acc.push(itemWithoutCategories, ...items);
+                    // We only add the category items to the first suggestion.
+                    if (i === 0) {
+                      const categories = current.instant_search.facets.exact_matches.categories.map(
+                        x => x.value
+                      );
+                      const firstLevelCategory = categories[0];
+
+                      items.push({
+                        query: current.query,
+                        category: firstLevelCategory,
+                        ...current,
+                      });
+                    }
+
+                    acc.push(...items);
 
                     return acc;
                   }, []);
                 },
                 onSelect({ suggestion }) {
                   setUiState(prevUiState => {
-                    const category = suggestion.categories[0];
-
                     return {
                       ...prevUiState,
                       instant_search: {
                         ...prevUiState.instant_search,
                         query: suggestion.query,
                         hierarchicalMenu: {
-                          'hierarchicalCategories.lvl0': category
-                            ? [category]
+                          'hierarchicalCategories.lvl0': suggestion.category
+                            ? [suggestion.category]
                             : [],
                         },
                       },
@@ -133,14 +130,14 @@ function createAutocompleteSearchBox() {
                 },
                 templates: {
                   item({ item }) {
-                    const category = item.categories[0];
-
-                    if (category) {
+                    if (item.category) {
                       return `
                         <div class="autocomplete-item">
                           <div class="autocomplete-item-content">
                             <div class="item-info">
-                              in <span class="item-category">${category}</span>
+                              in <span class="item-category">${
+                                item.category
+                              }</span>
                             </div>
                           </div>
                         </div>
