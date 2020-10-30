@@ -191,8 +191,8 @@ search.addWidgets([
     configure({
       hitsPerPage: 5,
     }),
-    // We need to add a refinement list with the same attribute as the parent index
-    // to reset the filter and to search suggestions in all categories.
+    // We need to add a hierarchical menu with the same attribute as the parent
+    // index to reset the filter and to search suggestions in all categories.
     virtualHierarchicalMenu({
       attributes: [
         'hierarchicalCategories.lvl0',
