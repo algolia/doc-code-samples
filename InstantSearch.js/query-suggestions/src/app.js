@@ -1,125 +1,227 @@
-/* global $ instantsearch algoliasearch */
+import { autocomplete } from '@algolia/autocomplete-js';
+import algoliasearch from 'algoliasearch/lite';
+import instantsearch from 'instantsearch.js';
+import { highlight } from 'instantsearch.js/es/helpers';
+import {
+  connectAutocomplete,
+  connectSearchBox,
+  connectHierarchicalMenu,
+} from 'instantsearch.js/es/connectors';
+import {
+  configure,
+  index,
+  hits,
+  hierarchicalMenu,
+} from 'instantsearch.js/es/widgets';
 
 const searchClient = algoliasearch(
   'latency',
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
-const virtualRefinementList = instantsearch.connectors.connectRefinementList(
-  () => null
-);
+function createAutocompleteSearchBox() {
+  const autocompleteRef = { current: null };
+  const indicesRef = { current: [] };
 
-const autocomplete = instantsearch.connectors.connectAutocomplete(
-  ({ indices, refine, widgetParams }, isFirstRendering) => {
-    const { container, onSelectChange } = widgetParams;
+  return connectAutocomplete(
+    (
+      { currentRefinement, indices, instantSearchInstance, widgetParams },
+      isFirstRender
+    ) => {
+      indicesRef.current = indices || [];
 
-    if (isFirstRendering) {
-      container.html('<select id="ais-autocomplete"></select>');
+      if (isFirstRender) {
+        const { setUiState } = instantSearchInstance;
 
-      container.find('select').selectize({
-        options: [],
-        valueField: 'query',
-        labelField: 'query',
-        highlight: false,
-        onType: refine,
-        onBlur() {
-          refine(this.getValue());
-        },
-        onChange(value) {
-          refine(value);
-          onSelectChange({
-            category: this.getOption(value).data('category'),
-            query: value,
-          });
-        },
-        score() {
-          return function() {
-            return 1;
-          };
-        },
-        render: {
-          option(item) {
-            // prettier-ignore
-            const [category] = item.instant_search.facets.exact_matches.categories;
-
-            return `
-              <div class="option" data-category="${category.value}">
-                ${item.query} in <i>${category.value}</i>
-              </div>
-            `;
+        autocompleteRef.current = autocomplete({
+          container: widgetParams.container,
+          placeholder: widgetParams.placeholder,
+          openOnFocus: true,
+          initialState: {
+            query: currentRefinement,
           },
-        },
-      });
+          onStateChange({ prevState, state }) {
+            if (
+              prevState.query !== state.query ||
+              prevState.isOpen !== state.isOpen
+            ) {
+              setUiState(prevUiState => {
+                return {
+                  ...prevUiState,
+                  ...indicesRef.current.reduce(
+                    (indicesUiState, currentIndex) => {
+                      return {
+                        ...indicesUiState,
+                        [currentIndex.indexName]: {
+                          query: state.query,
+                        },
+                      };
+                    },
+                    {}
+                  ),
+                };
+              });
+            }
+          },
+          onSubmit({ state }) {
+            setUiState(prevUiState => {
+              return {
+                ...prevUiState,
+                instant_search: {
+                  ...prevUiState.instant_search,
+                  query: state.query,
+                  hierarchicalMenu: {
+                    'hierarchicalCategories.lvl0': [],
+                  },
+                },
+              };
+            });
+          },
+          getSources() {
+            return indicesRef.current.map(currentIndex => {
+              return {
+                getInputValue({ suggestion }) {
+                  return suggestion.query;
+                },
+                getSuggestions() {
+                  return currentIndex.hits.reduce((acc, current, i) => {
+                    const items = [
+                      {
+                        query: current.query,
+                        category: null,
+                        ...current,
+                      },
+                    ];
 
-      return;
-    }
+                    // We only add the category item to the first suggestion.
+                    if (i === 0) {
+                      const categories = current.instant_search.facets.exact_matches.categories.map(
+                        x => x.value
+                      );
+                      const firstLevelCategory = categories[0];
 
-    const [select] = container.find('select');
+                      if (firstLevelCategory) {
+                        items.push({
+                          query: current.query,
+                          category: firstLevelCategory,
+                          ...current,
+                        });
+                      }
+                    }
 
-    select.selectize.clearOptions();
-    indices.forEach(index => {
-      index.results.hits.forEach(hit => select.selectize.addOption(hit));
-    });
-    select.selectize.refreshOptions(select.selectize.isOpen);
-  }
-);
+                    acc.push(...items);
 
-const suggestions = instantsearch({
-  indexName: 'instant_search_demo_query_suggestions',
-  searchClient,
-});
+                    return acc;
+                  }, []);
+                },
+                onSelect({ suggestion }) {
+                  setUiState(prevUiState => {
+                    return {
+                      ...prevUiState,
+                      instant_search: {
+                        ...prevUiState.instant_search,
+                        query: suggestion.query,
+                        hierarchicalMenu: {
+                          'hierarchicalCategories.lvl0': suggestion.category
+                            ? [suggestion.category]
+                            : [],
+                        },
+                      },
+                    };
+                  });
+                },
+                templates: {
+                  item({ item }) {
+                    if (item.category) {
+                      return `
+                        <div class="autocomplete-item">
+                          <div class="autocomplete-item-content">
+                            <div class="item-info">
+                              in <span class="item-category">${
+                                item.category
+                              }</span>
+                            </div>
+                          </div>
+                        </div>
+                      `;
+                    }
 
-suggestions.addWidgets([
-  instantsearch.widgets.configure({
-    hitsPerPage: 5,
-  }),
-  autocomplete({
-    container: $('#autocomplete'),
-    onSelectChange({ query, category }) {
-      // eslint-disable-next-line
-      search.helper
-        .setQuery(query)
-        .removeDisjunctiveFacetRefinement('categories');
+                    return `
+                      <div class="autocomplete-item">
+                        <div class="autocomplete-item-content">
+                          <svg viewBox="0 0 18 18" width="16" height="16">
+                            <path d="M13.14 13.14L17 17l-3.86-3.86A7.11 7.11 0 1 1 3.08 3.08a7.11 7.11 0 0 1 10.06 10.06z" stroke="currentColor" stroke-width="1.78" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
 
-      if (category) {
-        // eslint-disable-next-line
-        search.helper.addDisjunctiveFacetRefinement('categories', category);
+                          <span>${highlight({
+                            hit: item,
+                            attribute: 'query',
+                          })}</span>
+                        </div>
+                      </div>
+                    `;
+                  },
+                },
+              };
+            });
+          },
+        });
+      } else if (autocompleteRef.current) {
+        autocompleteRef.current.refresh();
       }
-
-      // eslint-disable-next-line
-      search.helper.search();
-    },
-  }),
-]);
+    }
+  );
+}
 
 const search = instantsearch({
-  indexName: 'instant_search',
   searchClient,
+  indexName: 'instant_search',
 });
 
+const autocompleteSearchBox = createAutocompleteSearchBox();
+const virtualSearchBox = connectSearchBox(() => {});
+const virtualHierarchicalMenu = connectHierarchicalMenu(() => {});
+
 search.addWidgets([
-  virtualRefinementList({
-    attribute: 'categories',
+  index({
+    indexName: 'instant_search_demo_query_suggestions',
+  }).addWidgets([
+    // You can add other Query Suggestions indices:
+    // index({
+    //   indexName: "instant_search_demo_query_suggestions"
+    // }),
+    configure({
+      hitsPerPage: 5,
+    }),
+    // We need to add a hierarchical menu with the same attribute as the parent
+    // index to reset the filter and to search suggestions in all categories.
+    virtualHierarchicalMenu({
+      attributes: [
+        'hierarchicalCategories.lvl0',
+        'hierarchicalCategories.lvl1',
+      ],
+    }),
+    autocompleteSearchBox({
+      container: '#autocomplete',
+      placeholder: 'Search products',
+    }),
+  ]),
+  virtualSearchBox({}),
+  hierarchicalMenu({
+    container: '#categories',
+    attributes: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1'],
   }),
-  instantsearch.widgets.configure({
-    hitsPerPage: 10,
-  }),
-  instantsearch.widgets.hits({
+  hits({
     container: '#hits',
     templates: {
       item: `
-        <div>
-          <header class="hit-name">
-            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
-          </header>
-          <p class="hit-description">
-            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
-          </p>
-        </div>
+        <article>
+          <h1>{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</h1>
+          <p>{{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}</p>
+        </article>
       `,
     },
   }),
 ]);
 
-suggestions.start();
 search.start();

@@ -1,10 +1,11 @@
-body,
-h1 {
-  margin: 0;
-  padding: 0;
+* {
+  box-sizing: border-box;
 }
 
 body {
+  background-color: #fcfcfd;
+  color: #333;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  margin: 0;
 }
