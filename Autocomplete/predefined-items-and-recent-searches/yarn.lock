@@ -2,34 +2,42 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@^1.0.0-alpha.31", "@algolia/autocomplete-core@^1.0.0-alpha.34":
-  version "1.0.0-alpha.34"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.34.tgz#29abd7f23d490eeb47a02961121fb54cceddaa33"
-  integrity sha512-a7+YKEoTfLDgL/eat/EuZoz8aui2K2yYvWzojLKfn1nq58sbuU2snXc+Nc3RmdgOAN2SzUIucmeRtLLmx4sVwQ==
-
-"@algolia/autocomplete-js@1.0.0-alpha.34":
-  version "1.0.0-alpha.34"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-js/-/autocomplete-js-1.0.0-alpha.34.tgz#2a219d320983d468460ea45ecf4d00c16491b303"
-  integrity sha512-+wRkZAkExuynYJSWYkwax6MWLTkzhDbzSpJ5tCn1t0NekI3w7+qJisVyx+2RnhAWF0DsidZR9/iK95PcXV5ujA==
+"@algolia/autocomplete-core@1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.35.tgz#a54949edf7b402da6fd6cf08943438bfb802aa50"
+  integrity sha512-KnogrTLI75wCjX4YD+/mKZyoodpebMtyxYq0pxwH3MHFNJ43U+wwLcLTpDqho0ZsrHhx6/boZuZsdyWhxIyGDg==
   dependencies:
-    "@algolia/autocomplete-core" "^1.0.0-alpha.34"
-    "@algolia/autocomplete-preset-algolia" "^1.0.0-alpha.34"
-    "@algolia/client-search" "4.5.1"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.35"
 
-"@algolia/autocomplete-plugin-recent-searches@1.0.0-alpha.34":
-  version "1.0.0-alpha.34"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-plugin-recent-searches/-/autocomplete-plugin-recent-searches-1.0.0-alpha.34.tgz#71dbd474cecee2d6785aaede76cb364bec69ee37"
-  integrity sha512-d9XqQHNQIO39a7gWcNPkvdcZpxaiufZPEFlr+sBbKlqPBmykBtjQlb3TY29a5p62a7Rj19PVfqgfmY0A+BrK/w==
+"@algolia/autocomplete-js@1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-js/-/autocomplete-js-1.0.0-alpha.35.tgz#003ce59a49e356db59453660081d6d90f382f330"
+  integrity sha512-uwbQYb7zrMKGIeB51PVb2DmVkA+/QvI2nxNNWsUwpaZnFnaL/Yb7firLVRXLmDqGRG/u16m5qfVPQMsA/ZpJjA==
   dependencies:
-    "@algolia/autocomplete-core" "^1.0.0-alpha.31"
+    "@algolia/autocomplete-core" "1.0.0-alpha.35"
+    "@algolia/autocomplete-preset-algolia" "1.0.0-alpha.35"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.35"
 
-"@algolia/autocomplete-preset-algolia@^1.0.0-alpha.34":
-  version "1.0.0-alpha.34"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.34.tgz#e7eda5ca37ae92dc928f47b5bfe1a57f2ae6316c"
-  integrity sha512-jcIkcvI7o4HRff+8ht2oN7lDRj3ZYao91XM+S8svfYG0h9ksTt/BTVifqfCwRTJoTq1/0f3hGctQaUAegr4nLw==
+"@algolia/autocomplete-plugin-recent-searches@1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-plugin-recent-searches/-/autocomplete-plugin-recent-searches-1.0.0-alpha.35.tgz#f800e7c679b7075be5cfef428587f94a4be64364"
+  integrity sha512-6TVsF67KJAhAkEQ3C6CsPZBE3CgMCVhSJoh9yy2rDzj/O3x0dABCzkcb55qM5gSfamXqdFJd3ZoHa7gPgAwduw==
   dependencies:
-    "@algolia/client-search" "4.5.1"
-    algoliasearch "4.5.1"
+    "@algolia/autocomplete-core" "1.0.0-alpha.35"
+    "@algolia/autocomplete-js" "1.0.0-alpha.35"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.35"
+
+"@algolia/autocomplete-preset-algolia@1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.35.tgz#b1218a689caa66b607a532c2e363973309764158"
+  integrity sha512-9MNEkVbPW/oJKJmWYcI1Q34E4v82LI1EWCxyYQdN5yGg8bdK8yRzjNqqoctVDz4SA1Mtis0IEPbPzzx41IUg5Q==
+  dependencies:
+    "@algolia/autocomplete-shared" "1.0.0-alpha.35"
+
+"@algolia/autocomplete-shared@1.0.0-alpha.35":
+  version "1.0.0-alpha.35"
+  resolved "https://registry.npmjs.org/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.35.tgz#d6819cb1420a389ac9894199bda2c7abd276fd3d"
+  integrity sha512-KNZxFImmcuL15PbrFN5V/Xn+/oqAaF9BS3UILnf04yAjbGbA4oixjNndxGe+RUFKj531Sr+hwja4+4bxa0TmEQ==
 
 "@algolia/cache-browser-local-storage@4.5.1":
   version "4.5.1"
