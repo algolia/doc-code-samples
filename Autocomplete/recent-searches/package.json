@@ -1,5 +1,5 @@
 {
-  "name": "autocomplete-predefined-items-and-recent-searches",
+  "name": "autocomplete-recent-searches",
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
