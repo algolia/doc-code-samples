@@ -1,9 +1,5 @@
 import algoliasearch from 'algoliasearch/lite';
-import {
-  autocomplete,
-  getAlgoliaHits,
-  highlightHit,
-} from '@algolia/autocomplete-js';
+import { autocomplete, highlightHit } from '@algolia/autocomplete-js';
 import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 
 const recentSearches = createLocalStorageRecentSearchesPlugin({
