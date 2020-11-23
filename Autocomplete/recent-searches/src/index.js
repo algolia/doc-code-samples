@@ -13,27 +13,33 @@ const searchClient = algoliasearch(
 );
 const index = searchClient.initIndex('instant_search');
 
+function searchAndShowMainResults(query) {
+  index.search(query).then((result) => {
+    console.log({
+      highlighted: highlightHit({ attribute: 'name', hit: result.hits[0] }),
+      result,
+    });
+    document.querySelector('#hits').innerHTML = result.hits
+      .map(
+        (hit) => `
+        <article class="hit">
+          <div class="image-wrapper"><img src="${hit.image}" /></div>
+          <p class="name">${hit._highlightResult.name.value}</p>
+          <p class="price">$${hit.price}</p>
+        </article>
+      `
+      )
+      .join('');
+  });
+}
+
 autocomplete({
   container: '#autocomplete',
   plugins: [recentSearches],
   openOnFocus: true,
-  onSubmit({ state }) {
-    index.search(state.query).then((result) => {
-      console.log({
-        highlighted: highlightHit({ attribute: 'name', hit: result.hits[0] }),
-        result,
-      });
-      document.querySelector('#hits').innerHTML = result.hits
-        .map(
-          (hit) => `
-          <article class="hit">
-            <div class="image-wrapper"><img src="${hit.image}" /></div>
-            <p class="name">${hit._highlightResult.name.value}</p>
-            <p class="price">$${hit.price}</p>
-          </article>
-        `
-        )
-        .join('');
-    });
+  onStateChange({ state, prevState }) {
+    if (state.query !== prevState.query) {
+      searchAndShowMainResults(state.query);
+    }
   },
 });
