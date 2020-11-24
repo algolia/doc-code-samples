@@ -12,24 +12,25 @@ const searchClient = algoliasearch(
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 const index = searchClient.initIndex('instant_search');
+const hitsContainer = document.querySelector('#hits');
 
-function searchAndShowMainResults(query) {
-  index.search(query).then((result) => {
-    console.log({
-      highlighted: highlightHit({ attribute: 'name', hit: result.hits[0] }),
-      result,
-    });
-    document.querySelector('#hits').innerHTML = result.hits
-      .map(
-        (hit) => `
+function render({ hits }, container) {
+  container.innerHTML = hits
+    .map(
+      (hit) => `
         <article class="hit">
           <div class="image-wrapper"><img src="${hit.image}" /></div>
           <p class="name">${hit._highlightResult.name.value}</p>
           <p class="price">$${hit.price}</p>
         </article>
       `
-      )
-      .join('');
+    )
+    .join('');
+}
+
+function searchAndRenderResult(query) {
+  index.search(query).then((result) => {
+    render(result, hitsContainer);
   });
 }
 
@@ -39,7 +40,7 @@ autocomplete({
   openOnFocus: true,
   onStateChange({ state, prevState }) {
     if (state.query !== prevState.query) {
-      searchAndShowMainResults(state.query);
+      searchAndRenderResult(state.query);
     }
   },
 });
