@@ -164,7 +164,9 @@ jobs:
       - build_project:
          path: "Vue InstantSearch/refresh"
       - build_project:
-         path: "Vue InstantSearch/routing-full-url"
+         path: "Vue InstantSearch/routing-basic"
+     - build_project:
+         path: "Vue InstantSearch/routing-seo-friendly"
       - build_project:
          path: "Vue InstantSearch/routing-state-mapping"
       - build_project:
