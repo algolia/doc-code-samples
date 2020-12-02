@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.0.0-alpha.35":
+"@algolia/autocomplete-core@1.0.0-alpha.35", "@algolia/autocomplete-core@^1.0.0-alpha.35":
   version "1.0.0-alpha.35"
   resolved "https://registry.npmjs.org/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.35.tgz#a54949edf7b402da6fd6cf08943438bfb802aa50"
   integrity sha512-KnogrTLI75wCjX4YD+/mKZyoodpebMtyxYq0pxwH3MHFNJ43U+wwLcLTpDqho0ZsrHhx6/boZuZsdyWhxIyGDg==
@@ -102,7 +102,7 @@
     "@algolia/requester-common" "4.8.2"
     "@algolia/transporter" "4.8.2"
 
-"@algolia/client-search@4.8.2":
+"@algolia/client-search@4.8.2", "@algolia/client-search@^4.5.1":
   version "4.8.2"
   resolved "https://registry.npmjs.org/@algolia/client-search/-/client-search-4.8.2.tgz#714d1604bfdf5b8ba33247ee571c6f3c2abc6c31"
   integrity sha512-JtmhdBKsA3Ll9ITvBfvMjsfuOY5oOPlaS9ahBGeb2OFfC1Myb6kbjXl73VtSVh4Bh0MpTsT4SdBdYCJFctRsQg==
