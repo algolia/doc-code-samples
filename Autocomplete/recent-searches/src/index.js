@@ -1,7 +1,8 @@
 import algoliasearch from 'algoliasearch/lite';
-import { autocomplete, highlightHit } from '@algolia/autocomplete-js';
+import { autocomplete } from '@algolia/autocomplete-js';
 import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
+import { predefinedItemsPlugin } from './predefinedItemsPlugin';
 
 const searchClient = algoliasearch(
   'latency',
@@ -46,7 +47,11 @@ function searchAndRenderResult(query) {
 
 autocomplete({
   container: '#autocomplete',
-  plugins: [recentSearchesPlugin, querySuggestionsPlugin],
+  plugins: [
+    predefinedItemsPlugin,
+    recentSearchesPlugin,
+    querySuggestionsPlugin,
+  ],
   openOnFocus: true,
   onStateChange({ state, prevState }) {
     if (state.query !== prevState.query) {
