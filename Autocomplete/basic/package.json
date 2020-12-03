@@ -7,10 +7,11 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@algolia/autocomplete-core": "^1.0.0-alpha.35",
-    "@algolia/autocomplete-js": "^1.0.0-alpha.35",
-    "@algolia/autocomplete-plugin-query-suggestions": "^1.0.0-alpha.35",
-    "@algolia/autocomplete-plugin-recent-searches": "^1.0.0-alpha.35",
+    "@algolia/autocomplete-core": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-js": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-plugin-query-suggestions": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-plugin-recent-searches": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-theme-classic": "^1.0.0-alpha.36",
     "@algolia/client-search": "^4.5.1",
     "algoliasearch": "^4.5.1"
   },
