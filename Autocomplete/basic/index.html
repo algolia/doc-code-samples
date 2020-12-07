@@ -25,7 +25,20 @@
   <body>
     <div class="container">
       <h1>Multi-source Autocomplete</h1>
-      <p>Predefined Items + Recent Searches + Query Suggestions</p>
+      <p>This autocomplete display items from multiple <a href="https://autocomplete.algolia.com/docs/sources/">sources</a>. It includes:</p>
+      <ul>
+        <li>
+          pre-defined items, i.e., links to our Autocomplete Documentation and
+          Github respository
+        </li>
+        <li>recent searches made by the user</li>
+        <li>suggested searches powered by <a href="https://www.algolia.com/doc/guides/getting-insights-and-analytics/leveraging-analytics-data/query-suggestions/">Algolia's Query Suggestions feature<a></li>
+      </ul>
+      <p>
+        You'll only see recent searches appear once you've submitted (pressed
+        enter) on a query.
+      </p>
+      <p>To see results, hit enter once you've selected a suggested or recent search or typed a query.</p>
       <div id="autocomplete"></div>
       <p>
         note: recent searches only get applied once you submit / press enter on
