@@ -26,7 +26,7 @@ export const predefinedItemsPlugin = {
           item({ item, root }) {
             const content = document.createElement('a');
             content.href = item.url;
-            content.className = 'aa-ItemContent aa-PredefinedItem';
+            content.className = 'aa-ItemLink aa-PredefinedItem';
             const icon = document.createElement('div');
             icon.className = 'aa-ItemSourceIcon';
             icon.innerHTML = linkIcon;
