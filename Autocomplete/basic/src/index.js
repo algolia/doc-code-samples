@@ -41,12 +41,6 @@ function render({ hits }, container) {
     .join('');
 }
 
-function searchAndRenderResult(query) {
-  index.search(query).then((result) => {
-    render(result, hitsContainer);
-  });
-}
-
 autocomplete({
   container: '#autocomplete',
   plugins: [
@@ -55,9 +49,9 @@ autocomplete({
     querySuggestionsPlugin,
   ],
   openOnFocus: true,
-  onStateChange({ state, prevState }) {
-    if (state.query !== prevState.query) {
-      searchAndRenderResult(state.query);
-    }
+  onSubmit({ state }) {
+    index.search(state.query).then((result) => {
+      render(result, hitsContainer);
+    });
   },
 });
