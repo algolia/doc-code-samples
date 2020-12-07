@@ -20,7 +20,9 @@ const querySuggestionsPlugin = createQuerySuggestionsPlugin({
   searchClient,
   indexName: 'instant_search_demo_query_suggestions',
   getSearchParams() {
-    return recentSearchesPlugin.data.getAlgoliaSearchParams();
+    return recentSearchesPlugin.data.getAlgoliaSearchParams({
+      hitsPerPage: 5,
+    });
   },
 });
 
