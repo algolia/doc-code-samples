@@ -1,0 +1,25 @@
+{
+  "name": "autocomplete-multi-source",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@algolia/autocomplete-core": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-js": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-plugin-query-suggestions": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-plugin-recent-searches": "^1.0.0-alpha.36",
+    "@algolia/autocomplete-theme-classic": "^1.0.0-alpha.36",
+    "@algolia/client-search": "^4.5.1",
+    "algoliasearch": "^4.5.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.3"
+  },
+  "keywords": [
+    "javascript",
+    "starter"
+  ]
+}

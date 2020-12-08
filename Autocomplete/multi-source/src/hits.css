@@ -1,0 +1,39 @@
+#hits {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hit {
+  width: calc(50% - 0.5rem);
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.hit:nth-child(2n) {
+  margin-left: 1rem;
+}
+
+.hit .image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.hit .image-wrapper img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.hit em {
+  background-color: rgb(255, 189, 141);
+}
+
+.hit .name {
+  margin: 0.5rem 0 0 0;
+}
+
+.hit .price {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+}

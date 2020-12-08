@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/predefinedItemsPlugin.css" />
+    <link rel="stylesheet" href="src/hits.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"
+    />
+
+    <title>Multi-source Autocomplete</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Multi-source Autocomplete</h1>
+      <p>This autocomplete display items from multiple <a href="https://autocomplete.algolia.com/docs/sources/">sources</a>. It includes:</p>
+      <ul>
+        <li>
+          pre-defined items, i.e., links to our Autocomplete Documentation and
+          Github respository
+        </li>
+        <li>recent searches made by the user</li>
+        <li>suggested searches powered by <a href="https://www.algolia.com/doc/guides/getting-insights-and-analytics/leveraging-analytics-data/query-suggestions/">Algolia's Query Suggestions feature<a></li>
+      </ul>
+      <p>
+        You'll only see recent searches appear once you've submitted (pressed
+        enter) on a query.
+      </p>
+      <p>To see results, hit enter once you've selected a suggested or recent search or typed a query.</p>
+      <div id="autocomplete"></div>
+      <div id="hits"></div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
