@@ -1,6 +1,6 @@
 {
-  "short_name": "autocomplete-predefined-items-and-recent-searches",
-  "name": "autocomplete-predefined-items-and-recent-searches example",
+  "short_name": "autocomplete-multi-source-example",
+  "name": "autocomplete-multi-source-example",
   "icons": [
     {
       "src": "favicon.png",

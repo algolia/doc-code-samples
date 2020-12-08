@@ -1,5 +1,5 @@
 {
-  "name": "autocomplete-recent-searches",
+  "name": "autocomplete-multi-source",
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
