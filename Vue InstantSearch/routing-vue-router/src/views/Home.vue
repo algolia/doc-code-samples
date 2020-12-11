@@ -13,7 +13,7 @@
     <div class="container">
       <ais-instant-search
         :search-client="searchClient"
-        index-name="demo_ecommerce"
+        index-name="instant_search"
         :routing="routing"
       >
         <div class="search-panel">
@@ -47,8 +47,8 @@ export default {
     const vueRouter = this.$router;
     return {
       searchClient: algoliasearch(
-        'B1G2GM9NG0',
-        'aadef574be1f9252bb48d4ea09b5cfe5'
+        'latency',
+        '6be0576ff61c053d5f9a3225e2a90f76'
       ),
       routing: {
         router: {
