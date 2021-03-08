@@ -1,4 +1,4 @@
-/* global algoliasearch analytics */
+/* global analytics */
 
 import instantsearch from 'instantsearch.js';
 import {
@@ -10,6 +10,7 @@ import {
 } from 'instantsearch.js/es/widgets';
 import insightsClient from 'search-insights';
 import { createInsightsMiddleware } from 'instantsearch.js/es/middlewares';
+import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
   'latency',
@@ -73,7 +74,7 @@ const insightsMiddleware = createInsightsMiddleware({
     if (widgetType === 'ais.hits' && eventType === 'view') {
       analytics.track('Product List Viewed', {
         index: payload.index,
-        products: hits.map((hit) => ({
+        products: hits.map(hit => ({
           objectID: hit.objectID,
           // the rest...
         })),
@@ -81,7 +82,7 @@ const insightsMiddleware = createInsightsMiddleware({
     } else if (widgetType === 'ais.refinementList' && eventType === 'click') {
       analytics.track('Product List Filtered', {
         index: payload.index,
-        filters: payload.filters.map((filter) => ({
+        filters: payload.filters.map(filter => ({
           type: attribute,
           value: filter,
         })),
@@ -109,7 +110,7 @@ const insightsMiddleware = createInsightsMiddleware({
       });
     } else if (payload.eventName === 'Order') {
       analytics.track('Order Completed', {
-        products: hits.map((hit) => ({
+        products: hits.map(hit => ({
           objectID: hit.objectID,
           // the rest...
         })),
