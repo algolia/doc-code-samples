@@ -42,11 +42,9 @@ search.addWidgets([
   }),
 ]);
 
-const insightsMiddleware = instantsearch.middlewares.createInsightsMiddleware({
+search.use(instantsearch.middlewares.createInsightsMiddleware({
   insightsClient: window.aa,
-});
-
-search.use(insightsMiddleware);
+}));
 window.aa('setUserToken', 'my-user-token');
 
 search.start();
