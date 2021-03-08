@@ -3,13 +3,9 @@
 const search = instantsearch({
   indexName: 'demo_ecommerce',
   searchClient: algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5'),
-  insightsClient: window.aa,
 });
 
 search.addWidgets([
-  instantsearch.widgets.configure({
-    clickAnalytics: true,
-  }),
   instantsearch.widgets.searchBox({
     container: '#searchbox',
   }),
@@ -23,23 +19,17 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      item: hit => `
+      item: (hit, bindEvent) => `
         <div>
           <img src="${hit.image}" align="left" alt="${hit.name}" />
           <div class="hit-name">
             ${hit.name}
           </div>
           <div>
-           <button ${instantsearch.insights('clickedObjectIDsAfterSearch', {
-             eventName: 'click-result',
-             objectIDs: [hit.objectID],
-           })}>
+           <button ${bindEvent('click', hit, 'my-click-event')}>
              Click event
            </button>
-           <button ${instantsearch.insights('convertedObjectIDsAfterSearch', {
-             eventName: 'click-result',
-             objectIDs: [hit.objectID],
-           })}>
+           <button ${bindEvent('conversion', hit, 'my-conversion-event')}>
              Conversion event
            </button>
           </div>
@@ -51,5 +41,12 @@ search.addWidgets([
     container: '#pagination',
   }),
 ]);
+
+const insightsMiddleware = instantsearch.middlewares.createInsightsMiddleware({
+  insightsClient: window.aa,
+});
+
+search.use(insightsMiddleware);
+window.aa('setUserToken', 'my-user-token');
 
 search.start();
