@@ -8,7 +8,6 @@ import {
   pagination,
   rangeSlider,
 } from 'instantsearch.js/es/widgets';
-import insightsClient from 'search-insights';
 import { createInsightsMiddleware } from 'instantsearch.js/es/middlewares';
 import algoliasearch from 'algoliasearch/lite';
 
@@ -65,8 +64,11 @@ search.addWidgets([
   }),
 ]);
 
+// Set userToken to Segment
+analytics.identify('my-user-token');
+
 const insightsMiddleware = createInsightsMiddleware({
-  insightsClient,
+  insightsClient: null,
   onEvent(event) {
     const { widgetType, eventType, payload, hits, attribute } = event;
 
@@ -122,8 +124,4 @@ const insightsMiddleware = createInsightsMiddleware({
   },
 });
 search.use(insightsMiddleware);
-
 search.start();
-
-insightsClient('setUserToken', 'my-user-token');
-analytics.identify('my-user-token');

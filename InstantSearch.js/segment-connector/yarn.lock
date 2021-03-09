@@ -5094,11 +5094,6 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-search-insights@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/search-insights/-/search-insights-1.7.1.tgz#eddfa56910e28cbbb0df80aec2ab8acf0a86cb6b"
-  integrity sha512-CSuSKIJp+WcSwYrD9GgIt1e3xmI85uyAefC4/KYGgtvNEm6rt4kBGilhVRmTJXxRE2W1JknvP598Q7SMhm7qKA==
-
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
