@@ -22,7 +22,7 @@
   "keywords": [],
   "dependencies": {
     "algoliasearch": "4.8.6",
-    "instantsearch.js": "https://pkg.csb.dev/algolia/instantsearch.js/commit/3375f3a3/instantsearch.js"
+    "instantsearch.js": "4.17.0"
   },
   "description": "Used by CodeSandbox CI"
 }
