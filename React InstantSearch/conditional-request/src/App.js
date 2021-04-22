@@ -16,6 +16,7 @@ const algoliaClient = algoliasearch(
 );
 
 const searchClient = {
+  ...algoliaClient,
   search(requests) {
     if (requests.every(({ params }) => !params.query)) {
       return Promise.resolve({
