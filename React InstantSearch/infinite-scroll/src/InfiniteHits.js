@@ -7,17 +7,17 @@ class InfiniteHits extends Component {
   static propTypes = {
     hits: PropTypes.arrayOf(PropTypes.object).isRequired,
     hasMore: PropTypes.bool.isRequired,
-    refine: PropTypes.func.isRequired,
+    refineNext: PropTypes.func.isRequired,
   };
 
   sentinel = null;
 
   onSentinelIntersection = entries => {
-    const { hasMore, refine } = this.props;
+    const { hasMore, refineNext } = this.props;
 
     entries.forEach(entry => {
       if (entry.isIntersecting && hasMore) {
-        refine();
+        refineNext();
       }
     });
   };
