@@ -14,45 +14,39 @@
       <ais-instant-search
         :search-client="searchClient"
         index-name="instant_search"
+        :middlewares="middlewares"
       >
-        <ais-configure :clickAnalytics="true" />
-        <ais-state-results>
-          <template slot-scope="{ results: { queryID } }">
-            <app-insights :query-id="queryID" />
-          </template>
-        </ais-state-results>
-
         <div class="search-panel">
           <div class="search-panel__filters">
             <ais-refinement-list attribute="categories" searchable />
           </div>
 
           <div class="search-panel__results">
+            <button type="button" @click="setUserToken('Paul')">
+              Set userToken to "Paul"
+            </button>
             <ais-search-box placeholder="Search here…" class="searchbox" />
             <ais-hits>
-              <template slot="item" slot-scope="{ item }">
-                <button
-                  @click="
-                    insightsClick({
-                      objectID: item.objectID,
-                      position: item.__position,
-                    })
-                  "
-                >
-                  Click
-                </button>
-                <button
-                  @click="
-                    insightsConversion({
-                      objectID: item.objectID,
-                    })
-                  "
-                >
-                  Convert
-                </button>
-                <h1><ais-highlight :hit="item" attribute="name" /></h1>
-                <p><ais-highlight :hit="item" attribute="description" /></p>
-              </template>
+              <ul slot-scope="{ items, sendEvent }">
+                <li v-for="item in items" :key="item.objectID">
+                  <h1><ais-highlight :hit="item" attribute="name" /></h1>
+                  <p><ais-highlight :hit="item" attribute="description" /></p>
+
+                  <button
+                    type="button"
+                    @click="sendEvent('click', item, 'Item Starred')"
+                  >
+                    Star
+                  </button>
+
+                  <button
+                    type="button"
+                    @click="sendEvent('conversion', item, 'Item Ordered')"
+                  >
+                    Order
+                  </button>
+                </li>
+              </ul>
             </ais-hits>
             <div class="pagination"><ais-pagination /></div>
           </div>
@@ -65,29 +59,25 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import AppInsights from './components/Insights.js';
+import { createInsightsMiddleware } from 'instantsearch.js/es/middlewares';
+
+const insightsMiddleware = createInsightsMiddleware({
+  insightsClient: window.aa,
+});
 
 export default {
-  components: { AppInsights },
   data() {
     return {
       searchClient: algoliasearch(
         'latency',
         '6be0576ff61c053d5f9a3225e2a90f76'
       ),
+      middlewares: [insightsMiddleware],
     };
   },
   methods: {
-    insightsClick({ position, objectID }) {
-      window.aa('click', {
-        objectID,
-        position,
-      });
-    },
-    insightsConversion({ objectID }) {
-      window.aa('conversion', {
-        objectID,
-      });
+    setUserToken(userToken) {
+      window.aa('setUserToken', userToken);
     },
   },
 };
