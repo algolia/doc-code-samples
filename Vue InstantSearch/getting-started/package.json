@@ -19,7 +19,7 @@
     "@vue/cli-service": "3.6.0",
     "@vue/eslint-config-prettier": "4.0.1",
     "babel-eslint": "10.0.1",
-    "eslint": "5.9.0",
+    "eslint": "5.16.0",
     "eslint-plugin-vue": "5.2.2",
     "vue-template-compiler": "2.6.10"
   }
