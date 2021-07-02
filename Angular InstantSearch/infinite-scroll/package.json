@@ -23,7 +23,7 @@
     "@trademe/ng-defer-load": "3.0.1",
     "algoliasearch": "3.33.0",
     "angular-instantsearch": "3.0.0-beta.2",
-    "core-js": "2.6.7",
+    "core-js": "3.15.2",
     "instantsearch.js": "3.7.0",
     "rxjs": "6.3.3",
     "zone.js": "0.9.1"

@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "6.1.10",
     "@angular/router": "6.1.10",
     "angular-instantsearch": "3.0.0-beta.2",
-    "core-js": "2.6.7",
+    "core-js": "3.15.2",
     "instantsearch.js": "3.7.0",
     "places.js": "1.16.4",
     "rxjs": "6.3.3",
