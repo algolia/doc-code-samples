@@ -1,8 +1,8 @@
 /* global $ instantsearch algoliasearch */
 
 const searchClient = algoliasearch(
-  'latency',
-  '6be0576ff61c053d5f9a3225e2a90f76'
+  '89NKF76CVQ',
+  '96a24f1f69041d121814204342394266'
 );
 
 const virtualRefinementList = instantsearch.connectors.connectRefinementList(
@@ -33,14 +33,19 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
           });
         },
         score() {
-          return function() {
+          return function () {
             return 1;
           };
         },
         render: {
           option(item) {
             // prettier-ignore
-            const [category] = item.instant_search.facets.exact_matches.categories;
+            // console.log(item);
+            // return;
+
+            const [
+              category,
+            ] = item.nft_views.facets.exact_matches.category_name;
 
             return `
               <div class="option" data-category="${category.value}">
@@ -57,21 +62,21 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
     const [select] = container.find('select');
 
     select.selectize.clearOptions();
-    indices.forEach(index => {
-      index.results.hits.forEach(hit => select.selectize.addOption(hit));
+    indices.forEach((index) => {
+      index.results.hits.forEach((hit) => select.selectize.addOption(hit));
     });
     select.selectize.refreshOptions(select.selectize.isOpen);
   }
 );
 
 const search = instantsearch({
-  indexName: 'instant_search',
+  indexName: 'nft_views_query_suggestions',
   searchClient,
 });
 
 search.addWidgets([
   instantsearch.widgets
-    .index({ indexName: 'instant_search_demo_query_suggestions' })
+    .index({ indexName: 'nft_views_query_suggestions' })
     .addWidgets([
       instantsearch.widgets.configure({
         hitsPerPage: 5,
