@@ -76,14 +76,9 @@ search.addWidgets([
   instantsearch.widgets.configure({
     hitsPerPage: 3,
   }),
+  instantsearch.widgets.index({ indexName: 'airbnb' }),
   autocomplete({
     container: $('#autocomplete'),
-    indices: [
-      {
-        value: 'instant_search_price_desc',
-        label: 'instant_search_price_desc',
-      },
-    ],
   }),
 ]);
 
