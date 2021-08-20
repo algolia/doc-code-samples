@@ -68,7 +68,11 @@ async function createServer(
         render = require('./dist/server/entry-server.js').render;
       }
 
-      const { appHtml, algoliaStateScript, preloadLinks } = await render(url, manifest);
+      const {
+        html: appHtml,
+        algoliaStateScript,
+        preloadLinks,
+      } = await render(url, manifest);
 
       const html = template
         .replace(`<!--preload-links-->`, preloadLinks)
