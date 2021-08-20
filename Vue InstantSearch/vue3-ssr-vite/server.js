@@ -10,7 +10,7 @@ async function createServer(
   root = process.cwd(),
   isProd = process.env.NODE_ENV === 'production'
 ) {
-  const resolve = p => path.resolve(__dirname, p);
+  const resolve = (p) => path.resolve(__dirname, p);
 
   const indexProd = isProd
     ? fs.readFileSync(resolve('dist/client/index.html'), 'utf-8')
@@ -79,10 +79,7 @@ async function createServer(
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--algolia-state-script-->`, algoliaStateScript);
 
-      res
-        .status(200)
-        .set({ 'Content-Type': 'text/html' })
-        .end(html);
+      res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
     } catch (e) {
       if (vite) {
         vite.ssrFixStacktrace(e);
