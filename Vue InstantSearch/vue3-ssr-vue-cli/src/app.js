@@ -2,11 +2,10 @@ import { createSSRApp, h } from 'vue';
 import algoliasearch from 'algoliasearch/lite';
 import { createServerRootMixin } from 'vue-instantsearch/vue3/es';
 import qs from 'qs';
-import { renderToString } from '@vue/server-renderer';
 import App from './App.vue';
 import { createRouter } from './router';
 
-export function createApp({ context } = {}) {
+export function createApp({ renderToString, context } = {}) {
   const searchClient = algoliasearch(
     'latency',
     '6be0576ff61c053d5f9a3225e2a90f76'
@@ -49,7 +48,7 @@ export function createApp({ context } = {}) {
               return router.resolve({ query: routeState }).href;
             },
             onUpdate(callback) {
-              this._onPopState = (event) => {
+              this._onPopState = event => {
                 const routeState = event.state;
                 // at initial load, the state is read from the URL without
                 // update. Therefore the state object is not there. In this
@@ -91,7 +90,10 @@ export function createApp({ context } = {}) {
       }),
     ],
     async serverPrefetch() {
-      resultsState = await this.instantsearch.findResultsState(this);
+      resultsState = await this.instantsearch.findResultsState({
+        component: this,
+        renderToString,
+      });
       return resultsState;
     },
     beforeMount() {

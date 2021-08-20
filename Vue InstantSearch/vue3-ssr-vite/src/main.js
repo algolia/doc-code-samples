@@ -2,7 +2,6 @@ import { createServerRootMixin } from 'vue-instantsearch/vue3/es';
 import algoliasearch from 'algoliasearch/lite';
 import { createSSRApp, h } from 'vue';
 import qs from 'qs';
-import { renderToString } from '@vue/server-renderer';
 
 import App from './App.vue';
 import { createRouter } from './router';
@@ -10,7 +9,7 @@ import { createRouter } from './router';
 // SSR requires a fresh app instance per request, therefore we export a function
 // that creates a fresh app instance. If using Vuex, we'd also be creating a
 // fresh store here.
-export function createApp({ context } = {}) {
+export function createApp({ renderToString, context } = {}) {
   const searchClient = algoliasearch(
     'latency',
     '6be0576ff61c053d5f9a3225e2a90f76'
@@ -23,7 +22,6 @@ export function createApp({ context } = {}) {
   const app = createSSRApp({
     mixins: [
       createServerRootMixin({
-        renderToString,
         searchClient,
         indexName: 'instant_search',
         routing: {
@@ -96,7 +94,10 @@ export function createApp({ context } = {}) {
       }),
     ],
     async serverPrefetch() {
-      resultsState = await this.instantsearch.findResultsState(this);
+      resultsState = await this.instantsearch.findResultsState({
+        component: this,
+        renderToString,
+      });
       return resultsState;
     },
     beforeMount() {

@@ -2,7 +2,10 @@ import { createApp } from './main';
 import { renderToString } from '@vue/server-renderer';
 
 export async function render(url, manifest) {
-  const { app, router, getResultsState } = createApp({ context: { url } });
+  const { app, router, getResultsState } = createApp({
+    renderToString,
+    context: { url },
+  });
 
   // set the router to the desired URL before rendering
   router.push(url);
