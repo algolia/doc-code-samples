@@ -1,0 +1,19 @@
+{
+  "name": "vue-instantsearch-with-vue3-and-vite",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "algoliasearch": "4.10.3",
+    "vue": "^3.0.5",
+    "vue-instantsearch": "4.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.3.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.4.4"
+  }
+}

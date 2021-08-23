@@ -1,0 +1,51 @@
+{
+  "name": "vue3-ssr-vue-cli",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "SSR_TARGET=client vue-cli-service build --dest dist/client",
+    "build:server": "SSR_TARGET=server vue-cli-service build --dest dist/server"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.10.3",
+    "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "qs": "6.5.1",
+    "vue": "3.1.5",
+    "vue-instantsearch": "4.0.0",
+    "vue-router": "^4.0.10",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-node-externals": "^2.5.1"
+  },
+  "devDependencies": {
+    "@vue/server-renderer": "3.1.5",
+    "@vue/cli-plugin-babel": "4.5.13",
+    "@vue/cli-plugin-eslint": "4.5.13",
+    "@vue/cli-service": "4.5.13",
+    "@vue/compiler-sfc": "3.1.5",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-plugin-vue": "7.16.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
