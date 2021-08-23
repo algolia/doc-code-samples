@@ -364,7 +364,7 @@ icss-utils@^5.0.0:
   resolved "https://registry.yarnpkg.com/icss-utils/-/icss-utils-5.1.0.tgz#c6be6858abd013d768e98366ae47e25d5887b1ae"
   integrity sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==
 
-instantsearch.js@^4.25.0:
+instantsearch.js@^4.27.2:
   version "4.27.2"
   resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.27.2.tgz#add7f76ae3aabca27bef384eba8ba521c9f16258"
   integrity sha512-7bMxhb0zUmv53EhvZuvxrAcfWYA56n4YkL5YNIzPW+6pXsq76McYmBNnkev33oV8rR3xREpAf7s6Sb2nAj1L4Q==
@@ -591,12 +591,13 @@ vite@^2.4.4:
   optionalDependencies:
     fsevents "~2.3.2"
 
-"vue-instantsearch@https://pkg.csb.dev/algolia/vue-instantsearch/commit/38987ac7/vue-instantsearch":
-  version "4.0.0-beta.1"
-  resolved "https://pkg.csb.dev/algolia/vue-instantsearch/commit/38987ac7/vue-instantsearch#6dffaf6ecff1775cfa47aaa1ac2aaf4cfca69053"
+vue-instantsearch@4.0.0-beta.3:
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-4.0.0-beta.3.tgz#3d3db26a7bd88ec8e7d1723e3dfad7c5a0734bea"
+  integrity sha512-xFqPYCFEONGuWx5h7uSVzQvluhTNyG+fcYVe7i8rP/WgrtHxIvAjXoEXOV1CFcipzLktn3vusFemigVuL+xhjA==
   dependencies:
     algoliasearch-helper "^3.1.0"
-    instantsearch.js "^4.25.0"
+    instantsearch.js "^4.27.2"
     mitt "^2.1.0"
 
 vue@^3.0.5:
