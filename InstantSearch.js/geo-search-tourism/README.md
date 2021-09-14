@@ -2,7 +2,7 @@
 
 This sample shows how to leverage [Algolia Geo Location](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/) with [InstantSearch's geoSearch widget](https://www.algolia.com/doc/api-reference/widgets/geo-search/js/#widget-param-googlereference) with [Google Maps](https://developers.google.com/maps).
 
-<img src="InstantSearch.js/geo-search-tourism/capture.png?raw=true" alt="A capture of the Algolia InstantSearch tourism demo" align="center">
+<img src="capture.png?raw=true" alt="A capture of the Algolia InstantSearch tourism demo" align="center">
 
 ## Features
 
