@@ -13,7 +13,7 @@ This sample showcase the following features:
 
 ## Demo
 
-[Access the demo](https://react-instantsearch.netlify.app/examples/tourism/)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/InstantSearch.js/geo-search-tourism)
 
 ## How to run this sample locally
 
