@@ -4,10 +4,11 @@ import {
   forwardRef,
   Input,
   Output,
-  EventEmitter
+  EventEmitter, Optional
 } from "@angular/core";
-import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
+import {BaseWidget, NgAisIndex, NgAisInstantSearch, TypedBaseWidget} from "angular-instantsearch";
 import { connectAutocomplete } from "instantsearch.js/es/connectors";
+import { AutocompleteWidgetDescription, AutocompleteConnectorParams } from "instantsearch.js/es/connectors/autocomplete/connectAutocomplete";
 
 @Component({
   selector: "app-autocomplete",
@@ -21,7 +22,6 @@ import { connectAutocomplete } from "instantsearch.js/es/connectors";
       />
       <mat-autocomplete
         #auto="matAutocomplete"
-        style="margin-top: 30px; max-height: 600px"
       >
         <div *ngFor="let index of state.indices || []">
           <mat-option
@@ -36,20 +36,25 @@ import { connectAutocomplete } from "instantsearch.js/es/connectors";
     </div>
   `
 })
-export class AutocompleteComponent extends BaseWidget {
-  state: {
-    query: string;
-    refine: Function;
-    indices: object[];
+export class AutocompleteComponent extends TypedBaseWidget<AutocompleteWidgetDescription, AutocompleteConnectorParams> {
+  state: AutocompleteWidgetDescription['renderState'] = {
+    currentRefinement: "",
+    refine: () => null,
+    indices: []
   };
 
   @Output() onQuerySuggestionClick = new EventEmitter<{ query : string }>();
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent
+    public instantSearchInstance: NgAisInstantSearch
   ) {
-    super("AutocompleteComponent");
+    super('SearchBox');
+    this!.createWidget(connectAutocomplete as any, {});
+
   }
 
   public handleChange($event: KeyboardEvent) {
@@ -57,7 +62,6 @@ export class AutocompleteComponent extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectAutocomplete, {});
     super.ngOnInit();
   }
 }
