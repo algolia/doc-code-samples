@@ -1,6 +1,6 @@
 {
-  "short_name": "ais-ecommerce-demo-app",
-  "name": "Create InstantSearch App Sample",
+  "short_name": "geo-search-tourism",
+  "name": "geo-search-tourism Demo",
   "icons": [
     {
       "src": "favicon.png",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
