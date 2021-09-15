@@ -4,6 +4,9 @@ executors:
   node9:
     docker:
       - image: circleci/node:9
+  node14:
+    docker:
+      - image: cimg/node:14.17.0
 
 commands:
   build_project:
@@ -21,7 +24,7 @@ commands:
             yarn build
 jobs:
   build_angular_projects:
-    executor: node9
+    executor: node14
     steps:
       - checkout
       - build_project:
