@@ -1,63 +1,36 @@
 <header class="header">
-    <h1 class="header-title">
-        <a href="/">multi-index-hits</a>
-    </h1>
-    <p class="header-subtitle">
-        using
-        <a href="https://github.com/algolia/angular-instantsearch">
-            Angular InstantSearch
-        </a>
-    </p>
+  <h1 class="header-title">
+    <a href="/">multi-index-hits</a>
+  </h1>
+  <p class="header-subtitle">
+    using
+    <a href="https://github.com/algolia/angular-instantsearch">
+      Angular InstantSearch
+    </a>
+  </p>
 </header>
 
 <div class="container">
-    <div class="searchbox">
-        <input type="text" class="ais-SearchBox-input" (keyup)="onQuery($event)"/>
+  <ais-instantsearch [config]="config">
+    <div class="search-panel">
+      <div class="search-panel__results">
+
+        <div class="searchbox">
+          <ais-search-box placeholder=""></ais-search-box>
+        </div>
+
+        <div style="display: flex; ">
+          <ais-index indexName="actors">
+            <h2>Actors</h2>
+            <ais-hits></ais-hits>
+          </ais-index>
+          <ais-index indexName="players">
+            <h2>Players</h2>
+            <ais-hits></ais-hits>
+          </ais-index>
+        </div>
+      </div>
+
     </div>
-
-    <div class="results">
-        <ais-instantsearch [config]="configProducts">
-            <h3>Players</h3>
-            <ais-configure [searchParameters]="searchParameters"></ais-configure>
-            <div class="search-panel">
-                <div class="search-panel__results">
-                    <ais-hits>
-                        <ng-template let-hits="hits" let-results="results">
-                            <div *ngIf="hits.length === 0">
-                                No results found matching <strong></strong>.
-                            </div>
-
-                            <ol class="ais-Hits-list">
-                                <li class="ais-Hits-item" *ngFor="let hit of hits">
-                                    <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
-                                </li>
-                            </ol>
-                        </ng-template>
-                    </ais-hits>
-                </div>
-            </div>
-        </ais-instantsearch>
-
-        <ais-instantsearch [config]="configActors">
-            <h3>Actors</h3>
-            <ais-configure [searchParameters]="searchParameters"></ais-configure>
-            <div class="search-panel">
-                <div class="search-panel__results">
-                    <ais-hits>
-                        <ng-template let-hits="hits" let-results="results">
-                            <div *ngIf="hits.length === 0">
-                                No results found matching <strong></strong>.
-                            </div>
-
-                            <ol class="ais-Hits-list">
-                                <li class="ais-Hits-item" *ngFor="let hit of hits">
-                                    <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
-                                </li>
-                            </ol>
-                        </ng-template>
-                    </ais-hits>
-                </div>
-            </div>
-        </ais-instantsearch>
-    </div>
+  </ais-instantsearch>
 </div>
