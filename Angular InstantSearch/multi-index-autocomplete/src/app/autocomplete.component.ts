@@ -13,35 +13,38 @@ import {
 } from "instantsearch.js/es/connectors/autocomplete/connectAutocomplete";
 
 @Component({
-  selector: "app-autocomplete",
+  selector: 'app-autocomplete',
   template: `
-      <div>
-          <input
-                  matInput
-                  [matAutocomplete]="auto"
-                  (keyup)="handleChange($event)"
-                  style="width: 100%; padding: 10px"
-          />
-          <mat-autocomplete #auto="matAutocomplete" style="height: 800px">
-              <div *ngFor="let index of state.indices.slice(1) || []">
-                  <mat-optgroup>{{index.indexName}}</mat-optgroup>
-                  <mat-option
-                          *ngFor="let option of index.hits"
-                          [value]="option.name"
-                          (click)="onQuerySuggestionClick.emit({ query: option.name })"
-                  >
-                      <ais-highlight [hit]="option" attribute="name"></ais-highlight>
-                  </mat-option>
-              </div>
-          </mat-autocomplete>
-      </div>
-  `
+    <div>
+      <input
+        matInput
+        [matAutocomplete]="auto"
+        (keyup)="handleChange($event)"
+        style="width: 100%; padding: 10px"
+      />
+      <mat-autocomplete #auto="matAutocomplete" style="height: 800px">
+        <div *ngFor="let index of state.indices.slice(1) || []">
+          <mat-optgroup>{{ index.indexName }}</mat-optgroup>
+          <mat-option
+            *ngFor="let option of index.hits"
+            [value]="option.name"
+            (click)="onQuerySuggestionClick.emit({ query: option.name })"
+          >
+            <ais-highlight [hit]="option" attribute="name"></ais-highlight>
+          </mat-option>
+        </div>
+      </mat-autocomplete>
+    </div>
+  `,
 })
-export class AutocompleteComponent extends TypedBaseWidget<AutocompleteWidgetDescription, AutocompleteConnectorParams> {
+export class AutocompleteComponent extends TypedBaseWidget<
+  AutocompleteWidgetDescription,
+  AutocompleteConnectorParams
+> {
   state: AutocompleteWidgetDescription['renderState'] = {
-    currentRefinement: "",
+    currentRefinement: '',
     refine: () => null,
-    indices: []
+    indices: [],
   };
 
   @Output() onQuerySuggestionClick = new EventEmitter<{ query: string }>();
@@ -55,7 +58,6 @@ export class AutocompleteComponent extends TypedBaseWidget<AutocompleteWidgetDes
   ) {
     super('Autocomplete');
     this!.createWidget(connectAutocomplete, {});
-
   }
 
   public handleChange($event: KeyboardEvent) {
