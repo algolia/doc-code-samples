@@ -18,7 +18,9 @@ export class OnVisibleDirective implements AfterViewInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this._intersectionObserver.disconnect();
+    if (this._intersectionObserver) {
+      this._intersectionObserver.disconnect();
+    }
   }
 
   private checkForIntersection = (

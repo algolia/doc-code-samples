@@ -1,37 +1,38 @@
 <header class="header">
-    <h1 class="header-title">
-        <a href="/">infinite-scroll</a>
-    </h1>
-    <p class="header-subtitle">
-        using
-        <a href="https://github.com/algolia/angular-instantsearch">
-            Angular InstantSearch
-        </a>
-    </p>
+  <h1 class="header-title">
+    <a href="/">infinite-scroll</a>
+  </h1>
+  <p class="header-subtitle">
+    using
+    <a href="https://github.com/algolia/angular-instantsearch">
+      Angular InstantSearch
+    </a>
+  </p>
 </header>
 
 <div class="container">
-    <div class="results">
-        <ais-instantsearch [config]="config">
-            <ais-search-box></ais-search-box>
-            <div class="search-panel">
-                <div class="search-panel__results">
-                    <ais-infinite-hits>
-                        <ng-template let-hits="hits" let-results="results" let-refine="showMore" >
-                            <div *ngIf="hits.length === 0">
-                                No results found matching <strong></strong>.
-                            </div>
+  <ais-instantsearch [config]="config">
+    <div class="search-panel">
+      <div class="search-panel__results">
+        <div class="searchbox">
+          <ais-search-box placeholder=""></ais-search-box>
+        </div>
 
-                            <ol class="ais-Hits-list">
-                                <li class="ais-Hits-item" *ngFor="let hit of hits">
-                                    <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
-                                </li>
-                                <div (onVisible)="refine()"></div>
-                            </ol>
-                        </ng-template>
-                    </ais-infinite-hits>
-                </div>
+        <ais-infinite-hits>
+          <ng-template let-hits="hits" let-results="results" let-refine="showMore" >
+            <div *ngIf="hits.length === 0">
+              No results found matching <strong></strong>.
             </div>
-        </ais-instantsearch>
+
+            <ol class="ais-Hits-list">
+              <li class="ais-Hits-item" *ngFor="let hit of hits">
+                <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
+              </li>
+              <div (onVisible)="refine()"></div>
+            </ol>
+          </ng-template>
+        </ais-infinite-hits>
+      </div>
     </div>
+  </ais-instantsearch>
 </div>
