@@ -1,34 +1,53 @@
-<div class="ais-InstantSearch">
-  <h1>Angular InstantSearch e-commerce demo</h1>
+<header class="header">
+  <h1 class="header-title">
+    <a href="/">refresh</a>
+  </h1>
+  <p class="header-subtitle">
+    using
+    <a href="https://github.com/algolia/angular-instantsearch">
+      Angular InstantSearch
+    </a>
+  </p>
+</header>
+
+<div class="container">
   <ais-instantsearch [config]="config">
-    <div class="left-panel">
-      <app-refresh></app-refresh>
-      <h2>Brands</h2>
-      <ais-refinement-list attribute="brand"></ais-refinement-list>
-      <ais-configure [searchParameters]="{ hitsPerPage: 8 }"></ais-configure>
-    </div>
-    <div class="right-panel">
-      <ais-search-box></ais-search-box>
-      <ais-hits>
-        <ng-template let-hits="hits">
-          <ol class="ais-Hits-list">
-            <li *ngFor="let hit of hits" class="ais-Hits-item">
-              <img src="{{ hit.image }}" alt="{{ hit.name }}" align="left" />
-              <div class="hit-name">
-                <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
-              </div>
-              <div class="hit-description">
-                <ais-highlight
-                  attribute="description"
-                  [hit]="hit"
-                ></ais-highlight>
-              </div>
-              <div class="hit-price">${{ hit.price }}</div>
-            </li>
-          </ol>
-        </ng-template>
-      </ais-hits>
-      <ais-pagination></ais-pagination>
+    <div class="search-panel">
+      <div class="search-panel__results">
+
+        <app-refresh></app-refresh>
+        <div class="searchbox">
+
+          <ais-search-box placeholder=""></ais-search-box>
+        </div>
+
+        <ais-hits>
+          <ng-template let-hits="hits" let-results="results">
+            <div *ngIf="hits.length === 0">
+              No results found matching <strong></strong>.
+            </div>
+
+            <ol class="ais-Hits-list">
+              <li class="ais-Hits-item" *ngFor="let hit of hits">
+                <article>
+                  <h1>
+                    <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
+                  </h1>
+
+                  <p>
+                    <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
+                  </p>
+                </article>
+              </li>
+            </ol>
+          </ng-template>
+        </ais-hits>
+
+        <div class="pagination">
+          <ais-pagination></ais-pagination>
+        </div>
+      </div>
+
     </div>
   </ais-instantsearch>
 </div>

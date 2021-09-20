@@ -1,14 +1,20 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { NgAisModule } from "angular-instantsearch";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgAisModule } from 'angular-instantsearch';
 
-import { AppComponent } from "./app.component";
-import { Refresh } from "./refresh.component";
+import { AppComponent } from './app.component';
+import {RefreshComponent} from "./refresh.component";
 
 @NgModule({
-  declarations: [AppComponent, Refresh],
-  imports: [NgAisModule.forRoot(), BrowserModule],
+  declarations: [
+    AppComponent,
+    RefreshComponent
+  ],
+  imports: [
+    NgAisModule.forRoot(),
+    BrowserModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
