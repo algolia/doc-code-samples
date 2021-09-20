@@ -1,42 +1,58 @@
-import { Component, Inject, forwardRef, Input } from "@angular/core";
-import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
-import { connectSearchBox } from "instantsearch.js/es/connectors";
+import { Component, Inject, forwardRef, Optional, Input } from '@angular/core';
+import {
+  TypedBaseWidget,
+  NgAisInstantSearch,
+  NgAisIndex,
+} from 'angular-instantsearch';
+import connectSearchBox, {
+  SearchBoxWidgetDescription,
+  SearchBoxConnectorParams,
+} from 'instantsearch.js/es/connectors/search-box/connectSearchBox';
 
 @Component({
-  selector: "app-debounced-search-box",
+  selector: 'app-debounced-search-box',
   template: `
     <input
-      class="ais-SearchBox"
       type="text"
       #input
       (keyup)="onChangeDebounced(input.value)"
       [value]="this.state.query"
     />
-  `
+  `,
 })
-export class DebouncedSearchBox extends BaseWidget {
-  private timerId = null;
-  state: {
-    query: string;
-    refine: Function;
+export class DebouncedSearchBoxComponent extends TypedBaseWidget<
+  SearchBoxWidgetDescription,
+  SearchBoxConnectorParams
+> {
+  private timerId: ReturnType<typeof setTimeout> | null = null;
+  @Input() delay: number = 0;
+  public state: SearchBoxWidgetDescription['renderState'] = {
+    clear(): void {},
+    isSearchStalled: false,
+    query: '',
+    refine(value: string): void {},
   };
 
-  @Input() delay: number = 0;
-
+  // Rendering options
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent
+    public instantSearchInstance: NgAisInstantSearch
   ) {
-    super("DebouncedSearchBox");
+    super('SearchBox');
   }
 
-  public onChangeDebounced(value) {
+  public onChangeDebounced(value: string) {
     if (this.timerId) clearTimeout(this.timerId);
     this.timerId = setTimeout(() => this.state.refine(value), this.delay);
   }
 
-  public ngOnInit() {
-    this.createWidget(connectSearchBox, {});
+  ngOnInit() {
+    this.createWidget(connectSearchBox, {
+      // instance options
+    });
     super.ngOnInit();
   }
 }

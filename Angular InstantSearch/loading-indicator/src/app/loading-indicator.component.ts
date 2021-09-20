@@ -1,42 +1,46 @@
-import { Component, Inject, forwardRef, OnInit } from "@angular/core";
-import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
-
-const connectSearchMetaData = (renderFn, unmountFn) => (widgetParams = {}) => ({
-  init() {
-    renderFn({ searchMetadata: {} }, true);
-  },
-  render({ searchMetadata }) {
-    renderFn({ searchMetadata }, false);
-  },
-  dispose() {
-    unmountFn();
-  }
-});
+import { Component, Inject, forwardRef, Optional } from '@angular/core';
+import {
+  TypedBaseWidget,
+  NgAisInstantSearch,
+  NgAisIndex,
+} from 'angular-instantsearch';
+import connectSearchBox, {
+  SearchBoxWidgetDescription,
+  SearchBoxConnectorParams,
+} from 'instantsearch.js/es/connectors/search-box/connectSearchBox';
 
 @Component({
-  selector: "app-loading-indicator",
+  selector: 'app-loading-indicator',
   template: `
-    <div>
-      <div *ngIf="state.searchMetadata && state.searchMetadata.isSearchStalled">
-        Loading...
-      </div>
-    </div>
-  `
+    <div *ngIf="state.isSearchStalled && state.isSearchStalled">Loading...</div>
+  `,
 })
-export class LoadingIndicator extends BaseWidget implements OnInit {
-  state: {
-    searchMetadata: object;
+export class LoadingIndicatorComponent extends TypedBaseWidget<
+  SearchBoxWidgetDescription,
+  SearchBoxConnectorParams
+> {
+  public state: SearchBoxWidgetDescription['renderState'] = {
+    clear(): void {},
+    isSearchStalled: false,
+    query: '',
+    refine(value: string): void {},
   };
 
+  // Rendering options
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent
+    public instantSearchInstance: NgAisInstantSearch
   ) {
-    super("LoadingIndicator");
+    super('SearchBox');
   }
 
-  public ngOnInit() {
-    this.createWidget(connectSearchMetaData as any, {});
+  ngOnInit() {
+    this.createWidget(connectSearchBox, {
+      // instance options
+    });
     super.ngOnInit();
   }
 }
