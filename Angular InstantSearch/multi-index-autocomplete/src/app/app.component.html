@@ -12,9 +12,9 @@
 
 <div class="container">
   <ais-instantsearch [config]="config">
-    <ais-configure [searchParameters]="{hitsPerPage: 3}"></ais-configure>
-    <div class="container">
+      <ais-configure [searchParameters]="{ hitsPerPage: 3 }"></ais-configure>
+      <ais-index indexName="players"></ais-index>
+      <ais-index indexName="actors"></ais-index>
       <app-autocomplete></app-autocomplete>
-    </div>
   </ais-instantsearch>
 </div>

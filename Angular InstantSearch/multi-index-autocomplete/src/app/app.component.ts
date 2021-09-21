@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as algoliasearch from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
   'latency',
@@ -13,7 +13,7 @@ const searchClient = algoliasearch(
 })
 export class AppComponent {
   config = {
-    indexName: 'players',
+    indexName: 'instant_search',
     searchClient,
   };
 }
