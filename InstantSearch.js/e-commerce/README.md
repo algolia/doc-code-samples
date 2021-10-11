@@ -37,15 +37,15 @@ cd InstantSearch.js/e-commerce
 ### 3. Install the dependencies and run the server
 
 ```
-npm install
-npm start
-```
-
-Alternatively, you may use Yarn:
-
-```
 yarn
 yarn start
+```
+
+Alternatively, you may use npm:
+
+```
+npm install
+npm start
 ```
 
 Open <http://localhost:3000> to see your app.
