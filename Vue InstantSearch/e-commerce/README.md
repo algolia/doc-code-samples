@@ -24,28 +24,28 @@ This sample showcase the following features:
 
 ### 1. Clone this repository
 
-```sh
+```
 git clone git@github.com:algolia/doc-code-samples.git
 ```
 
 ### 2. Navigate to this sample folder
 
-```sh
+```
 cd Vue InstantSearch/e-commerce
 ```
 
 ### 3. Install the dependencies and run the server
 
-```sh
-npm install
-npm start
 ```
-
-Alternatively, you may use Yarn:
-
-```sh
 yarn
-yarn start
+yarn serve
 ```
 
-Open <http://localhost:3000> to see your app.
+Alternatively, you may use npm:
+
+```
+npm install
+npm serve
+```
+
+Open <http://localhost:8080/examples/e-commerce/> to see your app.
