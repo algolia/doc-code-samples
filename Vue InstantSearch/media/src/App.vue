@@ -43,7 +43,7 @@
             <template v-slot="{ items }">
               <div class="movies">
                 <ais-state-results>
-                  <template v-slot="{ query, hits }">
+                  <template v-slot="{ results: { query , hits } }">
                     <p
                       class="movies-no-results"
                       v-if="hits.length === 0"
