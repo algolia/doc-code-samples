@@ -50,6 +50,7 @@
                     >
                       No results found matching <strong>{{query}}</strong>.
                     </p>
+                    <div v-else></div>
                   </template>
                 </ais-state-results>
 
