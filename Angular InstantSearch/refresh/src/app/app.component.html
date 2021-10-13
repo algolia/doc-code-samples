@@ -14,10 +14,8 @@
   <ais-instantsearch [config]="config">
     <div class="search-panel">
       <div class="search-panel__results">
-
         <app-refresh></app-refresh>
         <div class="searchbox">
-
           <ais-search-box placeholder=""></ais-search-box>
         </div>
 
@@ -35,7 +33,10 @@
                   </h1>
 
                   <p>
-                    <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
+                    <ais-highlight
+                      attribute="description"
+                      [hit]="hit"
+                    ></ais-highlight>
                   </p>
                 </article>
               </li>
@@ -47,7 +48,6 @@
           <ais-pagination></ais-pagination>
         </div>
       </div>
-
     </div>
   </ais-instantsearch>
 </div>

@@ -7,7 +7,7 @@ import {
 import { Connector } from 'instantsearch.js/es/types';
 
 type RefreshWidgetDescription = {
-  $$type: 'custom.referesh',
+  $$type: 'custom.referesh';
   renderState: {
     refresh(): void;
   };
@@ -34,7 +34,14 @@ const connectRefresh: RefreshConnector =
     },
     render({ instantSearchInstance }) {
       const refresh = instantSearchInstance.refresh.bind(instantSearchInstance);
-      renderFn({ refresh, widgetParams, instantSearchInstance }, false);
+      renderFn(
+        {
+          refresh,
+          widgetParams,
+          instantSearchInstance,
+        },
+        false
+      );
     },
     dispose() {
       if (unmountFn) {
