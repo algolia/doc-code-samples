@@ -63,8 +63,6 @@ jobs:
       - build_project:
           path: "Angular InstantSearch/multi-index-hits"
       - build_project:
-          path: "Angular InstantSearch/places"
-      - build_project:
           path: "Angular InstantSearch/query-suggestions"
       - build_project:
           path: "Angular InstantSearch/refresh"
