@@ -1,0 +1,41 @@
+{
+  "name": "react-instantsearch-e-commerce",
+  "version": "6.12.1",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "dependencies": {
+    "algoliasearch": "4.9.3",
+    "classnames": "^2.3.1",
+    "qs": "6.8.0",
+    "react": "16.8.6",
+    "react-compound-slider": "^3.3.1",
+    "react-dom": "16.8.6",
+    "react-instantsearch-dom": "6.12.0",
+    "react-scripts": "^4.0.3"
+  },
+  "devDependencies": {
+    "eslint-config-algolia": "13.3.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "7.12.4",
+    "prettier": "1.17.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
