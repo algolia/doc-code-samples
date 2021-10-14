@@ -1,48 +1,70 @@
-import {Component, Inject, forwardRef, Input} from '@angular/core';
-import {BaseWidget, NgAisInstantSearch} from 'angular-instantsearch';
-import {connectAutocomplete} from 'instantsearch.js/es/connectors';
+import {
+  Component,
+  Inject,
+  forwardRef,
+  Output,
+  EventEmitter, Optional
+} from "@angular/core";
+import {NgAisIndex, NgAisInstantSearch, TypedBaseWidget} from "angular-instantsearch";
+import {connectAutocomplete} from "instantsearch.js/es/connectors";
+import {
+  AutocompleteWidgetDescription,
+  AutocompleteConnectorParams
+} from "instantsearch.js/es/connectors/autocomplete/connectAutocomplete";
 
 @Component({
-    selector: 'app-autocomplete',
-    template: `
-        <div>
-            <input matInput [matAutocomplete]="auto" (keyup)="handleChange($event)" style="width: 100%; padding: 10px"/>
-            <mat-autocomplete #auto="matAutocomplete" style="margin-top: 30px; max-height: 600px">
-                <mat-optgroup *ngFor="let index of (state.indices || [])" [label]="index.index">
-                    <mat-option *ngFor="let options of index.hits" [value]="options.name">
-                        <div>
-                            {{options.name}}
-                        </div>
-                    </mat-option>
-                </mat-optgroup>
-            </mat-autocomplete>
+  selector: 'app-autocomplete',
+  template: `
+    <div>
+      <input
+        matInput
+        [matAutocomplete]="auto"
+        (keyup)="handleChange($event)"
+        style="width: 100%; padding: 10px"
+      />
+      <mat-autocomplete #auto="matAutocomplete" style="height: 800px">
+        <div *ngFor="let index of state.indices.slice(1) || []">
+          <mat-optgroup>{{ index.indexName }}</mat-optgroup>
+          <mat-option
+            *ngFor="let option of index.hits"
+            [value]="option.name"
+            (click)="onQuerySuggestionClick.emit({ query: option.name })"
+          >
+            <ais-highlight [hit]="option" attribute="name"></ais-highlight>
+          </mat-option>
         </div>
-    `
+      </mat-autocomplete>
+    </div>
+  `,
 })
-export class AutocompleteComponent extends BaseWidget {
-    state: {
-        query: string;
-        refine: Function;
-        indices: object[];
-    };
+export class AutocompleteComponent extends TypedBaseWidget<
+  AutocompleteWidgetDescription,
+  AutocompleteConnectorParams
+> {
+  state: AutocompleteWidgetDescription['renderState'] = {
+    currentRefinement: '',
+    refine: () => null,
+    indices: [],
+  };
 
-    constructor(
-        @Inject(forwardRef(() => NgAisInstantSearch))
-        public instantSearchParent,
-    ) {
-        super('AutocompleteComponent');
-    }
+  @Output() onQuerySuggestionClick = new EventEmitter<{ query: string }>();
 
-    public handleChange($event: KeyboardEvent) {
-        this.state.refine(($event.target as HTMLInputElement).value);
-    }
+  constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchInstance: NgAisInstantSearch
+  ) {
+    super('Autocomplete');
+    this!.createWidget(connectAutocomplete, {});
+  }
 
-    public ngOnInit() {
-        this.createWidget(connectAutocomplete, {
-            indices: [{
-                value: "actors"
-            }]
-        });
-        super.ngOnInit();
-    }
+  public handleChange($event: KeyboardEvent) {
+    this.state.refine(($event.target as HTMLInputElement).value);
+  }
+
+  public ngOnInit() {
+    super.ngOnInit();
+  }
 }
