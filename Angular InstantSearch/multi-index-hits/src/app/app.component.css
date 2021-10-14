@@ -53,24 +53,3 @@
   margin: 2rem auto;
   text-align: center;
 }
-
-.results {
-  display: flex
-}
-.results > * {
-  flex: 1
-}
-
-.results > *:not(:first-child) {
-  margin-left: 2em;
-}
-.ais-Hits-list {
-  display: block
-}
-.ais-Hits-item {
-  border: none;
-  width: 100%;
-  overflow: hidden;
-  height: 4em;
-  white-space: nowrap;
-}
