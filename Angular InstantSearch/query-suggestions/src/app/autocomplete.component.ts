@@ -24,18 +24,19 @@ export type QuerySuggestion = {
 @Component({
   selector: 'app-autocomplete',
   template: `
-    <input matInput [matAutocomplete]="auto" (keyup)="handleChange($event)" />
-    <mat-autocomplete #auto="matAutocomplete">
+    <input matInput [matAutocomplete]="auto" (keyup)="handleKeyUp($event)" />
+    <mat-autocomplete
+      [displayWith]="getOptionLabel"
+      (optionSelected)="onQuerySuggestionClick.emit($event.option.value)"
+      #auto="matAutocomplete"
+    >
       <ng-container *ngFor="let index of state?.indices || []">
         <mat-option
           *ngFor="let hit of index.hits"
-          [value]="hit.query"
-          (click)="
-            onQuerySuggestionClick.emit({
-              query: hit.query,
-              category: hasCategory(hit) ? getCategory(hit) : null
-            })
-          "
+          [value]="{
+            query: hit.query,
+            category: hasCategory(hit) ? getCategory(hit) : null
+          }"
         >
           {{ hit.query }}
           <span>
@@ -89,7 +90,17 @@ export class AutocompleteComponent extends TypedBaseWidget<
     return category.value;
   }
 
-  handleChange(event: Event) {
+  getOptionLabel(querySuggestion: QuerySuggestion) {
+    return querySuggestion.query;
+  }
+
+  handleKeyUp(event: KeyboardEvent) {
+    if (event.key.startsWith('Arrow')) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
     this.state?.refine((event.target as HTMLInputElement).value);
   }
 
