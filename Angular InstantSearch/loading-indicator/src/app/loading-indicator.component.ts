@@ -34,7 +34,7 @@ export class LoadingIndicatorComponent extends TypedBaseWidget<
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchInstance: NgAisInstantSearch
   ) {
-    super('SearchBox');
+    super('LoadingIndicator');
   }
 
   ngOnInit() {
