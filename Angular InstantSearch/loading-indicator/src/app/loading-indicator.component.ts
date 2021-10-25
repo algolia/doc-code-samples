@@ -20,10 +20,10 @@ export class LoadingIndicatorComponent extends TypedBaseWidget<
   SearchBoxConnectorParams
 > {
   public state: SearchBoxWidgetDescription['renderState'] = {
-    clear(): void {},
+    clear() {},
     isSearchStalled: false,
     query: '',
-    refine(value: string): void {},
+    refine() {},
   };
 
   // Rendering options
