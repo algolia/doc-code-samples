@@ -1,81 +1,99 @@
 import {
   Component,
-  Inject,
-  forwardRef,
   EventEmitter,
-  Output
-} from "@angular/core";
-import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
-import { connectAutocomplete } from "instantsearch.js/es/connectors";
+  forwardRef,
+  Inject,
+  Optional,
+  Output,
+} from '@angular/core';
+import {
+  NgAisIndex,
+  NgAisInstantSearch,
+  TypedBaseWidget,
+} from 'angular-instantsearch';
+import connectAutocomplete, {
+  AutocompleteWidgetDescription,
+  AutocompleteConnectorParams,
+} from 'instantsearch.js/es/connectors/autocomplete/connectAutocomplete';
+
+export type QuerySuggestion = {
+  query: string;
+  category: string | null;
+};
 
 @Component({
-  selector: "app-autocomplete",
+  selector: 'app-autocomplete',
   template: `
-    <div>
-      <input
-        matInput
-        [matAutocomplete]="auto"
-        (keyup)="handleChange($event)"
-        style="width: 100%; padding: 10px"
-      />
-      <mat-autocomplete
-        #auto="matAutocomplete"
-        style="margin-top: 30px; max-height: 600px"
-      >
-        <div *ngFor="let index of state.indices || []">
-          <mat-option
-            *ngFor="let hit of index.hits"
-            [value]="hit.query"
-            (click)="this.onQuerySuggestionClick.emit({query: hit.query, category: hasCategory(hit) ? getCategory(hit) : null })"
-          >
-            {{ hit.query }}
-            <span>
-              in
-              <em *ngIf="hasCategory(hit)"> {{ getCategory(hit) }} </em>
-              <em *ngIf="!hasCategory(hit)"> All categories </em>
-            </span>
-          </mat-option>
-        </div>
-      </mat-autocomplete>
-    </div>
-  `
-})
-export class AutocompleteComponent extends BaseWidget {
-  state: {
-    query: string;
-    refine: Function;
-    indices: object[];
-  };
+    <input matInput [matAutocomplete]="auto" (keyup)="handleChange($event)" />
+    <mat-autocomplete #auto="matAutocomplete">
+      <ng-container *ngFor="let index of state?.indices || []">
+        <mat-option
+          *ngFor="let hit of index.hits"
+          [value]="hit.query"
+          (click)="
+            onQuerySuggestionClick.emit({
+              query: hit.query,
+              category: hasCategory(hit) ? getCategory(hit) : null
+            })
+          "
+        >
+          {{ hit.query }}
+          <span>
+            in
+            <em *ngIf="hasCategory(hit)">{{ getCategory(hit) }}</em>
+            <em *ngIf="!hasCategory(hit)">All categories</em>
+          </span>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  `,
+  styles: [
+    `
+      :host {
+        display: block;
+        width: 100%;
+      }
 
-  @Output() onQuerySuggestionClick: EventEmitter<any> = new EventEmitter();
+      input {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    `,
+  ],
+})
+export class AutocompleteComponent extends TypedBaseWidget<
+  AutocompleteWidgetDescription,
+  AutocompleteConnectorParams
+> {
+  state?: AutocompleteWidgetDescription['renderState'];
+
+  @Output() onQuerySuggestionClick = new EventEmitter<QuerySuggestion>();
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent
+    public instantSearchInstance: NgAisInstantSearch
   ) {
-    super("AutocompleteComponent");
+    super('AutocompleteComponent');
   }
 
-  hasCategory(hit) {
-    return (
-      hit.instant_search &&
-      hit.instant_search.facets &&
-      hit.instant_search.facets.exact_matches &&
-      hit.instant_search.facets.exact_matches.categories &&
-      hit.instant_search.facets.exact_matches.categories.length
-    );
+  hasCategory(hit: any) {
+    return !!hit?.instant_search?.facets?.exact_matches?.categories?.length;
   }
 
-  getCategory(hit) {
+  getCategory(hit: any) {
     const [category] = hit.instant_search.facets.exact_matches.categories;
     return category.value;
   }
 
-  public handleChange($event: KeyboardEvent) {
-    this.state.refine(($event.target as HTMLInputElement).value);
+  handleChange(event: Event) {
+    this.state?.refine((event.target as HTMLInputElement).value);
   }
 
-  public ngOnInit() {
+  ngOnInit() {
     this.createWidget(connectAutocomplete, {});
     super.ngOnInit();
   }
