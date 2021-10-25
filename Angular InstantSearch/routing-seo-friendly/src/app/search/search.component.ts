@@ -79,12 +79,6 @@ export class SearchComponent {
           const { query = '', page, brands = [] } = queryParams;
           // brands is not an array when there's a single value.
           const allBrands = [].concat(brands);
-          console.log({
-            query: decodeURIComponent(query),
-            page,
-            brands: allBrands.map(decodeURIComponent),
-            category,
-          });
 
           return {
             query: decodeURIComponent(query),
