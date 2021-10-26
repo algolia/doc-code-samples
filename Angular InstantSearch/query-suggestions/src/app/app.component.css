@@ -49,8 +49,10 @@
   margin-bottom: 2rem;
 }
 
-.ais-Hits-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+@media (min-width: 900px) {
+  .ais-Hits-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 }

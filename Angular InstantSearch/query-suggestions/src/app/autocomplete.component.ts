@@ -1,3 +1,4 @@
+import type { Hit } from '@algolia/client-search';
 import {
   Component,
   EventEmitter,
@@ -20,6 +21,16 @@ export type QuerySuggestion = {
   query: string;
   category: string | null;
 };
+
+type QuerySuggestionHit = Hit<{
+  instant_search?: {
+    facets?: {
+      exact_matches?: {
+        categories?: ReadonlyArray<{ value: string; count: number }>;
+      };
+    };
+  };
+}>;
 
 @Component({
   selector: 'app-autocomplete',
@@ -81,12 +92,13 @@ export class AutocompleteComponent extends TypedBaseWidget<
     super('AutocompleteComponent');
   }
 
-  hasCategory(hit: any) {
-    return !!hit?.instant_search?.facets?.exact_matches?.categories?.length;
+  hasCategory(hit: QuerySuggestionHit) {
+    return !!hit.instant_search?.facets?.exact_matches?.categories?.length;
   }
 
-  getCategory(hit: any) {
-    const [category] = hit.instant_search.facets.exact_matches.categories;
+  getCategory(hit: QuerySuggestionHit) {
+    const [category] =
+      hit.instant_search?.facets?.exact_matches?.categories || [];
     return category.value;
   }
 
