@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
+import { UiState } from 'instantsearch.js/es/types';
 
 import algoliasearch from 'algoliasearch/lite';
+import { InstantSearchConfig } from 'angular-instantsearch/instantsearch/instantsearch';
 
 // Returns a slug from the category name.
 // Spaces are replaced by "+" to make
@@ -24,6 +26,10 @@ const searchClient = algoliasearch(
   'aadef574be1f9252bb48d4ea09b5cfe5'
 );
 
+type CustomRouteState = {
+  [stateKey: string]: any;
+};
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -32,11 +38,11 @@ const searchClient = algoliasearch(
 export class SearchComponent {
   constructor(private route: ActivatedRoute) {}
 
-  config = {
+  public config: InstantSearchConfig = {
     indexName: 'demo_ecommerce',
     searchClient,
     routing: {
-      router: historyRouter<any>({
+      router: historyRouter<CustomRouteState>({
         windowTitle({ category, query }) {
           const queryTitle = query ? `Results for "${query}"` : 'Search';
 
@@ -90,7 +96,7 @@ export class SearchComponent {
       }),
 
       stateMapping: {
-        stateToRoute(uiState: any) {
+        stateToRoute(uiState: UiState): CustomRouteState {
           return {
             query: uiState.demo_ecommerce.query,
             page: uiState.demo_ecommerce.page,
@@ -103,7 +109,7 @@ export class SearchComponent {
           };
         },
 
-        routeToState(routeState: any) {
+        routeToState(routeState: CustomRouteState): UiState {
           return {
             demo_ecommerce: {
               query: routeState.query,
