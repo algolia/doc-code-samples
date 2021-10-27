@@ -1,44 +1,57 @@
-import { Component } from "@angular/core";
-import * as algoliasearch from "algoliasearch/lite";
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
-  "B1G2GM9NG0",
-  "aadef574be1f9252bb48d4ea09b5cfe5"
+  'B1G2GM9NG0',
+  'aadef574be1f9252bb48d4ea09b5cfe5'
 );
 
 @Component({
-  selector: "app-search",
-  templateUrl: "./search.component.html"
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
+  constructor() {}
+
   config = {
-    indexName: "demo_ecommerce",
+    indexName: 'demo_ecommerce',
     searchClient,
     routing: {
       stateMapping: {
-        stateToRoute(uiState) {
+        stateToRoute(uiState: any) {
+          // refer to uiState docs for details: https://www.algolia.com/doc/api-reference/widgets/ui-state/js/
           return {
-            q: uiState.query || "",
+            query: uiState.demo_ecommerce.query,
+            page: uiState.demo_ecommerce.page,
             brands:
-              (uiState.refinementList &&
-                uiState.refinementList.brand &&
-                uiState.refinementList.brand.join("~")) ||
+              (uiState.demo_ecommerce.refinementList &&
+                uiState.demo_ecommerce.refinementList.brand &&
+                uiState.demo_ecommerce.refinementList.brand.join("~")) ||
               "all",
-            p: uiState.page || 1
+            category: uiState.demo_ecommerce.menu && uiState.demo_ecommerce.menu.categories,
           };
         },
-        routeToState(routeState) {
-          if (routeState.brands === "all") routeState.brands = undefined;
 
+        routeToState(routeState: any) {
+          // refer to uiState docs for details: https://www.algolia.com/doc/api-reference/widgets/ui-state/js/
           return {
-            query: routeState.q,
-            refinementList: {
-              brand: routeState.brands && routeState.brands.split("~")
-            },
-            page: routeState.p
+            // eslint-disable-next-line camelcase
+            demo_ecommerce: {
+              query: routeState.query,
+              page: routeState.page,
+              menu: {
+                categories: routeState.category,
+              },
+              refinementList: {
+                brand: routeState.brands && (routeState.brands === 'all' ? [] : routeState.brands.split("~"))
+              },
+            }
           };
-        }
-      }
-    }
+        },
+      },
+    },
   };
 }
