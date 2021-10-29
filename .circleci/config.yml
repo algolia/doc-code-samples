@@ -63,8 +63,6 @@ jobs:
       - build_project:
           path: "Angular InstantSearch/refresh"
       - build_project:
-          path: "Angular InstantSearch/routing-angular-router"
-      - build_project:
           path: "Angular InstantSearch/routing-basic"
       - build_project:
           path: "Angular InstantSearch/routing-seo-friendly"
