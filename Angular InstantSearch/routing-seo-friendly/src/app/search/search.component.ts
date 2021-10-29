@@ -1,47 +1,50 @@
-import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { history as historyRouter } from "instantsearch.js/es/lib/routers";
-import * as algoliasearch from "algoliasearch/lite";
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
+import { UiState } from 'instantsearch.js/es/types';
+
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearchConfig } from 'angular-instantsearch/instantsearch/instantsearch';
 
 // Returns a slug from the category name.
 // Spaces are replaced by "+" to make
 // the URL easier to read and other
 // characters are encoded.
-function getCategorySlug(name) {
-  return name
-    .split(" ")
-    .map(encodeURIComponent)
-    .join("+");
+function getCategorySlug(name: string) {
+  return name.split(' ').map(encodeURIComponent).join('+');
 }
 
 // Returns a name from the category slug.
 // The "+" are replaced by spaces and other
 // characters are decoded.
-function getCategoryName(slug) {
-  return slug
-    .split("+")
-    .map(decodeURIComponent)
-    .join(" ");
+function getCategoryName(slug: string) {
+  return slug.split('+').map(decodeURIComponent).join(' ');
 }
 
 const searchClient = algoliasearch(
-  "B1G2GM9NG0",
-  "aadef574be1f9252bb48d4ea09b5cfe5"
+  'B1G2GM9NG0',
+  'aadef574be1f9252bb48d4ea09b5cfe5'
 );
 
+type CustomRouteState = {
+  [stateKey: string]: any;
+};
+
 @Component({
-  selector: "app-search",
-  templateUrl: "./search.component.html"
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
   constructor(private route: ActivatedRoute) {}
-  config = {
-    indexName: "demo_ecommerce",
+
+  public config: InstantSearchConfig = {
+    indexName: 'demo_ecommerce',
     searchClient,
     routing: {
-      router: historyRouter({
+      router: historyRouter<CustomRouteState>({
         windowTitle({ category, query }) {
-          const queryTitle = query ? `Results for "${query}"` : "Search";
+          const queryTitle = query ? `Results for "${query}"` : 'Search';
 
           if (category) {
             return `${category} – ${queryTitle}`;
@@ -53,7 +56,7 @@ export class SearchComponent {
         createURL({ qsModule, routeState }) {
           const categoryPath = routeState.category
             ? `${getCategorySlug(routeState.category)}/`
-            : "";
+            : '';
           const queryParameters = {} as any;
 
           if (routeState.query) {
@@ -68,7 +71,7 @@ export class SearchComponent {
 
           const queryString = qsModule.stringify(queryParameters, {
             addQueryPrefix: true,
-            arrayFormat: "repeat"
+            arrayFormat: 'repeat',
           });
 
           return `/search/${categoryPath}${queryString}`;
@@ -77,9 +80,9 @@ export class SearchComponent {
         parseURL: () => {
           const { params, queryParams } = this.route.snapshot;
           const category = getCategoryName(
-            decodeURIComponent(params.category || "")
+            decodeURIComponent(params.category || '')
           );
-          const { query = "", page, brands = [] } = queryParams;
+          const { query = '', page, brands = [] } = queryParams;
           // brands is not an array when there's a single value.
           const allBrands = [].concat(brands);
 
@@ -87,34 +90,40 @@ export class SearchComponent {
             query: decodeURIComponent(query),
             page,
             brands: allBrands.map(decodeURIComponent),
-            category
+            category,
           };
-        }
+        },
       }),
 
       stateMapping: {
-        stateToRoute(uiState) {
+        stateToRoute(uiState: UiState): CustomRouteState {
           return {
-            query: uiState.query,
-            page: uiState.page,
-            brands: uiState.refinementList && uiState.refinementList.brand,
-            category: uiState.menu && uiState.menu.categories
+            query: uiState.demo_ecommerce.query,
+            page: uiState.demo_ecommerce.page,
+            brands:
+              uiState.demo_ecommerce.refinementList &&
+              uiState.demo_ecommerce.refinementList.brands,
+            category:
+              uiState.demo_ecommerce.menu &&
+              uiState.demo_ecommerce.menu.categories,
           };
         },
 
-        routeToState(routeState) {
+        routeToState(routeState: CustomRouteState): UiState {
           return {
-            query: routeState.query,
-            page: routeState.page,
-            menu: {
-              categories: routeState.category
+            demo_ecommerce: {
+              query: routeState.query,
+              page: routeState.page,
+              menu: {
+                categories: routeState.category,
+              },
+              refinementList: {
+                brand: routeState.brands,
+              },
             },
-            refinementList: {
-              brand: routeState.brands
-            }
           };
-        }
-      }
-    }
+        },
+      },
+    },
   };
 }

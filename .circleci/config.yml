@@ -55,10 +55,6 @@ jobs:
       - build_project:
           path: "Angular InstantSearch/loading-indicator"
       - build_project:
-          path: "Angular InstantSearch/manipulating-lists/filtering"
-      - build_project:
-          path: "Angular InstantSearch/manipulating-lists/sorting"
-      - build_project:
           path: "Angular InstantSearch/multi-index-autocomplete"
       - build_project:
           path: "Angular InstantSearch/multi-index-hits"
