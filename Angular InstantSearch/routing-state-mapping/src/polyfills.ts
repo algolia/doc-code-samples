@@ -42,7 +42,7 @@ import 'core-js/es6/reflect';
 
 /** Evergreen browsers require these. **/
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-import 'core-js/es7/reflect';
+import "core-js/es7/reflect";
 
 /**
  * Web Animations `@angular/platform-browser/animations`
@@ -69,7 +69,7 @@ import 'core-js/es7/reflect';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone'; // Included with Angular CLI.
+import "zone.js/dist/zone"; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
@@ -77,5 +77,5 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 // See: https://github.com/algolia/angular-instantsearch/issues/90
 (window as any).process = {
-  env: { DEBUG: undefined },
+  env: { DEBUG: undefined }
 };
