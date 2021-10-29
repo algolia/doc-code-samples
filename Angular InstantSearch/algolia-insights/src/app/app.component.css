@@ -53,3 +53,18 @@
   margin: 2rem auto;
   text-align: center;
 }
+
+.btn {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #dd0031;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-out;
+  outline: none;
+  margin-top: 1rem;
+  white-space: nowrap;
+  overflow: visible;
+  border: 0;
+  cursor: pointer;
+}
