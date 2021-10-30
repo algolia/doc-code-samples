@@ -19,7 +19,7 @@
     "prettier": "1.17.1"
   },
   "dependencies": {
-    "algoliasearch": "3.33.0",
+    "algoliasearch": "3.35.1",
     "express": "4.17.0"
   }
 }

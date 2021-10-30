@@ -585,7 +585,7 @@ algoliasearch-helper@^3.5.5:
   dependencies:
     events "^1.1.1"
 
-algoliasearch@^4.9.3:
+algoliasearch@4.9.3:
   version "4.9.3"
   resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-4.9.3.tgz#b22ef0ae0450304cdf5264369a29cefa71ea2b30"
   integrity sha512-VLl9pYXhVB397xTW369sy13qw3m1hHzCfj9zSdeDDYVwTxHiiok/QvhPKAMIzjqyUoY07O8j+941UxYZjugsMQ==
