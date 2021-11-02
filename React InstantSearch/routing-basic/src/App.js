@@ -91,5 +91,3 @@ App.propTypes = {
   }),
   location: PropTypes.object.isRequired,
 };
-
-export default App;
