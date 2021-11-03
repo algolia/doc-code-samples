@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   InstantSearch,
   Hits,
@@ -28,16 +28,14 @@ const urlToSearchState = location => qs.parse(location.search.slice(1));
 export function App(props) {
   const { location, history } = props;
   const [searchState, setSearchState] = useState(urlToSearchState(location));
-  const [debouncedSetState, setDebouncedSetState] = useState(null);
+  const debouncedSetState = useRef(null);
 
   function onSearchStateChange(updatedSearchState) {
-    clearTimeout(debouncedSetState);
+    clearTimeout(debouncedSetState.current);
 
-    setDebouncedSetState(
-      setTimeout(() => {
-        history.push(searchStateToUrl(props, updatedSearchState));
-      }, DEBOUNCE_TIME)
-    );
+    debouncedSetState.current = setTimeout(() => {
+      history.push(searchStateToUrl(props, updatedSearchState));
+    }, DEBOUNCE_TIME);
 
     setSearchState(updatedSearchState);
   }
