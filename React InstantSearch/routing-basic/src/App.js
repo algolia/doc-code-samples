@@ -20,13 +20,12 @@ const searchClient = algoliasearch(
 
 const createURL = state => `?${qs.stringify(state)}`;
 
-const searchStateToUrl = (props, searchState) =>
-  searchState ? `${props.location.pathname}${createURL(searchState)}` : '';
+const searchStateToUrl = (location, searchState) =>
+  searchState ? `${location.pathname}${createURL(searchState)}` : '';
 
 const urlToSearchState = location => qs.parse(location.search.slice(1));
 
-export function App(props) {
-  const { location, history } = props;
+export function App({ location, history }) {
   const [searchState, setSearchState] = useState(urlToSearchState(location));
   const debouncedSetStateRef = useRef(null);
 
