@@ -33,7 +33,7 @@ export function App({ location, history }) {
     clearTimeout(debouncedSetStateRef.current);
 
     debouncedSetStateRef.current = setTimeout(() => {
-      history.push(searchStateToUrl(props, updatedSearchState));
+      history.push(searchStateToUrl(location, updatedSearchState));
     }, DEBOUNCE_TIME);
 
     setSearchState(updatedSearchState);
