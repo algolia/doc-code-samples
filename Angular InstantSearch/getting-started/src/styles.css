@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "instantsearch.css/themes/reset.css";
-@import "instantsearch.css/themes/satellite.css";
-
 body { font-family: sans-serif }
 .ais-SearchBox { margin-bottom: 1em }
 .ais-Pagination { margin-top: 1em }
