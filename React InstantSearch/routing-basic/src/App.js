@@ -28,12 +28,12 @@ const urlToSearchState = location => qs.parse(location.search.slice(1));
 export function App(props) {
   const { location, history } = props;
   const [searchState, setSearchState] = useState(urlToSearchState(location));
-  const debouncedSetState = useRef(null);
+  const debouncedSetStateRef = useRef(null);
 
   function onSearchStateChange(updatedSearchState) {
-    clearTimeout(debouncedSetState.current);
+    clearTimeout(debouncedSetStateRef.current);
 
-    debouncedSetState.current = setTimeout(() => {
+    debouncedSetStateRef.current = setTimeout(() => {
       history.push(searchStateToUrl(props, updatedSearchState));
     }, DEBOUNCE_TIME);
 
