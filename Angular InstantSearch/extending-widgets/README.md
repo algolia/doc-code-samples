@@ -1,4 +1,4 @@
-# ais-ecommerce-demo-app
+# extending-widgets
 
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 
@@ -17,3 +17,5 @@ Alternatively, you may use [Yarn](https://http://yarnpkg.com/):
 yarn
 yarn start
 ```
+
+Open http://localhost:3000 to see your app.
