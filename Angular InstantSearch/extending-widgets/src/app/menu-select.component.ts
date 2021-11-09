@@ -10,7 +10,7 @@ import connectMenu, {
 } from 'instantsearch.js/es/connectors/menu/connectMenu';
 
 @Component({
-  selector: 'ais-menu-select',
+  selector: 'my-menu-select',
   template: `
     <select class="menu-select" (change)="onChange($event)">
       <option
