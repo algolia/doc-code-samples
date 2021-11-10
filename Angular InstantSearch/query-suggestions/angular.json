@@ -28,7 +28,6 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/instantsearch.css/themes/satellite.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,7 +96,6 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/instantsearch.css/themes/satellite.css",
               "src/styles.css"
             ],
             "scripts": []
