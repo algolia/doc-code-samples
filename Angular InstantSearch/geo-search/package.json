@@ -11,7 +11,7 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
-    "@agm/core": "1.0.0-beta.6",
+    "@agm/core": "1.1.0",
     "@angular/animations": "6.1.10",
     "@angular/common": "6.1.10",
     "@angular/compiler": "6.1.10",
