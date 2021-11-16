@@ -1,14 +1,14 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { NgAisModule } from "angular-instantsearch";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgAisModule } from 'angular-instantsearch';
 
-import { AppComponent } from "./app.component";
-import { DebouncedSearchBox } from "./debounced-search-box.component";
+import { AppComponent } from './app.component';
+import { DebouncedSearchBoxComponent } from './debounced-search-box.component';
 
 @NgModule({
-  declarations: [AppComponent, DebouncedSearchBox],
+  declarations: [AppComponent, DebouncedSearchBoxComponent],
   imports: [NgAisModule.forRoot(), BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
