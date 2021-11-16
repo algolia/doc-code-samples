@@ -45,11 +45,14 @@
   flex: 3;
 }
 
-.searchbox {
+.search-box {
   margin-bottom: 2rem;
 }
 
-.pagination {
-  margin: 2rem auto;
-  text-align: center;
+@media (min-width: 900px) {
+  .ais-Hits-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 }

@@ -4,24 +4,21 @@ import { NgAisModule } from 'angular-instantsearch';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AutocompleteComponent } from './autocomplete.component';
 
-import { MatInputModule, MatAutocompleteModule } from '@angular/material';
-
-import { AutocompleteComponent } from './autocomplete.component'
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AutocompleteComponent,
-  ],
+  declarations: [AppComponent, AutocompleteComponent],
   imports: [
     NgAisModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
-    MatInputModule,
     MatAutocompleteModule,
+    MatInputModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

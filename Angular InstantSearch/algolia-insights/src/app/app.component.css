@@ -19,7 +19,7 @@
 }
 
 .header-title::after {
-  content: " ▸ ";
+  content: ' ▸ ';
   padding: 0 0.5rem;
 }
 
@@ -58,7 +58,7 @@
   padding: 0.3rem 0.5rem;
   font-size: 0.8rem;
   color: #fff;
-  background-color: #0096db;
+  background-color: #dd0031;
   border-radius: 5px;
   transition: background-color 0.2s ease-out;
   outline: none;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as algoliasearch from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
   'latency',
@@ -12,25 +12,8 @@ const searchClient = algoliasearch(
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private query : string = "";
-
-  public configProducts = {
-    indexName: 'players',
+  config = {
+    indexName: 'instant_search',
     searchClient,
   };
-
-  public configActors = {
-    indexName: 'actors',
-    searchClient,
-  };
-
-  onQuery($event) {
-    this.query = $event.target.value
-  }
-
-  get searchParameters() {
-    return {
-      query: this.query
-    }
-  }
 }

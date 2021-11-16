@@ -12,7 +12,7 @@
 
 <div class="container">
   <ais-instantsearch [config]="configSuggestions">
-    <ais-configure [searchParameters]="{hitsPerPage: 5}"></ais-configure>
+    <ais-configure [searchParameters]="{ hitsPerPage: 5 }"></ais-configure>
     <div class="search-box">
       <app-autocomplete (onQuerySuggestionClick)="setQuery($event)"></app-autocomplete>
     </div>
@@ -25,7 +25,7 @@
         <ais-hits>
           <ng-template let-hits="hits" let-results="results">
             <div *ngIf="hits.length === 0">
-              No results found matching <strong></strong>.
+              No results found matching <strong>{{ results?.query }}</strong>.
             </div>
 
             <ol class="ais-Hits-list">
