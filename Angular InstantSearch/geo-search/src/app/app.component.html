@@ -11,11 +11,14 @@
 </header>
 
 <div class="container">
-  <div class="results">
-    <ais-instantsearch [config]="config">
-      <ais-search-box></ais-search-box>
-      <br />
-      <app-geo-search></app-geo-search>
-    </ais-instantsearch>
-  </div>
+  <ais-instantsearch [config]="config">
+    <div class="search-panel">
+      <div class="search-panel__results">
+        <div class="searchbox">
+          <ais-search-box placeholder=""></ais-search-box>
+        </div>
+        <ais-geo-search></ais-geo-search>
+      </div>
+    </div>
+  </ais-instantsearch>
 </div>

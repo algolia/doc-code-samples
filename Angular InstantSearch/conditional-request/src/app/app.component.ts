@@ -1,26 +1,41 @@
 import { Component } from '@angular/core';
-import * as algoliasearch from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
+import {
+  MultipleQueriesQuery,
+  MultipleQueriesResponse,
+  SearchResponse,
+} from '@algolia/client-search';
 
-const algoliaClient = algoliasearch(
-  'latency',
-  '6be0576ff61c053d5f9a3225e2a90f76'
+const originalSearchClient = algoliasearch(
+  'B1G2GM9NG0',
+  'aadef574be1f9252bb48d4ea09b5cfe5'
 );
 
-const searchClient = {
-  ...algoliaClient,
-  search(requests) {
-    if (requests.every(({ params }) => !params.query)) {
-      return Promise.resolve({
-        results: requests.map(() => ({
-          hits: [],
-          nbHits: 0,
-          processingTimeMS: 0,
-        })),
-      });
-    }
+const search: typeof originalSearchClient.search = <THit>(
+  queries: readonly MultipleQueriesQuery[]
+) => {
+  if (queries.every(({ params }) => !params || !params.query)) {
+    return Promise.resolve({
+      results: queries.map(() => ({
+        exhaustiveNbHits: false,
+        hits: [],
+        hitsPerPage: 0,
+        nbHits: 0,
+        nbPages: 0,
+        page: 0,
+        params: '',
+        processingTimeMS: 0,
+        query: '',
+      })),
+    });
+  }
 
-    return algoliaClient.search(requests);
-  },
+  return originalSearchClient.search<THit>(queries);
+};
+
+const searchClient = {
+  ...originalSearchClient,
+  search,
 };
 
 @Component({
@@ -29,8 +44,8 @@ const searchClient = {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  public config = {
-    indexName: 'instant_search',
+  config = {
+    indexName: 'demo_ecommerce',
     searchClient,
   };
 }

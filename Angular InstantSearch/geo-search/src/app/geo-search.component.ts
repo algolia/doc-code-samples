@@ -1,42 +1,46 @@
-import { Component, forwardRef, Inject } from "@angular/core";
-import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
-import { connectGeoSearch } from "instantsearch.js/es/connectors";
+import { Component, Inject, forwardRef, Optional } from '@angular/core';
+import {
+  TypedBaseWidget,
+  NgAisInstantSearch,
+  NgAisIndex,
+} from 'angular-instantsearch';
+import connectGeoSearch, {
+  GeoSearchConnectorParams,
+  GeoSearchWidgetDescription,
+} from 'instantsearch.js/es/connectors/geo-search/connectGeoSearch';
 
 @Component({
-  selector: "app-geo-search",
+  selector: 'ais-geo-search',
   template: `
-    <agm-map
-      [latitude]="center.lat"
-      [longitude]="center.lng"
-      style="height: 600px"
-    >
-      <agm-marker
-        [latitude]="item._geoloc.lat"
-        [longitude]="item._geoloc.lng"
-        [label]="item.name"
-        *ngFor="let item of state.items || []"
-      ></agm-marker>
-    </agm-map>
-  `
+    <google-map [center]="center" [zoom]="7" width="100%">
+      <map-marker
+        *ngFor="let item of state.items"
+        [position]="item._geoloc"
+      ></map-marker>
+    </google-map>
+  `,
 })
-export class GeoSearchComponent extends BaseWidget {
-  state: {
-    clearMapRefinement: Function;
-    hasMapMoveSinceLastRefine: Function;
-    isRefineOnMapMove: Function;
-    isRefinedWithMap: Function;
-    items: { name: string; _geoloc: { lat: number; lng: number } }[];
-    refine: Function;
-    setMapMoveSinceLastRefine: Function;
-    toggleRefineOnMapMove: Function;
-    position: object;
-  };
-
+export class GeoSearchComponent extends TypedBaseWidget<
+  GeoSearchWidgetDescription,
+  GeoSearchConnectorParams
+> {
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent
+    public instantSearchInstance: NgAisInstantSearch
   ) {
-    super("GeoSearchComponent");
+    super('GeoSearch');
+  }
+
+  public state: GeoSearchWidgetDescription['renderState'] = {
+    items: [],
+  } as any;
+
+  public ngOnInit() {
+    this.createWidget(connectGeoSearch, {});
+    super.ngOnInit();
   }
 
   get center() {
@@ -45,10 +49,5 @@ export class GeoSearchComponent extends BaseWidget {
       return first._geoloc || { lat: 0, lng: 0 };
     }
     return { lat: 0, lng: 0 };
-  }
-
-  public ngOnInit() {
-    this.createWidget(connectGeoSearch, {});
-    super.ngOnInit();
   }
 }

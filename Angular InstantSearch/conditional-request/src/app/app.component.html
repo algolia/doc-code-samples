@@ -11,33 +11,47 @@
 </header>
 
 <div class="container">
-  <div class="results">
-    <ais-instantsearch [config]="config">
-      <p>The request is only triggered once the query is not empty.</p>
-      <div class="searchbox">
-        <ais-search-box></ais-search-box>
-      </div>
-      <div class="search-panel">
-        <div class="search-panel__results">
-          <ais-hits>
-            <ng-template let-hits="hits">
-              <ol class="ais-Hits-list">
-                <li class="ais-Hits-item" *ngFor="let hit of hits">
+  <ais-instantsearch [config]="config">
+    <div class="search-panel">
+      <div class="search-panel__results">
+        <p>The request is only triggered once the query is not empty.</p>
+        <div class="searchbox">
+          <ais-search-box></ais-search-box>
+        </div>
+
+        <ais-hits>
+          <ng-template let-hits="hits" let-results="results">
+            <ol class="ais-Hits-list">
+              <li class="ais-Hits-item" *ngFor="let hit of hits">
+                <article>
                   <h1>
                     <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
                   </h1>
+
                   <p>
                     <ais-highlight
                       attribute="description"
                       [hit]="hit"
                     ></ais-highlight>
                   </p>
-                </li>
-              </ol>
-            </ng-template>
-          </ais-hits>
-        </div>
+                  <p>
+                    <ais-highlight
+                      attribute="brand"
+                      [hit]="hit"
+                    ></ais-highlight>
+                  </p>
+                  <p>
+                    <ais-highlight
+                      attribute="categories"
+                      [hit]="hit"
+                    ></ais-highlight>
+                  </p>
+                </article>
+              </li>
+            </ol>
+          </ng-template>
+        </ais-hits>
       </div>
-    </ais-instantsearch>
-  </div>
+    </div>
+  </ais-instantsearch>
 </div>
