@@ -12,12 +12,23 @@ import connectSearchBox, {
 @Component({
   selector: 'app-debounced-search-box',
   template: `
-    <input
-      type="text"
-      #input
-      (keyup)="onChangeDebounced(input.value)"
-      [value]="this.state.query"
-    />
+    <div class="ais-SearchBox">
+      <form class="ais-SearchBox-form" novalidate>
+        <input
+          type="text"
+          class="ais-SearchBox-input"
+          #input
+          (keyup)="onChangeDebounced(input.value)"
+          [value]="this.state.query"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="Search for products"
+          spellcheck="false"
+          maxlength="512"
+        />
+      </form>
+    </div>
   `,
 })
 export class DebouncedSearchBoxComponent extends TypedBaseWidget<

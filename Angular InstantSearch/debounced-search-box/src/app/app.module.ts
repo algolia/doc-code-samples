@@ -6,15 +6,9 @@ import { AppComponent } from './app.component';
 import { DebouncedSearchBoxComponent } from './debounced-search-box.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DebouncedSearchBoxComponent,
-  ],
-  imports: [
-    NgAisModule.forRoot(),
-    BrowserModule
-  ],
+  declarations: [AppComponent, DebouncedSearchBoxComponent],
+  imports: [NgAisModule.forRoot(), BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
