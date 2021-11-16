@@ -53,8 +53,6 @@ jobs:
       - build_project:
           path: "Angular InstantSearch/infinite-scroll"
       - build_project:
-          path: "Angular InstantSearch/loading-indicator"
-      - build_project:
           path: "Angular InstantSearch/multi-index-autocomplete"
       - build_project:
           path: "Angular InstantSearch/multi-index-hits"
