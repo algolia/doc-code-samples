@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   InstantSearch,
   Hits,
@@ -133,21 +133,26 @@ Hit.propTypes = {
   hit: PropTypes.object.isRequired,
 };
 
+let timeout;
+
 const App = ({ location, history }) => {
   const [searchState, setSearchState] = useState(urlToSearchState(location));
-  const [debouncedSetState, setDebouncedSetState] = useState(null);
 
   const onSearchStateChange = updatedSearchState => {
-    clearTimeout(debouncedSetState);
+    if (timeout) {
+      clearTimeout(timeout);
+    }
 
-    setDebouncedSetState(
-      setTimeout(() => {
-        history.push(searchStateToUrl(updatedSearchState), updatedSearchState);
-      }, DEBOUNCE_TIME)
-    );
+    timeout = setTimeout(() => {
+      history.push(searchStateToUrl(updatedSearchState), updatedSearchState);
+    }, DEBOUNCE_TIME);
 
     setSearchState(updatedSearchState);
   };
+
+  useEffect(() => {
+    setSearchState(urlToSearchState(location));
+  }, [location]);
 
   return (
     <div className="container">
