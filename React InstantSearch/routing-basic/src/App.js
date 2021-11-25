@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   InstantSearch,
   Hits,
@@ -38,6 +38,10 @@ export function App({ location, history }) {
 
     setSearchState(updatedSearchState);
   }
+
+  useEffect(() => {
+    setSearchState(urlToSearchState(location));
+  }, [location]);
 
   return (
     <div className="container">
