@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "12.2.15",
     "@angular/router": "12.2.15",
     "algoliasearch": "^4.10.5",
-    "angular-instantsearch": "4.0.0",
+    "angular-instantsearch": "4.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
