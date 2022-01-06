@@ -111,6 +111,20 @@ em {
   border-radius: 9999px;
 }
 
+.ais-Hits-injected .banner {
+  display: flex;
+  background-size: cover;
+  color: white;
+  text-transform: capitalize;
+  justify-content: end;
+}
+
+.ais-Hits-injected .banner h1 {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
 .ais-Hits-loadMore {
   width: 100%;
   margin-top: 1rem;
