@@ -1,8 +1,7 @@
-import React from 'react';
-
 import { HitsFromIndex } from './pages/HitsFromIndex';
 import { HitsFromRule } from './pages/HitsFromRule';
 import { InterspersedHits } from './pages/InterspersedHits';
+import { ThirdPartyHits } from './pages/ThirdPartyHits';
 
 export const routes = [
   {
@@ -18,7 +17,7 @@ export const routes = [
   {
     path: '/third-party',
     label: 'Third-party hits',
-    element: () => <></>,
+    element: ThirdPartyHits,
   },
   {
     path: '/interspersed-hits',

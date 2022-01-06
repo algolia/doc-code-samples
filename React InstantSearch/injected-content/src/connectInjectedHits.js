@@ -40,7 +40,15 @@ export const connectInjectedHits = createConnector({
         return slots({ resultsByIndex })
           .reverse()
           .reduce(
-            (acc, { injectAt, getHits = () => [null], slotComponent }) => {
+            (
+              acc,
+              {
+                injectAt,
+                getHits = () => [null],
+                slotComponent,
+                className = '',
+              }
+            ) => {
               const slotScopeProps = { position, resultsByIndex };
               const shouldInject =
                 typeof injectAt === 'function'
@@ -63,6 +71,7 @@ export const connectInjectedHits = createConnector({
                   props: {
                     ...slotScopeProps,
                     hit: hitFromSlotIndex,
+                    className,
                   },
                   Hit: slotComponent,
                 })),

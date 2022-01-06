@@ -82,6 +82,11 @@ em {
 
 .ais-Hits-injected {
   width: calc(50% - 1rem);
+  min-height: 250px;
+}
+
+.ais-Hits-injected--small {
+  width: calc(25% - 1rem);
 }
 
 .ais-Hits-injected article {
@@ -135,9 +140,14 @@ em {
 @media (max-width: 767px) {
   .ais-Hits-item {
     width: calc(50% - 1rem);
+    flex-grow: 1;
   }
 
   .ais-Hits-injected {
     width: calc(100% - 1rem);
+  }
+
+  .ais-Hits-injected--small {
+    width: calc(50% - 1rem);
   }
 }

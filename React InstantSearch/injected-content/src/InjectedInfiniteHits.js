@@ -10,12 +10,16 @@ export const InjectedInfiniteHits = connectInfiniteHits(
     <div className={cx('')}>
       <ul className={cx('list')}>
         {injectedHits.map(({ props, type, Hit }, index) => {
+          const { className = '', ...otherProps } = props;
+
           return (
             <li
               key={index}
-              className={[...new Set([cx('item'), cx(type)])].join(' ')}
+              className={[...new Set([cx('item'), cx(type), className])].join(
+                ' '
+              )}
             >
-              <Hit {...props} />
+              <Hit {...otherProps} />
             </li>
           );
         })}
