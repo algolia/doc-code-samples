@@ -25,27 +25,26 @@ export function HitsFromRule() {
             }}
           />
           <InjectedInfiniteHits
-            slots={() => [
-              {
-                injectAt: 2,
-                getHits: ({ resultsByIndex }) => {
-                  const recipesIndex =
-                    resultsByIndex[
-                      'instantsearch_content_injection_ingredients'
-                    ];
+            slots={({ resultsByIndex }) => {
+              const recipesIndex =
+                resultsByIndex['instantsearch_content_injection_ingredients'];
 
-                  return (
-                    (recipesIndex &&
-                      recipesIndex.userData &&
-                      recipesIndex.userData.filter(
-                        ({ type }) => type === 'banner'
-                      )) ||
-                    []
-                  );
+              const [banner] =
+                (recipesIndex &&
+                  recipesIndex.userData &&
+                  recipesIndex.userData.filter(
+                    ({ type }) => type === 'banner'
+                  )) ||
+                [];
+
+              return [
+                {
+                  injectAt: banner && banner.position,
+                  getHits: () => [banner].filter(Boolean),
+                  slotComponent: BannerHit,
                 },
-                slotComponent: BannerHit,
-              },
-            ]}
+              ];
+            }}
             hitComponent={IngredientHit}
           />
         </div>
