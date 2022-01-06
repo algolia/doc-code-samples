@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { HitsFromIndex } from './pages/HitsFromIndex';
 import { InterspersedHits } from './pages/InterspersedHits';
 
 export const routes = [
   {
     path: '/',
     label: 'Hits from other index',
-    element: () => <></>,
+    element: HitsFromIndex,
   },
   {
     path: '/rule',

@@ -11,15 +11,19 @@ import { InjectedInfiniteHits } from '../InjectedInfiniteHits';
 import { RecipeHit } from '../components/RecipeHit';
 import { IngredientHit } from '../components/IngredientHit';
 
-export function InterspersedHits() {
+export function HitsFromIndex() {
   return (
     <InstantSearch
       searchClient={searchClient}
       indexName="instantsearch_content_injection_ingredients"
     >
-      <Configure attributesToSnippet={['summary:20']} snippetEllipsisText="…" />
+      <Configure
+        hitsPerPage={14}
+        attributesToSnippet={['summary:20']}
+        snippetEllipsisText="…"
+      />
       <Index indexName="instantsearch_content_injection_recipes">
-        <Configure hitsPerPage={100} page={0} />
+        <Configure hitsPerPage={1} page={0} />
       </Index>
       <div className="search-panel">
         <div className="search-panel__results">
@@ -32,15 +36,12 @@ export function InterspersedHits() {
           <InjectedInfiniteHits
             slots={() => [
               {
-                injectAt: ({ position }) => position > 0 && position % 4 === 0,
-                getHits: ({ resultsByIndex, position }) => {
+                injectAt: 2,
+                getHits: ({ resultsByIndex }) => {
                   const recipesIndex =
                     resultsByIndex['instantsearch_content_injection_recipes'];
 
-                  const index = position / 4 - 1;
-                  const item = recipesIndex && recipesIndex.hits[index];
-
-                  return item ? [item] : [];
+                  return (recipesIndex && recipesIndex.hits) || [];
                 },
                 slotComponent: RecipeHit,
               },
