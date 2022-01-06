@@ -11,6 +11,12 @@ em {
   background-image: linear-gradient(to right, #8e43e7, #00aeff);
   color: #fff;
   margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .header a {
@@ -30,6 +36,13 @@ em {
 
 .header-subtitle {
   font-size: 1.2rem;
+}
+
+.navigation-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -95,4 +108,14 @@ em {
   margin-top: 1rem;
   padding: 1rem;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .ais-Hits-item {
+    width: calc(50% - 1rem);
+  }
+
+  .ais-Hits-injected {
+    width: calc(100% - 1rem);
+  }
 }
