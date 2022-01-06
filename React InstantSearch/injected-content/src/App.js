@@ -12,7 +12,7 @@ function App() {
       <header className="header">
         <div className="header-wrapper">
           <h1 className="header-title">
-            <a href="/">injected-content</a>
+            <a href="/">Injected content</a>
           </h1>
           <p className="header-subtitle">
             using{' '}
@@ -25,7 +25,14 @@ function App() {
           <ul className="navigation-list">
             {routes.map(({ path, label }) => (
               <li key={path} className="navigation-item">
-                <NavLink to={path}>{label}</NavLink>
+                <NavLink
+                  to={path}
+                  style={({ isActive }) => ({
+                    textDecoration: isActive ? 'underline' : '',
+                  })}
+                >
+                  {label}
+                </NavLink>
               </li>
             ))}
           </ul>

@@ -41,8 +41,16 @@ em {
 .navigation-list {
   display: flex;
   list-style: none;
-  margin: 0;
+  margin: 0 -0.5rem;
   padding: 0;
+}
+
+.navigation-item {
+  margin: 0 0.5rem;
+}
+
+.navigation-item:hover {
+  text-decoration: underline;
 }
 
 .container {
