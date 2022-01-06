@@ -16,7 +16,7 @@
     "eslint-plugin-import": "2.17.3",
     "eslint-plugin-prettier": "3.1.0",
     "parcel-bundler": "1.12.3",
-    "prettier": "1.17.1"
+    "prettier": "1.19.1"
   },
   "dependencies": {
     "scriptjs": "2.5.9"
