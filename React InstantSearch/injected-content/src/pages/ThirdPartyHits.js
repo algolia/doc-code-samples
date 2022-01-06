@@ -65,7 +65,7 @@ function BannerHit({ id, className }) {
 
   return (
     <article
-      className={['banner', className].join(' ')}
+      className={['Banner', className].join(' ')}
       style={{
         backgroundImage: `url(./assets/${banner.image})`,
       }}

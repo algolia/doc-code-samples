@@ -6,7 +6,7 @@ import { ThirdPartyHits } from './pages/ThirdPartyHits';
 export const routes = [
   {
     path: '/',
-    label: 'Hits from other index',
+    label: 'Hits from index',
     element: HitsFromIndex,
   },
   {
@@ -20,7 +20,7 @@ export const routes = [
     element: ThirdPartyHits,
   },
   {
-    path: '/interspersed-hits',
+    path: '/interspersed',
     label: 'Interspersed hits',
     element: InterspersedHits,
   },
