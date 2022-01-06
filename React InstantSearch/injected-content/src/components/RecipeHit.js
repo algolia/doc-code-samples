@@ -10,12 +10,8 @@ export function RecipeHit(props) {
           <span className="badge">{props.hit.course}</span>
         </h1>
         <p>
-          {typeof props.hit.state === 'string' && (
-            <Highlight attribute="state" hit={props.hit} />
-          )}{' '}
-          {typeof props.hit.region === 'string' && (
-            <Highlight attribute="region" hit={props.hit} />
-          )}
+          {props.hit.state && <Highlight attribute="state" hit={props.hit} />}{' '}
+          {props.hit.region && <Highlight attribute="region" hit={props.hit} />}
         </p>
       </div>
       <p>
