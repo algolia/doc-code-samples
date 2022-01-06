@@ -57,7 +57,7 @@ export function HitsFromRule() {
 function BannerHit(props) {
   return (
     <article
-      className="banner"
+      className="banner Block-1/2 sm:Block-full"
       style={{
         backgroundImage: `url(./assets/${props.hit.image})`,
       }}

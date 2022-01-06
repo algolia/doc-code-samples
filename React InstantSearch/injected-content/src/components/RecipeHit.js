@@ -3,7 +3,7 @@ import { Highlight } from 'react-instantsearch-dom';
 
 export function RecipeHit(props) {
   return (
-    <article>
+    <article className="Block-1/2 sm:Block-full">
       <div>
         <h1>
           <Highlight attribute="name" hit={props.hit} />

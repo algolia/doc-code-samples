@@ -81,19 +81,22 @@ em {
 }
 
 .ais-Hits-injected {
-  width: calc(50% - 1rem);
-  min-height: 250px;
-}
-
-.ais-Hits-injected--small {
-  width: calc(25% - 1rem);
+  display: contents;
 }
 
 .ais-Hits-injected article {
   display: flex;
+  height: 100%;
+  min-height: 250px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #c4c8d8;
+  box-shadow: 0 2px 5px 0 #e3e5ec;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  box-sizing: border-box;
 }
 
 .ais-Hits-injected h1 {
@@ -121,7 +124,8 @@ em {
   background-size: cover;
   color: white;
   text-transform: capitalize;
-  justify-content: end;
+  justify-content: flex-end;
+  padding: 0;
 }
 
 .ais-Hits-injected .banner h1 {
@@ -137,17 +141,28 @@ em {
   cursor: pointer;
 }
 
+.Block-1\/2 {
+  width: calc(50% - 1rem);
+}
+
+.Block-1\/4 {
+  width: calc(25% - 1rem);
+}
+
 @media (max-width: 767px) {
   .ais-Hits-item {
-    width: calc(50% - 1rem);
     flex-grow: 1;
   }
 
-  .ais-Hits-injected {
+  .sm\:Block-full {
     width: calc(100% - 1rem);
   }
 
-  .ais-Hits-injected--small {
+  .sm\:Block-1\/2 {
     width: calc(50% - 1rem);
+  }
+
+  .sm\:Block-1\/4 {
+    width: calc(25% - 1rem);
   }
 }

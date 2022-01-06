@@ -30,7 +30,6 @@ export function ThirdPartyHits() {
               {
                 injectAt: 3,
                 slotComponent: SnackHit,
-                className: 'ais-Hits-injected--small',
               },
               {
                 injectAt: 8,
@@ -46,14 +45,14 @@ export function ThirdPartyHits() {
 }
 
 function SnackHit() {
-  return <BannerHit id="snacks" />;
+  return <BannerHit id="snacks" className="Block-1/4 sm:Block-full" />;
 }
 
 function BookHit() {
-  return <BannerHit id="book" />;
+  return <BannerHit id="book" className="Block-1/2 sm:Block-full" />;
 }
 
-function BannerHit({ id }) {
+function BannerHit({ id, className }) {
   const [banner, setBanner] = useState(null);
 
   useEffect(() => {
@@ -61,12 +60,12 @@ function BannerHit({ id }) {
   }, []);
 
   if (!banner) {
-    return <div>Loading...</div>;
+    return <article className={className}>Loading...</article>;
   }
 
   return (
     <article
-      className="banner"
+      className={['banner', className].join(' ')}
       style={{
         backgroundImage: `url(./assets/${banner.image})`,
       }}
