@@ -15,7 +15,7 @@
     "@angular/compiler": "12.2.15",
     "@angular/core": "12.2.15",
     "@angular/forms": "12.2.15",
-    "@angular/google-maps": "^13.0.0",
+    "@angular/google-maps": "13.1.1",
     "@angular/platform-browser": "12.2.15",
     "@angular/platform-browser-dynamic": "12.2.15",
     "@angular/router": "12.2.15",
