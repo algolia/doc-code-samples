@@ -6,7 +6,7 @@ executors:
       - image: circleci/node:9
   node14:
     docker:
-      - image: cimg/node:14.17.0
+      - image: cimg/node:14.18.2
 
 commands:
   build_project:
