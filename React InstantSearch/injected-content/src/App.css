@@ -132,6 +132,30 @@ em {
   display: block;
 }
 
+.ais-Hits-injected .Recommend {
+  color: #00aeff;
+  background-color: #e5f1f7;
+  border-color: currentColor;
+  box-shadow: none;
+}
+
+.ais-Hits-injected .Recommend h2 {
+  margin-top: 0;
+}
+
+.ais-Hits-injected .Recommend ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.ais-Hits-injected .Recommend article {
+  margin: 0;
+  background-color: #fff;
+}
+
 .ais-Hits-loadMore {
   width: 100%;
   margin-top: 1rem;
