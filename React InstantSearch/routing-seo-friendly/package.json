@@ -1,5 +1,6 @@
 {
   "name": "routing-seo-friendly",
+  "main": "public/App.js",
   "version": "1.0.0",
   "private": true,
   "scripts": {
