@@ -141,6 +141,7 @@ em {
   color: #00aeff;
   background-color: #e5f1f7;
   border-color: currentColor;
+  width: 100%;
   box-shadow: none;
 }
 
@@ -154,7 +155,7 @@ em {
   list-style: none;
   flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
   gap: 1rem;
 }
 
@@ -209,10 +210,6 @@ em {
 
   .Recommend .ais-Hits-item:first-of-type {
     border-bottom: 0;
-  }
-
-  .Recommend .ais-Hits-item:first-of-type div {
-    height: 200px;
   }
 
   .Recommend .ais-Hits-injected .FrequentlyBoughtTogether {

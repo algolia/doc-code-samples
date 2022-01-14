@@ -29,7 +29,7 @@ export function Recommend() {
       searchClient={searchClient}
       indexName="test_FLAGSHIP_ECOM_recommend"
     >
-      <Configure hitsPerPage={18} />
+      <Configure hitsPerPage={17} />
       <div className="search-panel">
         <div className="search-panel__results Recommend">
           <SearchBox
@@ -84,11 +84,14 @@ function ProductHit({ hit }) {
         display: 'flex',
         height: '100%',
         flexDirection: 'column',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
       }}
     >
       <div
         style={{
+          margin: '0 auto',
+          maxWidth: '100%',
+          maxHeight: '200px',
           aspectRatio: '9/10',
           overflow: 'hidden',
         }}
