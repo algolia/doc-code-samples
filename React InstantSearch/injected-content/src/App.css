@@ -132,26 +132,33 @@ em {
   display: block;
 }
 
-.ais-Hits-injected .Recommend {
+.Recommend .ais-Hits-item:first-of-type {
+  color: #00aeff;
+  border-color: currentColor;
+}
+
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether {
   color: #00aeff;
   background-color: #e5f1f7;
   border-color: currentColor;
   box-shadow: none;
 }
 
-.ais-Hits-injected .Recommend h2 {
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether h2 {
   margin-top: 0;
 }
 
-.ais-Hits-injected .Recommend ul {
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.ais-Hits-injected .Recommend article {
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether article {
   margin: 0;
   background-color: #fff;
 }
@@ -177,6 +184,18 @@ em {
   }
 }
 
+@media (min-width: 768px) {
+  .Recommend .ais-Hits-item:first-of-type {
+    border-right: 0;
+  }
+
+  .Recommend .ais-Hits-injected .FrequentlyBoughtTogether {
+    margin-left: 0;
+    width: calc(100% / 4 * 3);
+    border-left: 0;
+  }
+}
+
 @media (max-width: 767px) {
   .ais-Hits-item {
     width: calc(50% - 1rem);
@@ -186,6 +205,19 @@ em {
   .ais-Hits-injected article {
     min-height: 250px;
     height: 100%;
+  }
+
+  .Recommend .ais-Hits-item:first-of-type {
+    border-bottom: 0;
+  }
+
+  .Recommend .ais-Hits-item:first-of-type div {
+    height: 200px;
+  }
+
+  .Recommend .ais-Hits-injected .FrequentlyBoughtTogether {
+    margin-top: 0;
+    border-top: 0;
   }
 
   .sm\:Block-full {

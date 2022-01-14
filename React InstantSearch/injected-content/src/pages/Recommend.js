@@ -31,7 +31,7 @@ export function Recommend() {
     >
       <Configure hitsPerPage={18} />
       <div className="search-panel">
-        <div className="search-panel__results">
+        <div className="search-panel__results Recommend">
           <SearchBox
             className="searchbox"
             translations={{
@@ -41,7 +41,7 @@ export function Recommend() {
           <InjectedInfiniteHits
             slots={() => [
               {
-                injectAt: 2,
+                injectAt: 1,
                 slotComponent: RelatedProducts,
               },
             ]}
@@ -58,13 +58,13 @@ function RelatedProducts({ resultsByIndex }) {
     recommendClient,
     indexName: 'test_FLAGSHIP_ECOM_recommend',
     objectIDs: resultsByIndex.test_FLAGSHIP_ECOM_recommend.hits
-      .slice(0, 2)
+      .slice(0, 1)
       .map(({ objectID }) => objectID),
-    maxRecommendations: 2,
+    maxRecommendations: 3,
   });
 
   return (
-    <article className="Recommend Block-1/2 sm:Block-full">
+    <article className="FrequentlyBoughtTogether">
       <h2>Frequently bought together</h2>
       <ul>
         {recommendations.map(recommendation => (
@@ -87,14 +87,18 @@ function ProductHit({ hit }) {
         justifyContent: 'space-around',
       }}
     >
-      <img
-        src={hit.image_urls[0]}
-        alt={hit.name}
+      <div
         style={{
-          width: '100%',
-          objectFit: 'contain',
+          aspectRatio: '9/10',
+          overflow: 'hidden',
         }}
-      />
+      >
+        <img
+          src={hit.image_urls[0]}
+          alt={hit.name}
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      </div>
       <p style={{ marginBottom: 0 }}>
         <Highlight attribute="name" hit={hit} />
       </p>
