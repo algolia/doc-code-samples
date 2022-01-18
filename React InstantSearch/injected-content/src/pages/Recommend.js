@@ -35,13 +35,13 @@ export function Recommend() {
           <SearchBox
             className="searchbox"
             translations={{
-              placeholder: 'Search for articles like "dress" or "jeans"',
+              placeholder: 'Search for articles like "dress" or "jacket"',
             }}
           />
           <InjectedInfiniteHits
             slots={() => [
               {
-                injectAt: 1,
+                injectAt: 5,
                 slotComponent: RelatedProducts,
               },
             ]}
@@ -57,9 +57,7 @@ function RelatedProducts({ resultsByIndex }) {
   const { recommendations } = useFrequentlyBoughtTogether({
     recommendClient,
     indexName: 'test_FLAGSHIP_ECOM_recommend',
-    objectIDs: resultsByIndex.test_FLAGSHIP_ECOM_recommend.hits
-      .slice(0, 1)
-      .map(({ objectID }) => objectID),
+    objectIDs: [resultsByIndex.test_FLAGSHIP_ECOM_recommend.hits[4].objectID],
     maxRecommendations: 3,
   });
 

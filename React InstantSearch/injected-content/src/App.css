@@ -132,7 +132,7 @@ em {
   display: block;
 }
 
-.Recommend .ais-Hits-item:first-of-type {
+.Recommend .ais-Hits-item:nth-of-type(5) {
   color: #00aeff;
   border-color: currentColor;
 }
@@ -186,7 +186,7 @@ em {
 }
 
 @media (min-width: 768px) {
-  .Recommend .ais-Hits-item:first-of-type {
+  .Recommend .ais-Hits-item:nth-of-type(5) {
     border-right: 0;
   }
 
@@ -208,7 +208,7 @@ em {
     height: 100%;
   }
 
-  .Recommend .ais-Hits-item:first-of-type {
+  .Recommend .ais-Hits-item:nth-of-type(5) {
     border-bottom: 0;
   }
 
