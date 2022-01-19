@@ -1,6 +1,7 @@
 import { HitsFromIndex } from './pages/HitsFromIndex';
 import { HitsFromRule } from './pages/HitsFromRule';
 import { InterspersedHits } from './pages/InterspersedHits';
+import { Recommend } from './pages/Recommend';
 import { ThirdPartyHits } from './pages/ThirdPartyHits';
 
 export const routes = [
@@ -23,5 +24,10 @@ export const routes = [
     path: '/interspersed',
     label: 'Interspersed hits',
     element: InterspersedHits,
+  },
+  {
+    path: '/recommend',
+    label: 'Recommend',
+    element: Recommend,
   },
 ];
