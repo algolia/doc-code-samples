@@ -153,9 +153,6 @@ em {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  grid-auto-columns: minmax(0, 1fr);
-  gap: 1rem;
 }
 
 .Recommend .ais-Hits-injected .FrequentlyBoughtTogether article {
@@ -196,6 +193,9 @@ em {
   }
 
   .Recommend .ais-Hits-injected .FrequentlyBoughtTogether ul {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 1rem;
     grid-auto-flow: column;
   }
 }
@@ -218,6 +218,10 @@ em {
   .Recommend .ais-Hits-injected .FrequentlyBoughtTogether {
     margin-top: 0;
     border-top: 0;
+  }
+
+  .Recommend .ais-Hits-injected .FrequentlyBoughtTogether ul li + li {
+    margin-top: 1rem;
   }
 
   .sm\:Block-full {
