@@ -21,7 +21,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "algoliasearch": "4.8.6",
+    "algoliasearch": "4.12.0",
     "instantsearch.js": "4.17.0"
   },
   "description": "Used by CodeSandbox CI"

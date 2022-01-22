@@ -9,7 +9,7 @@
     "build:server": "vite build --ssr src/entry-server.js --outDir dist/server"
   },
   "dependencies": {
-    "algoliasearch": "^4.9.3",
+    "algoliasearch": "4.12.0",
     "qs": "6.5.1",
     "vue": "^3.1.5",
     "vue-instantsearch": "4.0.0",
