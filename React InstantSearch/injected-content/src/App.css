@@ -132,6 +132,34 @@ em {
   display: block;
 }
 
+.Recommend .ais-Hits-item:nth-of-type(5) {
+  color: #00aeff;
+  border-color: currentColor;
+}
+
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether {
+  color: #00aeff;
+  background-color: #e5f1f7;
+  border-color: currentColor;
+  width: 100%;
+  box-shadow: none;
+}
+
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether h2 {
+  margin-top: 0;
+}
+
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Recommend .ais-Hits-injected .FrequentlyBoughtTogether article {
+  margin: 0;
+  background-color: #fff;
+}
+
 .ais-Hits-loadMore {
   width: 100%;
   margin-top: 1rem;
@@ -153,6 +181,25 @@ em {
   }
 }
 
+@media (min-width: 768px) {
+  .Recommend .ais-Hits-item:nth-of-type(5) {
+    border-right: 0;
+  }
+
+  .Recommend .ais-Hits-injected .FrequentlyBoughtTogether {
+    margin-left: 0;
+    width: calc(100% / 4 * 3);
+    border-left: 0;
+  }
+
+  .Recommend .ais-Hits-injected .FrequentlyBoughtTogether ul {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 1rem;
+    grid-auto-flow: column;
+  }
+}
+
 @media (max-width: 767px) {
   .ais-Hits-item {
     width: calc(50% - 1rem);
@@ -162,6 +209,19 @@ em {
   .ais-Hits-injected article {
     min-height: 250px;
     height: 100%;
+  }
+
+  .Recommend .ais-Hits-item:nth-of-type(5) {
+    border-bottom: 0;
+  }
+
+  .Recommend .ais-Hits-injected .FrequentlyBoughtTogether {
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .Recommend .ais-Hits-injected .FrequentlyBoughtTogether ul li + li {
+    margin-top: 1rem;
   }
 
   .sm\:Block-full {

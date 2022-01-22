@@ -83,6 +83,42 @@
   dependencies:
     "@algolia/logger-common" "4.12.0"
 
+"@algolia/recommend-core@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@algolia/recommend-core/-/recommend-core-1.1.0.tgz#e35bd11a0fb0094df2f5b4e3c8c0942a7553f5fc"
+  integrity sha512-iX8nedpDT4zQjTJAsFo0uc+pQAmuHb/TCY9dIyFGS+L6GqBvovcViDWQobF48IFvbYV0OSMANeQj8RIqBJ7Rrg==
+
+"@algolia/recommend-react@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@algolia/recommend-react/-/recommend-react-1.1.0.tgz#9f1799e0e89b79cd465ed5945ba4b27da86258f0"
+  integrity sha512-x44opUZVdgGm3algt3x/pxgvAUsye986YN0z4cSEymjyma5vv75w3bknqPLNsTaTvh61dhFXEY1rfTsaLyOdMg==
+  dependencies:
+    "@algolia/recommend-core" "1.1.0"
+    "@algolia/recommend-vdom" "1.1.0"
+    dequal "^2.0.0"
+
+"@algolia/recommend-vdom@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@algolia/recommend-vdom/-/recommend-vdom-1.1.0.tgz#55c02857c9aa85ef01640143e525594c77aaeebe"
+  integrity sha512-Gsd9tOaRfVhdlQRGLzXwSvddRdVyzp8s/3h9Tb448Aa6lUVT/3SUbP5ODFX9TOtb6RtOGWQl8nT6nhgpPgJ4zA==
+
+"@algolia/recommend@4.12.0":
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/@algolia/recommend/-/recommend-4.12.0.tgz#b29a847ca25e2e72abfc367ab69c5f7ab4199c9d"
+  integrity sha512-gArGBRzcvWee+MrnSbZQOBxfH3r8kGOYsonoSH/+TQ0VODrkCF/ZChWNLAwe5Zr/SSxSex+WPwI5PxrgSUusMQ==
+  dependencies:
+    "@algolia/cache-browser-local-storage" "4.12.0"
+    "@algolia/cache-common" "4.12.0"
+    "@algolia/cache-in-memory" "4.12.0"
+    "@algolia/client-common" "4.12.0"
+    "@algolia/client-search" "4.12.0"
+    "@algolia/logger-common" "4.12.0"
+    "@algolia/logger-console" "4.12.0"
+    "@algolia/requester-browser-xhr" "4.12.0"
+    "@algolia/requester-common" "4.12.0"
+    "@algolia/requester-node-http" "4.12.0"
+    "@algolia/transporter" "4.12.0"
+
 "@algolia/requester-browser-xhr@4.12.0":
   version "4.12.0"
   resolved "https://registry.yarnpkg.com/@algolia/requester-browser-xhr/-/requester-browser-xhr-4.12.0.tgz#64e8e4d4f0724e477421454215195400351cfe61"
@@ -3547,6 +3583,11 @@ depd@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
+
+dequal@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.2.tgz#85ca22025e3a87e65ef75a7a437b35284a7e319d"
+  integrity sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==
 
 des.js@^1.0.0:
   version "1.0.1"
