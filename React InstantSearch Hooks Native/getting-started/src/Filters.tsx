@@ -148,9 +148,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 18,
   },
-  filterListButtonText: {
-    fontSize: 18,
-  },
   filtersButton: {
     paddingVertical: 18,
     flexDirection: 'row',
