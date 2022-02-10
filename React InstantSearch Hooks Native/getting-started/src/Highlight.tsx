@@ -12,15 +12,11 @@ type HighlightPartProps = {
 };
 
 function HighlightPart({ children, isHighlighted }: HighlightPartProps) {
-  const styles = StyleSheet.create({
-    highlight: {
-      fontWeight: isHighlighted ? 'bold' : 'normal',
-      backgroundColor: isHighlighted ? '#f5df4d' : 'transparent',
-      color: isHighlighted ? '#6f6106' : 'black',
-    },
-  });
-
-  return <Text style={styles.highlight}>{children}</Text>;
+  return (
+    <Text style={isHighlighted ? styles.highlighted : styles.nonHighlighted}>
+      {children}
+    </Text>
+  );
 }
 
 type HighlightProps<THit> = {
@@ -70,3 +66,16 @@ export function Highlight<THit extends AlgoliaHit<Record<string, unknown>>>({
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  highlighted: {
+    fontWeight: 'bold',
+    backgroundColor: '#f5df4d',
+    color: '#6f6106',
+  },
+  nonHighlighted: {
+    fontWeight: 'normal',
+    backgroundColor: 'transparent',
+    color: 'black',
+  },
+});
