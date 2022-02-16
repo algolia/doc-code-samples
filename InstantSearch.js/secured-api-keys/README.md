@@ -9,7 +9,6 @@ To run this project locally, install the dependencies and run the local server:
 ```sh
 npm install
 npm start
-node server.js
 ```
 
 Alternatively, you may use [Yarn](https://http://yarnpkg.com/):
@@ -17,7 +16,6 @@ Alternatively, you may use [Yarn](https://http://yarnpkg.com/):
 ```sh
 yarn
 yarn start
-node server.js
 ```
 
 Open http://localhost:8080 to see your app.
