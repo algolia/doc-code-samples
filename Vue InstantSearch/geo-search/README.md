@@ -1,6 +1,6 @@
 # Geo-search example with Vue InstantSearch and Google Maps
 
-This example shows you how to add Geo search capabilities to your Vue InstantSearch implementation and displaying the found results via Google Maps component.
+This example shows you how to add Geo search capabilities to your Vue InstantSearch implementation and displaying the found results via Google Maps.
 
 <p align="center"><img src="capture.jpg" alt="A capture of the Geo-search example with Vue InstantSearch and Google Maps demo" /></p>
 
