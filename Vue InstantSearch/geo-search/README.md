@@ -35,6 +35,5 @@ npm serve
 Open <http://localhost:8080> to see your app.
 
 ## Additional resources
-Learn more [Geo Search with Vue InstantSearch
-](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/geo-search/vue/) in the Algolia documentation.
+Learn more [Geo Search with Vue InstantSearch](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/geo-search/vue/) in the Algolia documentation.
 
