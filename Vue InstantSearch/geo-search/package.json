@@ -1,5 +1,5 @@
 {
-  "name": "infinite-scroll",
+  "name": "geosearch-with-googlemaps",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
     "instantsearch.css": "7.3.1",
     "vue": "2.6.10",
     "vue-googlemaps": "0.1.2",
-    "vue-instantsearch": "3.8.1"
+    "vue-instantsearch": "latest"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.6.0",
