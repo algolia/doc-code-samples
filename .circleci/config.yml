@@ -103,7 +103,7 @@ jobs:
            path: "React InstantSearch/algolia-insights"
 
   build_vanilla_projects:
-    executor: node9
+    executor: node14
     steps:
       - checkout
       - build_project:
