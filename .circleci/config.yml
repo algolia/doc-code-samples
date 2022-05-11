@@ -103,7 +103,7 @@ jobs:
            path: "React InstantSearch/algolia-insights"
 
   build_vanilla_projects:
-    executor: node9
+    executor: node14
     steps:
       - checkout
       - build_project:
@@ -136,6 +136,8 @@ jobs:
            path: "InstantSearch.js/routing-seo-friendly"
       - build_project:
            path: "InstantSearch.js/secured-api-keys"
+      - build_project:
+           path: "InstantSearch.js/e-commerce"
 
   build_vue_projects:
     executor: node9
