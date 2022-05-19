@@ -7164,19 +7164,19 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-instantsearch-hooks-web@^6.24.3:
-  version "6.24.3"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks-web/-/react-instantsearch-hooks-web-6.24.3.tgz#7ba48419672b7c826e2245aced4c13b09fa3183b"
-  integrity sha512-UOtrsbTMUUzmhsAp+VP8V7/ndz7Rvrp1gt8omFK+v8SmwsWZYb3qrVtOmqhl9X+JLWT9oDhxzxvR/oYGHXXsEQ==
+react-instantsearch-hooks-web@^6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks-web/-/react-instantsearch-hooks-web-6.26.0.tgz#763ab5296dcbe1d1bb42ab63483216912af929f1"
+  integrity sha512-0PUPGxEeXGVqn87dcSqNMV2SERzTKA9n/TgixNOK5Psp5WQweFUNYkEjupgwEjMtzBiDOAEbR83bZ8A8jxR6yg==
   dependencies:
     "@babel/runtime" "^7.1.2"
     instantsearch.js "^4.40.1"
-    react-instantsearch-hooks "6.24.3"
+    react-instantsearch-hooks "6.26.0"
 
-react-instantsearch-hooks@6.24.3:
-  version "6.24.3"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks/-/react-instantsearch-hooks-6.24.3.tgz#20568af6338e6379c6843bd628ab5998e9e9f6df"
-  integrity sha512-QxddqXkv3UQVrOPYOG1pKe1Q+BtkYKv3m3MNwWvwlUcUX4+bAWNleP71EVBMBLIuCtV1zvy9evFyxincbqSvqw==
+react-instantsearch-hooks@6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks/-/react-instantsearch-hooks-6.26.0.tgz#d4ccc324ea77a0b2b81584fda191d45a8a0827d5"
+  integrity sha512-KcyQoquUUmYFZRQDXT63V7VHqAVsnxVIi7LwBHAUSWYGVG7RddfJzTgl00hjXFIq5SEwfG4f1rJHbSa9oXusug==
   dependencies:
     "@babel/runtime" "^7.1.2"
     algoliasearch-helper "^3.7.4"
