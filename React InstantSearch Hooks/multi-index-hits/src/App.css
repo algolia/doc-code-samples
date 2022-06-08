@@ -1,0 +1,17 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .ais-Hits-item {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ais-Hits-item {
+    width: 100%;
+  }
+}
