@@ -8,6 +8,7 @@ import {
   SearchBox,
 } from 'react-instantsearch-hooks-web';
 
+import 'instantsearch.css/themes/algolia.css';
 import './App.css';
 
 const searchClient = algoliasearch(
