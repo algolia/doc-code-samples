@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import {
   Highlight,
@@ -14,29 +15,41 @@ const searchClient = algoliasearch(
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
+const connection = navigator.connection;
 let timerId = undefined;
+let timeout = getTimeout();
 
 function App() {
+  useEffect(() => {
+    connection.addEventListener('change', updateTimeout);
+
+    return () => connection.removeEventListener('change', updateTimeout);
+  });
+
   return (
     <div className="container">
       <InstantSearch indexName="instant_search" searchClient={searchClient}>
-        <SearchBox
-          queryHook={(query, search) => {
-            const timeout = navigator.connection?.effectiveType?.includes('2g')
-              ? 400
-              : 0;
-
-            if (timerId) {
-              clearTimeout(timerId);
-            }
-
-            timerId = setTimeout(() => search(query), timeout);
-          }}
-        />
+        <SearchBox queryHook={queryHook} />
         <Hits hitComponent={Hit} />
       </InstantSearch>
     </div>
   );
+}
+
+function queryHook(query, search) {
+  if (timerId) {
+    clearTimeout(timerId);
+  }
+
+  timerId = setTimeout(() => search(query), timeout);
+}
+
+function updateTimeout() {
+  timeout = getTimeout();
+}
+
+function getTimeout() {
+  return ['slow-2g', '2g'].includes(connection?.effectiveType) ? 400 : 0;
 }
 
 function Hit({ hit }) {
