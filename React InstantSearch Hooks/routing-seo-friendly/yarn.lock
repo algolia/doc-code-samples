@@ -2381,7 +2381,7 @@ ajv@^8.0.0, ajv@^8.6.0, ajv@^8.8.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-algoliasearch-helper@^3.7.4, algoliasearch-helper@^3.8.2:
+algoliasearch-helper@^3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.8.2.tgz#35726dc6d211f49dbab0bf6d37b4658165539523"
   integrity sha512-AXxiF0zT9oYwl8ZBgU/eRXvfYhz7cBA5YrLPlw9inZHdaYF0QEya/f1Zp1mPYMXc1v6VkHwBq4pk6/vayBLICg==
@@ -4823,10 +4823,26 @@ instantsearch.css@^7.4.5:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.4.5.tgz#2a521aa634329bf1680f79adf87c79d67669ec8d"
   integrity sha512-iIGBYjCokU93DDB8kbeztKtlu4qVEyTg1xvS6iSO1YvqRwkIZgf0tmsl/GytsLdZhuw8j4wEaeYsCzNbeJ/zEQ==
 
-instantsearch.js@^4.40.1, instantsearch.js@^4.40.5:
+instantsearch.js@^4.40.5:
   version "4.40.5"
   resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.40.5.tgz#17b3c2ed493bee80101b3eb9a48187b487d275c3"
   integrity sha512-6YL4WGJ4mGz+b1mbAd/k+g3foz0W0HhZA7wSz0CeuNoJHnCcCcJAoAFdwLoWGRBKjxV7FoXFou0NRkLWXEmBrg==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+    "@types/google.maps" "^3.45.3"
+    "@types/hogan.js" "^3.0.0"
+    "@types/qs" "^6.5.3"
+    algoliasearch-helper "^3.8.2"
+    classnames "^2.2.5"
+    hogan.js "^3.0.2"
+    preact "^10.6.0"
+    qs "^6.5.1 < 6.10"
+    search-insights "^2.1.0"
+
+instantsearch.js@^4.41.0:
+  version "4.41.1"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.41.1.tgz#5d8947ab37769255931649dbe23d5ed25fc84970"
+  integrity sha512-uwl8voHcsvy+FJQPgT7Q4SCiwHGhtFnAFU8doWZZC1+o2KRPGHF6vtd+8c/UqXmFx9iHwGuJwQ5fve0G/zBjfA==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@types/google.maps" "^3.45.3"
@@ -7164,23 +7180,24 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-instantsearch-hooks-web@^6.24.3:
-  version "6.24.3"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks-web/-/react-instantsearch-hooks-web-6.24.3.tgz#7ba48419672b7c826e2245aced4c13b09fa3183b"
-  integrity sha512-UOtrsbTMUUzmhsAp+VP8V7/ndz7Rvrp1gt8omFK+v8SmwsWZYb3qrVtOmqhl9X+JLWT9oDhxzxvR/oYGHXXsEQ==
+react-instantsearch-hooks-web@^6.28.0:
+  version "6.28.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks-web/-/react-instantsearch-hooks-web-6.28.0.tgz#49b17edd0ba891a095f6a43b5b42a25128e27ae7"
+  integrity sha512-ye7TpcNotK/uslFd6jdEGZb3URpyoZfH95EgDRb238uvZZAt2YIy/IC2AwxnFD6L2HMBKbtOW9CPZLd3S/1viA==
   dependencies:
     "@babel/runtime" "^7.1.2"
-    instantsearch.js "^4.40.1"
-    react-instantsearch-hooks "6.24.3"
+    instantsearch.js "^4.41.0"
+    react-instantsearch-hooks "6.28.0"
 
-react-instantsearch-hooks@6.24.3:
-  version "6.24.3"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks/-/react-instantsearch-hooks-6.24.3.tgz#20568af6338e6379c6843bd628ab5998e9e9f6df"
-  integrity sha512-QxddqXkv3UQVrOPYOG1pKe1Q+BtkYKv3m3MNwWvwlUcUX4+bAWNleP71EVBMBLIuCtV1zvy9evFyxincbqSvqw==
+react-instantsearch-hooks@6.28.0:
+  version "6.28.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks/-/react-instantsearch-hooks-6.28.0.tgz#e71399a715faf2c4045eaafb4ed302610598a879"
+  integrity sha512-CfrAWnhXj6+TtFdUviBiz9r4U9Hwcq3ARstvq98R0X23kMoY8+VzAdTGmfPchxLaadraV8L2XdpclH2bUIYNiQ==
   dependencies:
     "@babel/runtime" "^7.1.2"
-    algoliasearch-helper "^3.7.4"
-    instantsearch.js "^4.40.1"
+    algoliasearch-helper "^3.8.2"
+    instantsearch.js "^4.41.0"
+    use-sync-external-store "^1.0.0"
 
 react-is@^16.13.1:
   version "16.13.1"
@@ -8347,6 +8364,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+use-sync-external-store@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"

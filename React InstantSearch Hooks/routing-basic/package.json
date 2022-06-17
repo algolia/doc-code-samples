@@ -8,7 +8,7 @@
     "instantsearch.js": "^4.40.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-instantsearch-hooks-web": "^6.24.3",
+    "react-instantsearch-hooks-web": "^6.28.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {

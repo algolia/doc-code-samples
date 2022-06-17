@@ -8,8 +8,8 @@ import {
 } from 'react-instantsearch-hooks-web';
 import algoliasearch from 'algoliasearch/lite';
 
+import { InsightsMiddleware } from './InsightsMiddleware';
 import './App.css';
-import { Insights } from './Insights';
 
 const searchClient = algoliasearch(
   'B1G2GM9NG0',
@@ -20,7 +20,8 @@ function App() {
   return (
     <div className="container">
       <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
-        <Insights />
+        <InsightsMiddleware />
+
         <div className="search-panel">
           <div className="search-panel__filters">
             <RefinementList attribute="brand" />
