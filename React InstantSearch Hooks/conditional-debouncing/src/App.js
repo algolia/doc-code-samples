@@ -17,7 +17,9 @@ const searchClient = algoliasearch(
 
 const connection = navigator.connection;
 let timerId = undefined;
-let timeout = getTimeout();
+let timeout = 0;
+
+updateTimeout();
 
 function App() {
   useEffect(() => {
@@ -45,11 +47,7 @@ function queryHook(query, search) {
 }
 
 function updateTimeout() {
-  timeout = getTimeout();
-}
-
-function getTimeout() {
-  return ['slow-2g', '2g'].includes(connection?.effectiveType) ? 400 : 0;
+  timeout = ['slow-2g', '2g'].includes(connection?.effectiveType) ? 400 : 0;
 }
 
 function Hit({ hit }) {
