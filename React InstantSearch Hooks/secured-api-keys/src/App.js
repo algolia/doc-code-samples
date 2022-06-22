@@ -8,7 +8,7 @@ import {
   ClearRefinements,
   RefinementList,
   Configure,
-} from 'react-instantsearch-dom';
+} from 'react-instantsearch-hooks-web';
 import './App.css';
 
 function App({ searchClient }) {
@@ -32,10 +32,6 @@ function App({ searchClient }) {
   );
 }
 
-App.propTypes = {
-  searchClient: PropTypes.object.isRequired,
-};
-
 function Hit(props) {
   return (
     <div>
@@ -50,9 +46,5 @@ function Hit(props) {
     </div>
   );
 }
-
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-};
 
 export default App;
