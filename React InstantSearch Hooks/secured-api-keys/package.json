@@ -1,0 +1,32 @@
+{
+  "name": "secured-api-keys",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "server": "npm run build && node server.js",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "dependencies": {
+    "algoliasearch": "4.13.1",
+    "express": "4.18.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-instantsearch-hooks-web": "6.29.0",
+    "react-scripts": "5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
