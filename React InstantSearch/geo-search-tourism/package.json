@@ -15,7 +15,7 @@
     "react-dom": "16.8.6",
     "react-instantsearch-dom": "6.12.0",
     "react-instantsearch-dom-maps": "^6.12.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "5.0.0",
     "rheostat": "2.2.0"
   },
   "devDependencies": {
