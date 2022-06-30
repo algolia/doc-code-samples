@@ -37,148 +37,148 @@ jobs:
     steps:
       - checkout
       - build_project:
-          path: "Angular InstantSearch/loading-indicator"
+          path: "angular-instantsearch/loading-indicator"
       - build_project:
-          path: "Angular InstantSearch/algolia-insights"
+          path: "angular-instantsearch/algolia-insights"
       - build_project:
-          path: "Angular InstantSearch/autocomplete-results-page"
+          path: "angular-instantsearch/autocomplete-results-page"
       - build_project:
-          path: "Angular InstantSearch/debounced-search-box"
+          path: "angular-instantsearch/debounced-search-box"
       - build_project:
-          path: "Angular InstantSearch/extending-widgets"
+          path: "angular-instantsearch/extending-widgets"
       - build_project:
-          path: "Angular InstantSearch/geo-search"
+          path: "angular-instantsearch/geo-search"
       - build_project:
-          path: "Angular InstantSearch/getting-started"
+          path: "angular-instantsearch/getting-started"
       - build_project:
-          path: "Angular InstantSearch/infinite-scroll"
+          path: "angular-instantsearch/infinite-scroll"
       - build_project:
-          path: "Angular InstantSearch/multi-index-autocomplete"
+          path: "angular-instantsearch/multi-index-autocomplete"
       - build_project:
-          path: "Angular InstantSearch/multi-index-hits"
+          path: "angular-instantsearch/multi-index-hits"
       - build_project:
-          path: "Angular InstantSearch/query-suggestions"
+          path: "angular-instantsearch/query-suggestions"
       - build_project:
-          path: "Angular InstantSearch/refresh"
+          path: "angular-instantsearch/refresh"
       - build_project:
-          path: "Angular InstantSearch/routing-basic"
+          path: "angular-instantsearch/routing-basic"
       - build_project:
-          path: "Angular InstantSearch/routing-seo-friendly"
+          path: "angular-instantsearch/routing-seo-friendly"
       - build_project:
-          path: "Angular InstantSearch/routing-state-mapping"
+          path: "angular-instantsearch/routing-state-mapping"
       - build_project:
-          path: "Angular InstantSearch/secured-api-keys"
+          path: "angular-instantsearch/secured-api-keys"
 
   build_react_projects:
     executor: node9
     steps:
       - checkout
       - build_project:
-           path: "React InstantSearch/autocomplete-mentions"
+           path: "react-instantsearch/autocomplete-mentions"
       - build_project:
-           path: "React InstantSearch/autocomplete-results-page"
+           path: "react-instantsearch/autocomplete-results-page"
       - build_project:
-           path: "React InstantSearch/extending-widgets"
+           path: "react-instantsearch/extending-widgets"
       - build_project:
-           path: "React InstantSearch/getting-started"
+           path: "react-instantsearch/getting-started"
       - build_project:
-           path: "React InstantSearch/infinite-scroll"
+           path: "react-instantsearch/infinite-scroll"
       - build_project:
-           path: "React InstantSearch/multi-index-autocomplete"
+           path: "react-instantsearch/multi-index-autocomplete"
       - build_project:
-           path: "React InstantSearch/multi-index-hits"
+           path: "react-instantsearch/multi-index-hits"
       - build_project:
-           path: "React InstantSearch/places"
+           path: "react-instantsearch/places"
       - build_project:
-           path: "React InstantSearch/query-suggestions"
+           path: "react-instantsearch/query-suggestions"
       - build_project:
-           path: "React InstantSearch/routing-basic"
+           path: "react-instantsearch/routing-basic"
       - build_project:
-           path: "React InstantSearch/routing-seo-friendly"
+           path: "react-instantsearch/routing-seo-friendly"
       - build_project:
-           path: "React InstantSearch/routing-user-friendly"
+           path: "react-instantsearch/routing-user-friendly"
       - build_project:
-           path: "React InstantSearch/secured-api-keys"
+           path: "react-instantsearch/secured-api-keys"
       - build_project:
-           path: "React InstantSearch/algolia-insights"
+           path: "react-instantsearch/algolia-insights"
 
   build_vanilla_projects:
     executor: node14
     steps:
       - checkout
       - build_project:
-           path: "InstantSearch.js/autocomplete-results-page"
+           path: "instantsearch-js/autocomplete-results-page"
       - build_project:
-           path: "InstantSearch.js/geo-search-control"
+           path: "instantsearch-js/geo-search-control"
       - build_project:
-           path: "InstantSearch.js/geo-search-custom-marker"
+           path: "instantsearch-js/geo-search-custom-marker"
       - build_project:
-           path: "InstantSearch.js/geo-search-hits"
+           path: "instantsearch-js/geo-search-hits"
       - build_project:
-           path: "InstantSearch.js/getting-started"
+           path: "instantsearch-js/getting-started"
       - build_project:
-           path: "InstantSearch.js/infinite-scroll"
+           path: "instantsearch-js/infinite-scroll"
       - build_project:
-           path: "InstantSearch.js/multi-index-autocomplete"
+           path: "instantsearch-js/multi-index-autocomplete"
       - build_project:
-           path: "InstantSearch.js/multi-index-hits"
+           path: "instantsearch-js/multi-index-hits"
       - build_project:
-           path: "InstantSearch.js/places"
+           path: "instantsearch-js/places"
       - build_project:
-           path: "InstantSearch.js/query-suggestions"
+           path: "instantsearch-js/query-suggestions"
       - build_project:
-           path: "InstantSearch.js/refresh-cache-periodically"
+           path: "instantsearch-js/refresh-cache-periodically"
       - build_project:
-           path: "InstantSearch.js/refresh-cache-user-action"
+           path: "instantsearch-js/refresh-cache-user-action"
       - build_project:
-           path: "InstantSearch.js/routing-basic"
+           path: "instantsearch-js/routing-basic"
       - build_project:
-           path: "InstantSearch.js/routing-seo-friendly"
+           path: "instantsearch-js/routing-seo-friendly"
       - build_project:
-           path: "InstantSearch.js/secured-api-keys"
+           path: "instantsearch-js/secured-api-keys"
       - build_project:
-           path: "InstantSearch.js/e-commerce"
+           path: "instantsearch-js/e-commerce"
 
   build_vue_projects:
     executor: node9
     steps:
       - checkout
       - build_project:
-         path: "Vue InstantSearch/algolia-insights"
+         path: "vue-instantsearch/algolia-insights"
       - build_project:
-         path: "Vue InstantSearch/autocomplete-results-page"
+         path: "vue-instantsearch/autocomplete-results-page"
       - build_project:
-         path: "Vue InstantSearch/debounced-search-box"
+         path: "vue-instantsearch/debounced-search-box"
       - build_project:
-         path: "Vue InstantSearch/extending-widgets"
+         path: "vue-instantsearch/extending-widgets"
       - build_project:
-         path: "Vue InstantSearch/geo-search"
+         path: "vue-instantsearch/geo-search"
       - build_project:
-         path: "Vue InstantSearch/getting-started"
+         path: "vue-instantsearch/getting-started"
       - build_project:
-         path: "Vue InstantSearch/infinite-scroll"
+         path: "vue-instantsearch/infinite-scroll"
       - build_project:
-         path: "Vue InstantSearch/loading-indicator"
+         path: "vue-instantsearch/loading-indicator"
       - build_project:
-         path: "Vue InstantSearch/multi-index-autocomplete"
+         path: "vue-instantsearch/multi-index-autocomplete"
       - build_project:
-         path: "Vue InstantSearch/multi-index-hits"
+         path: "vue-instantsearch/multi-index-hits"
       - build_project:
-         path: "Vue InstantSearch/query-suggestions"
+         path: "vue-instantsearch/query-suggestions"
       - build_project:
-         path: "Vue InstantSearch/refresh"
+         path: "vue-instantsearch/refresh"
       - build_project:
-         path: "Vue InstantSearch/routing-basic"
+         path: "vue-instantsearch/routing-basic"
       - build_project:
-         path: "Vue InstantSearch/routing-seo-friendly"
+         path: "vue-instantsearch/routing-seo-friendly"
       - build_project:
-         path: "Vue InstantSearch/routing-state-mapping"
+         path: "vue-instantsearch/routing-state-mapping"
       - build_project:
-         path: "Vue InstantSearch/routing-vue-router"
+         path: "vue-instantsearch/routing-vue-router"
       - build_project:
-         path: "Vue InstantSearch/secured-api-keys"
+         path: "vue-instantsearch/secured-api-keys"
       - build_project:
-         path: "Vue InstantSearch/server-side-rendering"
+         path: "vue-instantsearch/server-side-rendering"
 
 workflows:
   version: 2.1

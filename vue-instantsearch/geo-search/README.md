@@ -6,7 +6,7 @@ This example shows you how to add Geo search capabilities to your Vue InstantSea
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/Vue%20InstantSearch/geo-search)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/geo-search)
 
 ## How to run this example locally
 
@@ -19,7 +19,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Install the dependencies and run the server
 
 ```sh
-cd Vue InstantSearch/geo-search
+cd vue-instantsearch/geo-search
 yarn
 yarn serve
 ```
@@ -27,7 +27,7 @@ yarn serve
 Alternatively, you may use npm:
 
 ```sh
-cd Vue InstantSearch/geo-search
+cd vue-instantsearch/geo-search
 npm
 npm serve
 ```

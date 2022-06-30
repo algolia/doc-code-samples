@@ -1,6 +1,6 @@
 # React Instantsearch tourism sample
 
-Also available in [InstantSearch.js](../../InstantSearch.js/geo-search-tourism/)
+Also available in [InstantSearch.js](../../instantsearch-js/geo-search-tourism/)
 
 ---
 
@@ -17,7 +17,7 @@ This sample showcase the following features:
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/React%20InstantSearch/geo-search-tourism)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch/geo-search-tourism)
 
 ## How to run this sample locally
 
@@ -30,7 +30,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Navigate to this sample folder
 
 ```
-cd React InstantSearch/geo-search-tourism
+cd react-instantsearch/geo-search-tourism
 ```
 
 ### 3. Install the dependencies and run the server

@@ -1,6 +1,6 @@
 # Angular Instantsearch e-commerce sample
 
-Also available in [InstantSearch.js](../../InstantSearch.js/e-commerce/), [React InstantSearch](../../React%20InstantSearch/e-commerce/) and [Vue InstantSearch](../../Vue%20InstantSearch/e-commerce/)
+Also available in [InstantSearch.js](../../instantsearch-js/e-commerce/), [React InstantSearch](../../react-instantsearch/e-commerce/) and [Vue InstantSearch](../../vue-instantsearch/e-commerce/)
 
 ---
 
@@ -14,11 +14,11 @@ This sample showcase the following features:
 
 - Responsive UI.
 - InstantSearch [URL routing](https://www.algolia.com/doc/guides/building-search-ui/going-further/routing-urls/angular/).
-- Multiple InstantSearch widgets: [refinementList](https://www.algolia.com/doc/api-reference/widgets/refinement-list/angular/), [RangeSlider](https://www.algolia.com/doc/api-reference/widgets/range-slider/angular/), [toggleRefinement](https://www.algolia.com/doc/api-reference/widgets/toggle-refinement/angular/), and more. 
+- Multiple InstantSearch widgets: [refinementList](https://www.algolia.com/doc/api-reference/widgets/refinement-list/angular/), [RangeSlider](https://www.algolia.com/doc/api-reference/widgets/range-slider/angular/), [toggleRefinement](https://www.algolia.com/doc/api-reference/widgets/toggle-refinement/angular/), and more.
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/Angular%20InstantSearch/e-commerce)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/angular-instantsearch/e-commerce)
 
 ## How to run this sample locally
 
@@ -31,7 +31,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Navigate to this sample folder
 
 ```
-cd Angular InstantSearch/e-commerce
+cd angular-instantsearch/e-commerce
 ```
 
 ### 3. Install the dependencies and run the server
