@@ -19,7 +19,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Install the dependencies and run the server
 
 ```sh
-cd Vue InstantSearch/geo-search
+cd "Vue InstantSearch/geo-search"
 yarn
 yarn serve
 ```
@@ -27,7 +27,7 @@ yarn serve
 Alternatively, you may use npm:
 
 ```sh
-cd Vue InstantSearch/geo-search
+cd "Vue InstantSearch/geo-search"
 npm
 npm serve
 ```

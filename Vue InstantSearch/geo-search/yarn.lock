@@ -1286,17 +1286,10 @@ ajv@^6.1.0, ajv@^6.5.3, ajv@^6.5.5, ajv@^6.6.1:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-algoliasearch-helper@^3.1.0:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.1.2.tgz#f01cfed1ff3e4848ae9dc1ece31a4e7cbf65eeea"
-  integrity sha512-HfCVvmKH6+5OU9/SaHLdhvr39DBObA02z62RsfPhFDftzgQM6pJB2JoPyGpIteHW4RAYh8bPLiB8l4hajuy6fA==
-  dependencies:
-    events "^1.1.1"
-
-algoliasearch-helper@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.7.0.tgz#c0a0493df84d850360f664ad7a9d4fc78a94fd78"
-  integrity sha512-XJ3QfERBLfeVCyTVx80gon7r3/rgm/CE8Ha1H7cbablRe/X7SfYQ14g/eO+MhjVKIQp+gy9oC6G5ilmLwS1k6w==
+algoliasearch-helper@^3.7.4:
+  version "3.7.4"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.7.4.tgz#3812ea161da52463ec88da52612c9a363c1b181d"
+  integrity sha512-KmJrsHVm5TmxZ9Oj53XdXuM4CQeu7eVFnB15tpSFt+7is1d1yVCv3hxCLMqYSw/rH42ccv013miQpRr268P8vw==
   dependencies:
     "@algolia/events" "^4.0.1"
 
@@ -3419,7 +3412,7 @@ eventemitter3@^3.0.0:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
   integrity sha512-ivIvhpq/Y0uSjcHDcOIccjmYjGLcP09MFGE7ysAwkAvkXfpZlC985pH2/ui64DKazbTW/4kN3yqozUxlXzI6cA==
 
-events@^1.0.0, events@^1.1.0, events@^1.1.1:
+events@^1.0.0, events@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
   integrity sha1-nr23Y1rQmccNzEwqH1AEKI6L2SQ=
@@ -4447,16 +4440,16 @@ instantsearch.css@7.3.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
   integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@^4.25.0:
-  version "4.37.1"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.37.1.tgz#8701222c413f86d7b0f40d45a040454562d0d40f"
-  integrity sha512-HB1HHUnH00S5RdOcMN2h9KGokd87D9N+m37KP0leDMCWM26dakI96PJnm1cnDzFnxDPcgHaSKTYmZTW7u5/uxw==
+instantsearch.js@^4.34.0:
+  version "4.40.1"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.40.1.tgz#9c702a1e7e3bc14e5137b1236be2ee68bb0bf643"
+  integrity sha512-0wIuz1vAHPo2aUpsSsym5urLDpAqQIVBx4QzbHZmmXhA+DEQq5bHmNCCo3FnyKFZ2/79dNmg0OwJTMQM6Je/fg==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
-    algoliasearch-helper "^3.7.0"
+    algoliasearch-helper "^3.7.4"
     classnames "^2.2.5"
     hogan.js "^3.0.2"
     preact "^10.6.0"
@@ -8388,13 +8381,12 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
   integrity sha512-AA86yKZ5uOKz87/q1UpngEXhbRkaYg1b7HMMVRobNV1IVKqZe8oLIzo6iMocVwZXnYitlGwf2k4ZRLOZlS8oPQ==
 
-vue-instantsearch@3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-3.8.1.tgz#6ab57f0aef5558e235b085e0652e5a50eb8aa6e1"
-  integrity sha512-3lV8YBZTNZ2j2Kq9q5ALM/7J7TbBX4mDzFeUQZhI5XDL3HFfRU12ThPUGk6dOm+5XMEHQ7yCXmFTmGb8z3Lg/g==
+vue-instantsearch@^3.8.1:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-3.9.0.tgz#e2db2616de82216bb54182773b0a36b4db4c7653"
+  integrity sha512-zOo+Ed0ShgY0wAZC1wdv3eDaMoVZp30ztUCfFZ+cNoXxnOZgqWwocN+m38zx2aj5C+ce2qOVCOqsTXpF90AprA==
   dependencies:
-    algoliasearch-helper "^3.1.0"
-    instantsearch.js "^4.25.0"
+    instantsearch.js "^4.34.0"
 
 vue-loader@^15.7.0:
   version "15.7.0"
