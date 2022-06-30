@@ -13,13 +13,11 @@
     "algoliasearch": "4",
     "instantsearch.js": "4.40.5",
     "react": "17.0.2",
-    "react-autosuggest": "^10.1.0",
     "react-dom": "17.0.2",
     "react-instantsearch-hooks-web": "6.29.0"
   },
   "devDependencies": {
     "@types/react": "17.0.45",
-    "@types/react-autosuggest": "^10.1.5",
     "parcel": "2.5.0"
   }
 }
