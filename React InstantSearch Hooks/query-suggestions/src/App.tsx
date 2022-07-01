@@ -10,7 +10,7 @@ import './App.css';
 
 import type { Hit } from 'instantsearch.js';
 
-import { QuerySuggestions } from './QuerySuggestions';
+import { SearchBoxWithSuggestions } from './SearchBoxWithSuggestions';
 import { searchClient } from './searchClient';
 
 export function App() {
@@ -19,7 +19,7 @@ export function App() {
       <InstantSearch searchClient={searchClient} indexName="instant_search">
         <Configure hitsPerPage={16} />
 
-        <QuerySuggestions />
+        <SearchBoxWithSuggestions />
 
         <CurrentRefinements
           className="current-refinements"
