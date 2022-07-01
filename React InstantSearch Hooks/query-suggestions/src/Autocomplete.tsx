@@ -11,21 +11,21 @@ import '@algolia/autocomplete-theme-classic';
 type AutocompleteProps = Partial<AutocompleteOptions<BaseItem>>;
 
 export function Autocomplete(props: AutocompleteProps) {
-  const container = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!container.current) {
+    if (!containerRef.current) {
       return;
     }
 
-    const instance = autocomplete({
+    const search = autocomplete({
       ...props,
-      container: container.current,
+      container: containerRef.current,
       renderer: { createElement, Fragment, render },
     });
 
-    return () => instance.destroy();
+    return () => search.destroy();
   }, [props]);
 
-  return <div ref={container} />;
+  return <div ref={containerRef} />;
 }
