@@ -10,7 +10,7 @@ This sample shows how to leverage multiple InstantSearch features to build a com
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/instantsearch-js/media)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/instantsearch.js/media)
 
 ## How to run this sample locally
 
@@ -23,7 +23,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Navigate to this sample folder
 
 ```
-cd instantsearch-js/media
+cd instantsearch.js/media
 ```
 
 ### 3. Install the dependencies and run the server

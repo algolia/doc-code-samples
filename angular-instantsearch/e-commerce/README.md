@@ -1,6 +1,6 @@
 # Angular Instantsearch e-commerce sample
 
-Also available in [InstantSearch.js](../../instantsearch-js/e-commerce/), [React InstantSearch](../../react-instantsearch/e-commerce/) and [Vue InstantSearch](../../vue-instantsearch/e-commerce/)
+Also available in [InstantSearch.js](../../instantsearch.js/e-commerce/), [React InstantSearch](../../react-instantsearch/e-commerce/) and [Vue InstantSearch](../../vue-instantsearch/e-commerce/)
 
 ---
 

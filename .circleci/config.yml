@@ -107,37 +107,37 @@ jobs:
     steps:
       - checkout
       - build_project:
-           path: "instantsearch-js/autocomplete-results-page"
+           path: "instantsearch.js/autocomplete-results-page"
       - build_project:
-           path: "instantsearch-js/geo-search-control"
+           path: "instantsearch.js/geo-search-control"
       - build_project:
-           path: "instantsearch-js/geo-search-custom-marker"
+           path: "instantsearch.js/geo-search-custom-marker"
       - build_project:
-           path: "instantsearch-js/geo-search-hits"
+           path: "instantsearch.js/geo-search-hits"
       - build_project:
-           path: "instantsearch-js/getting-started"
+           path: "instantsearch.js/getting-started"
       - build_project:
-           path: "instantsearch-js/infinite-scroll"
+           path: "instantsearch.js/infinite-scroll"
       - build_project:
-           path: "instantsearch-js/multi-index-autocomplete"
+           path: "instantsearch.js/multi-index-autocomplete"
       - build_project:
-           path: "instantsearch-js/multi-index-hits"
+           path: "instantsearch.js/multi-index-hits"
       - build_project:
-           path: "instantsearch-js/places"
+           path: "instantsearch.js/places"
       - build_project:
-           path: "instantsearch-js/query-suggestions"
+           path: "instantsearch.js/query-suggestions"
       - build_project:
-           path: "instantsearch-js/refresh-cache-periodically"
+           path: "instantsearch.js/refresh-cache-periodically"
       - build_project:
-           path: "instantsearch-js/refresh-cache-user-action"
+           path: "instantsearch.js/refresh-cache-user-action"
       - build_project:
-           path: "instantsearch-js/routing-basic"
+           path: "instantsearch.js/routing-basic"
       - build_project:
-           path: "instantsearch-js/routing-seo-friendly"
+           path: "instantsearch.js/routing-seo-friendly"
       - build_project:
-           path: "instantsearch-js/secured-api-keys"
+           path: "instantsearch.js/secured-api-keys"
       - build_project:
-           path: "instantsearch-js/e-commerce"
+           path: "instantsearch.js/e-commerce"
 
   build_vue_projects:
     executor: node9

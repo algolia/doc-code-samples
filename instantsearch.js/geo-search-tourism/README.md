@@ -17,7 +17,7 @@ This sample showcase the following features:
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/instantsearch-js/geo-search-tourism)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/instantsearch.js/geo-search-tourism)
 
 ## How to run this sample locally
 
@@ -30,7 +30,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Navigate to this sample folder
 
 ```
-cd instantsearch-js/geo-search-tourism
+cd instantsearch.js/geo-search-tourism
 ```
 
 ### 3. Install the dependencies and run the server

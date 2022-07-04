@@ -18,7 +18,7 @@ This sample showcase the following features:
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/instantsearch-js/e-commerce)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/instantsearch.js/e-commerce)
 
 ## How to run this sample locally
 
@@ -31,7 +31,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Navigate to this sample folder
 
 ```
-cd instantsearch-js/e-commerce
+cd instantsearch.js/e-commerce
 ```
 
 ### 3. Install the dependencies and run the server
