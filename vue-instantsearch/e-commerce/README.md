@@ -1,6 +1,6 @@
 # Vue InstantSearch e-commerce sample
 
-Also available in [InstantSearch.js](../../InstantSearch.js/e-commerce/), [Angular InstantSearch](../../Angular%20InstantSearch/e-commerce/) and [React InstantSearch](../../React%20InstantSearch/e-commerce/)
+Also available in [InstantSearch.js](../../instantsearch.js/e-commerce/), [Angular InstantSearch](../../angular-instantsearch/e-commerce/) and [React InstantSearch](../../react-instantsearch/e-commerce/)
 
 ---
 
@@ -18,7 +18,7 @@ This sample showcase the following features:
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/Vue%20InstantSearch/e-commerce)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/e-commerce)
 
 ## How to run this sample locally
 
@@ -31,7 +31,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Navigate to this sample folder
 
 ```
-cd Vue InstantSearch/e-commerce
+cd vue-instantsearch/e-commerce
 ```
 
 ### 3. Install the dependencies and run the server

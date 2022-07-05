@@ -1,6 +1,6 @@
 # Angular Instantsearch media sample
 
-Also available in [InstantSearch.js](../../InstantSearch.js/media/), [React InstantSearch](../../React%20InstantSearch/media/) and [Vue InstantSearch](../../Vue%20InstantSearch/media/)
+Also available in [InstantSearch.js](../../instantsearch.js/media/), [React InstantSearch](../../react-instantsearch/media/) and [Vue InstantSearch](../../vue-instantsearch/media/)
 
 ---
 
@@ -10,7 +10,7 @@ This sample shows how to leverage multiple InstantSearch features to build a com
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/Angular%20InstantSearch/media)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/angular-instantsearch/media)
 
 ## How to run this sample locally
 
@@ -23,7 +23,7 @@ git clone git@github.com:algolia/doc-code-samples.git
 ### 2. Navigate to this sample folder
 
 ```
-cd Angular InstantSearch/media
+cd angular-instantsearch/media
 ```
 
 ### 3. Install the dependencies and run the server
