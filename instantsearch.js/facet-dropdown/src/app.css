@@ -1,0 +1,123 @@
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(284deg, #fedd4e, #fcb43a);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.header-title::after {
+  content: ' ▸ ';
+  padding: 0 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.ais-Highlight-highlighted {
+  color: inherit;
+  font-size: inherit;
+}
+
+#searchbox {
+  margin-bottom: 2rem;
+}
+
+#pagination {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+#hits {
+  margin-top: 1rem;
+}
+
+.search-panel__filters {
+  display: flex;
+}
+
+.search-panel__filters > div {
+  margin-right: 1rem;
+}
+
+.search-panel__filters > div:last-child {
+  margin-right: 0;
+}
+
+.ais-HierarchicalMenu-list,
+.ais-Menu-list,
+.ais-NumericMenu-list,
+.ais-RatingMenu-list,
+.ais-RefinementList-list {
+  font-weight: normal;
+}
+
+.ais-Breadcrumb-item--selected,
+.ais-HierarchicalMenu-item--selected,
+.ais-Menu-item--selected {
+  font-weight: bold;
+}
+
+/* Custom styles for the dropdown widgets  */
+
+#category .ais-HierarchicalMenu {
+  height: 195px;
+  overflow: auto;
+}
+
+#price .ais-RangeSlider {
+  width: 12rem;
+}
+
+#price2 .ais-NumericMenu-list {
+  width: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-BrandDropdown .ais-RefinementList-list {
+  width: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-BrandDropdown .ais-RefinementList-item {
+  margin: 0.2rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2em;
+  background: #ccc;
+}
+
+.my-BrandDropdown .ais-RefinementList-item .ais-RefinementList-checkbox {
+  display: none;
+}
+
+.my-BrandDropdown .ais-RefinementList-item.ais-RefinementList-item--selected {
+  background: #333;
+  color: #fff;
+}
+
+.my-BrandDropdown .ais-RefinementList-label mark {
+  background: none;
+  text-decoration: underline;
+  font-weight: bold;
+}
