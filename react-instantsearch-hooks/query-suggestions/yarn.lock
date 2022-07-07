@@ -9,7 +9,7 @@
   dependencies:
     "@algolia/autocomplete-shared" "1.7.0"
 
-"@algolia/autocomplete-js@1.7.0", "@algolia/autocomplete-js@^1.7.0":
+"@algolia/autocomplete-js@1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-js/-/autocomplete-js-1.7.0.tgz#8b0d968d4a44d4a03e44858d69aa0b49bea360ec"
   integrity sha512-yFQ5ZUwKnzqK4ORKF1Z0vrmOzuDKa0W1OuqZG/2zrSZNyn3rv0KXUPMOq2UGXMk4xRHG40MJVlG4fbxm8j2gZQ==
@@ -20,7 +20,7 @@
     htm "^3.0.0"
     preact "^10.0.0"
 
-"@algolia/autocomplete-plugin-query-suggestions@^1.7.0":
+"@algolia/autocomplete-plugin-query-suggestions@1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-plugin-query-suggestions/-/autocomplete-plugin-query-suggestions-1.7.0.tgz#7983dd7dfa5cb51fb2dace204946a32c99700d0f"
   integrity sha512-bZrVLvwEcxHUsxkon5eXS3A7HEFDk0A/L+vetQdFb2xoT51cI6GjenB4E8apo/uAF43qnklgmJIsPq2WoroU0g==
@@ -42,7 +42,7 @@
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.7.0.tgz#5c859f67c45bd96f1e422c580b5607a0ee849cfa"
   integrity sha512-2m6+q3xqHSFaJuxZBExdFvz1GPyhMp5XphppnxKcnOjuPZWJysiaBDKi9ZlsLsWEXl/tqlf73sJ7xd9ggw8fvQ==
 
-"@algolia/autocomplete-theme-classic@^1.7.0":
+"@algolia/autocomplete-theme-classic@1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-theme-classic/-/autocomplete-theme-classic-1.7.0.tgz#de719c76d44791f86b74ee784b148d9b6f74fbfe"
   integrity sha512-QLFsfJUSswDO/CRKaPNopUPvKHNrmNX27KT90ejLHHVRuW2t29ob41uC6hRCgrkdvj52nEOR2weqW9Tng9Eu4w==
