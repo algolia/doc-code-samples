@@ -2,21 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
-import { useConnector, useSearchBox } from 'react-instantsearch-hooks-web';
-import connectGeoSearch, {
-  GeoHit,
-  GeoSearchConnectorParams,
-  GeoSearchWidgetDescription,
-} from 'instantsearch.js/es/connectors/geo-search/connectGeoSearch';
+import { useSearchBox } from 'react-instantsearch-hooks-web';
+import { useGeoSearch } from './useGeoSearch';
 
-type UseGeoSearchProps = GeoSearchConnectorParams;
-
-function useGeoSearch(props?: UseGeoSearchProps) {
-  return useConnector<GeoSearchConnectorParams, GeoSearchWidgetDescription>(
-    connectGeoSearch,
-    props
-  );
-}
+import type { GeoHit } from 'instantsearch.js/es/connectors/geo-search/connectGeoSearch';
 
 export function Airports() {
   const skipViewEffect = useRef(false);
