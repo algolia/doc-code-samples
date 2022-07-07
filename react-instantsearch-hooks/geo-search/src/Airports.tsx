@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
