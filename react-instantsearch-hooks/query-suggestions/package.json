@@ -1,0 +1,23 @@
+{
+  "name": "query-suggestions",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@algolia/autocomplete-js": "1.7.0",
+    "@algolia/autocomplete-plugin-query-suggestions": "1.7.0",
+    "@algolia/autocomplete-theme-classic": "1.7.0",
+    "algoliasearch": "4",
+    "instantsearch.js": "4.40.5",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-instantsearch-hooks-web": "6.29.0"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.45",
+    "parcel": "2.5.0"
+  }
+}
