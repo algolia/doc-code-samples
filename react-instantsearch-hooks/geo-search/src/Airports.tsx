@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
@@ -69,7 +68,7 @@ export function Airports() {
 
 function createAirportIcon(item: GeoHit) {
   return new DivIcon({
-    html: renderToStaticMarkup(<div className="marker">{item.airport_id}</div>),
+    html: `<div class="marker">${item.airport_id}</div>`,
     popupAnchor: [0, -15],
   });
 }
