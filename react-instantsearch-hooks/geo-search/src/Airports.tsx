@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
@@ -16,6 +16,8 @@ export function Airports() {
     currentRefinement,
     clearMapRefinement,
   } = useGeoSearch();
+
+  const [previousQuery, setPreviousQuery] = useState(query);
 
   const onViewChange = ({ target }) => {
     skipViewEffect.current = true;
@@ -35,7 +37,7 @@ export function Airports() {
     dragend: onViewChange,
   });
 
-  useEffect(() => {
+  if (query !== previousQuery) {
     if (currentRefinement) {
       clearMapRefinement();
     }
@@ -45,7 +47,8 @@ export function Airports() {
     }
 
     skipViewEffect.current = false;
-  }, [query]);
+    setPreviousQuery(query);
+  }
 
   return (
     <>
