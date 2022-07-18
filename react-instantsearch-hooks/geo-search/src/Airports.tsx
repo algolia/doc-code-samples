@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
@@ -7,8 +7,6 @@ import { useGeoSearch } from './useGeoSearch';
 import type { GeoHit } from 'instantsearch.js/es/connectors/geo-search/connectGeoSearch';
 
 export function Airports() {
-  const skipViewEffect = useRef(false);
-
   const { query, refine: refineQuery } = useSearchBox();
   const {
     items,
@@ -18,9 +16,12 @@ export function Airports() {
   } = useGeoSearch();
 
   const [previousQuery, setPreviousQuery] = useState(query);
+  const [skipViewEffect, setSkipViewEffect] = useState(false);
 
+  // When the user moves the map, we clear the query if necessary to only
+  // refine on the new boundaries of the map.
   const onViewChange = ({ target }) => {
-    skipViewEffect.current = true;
+    setSkipViewEffect(true);
 
     if (query.length > 0) {
       refineQuery('');
@@ -37,16 +38,20 @@ export function Airports() {
     dragend: onViewChange,
   });
 
+  // When the query changes, we remove the boundary refinement if necessary and
+  // we center the map on the first result.
   if (query !== previousQuery) {
     if (currentRefinement) {
       clearMapRefinement();
     }
 
-    if (items.length > 0 && !skipViewEffect.current) {
+    // `skipViewEffect` allows us to bail out of centering on the first result
+    // if the query has been cleared programmatically.
+    if (items.length > 0 && !skipViewEffect) {
       map.setView(items[0]._geoloc);
     }
 
-    skipViewEffect.current = false;
+    setSkipViewEffect(false);
     setPreviousQuery(query);
   }
 
