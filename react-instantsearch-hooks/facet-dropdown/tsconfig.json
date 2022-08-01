@@ -3,6 +3,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
+    "esModuleInterop": true,
     "removeComments": true,
     "isolatedModules": true,
     "strict": true,
