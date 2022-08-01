@@ -10,10 +10,7 @@ import type {
   CurrentRefinementsConnectorParamsRefinement,
   CurrentRefinementsRenderState,
 } from 'instantsearch.js/es/connectors/current-refinements/connectCurrentRefinements';
-import type {
-  Middleware as DropdownMiddleware,
-  UiState,
-} from 'instantsearch.js';
+import type { UiState } from 'instantsearch.js';
 import {
   useCurrentRefinements,
   useInstantSearch,
