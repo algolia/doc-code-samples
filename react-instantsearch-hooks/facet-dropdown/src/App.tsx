@@ -10,7 +10,7 @@ import {
   RefinementList,
   SearchBox,
 } from 'react-instantsearch-hooks-web';
-import type { Hit } from 'instantsearch.js';
+import type { Hit as AlgoliaHit } from 'instantsearch.js';
 
 import { Dropdown } from './Dropdown';
 
@@ -99,7 +99,7 @@ export function App() {
 }
 
 type HitProps = {
-  hit: Hit;
+  hit: AlgoliaHit;
 };
 
 function Hit({ hit }: HitProps) {
