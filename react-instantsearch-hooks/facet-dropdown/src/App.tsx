@@ -23,6 +23,23 @@ const searchClient = algoliasearch(
 
 const closeOnChange = () => window.innerWidth > 375;
 
+type HitProps = {
+  hit: AlgoliaHit;
+};
+
+function Hit({ hit }: HitProps) {
+  return (
+    <article>
+      <h1>
+        <Highlight attribute="name" hit={hit} />
+      </h1>
+      <p>
+        <Highlight attribute="description" hit={hit} />
+      </p>
+    </article>
+  );
+}
+
 export function App() {
   return (
     <div>
@@ -95,22 +112,5 @@ export function App() {
         </InstantSearch>
       </div>
     </div>
-  );
-}
-
-type HitProps = {
-  hit: AlgoliaHit;
-};
-
-function Hit({ hit }: HitProps) {
-  return (
-    <article>
-      <h1>
-        <Highlight attribute="name" hit={hit} />
-      </h1>
-      <p>
-        <Highlight attribute="description" hit={hit} />
-      </p>
-    </article>
   );
 }
