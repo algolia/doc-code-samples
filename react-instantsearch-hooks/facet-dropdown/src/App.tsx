@@ -12,7 +12,7 @@ import {
 } from 'react-instantsearch-hooks-web';
 import type { Hit as AlgoliaHit } from 'instantsearch.js';
 
-import { Dropdown } from './Dropdown';
+import { Dropdown } from './components/Dropdown';
 
 import './App.css';
 

@@ -17,10 +17,10 @@ import {
 } from 'react-instantsearch-hooks-web';
 
 import { Panel } from './Panel';
-import { useCloseDropdown } from './useCloseDropdown';
-import { useLockedBody } from './useLockedBody';
-import { useMediaQuery } from './useMediaQuery';
-import { capitalize, cx, getFirstChildPropValue } from './utils';
+import { useCloseDropdown } from '../hooks/useCloseDropdown';
+import { useLockedBody } from '../hooks/useLockedBody';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import { capitalize, cx, getFirstChildPropValue } from '../utils';
 
 import './Dropdown.css';
 
