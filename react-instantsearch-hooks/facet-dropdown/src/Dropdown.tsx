@@ -106,7 +106,7 @@ export function Dropdown({
   );
   if (!attributeProp) {
     throw new Error(
-      'A widget with the `attribute` prop must be passed as a child.'
+      '<Dropdown> widget only supports InstantSearch widgets with an `attribute` or `attributes` prop.'
     );
   }
 
@@ -124,8 +124,9 @@ export function Dropdown({
   } else if (typeof buttonText === 'function') {
     text = buttonText({ results, uiState, refinements });
   } else if (typeof attribute === 'string') {
-    const title = capitalize(attribute);
-    text = isRefined ? `${title} (${refinements.length})` : title;
+    text = isRefined
+      ? `${capitalize(attribute)} (${refinements.length})`
+      : capitalize(attribute);
   }
 
   const header = (
