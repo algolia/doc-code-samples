@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "algoliasearch": "4",
-    "instantsearch.js": "4.43.0",
+    "instantsearch.js": "4.44.0",
     "leaflet": "1.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-instantsearch-hooks-web": "6.29.0",
+    "react-instantsearch-hooks-web": "6.31.1",
     "react-leaflet": "4.0.1"
   },
   "devDependencies": {

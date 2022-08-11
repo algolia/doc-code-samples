@@ -6,6 +6,14 @@ import { useGeoSearch } from './useGeoSearch';
 
 import type { GeoHit } from 'instantsearch.js/es/connectors/geo-search/connectGeoSearch';
 
+type Airport = {
+  airport_id: string;
+  city: string;
+  country: string;
+  name: string;
+  nb_airline_liaisons: number;
+};
+
 export function Airports() {
   const { query, refine: refineQuery } = useSearchBox();
   const {
@@ -13,7 +21,7 @@ export function Airports() {
     refine: refineItems,
     currentRefinement,
     clearMapRefinement,
-  } = useGeoSearch();
+  } = useGeoSearch<Airport>();
 
   const [previousQuery, setPreviousQuery] = useState(query);
   const [skipViewEffect, setSkipViewEffect] = useState(false);
@@ -74,7 +82,7 @@ export function Airports() {
   );
 }
 
-function createAirportIcon(item: GeoHit) {
+function createAirportIcon(item: GeoHit<Airport>) {
   return new DivIcon({
     html: `<div class="marker">${item.airport_id}</div>`,
     popupAnchor: [0, -15],
