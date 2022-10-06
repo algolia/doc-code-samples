@@ -6,7 +6,7 @@ import {
   StatusBar,
   Button,
 } from 'react-native';
-import algoliasearch from 'algoliasearch/reactnative';
+import algoliasearch from 'algoliasearch';
 import {
   InstantSearch,
   connectRefinementList,
