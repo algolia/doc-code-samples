@@ -17,15 +17,15 @@ const search: typeof originalSearchClient.search = <THit>(
   if (queries.every(({ params }) => !params || !params.query)) {
     return Promise.resolve({
       results: queries.map(() => ({
-        exhaustiveNbHits: false,
         hits: [],
-        hitsPerPage: 0,
         nbHits: 0,
         nbPages: 0,
         page: 0,
-        params: '',
         processingTimeMS: 0,
+        hitsPerPage: 0,
+        exhaustiveNbHits: false,
         query: '',
+        params: '',
       })),
     });
   }

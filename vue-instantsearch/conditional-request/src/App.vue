@@ -62,7 +62,13 @@ const searchClient = {
         results: requests.map(() => ({
           hits: [],
           nbHits: 0,
+          nbPages: 0,
+          page: 0,
           processingTimeMS: 0,
+          hitsPerPage: 0,
+          exhaustiveNbHits: false,
+          query: '',
+          params: '',
         })),
       });
     }
