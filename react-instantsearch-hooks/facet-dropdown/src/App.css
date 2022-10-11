@@ -72,3 +72,38 @@ em {
 .search-panel__pagination {
   margin: 0 auto 1rem;
 }
+
+/* Custom category dropdown */
+.my-CategoryDropdown .ais-HierarchicalMenu {
+  height: 185px;
+  overflow: auto;
+}
+
+/* Custom brand dropdown */
+.my-BrandDropdown .ais-RefinementList-list {
+  width: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-BrandDropdown .ais-RefinementList-item {
+  margin: 0.2rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2em;
+  background: #ccc;
+}
+
+.my-BrandDropdown .ais-RefinementList-item .ais-RefinementList-checkbox {
+  display: none;
+}
+
+.my-BrandDropdown .ais-RefinementList-item.ais-RefinementList-item--selected {
+  background: #333;
+  color: #fff;
+}
+
+.my-BrandDropdown .ais-RefinementList-label mark {
+  background: none;
+  text-decoration: underline;
+  font-weight: bold;
+}
