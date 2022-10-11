@@ -22,7 +22,7 @@ import { useLockedBody } from '../hooks/useLockedBody';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { capitalize, cx, getFirstChildPropValue } from '../utils';
 
-import './Dropdown.css';
+import './FacetDropdown.css';
 
 export type DropdownProps = PropsWithChildren<{
   buttonText?: string | ((options: DropdownButtonTextOptions) => string);
@@ -37,6 +37,7 @@ export type DropdownButtonTextOptions = {
 };
 
 export type DropdownClassNames = {
+  root: string;
   button: string;
   buttonRefined: string;
   closeButton: string;
@@ -81,7 +82,7 @@ function DropdownMiddleware({
   return null;
 }
 
-export function Dropdown({
+export function FacetDropdown({
   children,
   buttonText,
   closeOnChange,
@@ -162,7 +163,11 @@ export function Dropdown({
     <Panel
       header={header}
       footer={footer}
-      className={cx('ais-Dropdown', isOpened && 'ais-Dropdown--opened')}
+      className={cx(
+        'ais-Dropdown',
+        isOpened && 'ais-Dropdown--opened',
+        classNames.root
+      )}
       ref={panelRef}
     >
       <DropdownMiddleware

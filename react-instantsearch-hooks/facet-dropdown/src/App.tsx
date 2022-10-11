@@ -12,7 +12,7 @@ import {
 } from 'react-instantsearch-hooks-web';
 import type { Hit as AlgoliaHit } from 'instantsearch.js';
 
-import { Dropdown } from './components/Dropdown';
+import { FacetDropdown } from './components/FacetDropdown';
 
 import './App.css';
 
@@ -63,23 +63,27 @@ export function App() {
             <SearchBox placeholder="Search..." className="searchbox" />
 
             <div className="search-panel__filters">
-              <Dropdown closeOnChange={closeOnChange}>
+              <FacetDropdown
+                closeOnChange={closeOnChange}
+                classNames={{ root: 'my-BrandDropdown' }}
+              >
                 <RefinementList
                   attribute="brand"
                   searchable={true}
                   searchablePlaceholder="Search..."
                 />
-              </Dropdown>
+              </FacetDropdown>
 
-              <Dropdown closeOnChange={closeOnChange}>
+              <FacetDropdown closeOnChange={closeOnChange}>
                 <RefinementList attribute="type" />
-              </Dropdown>
+              </FacetDropdown>
 
-              <Dropdown
+              <FacetDropdown
                 buttonText={({ refinements }) => {
                   const label = refinements[0]?.label.split(' > ').pop();
                   return label ? `Category (${label})` : `Category`;
                 }}
+                classNames={{ root: 'my-CategoryDropdown' }}
               >
                 <HierarchicalMenu
                   attributes={[
@@ -88,9 +92,9 @@ export function App() {
                     'hierarchicalCategories.lvl2',
                   ]}
                 />
-              </Dropdown>
+              </FacetDropdown>
 
-              <Dropdown
+              <FacetDropdown
                 closeOnChange={closeOnChange}
                 buttonText={({ refinements }) => {
                   const [start, end] = refinements;
@@ -102,7 +106,7 @@ export function App() {
                 }}
               >
                 <RangeInput attribute="price" />
-              </Dropdown>
+              </FacetDropdown>
             </div>
 
             <Hits hitComponent={Hit} />
