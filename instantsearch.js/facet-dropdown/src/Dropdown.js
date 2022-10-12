@@ -85,6 +85,7 @@ export function createDropdown(
     // Return a modified version of the widget
     return {
       ...widget,
+      $$widgetType: 'cmty.facetDropdown',
       init: (options) => {
         const rootElem = document
           .querySelector(widgetParams.container)
