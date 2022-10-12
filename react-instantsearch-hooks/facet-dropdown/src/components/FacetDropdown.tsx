@@ -89,7 +89,10 @@ export function FacetDropdown({
   classNames = {},
 }: DropdownProps) {
   const { results, uiState } = useInstantSearch();
-  const { items } = useCurrentRefinements();
+  const { items } = useCurrentRefinements(
+    {},
+    { $$widgetType: 'cmty.facetDropdown' }
+  );
   const [isOpened, setIsOpened] = useState(false);
   const panelRef = useRef(null);
 
