@@ -1,3 +1,4 @@
+import { renderToString } from 'react-dom/server';
 import algoliasearch from 'algoliasearch/lite';
 import type { InstantSearchServerState } from 'react-instantsearch-hooks-web';
 import {
@@ -38,7 +39,9 @@ export const links: LinksFunction = () => [
 
 export const loader: LoaderFunction = async ({ request }) => {
   const serverUrl = request.url;
-  const serverState = await getServerState(<Search serverUrl={serverUrl} />);
+  const serverState = await getServerState(<Search serverUrl={serverUrl} />, {
+    renderToString,
+  });
 
   return json({
     serverState,
