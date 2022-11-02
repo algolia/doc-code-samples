@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"
+    />
+    <link rel="stylesheet" href="./src/app.css" />
+
+    <title>instantsearch.js-app</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="header-title">
+        <a href="/">instantsearch.js-app</a>
+      </h1>
+      <p class="header-subtitle">
+        using
+        <a href="https://github.com/algolia/instantsearch.js">
+          InstantSearch.js
+        </a>
+      </p>
+    </header>
+
+    <div class="container">
+      <div class="search-panel">
+        <div id="searchbox"></div>
+
+        <div class="search-panel__filters">
+          <div class="responsive-filters__desktop" id="filters-desktop">
+            <div id="category"></div>
+            <div id="brand"></div>
+            <div id="price"></div>
+          </div>
+
+          <div class="responsive-filters__mobile">
+            <div id="sort-by" class="responsive-filters_sort"></div>
+
+            <button id="open-filters" class="responsive-filters__open">
+              <svg xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15 1H1l5.6 6.3v4.37L9.4 13V7.3z"
+                  stroke="#fff"
+                  stroke-width="1.29"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <span id="nb-filters"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="search-panel_results">
+          <div id="hits"></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      tabindex="-1"
+      id="filters-modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Filters</h5>
+          </div>
+          <div class="modal-body" id="modal-body"></div>
+          <div id="modal-footer">
+            <div class="responsive-filters__footer">
+              <div
+                id="clear-refinements"
+                class="responsive-filters__clear"
+              ></div>
+
+              <button class="responsive-filters__apply" id="apply-filters">
+                <span id="nb-hits"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.0"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./src/app.js"></script>
+  </body>
+</html>
