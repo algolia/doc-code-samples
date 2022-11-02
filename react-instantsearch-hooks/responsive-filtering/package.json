@@ -1,0 +1,23 @@
+{
+  "name": "facet-dropdown",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "parcel build index.html",
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "@reach/dialog": "^0.18.0",
+    "algoliasearch": "4.14.2",
+    "instantsearch.js": "4.49.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-instantsearch-hooks-web": "6.38.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "parcel": "2.5.0",
+    "typescript": "4.8.4"
+  }
+}
