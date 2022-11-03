@@ -10,9 +10,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src/*",
-    "src/ResponsiveFilters/Panel.tsx",
-    "src/ResponsiveFilters/Panel.tsx"
-  ]
+  "include": ["src/*"]
 }
