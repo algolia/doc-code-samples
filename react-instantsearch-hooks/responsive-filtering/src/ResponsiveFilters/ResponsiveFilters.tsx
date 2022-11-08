@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dialog } from '@reach/dialog';
+import { VisuallyHidden } from '@reach/visually-hidden';
 
 import { Filters } from './Filters';
 import {
@@ -56,6 +57,13 @@ export function ResponsiveFilters() {
       >
         <div className="responsive-filters__header">
           <h2>Filters</h2>
+          <button
+            className="responsive-filters__close"
+            onClick={() => setShowFilters(false)}
+          >
+            <VisuallyHidden>Close</VisuallyHidden>
+            <span aria-hidden>×</span>
+          </button>
         </div>
 
         <div className="responsive-filters__body">

@@ -107,6 +107,18 @@ em {
   top: 0;
   background-color: white;
   z-index: 2;
+  display: flex;
+}
+
+.responsive-filters__close {
+  margin-left: auto;
+  margin-right: 0.25em;
+  height: 2em;
+  align-self: center;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: darkgray;
 }
 
 .responsive-filters__footer {

@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-import { useInstantSearch } from 'react-instantsearch-hooks-web';
+import {
+  ToggleRefinement,
+  useInstantSearch,
+} from 'react-instantsearch-hooks-web';
 import {
   HierarchicalMenu,
-  RangeInput,
   RefinementList,
 } from 'react-instantsearch-hooks-web';
 
@@ -40,7 +42,7 @@ export function Filters() {
         <RefinementList attribute="brand" />
       </Panel>
       <Panel header="price">
-        <RangeInput attribute="price" />
+        <ToggleRefinement attribute="free_shipping" label="Free shipping" />
       </Panel>
     </>
   );

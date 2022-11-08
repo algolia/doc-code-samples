@@ -1,6 +1,20 @@
 /* global bootstrap instantsearch */
 
-export const createResponsiveFiltersWidgets = () => {
+const { connectCurrentRefinements } = instantsearch.connectors;
+
+function filtersCount({ container }) {
+  const createCurrentRefinements = connectCurrentRefinements(({ items }) => {
+    document.querySelector(container).innerText =
+      items.length > 0 ? `Filters (${items.length})` : 'Filters';
+  });
+
+  return {
+    ...createCurrentRefinements(),
+    $$widgetType: 'custom.filtersCount',
+  };
+}
+
+export function createResponsiveFiltersWidgets() {
   const filtersModal = new bootstrap.Modal('#filters-modal');
   const modalBody = document.getElementById('modal-body');
   const filtersDesktop = document.getElementById('filters-desktop');
@@ -21,14 +35,8 @@ export const createResponsiveFiltersWidgets = () => {
       filtersDesktop.append(...modalBody.childNodes);
     });
 
-  const { connectCurrentRefinements } = instantsearch.connectors;
-  const customCurrentRefinements = connectCurrentRefinements(({ items }) => {
-    document.getElementById('nb-filters').innerText =
-      items.length > 0 ? `Filters (${items.length})` : 'Filters';
-  });
-
   return [
-    customCurrentRefinements(),
+    filtersCount({ container: '#nb-filters' }),
     instantsearch.widgets.clearRefinements({
       container: '#clear-refinements',
       templates: { resetLabel: 'Reset filters' },
@@ -42,4 +50,4 @@ export const createResponsiveFiltersWidgets = () => {
       },
     }),
   ];
-};
+}

@@ -57,10 +57,10 @@ search.addWidgets([
     container: '#brand',
   }),
   instantsearch.widgets.panel({ templates: { header: 'Price' } })(
-    instantsearch.widgets.rangeInput
+    instantsearch.widgets.toggleRefinement
   )({
-    attribute: 'price',
-    container: '#price',
+    attribute: 'free_shipping',
+    container: '#free-shipping',
   }),
   ...createResponsiveFiltersWidgets(),
 ]);
