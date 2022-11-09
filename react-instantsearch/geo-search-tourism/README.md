@@ -17,7 +17,7 @@ This sample showcase the following features:
 
 ## Demo
 
-[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/React%20InstantSearch/geo-search-tourism)
+[Access the demo](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch/geo-search-tourism)
 
 ## How to run this sample locally
 

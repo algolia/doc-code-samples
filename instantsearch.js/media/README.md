@@ -1,6 +1,6 @@
 # Instantsearch media sample
 
-Also available in [React InstantSearch](../../React%20InstantSearch/media/), [Angular InstantSearch](../../Angular%20InstantSearch/media/) and [Vue InstantSearch](../../Vue%20InstantSearch/media/)
+Also available in [React InstantSearch](../../react-instantsearch/media/), [Angular InstantSearch](../../angular-instantsearch/media/) and [Vue InstantSearch](../../vue-instantsearch/media/)
 
 ---
 

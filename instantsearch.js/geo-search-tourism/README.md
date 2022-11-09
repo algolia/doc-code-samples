@@ -1,6 +1,6 @@
 # Instantsearch tourism sample
 
-Also available in [React InstantSearch](../../React%20InstantSearch/geo-search-tourism/)
+Also available in [React InstantSearch](../../react-instantsearch/geo-search-tourism/)
 
 ---
 
