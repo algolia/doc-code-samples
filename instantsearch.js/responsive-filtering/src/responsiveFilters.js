@@ -42,7 +42,7 @@ export function createResponsiveFiltersWidgets() {
       templates: { resetLabel: 'Reset filters' },
     }),
     instantsearch.widgets.stats({
-      container: '#nb-hits',
+      container: '#hits-count',
       templates: {
         text({ nbHits }) {
           return `See ${nbHits.toLocaleString()} results`;
