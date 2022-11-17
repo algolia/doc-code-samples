@@ -1,6 +1,6 @@
 {
-  "short_name": "instantsearch.js-app",
-  "name": "instantsearch.js-app Sample",
+  "short_name": "InstantSearch",
+  "name": "instantsearch.js Responsive Filtering Example",
   "icons": [
     {
       "src": "favicon.png",
