@@ -38,16 +38,16 @@
         <div id="searchbox"></div>
 
         <div class="search-panel__filters">
-          <div class="responsive-filters__desktop" id="filters-desktop">
+          <div id="filters-desktop">
             <div id="category"></div>
             <div id="brand"></div>
             <div id="free-shipping"></div>
           </div>
 
-          <div class="responsive-filters__mobile">
-            <div id="sort-by" class="responsive-filters_sort"></div>
+          <div class="responsive-filters-buttons">
+            <div id="sort-by"></div>
 
-            <button id="open-filters" class="responsive-filters__open">
+            <button id="open-filters">
               <svg xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15 1H1l5.6 6.3v4.37L9.4 13V7.3z"
@@ -58,14 +58,12 @@
                   stroke-linejoin="round"
                 ></path>
               </svg>
-              <span id="nb-filters"></span>
+              <span id="filters-count"></span>
             </button>
           </div>
         </div>
 
-        <div class="search-panel_results">
-          <div id="hits"></div>
-        </div>
+        <div id="hits"></div>
       </div>
     </div>
 
@@ -90,13 +88,10 @@
           </div>
           <div class="modal-body" id="modal-body"></div>
           <div id="modal-footer">
-            <div class="responsive-filters__footer">
-              <div
-                id="clear-refinements"
-                class="responsive-filters__clear"
-              ></div>
+            <div class="responsive-filters-footer">
+              <div id="clear-refinements"></div>
 
-              <button class="responsive-filters__apply" id="apply-filters">
+              <button id="apply-filters">
                 <span id="nb-hits"></span>
               </button>
             </div>

@@ -56,11 +56,14 @@ search.addWidgets([
     attribute: 'brand',
     container: '#brand',
   }),
-  instantsearch.widgets.panel({ templates: { header: 'Price' } })(
-    instantsearch.widgets.toggleRefinement
-  )({
+  instantsearch.widgets.toggleRefinement({
     attribute: 'free_shipping',
     container: '#free-shipping',
+    templates: {
+      labelText() {
+        return 'Free shipping';
+      },
+    },
   }),
   ...createResponsiveFiltersWidgets(),
 ]);

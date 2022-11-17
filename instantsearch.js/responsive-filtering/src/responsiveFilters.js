@@ -36,7 +36,7 @@ export function createResponsiveFiltersWidgets() {
     });
 
   return [
-    filtersCount({ container: '#nb-filters' }),
+    filtersCount({ container: '#filters-count' }),
     instantsearch.widgets.clearRefinements({
       container: '#clear-refinements',
       templates: { resetLabel: 'Reset filters' },

@@ -49,6 +49,10 @@ em {
   font-size: 1.2rem;
 }
 
+.ais-ClearRefinements-button {
+  height: 40px !important;
+}
+
 /* Container */
 .container {
   max-width: 1200px;
@@ -72,16 +76,16 @@ em {
   text-align: center;
 }
 
-.responsive-filters__mobile {
+.responsive-filters-buttons {
   display: none;
   gap: 1em;
 }
 
-.responsive-filters_sort {
+.responsive-filters-buttons__sort {
   width: 100%;
 }
 
-.responsive-filters__modal {
+.responsive-filters-modal {
   width: 100vw;
   margin-bottom: 0;
   padding: 0;
@@ -91,14 +95,14 @@ em {
   overflow: scroll;
 }
 
-.responsive-filters__body {
+.responsive-filters-modal__body {
   padding-left: 1em;
   overflow: scroll;
   height: auto;
   position: relative;
 }
 
-.responsive-filters__header {
+.responsive-filters-modal__header {
   border-bottom: 1px solid #ccc;
   padding-top: 0.5em;
   padding-left: 1em;
@@ -110,7 +114,7 @@ em {
   display: flex;
 }
 
-.responsive-filters__close {
+.responsive-filters-modal__close {
   margin-left: auto;
   margin-right: 0.25em;
   height: 2em;
@@ -121,7 +125,7 @@ em {
   color: darkgray;
 }
 
-.responsive-filters__footer {
+.responsive-filters-modal__footer {
   position: sticky;
   margin-top: auto;
   bottom: 0;
@@ -133,8 +137,8 @@ em {
   gap: 1em;
 }
 
-.responsive-filters__apply,
-.responsive-filters__open {
+.responsive-filters-modal__apply,
+.responsive-filters-buttons__open {
   width: 100%;
   font-size: medium;
   font-weight: 400;
@@ -147,19 +151,17 @@ em {
   box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 6%),
     0 1px 0 0 rgb(35 38 59 / 10%);
   height: 32px;
+  border-radius: 3px;
+  height: 40px;
 }
 
-.responsive-filters__open {
-  height: 2.4rem;
-}
-
-.responsive-filters__open svg {
+.responsive-filters-buttons__open svg {
   width: 16px;
   height: 12px;
   padding-right: 4px;
 }
 
-.responsive-filters__clear {
+.responsive-filters-modal__clear {
   width: 100%;
 }
 
@@ -172,11 +174,11 @@ em {
     grid-row: 2 / 3;
   }
 
-  .responsive-filters__mobile {
+  .responsive-filters-buttons {
     display: flex;
   }
 
-  .responsive-filters__desktop {
+  .responsive-filters-desktop {
     display: none;
   }
 }

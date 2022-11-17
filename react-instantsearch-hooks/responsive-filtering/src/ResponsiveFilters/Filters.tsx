@@ -41,7 +41,7 @@ export function Filters() {
       <Panel header="brand">
         <RefinementList attribute="brand" />
       </Panel>
-      <Panel header="price">
+      <Panel header="Free shipping">
         <ToggleRefinement attribute="free_shipping" label="Free shipping" />
       </Panel>
     </>
