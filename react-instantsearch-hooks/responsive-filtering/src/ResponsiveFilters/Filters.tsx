@@ -2,8 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import {
   ToggleRefinement,
   useInstantSearch,
-} from 'react-instantsearch-hooks-web';
-import {
   HierarchicalMenu,
   RefinementList,
 } from 'react-instantsearch-hooks-web';
