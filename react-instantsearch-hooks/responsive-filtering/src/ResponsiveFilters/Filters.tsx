@@ -12,12 +12,12 @@ export function Filters() {
   const { uiState, setUiState } = useInstantSearch();
   const uiStateRef = useRef(uiState);
 
-  // Keep up to date uiState in a reference
+  // Keep up-to-date `uiState` in a ref
   useEffect(() => {
     uiStateRef.current = uiState;
   }, [uiState]);
 
-  // Apply latest uiState to InstantSearch as the component is unmounted
+  // Apply latest `uiState` to InstantSearch as the component is unmounted
   useEffect(() => {
     return () => {
       setTimeout(() => setUiState(uiStateRef.current));
