@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "algoliasearch": "4.12.1",
-    "classnames": "2.2.6",
+    "classnames": "2.3.2",
     "instantsearch.js": "^4.5.0",
     "vue": "2.6.10",
     "vue-instantsearch": "3.8.1",

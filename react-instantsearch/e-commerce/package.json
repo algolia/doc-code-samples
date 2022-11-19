@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "algoliasearch": "4.12.1",
-    "classnames": "^2.3.1",
+    "classnames": "2.3.2",
     "qs": "6.8.0",
     "react": "16.8.6",
     "react-compound-slider": "^3.3.1",
