@@ -91,7 +91,7 @@ em {
   padding: 0;
   bottom: 0px;
   position: absolute;
-  max-height: 85%;
+  max-height: 100%;
   overflow: scroll;
 }
 
@@ -116,13 +116,14 @@ em {
 
 .responsive-filters-modal__close {
   margin-left: auto;
-  margin-right: 0.25em;
+  margin-right: 0.5em;
   height: 2em;
   align-self: center;
   background: none;
   border: none;
   font-size: 1.5em;
   color: darkgray;
+  cursor: pointer;
 }
 
 .responsive-filters-modal__footer {
@@ -140,8 +141,7 @@ em {
 .responsive-filters-modal__apply,
 .responsive-filters-buttons__open {
   width: 100%;
-  font-size: medium;
-  font-weight: 400;
+  font-size: 14px;
   line-height: 1.25rem;
   padding: 0 1rem;
   color: #ffffff;
@@ -153,6 +153,21 @@ em {
   height: 32px;
   border-radius: 3px;
   height: 40px;
+  cursor: pointer;
+}
+
+.responsive-filters-modal__apply:hover,
+.responsive-filters-buttons__open:hover {
+  border-color: #1e2b8f;
+  background-image: linear-gradient(0deg, #1e2b8f, #2b3cbb);
+}
+
+.responsive-filters-modal__apply:active,
+.responsive-filters-buttons__open:active {
+  background-image: linear-gradient(0deg, #3c4fe0, #2b3cbb);
+  border-color: #1e2b8f;
+  box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 6%), 0 0 0 1px #1e2b8f,
+    0 2px 0 1px rgb(35 38 59 / 10%);
 }
 
 .responsive-filters-buttons__open svg {
