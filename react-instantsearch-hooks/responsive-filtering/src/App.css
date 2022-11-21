@@ -171,9 +171,12 @@ em {
 }
 
 .responsive-filters-buttons__open svg {
+  margin-bottom: 2px;
   width: 16px;
-  height: 12px;
+  height: 14px;
   padding-right: 4px;
+  box-sizing: content-box;
+  vertical-align: middle;
 }
 
 .responsive-filters-modal__clear {
