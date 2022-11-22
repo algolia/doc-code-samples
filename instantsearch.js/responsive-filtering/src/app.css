@@ -146,6 +146,37 @@ mark {
 }
 
 @media (max-width: 650px) {
+  .ais-HierarchicalMenu-count,
+  .ais-RefinementList-count {
+    margin-left: auto;
+    margin-right: 1em;
+  }
+
+  .ais-HierarchicalMenu-item,
+  .ais-RefinementList-item,
+  .ais-ToggleRefinement-labelText {
+    line-height: 40px;
+    font-size: 16px;
+  }
+
+  .ais-Panel-header {
+    font-size: 16px;
+  }
+
+  .ais-ToggleRefinement-checkbox {
+    margin-right: 1em;
+  }
+
+  .ais-CurrentRefinements-list {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  .ais-CurrentRefinements-item {
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+
   .search-panel {
     grid-template-columns: auto;
   }

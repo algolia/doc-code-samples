@@ -6,6 +6,7 @@ import {
   RefinementList,
 } from 'react-instantsearch-hooks-web';
 
+import { CustomCurrentRefinements } from './CustomCurrentRefinements';
 import { Panel } from './Panel';
 
 export function Filters() {
@@ -26,7 +27,8 @@ export function Filters() {
 
   return (
     <>
-      <Panel header="category">
+      <CustomCurrentRefinements />
+      <Panel header="category" collapsible>
         <HierarchicalMenu
           attributes={[
             'hierarchicalCategories.lvl0',
@@ -36,7 +38,7 @@ export function Filters() {
           ]}
         />
       </Panel>
-      <Panel header="brand">
+      <Panel header="brand" collapsible collapsedByDefault>
         <RefinementList attribute="brand" />
       </Panel>
       <Panel header="Free shipping">

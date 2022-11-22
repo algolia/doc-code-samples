@@ -39,9 +39,16 @@ search.addWidgets([
       { label: 'Price descending', value: 'instant_search_price_desc' },
     ],
   }),
-  instantsearch.widgets.panel({ templates: { header: 'Category' } })(
-    instantsearch.widgets.hierarchicalMenu
-  )({
+  instantsearch.widgets.panel({
+    templates: { header: 'applied filters' },
+    hidden: ({ canRefine }) => !canRefine,
+  })(instantsearch.widgets.currentRefinements)({
+    container: '#current-refinements',
+  }),
+  instantsearch.widgets.panel({
+    templates: { header: 'Category' },
+    collapsed: () => false,
+  })(instantsearch.widgets.hierarchicalMenu)({
     attributes: [
       'hierarchicalCategories.lvl0',
       'hierarchicalCategories.lvl1',
@@ -50,9 +57,10 @@ search.addWidgets([
     ],
     container: '#category',
   }),
-  instantsearch.widgets.panel({ templates: { header: 'Brand' } })(
-    instantsearch.widgets.refinementList
-  )({
+  instantsearch.widgets.panel({
+    templates: { header: 'Brand' },
+    collapsed: () => true,
+  })(instantsearch.widgets.refinementList)({
     attribute: 'brand',
     container: '#brand',
   }),

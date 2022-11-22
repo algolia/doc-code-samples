@@ -50,7 +50,7 @@ em {
 }
 
 .ais-ClearRefinements-button {
-  height: 40px !important;
+  height: 40px;
 }
 
 /* Container */
@@ -91,8 +91,10 @@ em {
   padding: 0;
   bottom: 0px;
   position: absolute;
-  max-height: 100%;
+  height: 100%;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 .responsive-filters-modal__body {
@@ -116,7 +118,7 @@ em {
 
 .responsive-filters-modal__close {
   margin-left: auto;
-  margin-right: 0.5em;
+  margin-right: 0.15em;
   height: 2em;
   align-self: center;
   background: none;
@@ -184,6 +186,37 @@ em {
 }
 
 @media (max-width: 650px) {
+  .ais-HierarchicalMenu-count,
+  .ais-RefinementList-count {
+    margin-left: auto;
+    margin-right: 1em;
+  }
+
+  .ais-HierarchicalMenu-item,
+  .ais-RefinementList-item,
+  .ais-ToggleRefinement-labelText {
+    line-height: 40px;
+    font-size: 16px;
+  }
+
+  .ais-Panel-header {
+    font-size: 16px;
+  }
+
+  .ais-ToggleRefinement-checkbox {
+    margin-right: 1em;
+  }
+
+  .ais-CurrentRefinements-list {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  .ais-CurrentRefinements-item {
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+
   .search-panel {
     grid-template-columns: auto;
   }
