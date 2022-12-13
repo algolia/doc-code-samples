@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "algoliasearch": "4.12.1",
-    "qs": "6.7.0",
+    "qs": "6.7.3",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-instantsearch-dom": "6.0.0",
