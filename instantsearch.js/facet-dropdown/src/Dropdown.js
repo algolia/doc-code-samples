@@ -35,7 +35,7 @@ export function createDropdown(
   const makeWidget = instantsearch.widgets.panel({
     cssClasses,
     templates: {
-      header: (options) => {
+      header: options => {
         const { widgetParams } = options;
 
         let text;
@@ -51,7 +51,7 @@ export function createDropdown(
               : '';
           // Get the number of refinements if the widget has `items`
           const nbRefinements = (options.items || []).filter(
-            (item) => item.isRefined
+            item => item.isRefined
           ).length;
           // Format the button text
           text =
@@ -63,7 +63,7 @@ export function createDropdown(
           classNames.push(buttonClassName);
         } else if (typeof buttonClassName === 'function') {
           classNames.push(buttonClassName(options));
-        } else if ((options.items || []).find((item) => item.isRefined)) {
+        } else if ((options.items || []).find(item => item.isRefined)) {
           classNames.push(cssClasses.buttonRefined);
         }
 
@@ -77,73 +77,80 @@ export function createDropdown(
     },
   })(baseWidget);
 
-  return (widgetParams) => {
+  return widgetParams => {
     const widget = makeWidget(widgetParams);
-    let cleanUp;
     let state = {};
+    let rootElem, headerElem, closeButtonElem;
+
+    const open = () => {
+      addClassName(rootElem, CLASS_OPENED);
+      // This 'click' event is still being propagated,
+      // so we add this event listener in the next tick.
+      // Otherwise, it will immediately close the panel again.
+      setTimeout(() => {
+        state.windowClickListener = event => {
+          // Close if the outside is clicked
+          if (!rootElem.contains(event.target)) {
+            close();
+          }
+        };
+        // Add an event listener when the panel is opened
+        window.addEventListener('click', state.windowClickListener);
+      }, 0);
+    };
+    const close = () => {
+      removeClassName(rootElem, CLASS_OPENED);
+      // Remove the event listener when the panel is closed
+      window.removeEventListener('click', state.windowClickListener);
+      delete state.windowClickListener;
+    };
+    const isOpened = () => hasClassName(rootElem, CLASS_OPENED);
+    const toggle = () => {
+      if (isOpened()) {
+        close();
+      } else {
+        open();
+      }
+    };
+
+    // Add a click listener to the header (button)
+    const buttonListener = event => {
+      if (!event.target.matches('.' + CLASS_BUTTON)) {
+        return;
+      }
+      toggle();
+    };
+
+    // Setup a clean-up function, which will be called in `dispose`.
+    const cleanUp = () => {
+      headerElem.removeEventListener('click', buttonListener);
+      if (state.windowClickListener) {
+        window.removeEventListener('click', state.windowClickListener);
+      }
+    };
 
     // Return a modified version of the widget
     return {
       ...widget,
       $$widgetType: 'cmty.facetDropdown',
-      init: (options) => {
-        const rootElem = document
-          .querySelector(widgetParams.container)
-          .querySelector('.ais-Panel');
-        const headerElem = rootElem.querySelector('.ais-Panel-header');
-        const closeButtonElem = rootElem.querySelector(
-          '.' + CLASS_CLOSE_BUTTON
-        );
+      render: options => {
+        if (!rootElem) {
+          rootElem = document
+            .querySelector(widgetParams.container)
+            .querySelector('.ais-Panel');
+        }
 
-        const open = () => {
-          addClassName(rootElem, CLASS_OPENED);
-          // This 'click' event is still being propagated,
-          // so we add this event listener in the next tick.
-          // Otherwise, it will immediately close the panel again.
-          setTimeout(() => {
-            state.windowClickListener = (event) => {
-              // Close if the outside is clicked
-              if (!rootElem.contains(event.target)) {
-                close();
-              }
-            };
-            // Add an event listener when the panel is opened
-            window.addEventListener('click', state.windowClickListener);
-          }, 0);
-        };
-        const close = () => {
-          removeClassName(rootElem, CLASS_OPENED);
-          // Remove the event listener when the panel is closed
-          window.removeEventListener('click', state.windowClickListener);
-          delete state.windowClickListener;
-        };
-        const isOpened = () => hasClassName(rootElem, CLASS_OPENED);
-        const toggle = () => {
-          if (isOpened()) {
-            close();
-          } else {
-            open();
-          }
-        };
+        if (!headerElem) {
+          headerElem = rootElem.querySelector('.ais-Panel-header');
 
-        // Add a click listener to the header (button)
-        const buttonListener = (event) => {
-          if (!event.target.matches('.' + CLASS_BUTTON)) {
-            return;
-          }
-          toggle();
-        };
-        headerElem.addEventListener('click', buttonListener);
+          headerElem.addEventListener('click', buttonListener);
+        }
 
-        closeButtonElem.addEventListener('click', close);
+        if (!closeButtonElem) {
+          closeButtonElem = rootElem.querySelector('.' + CLASS_CLOSE_BUTTON);
 
-        // Setup a clean-up function, which will be called in `dispose`.
-        cleanUp = () => {
-          headerElem.removeEventListener('click', buttonListener);
-          if (state.windowClickListener) {
-            window.removeEventListener('click', state.windowClickListener);
-          }
-        };
+          closeButtonElem.addEventListener('click', close);
+        }
 
         // Whenever uiState changes, it closes the panel.
         options.instantSearchInstance.use(() => ({
@@ -160,12 +167,14 @@ export function createDropdown(
             }
           },
         }));
-        return widget.init.call(widget, options);
+
+        return widget.render.call(widget, options);
       },
-      dispose: (options) => {
+      dispose: options => {
         if (typeof cleanUp === 'function') {
           cleanUp();
         }
+
         return widget.dispose.call(widget, options);
       },
     };
