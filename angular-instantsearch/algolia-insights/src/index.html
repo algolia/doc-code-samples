@@ -8,21 +8,12 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite.css" rel="stylesheet" />
     <script>
-      var ALGOLIA_INSIGHTS_SRC =
-        'https://cdn.jsdelivr.net/npm/search-insights@1.2.0';
-      !(function (e, a, t, n, s, i, c) {
-        (e.AlgoliaAnalyticsObject = s),
-          (e.aa =
-            e.aa ||
-            function () {
-              (e.aa.queue = e.aa.queue || []).push(arguments);
-            }),
-          (i = a.createElement(t)),
-          (c = a.getElementsByTagName(t)[0]),
-          (i.async = 1),
-          (i.src = ALGOLIA_INSIGHTS_SRC),
-          c.parentNode.insertBefore(i, c);
-      })(window, document, 'script', 0, 'aa');
+      var ALGOLIA_INSIGHTS_SRC = "https://cdn.jsdelivr.net/npm/search-insights@2.3.0";
+      !function(e,a,t,n,s,i,c){e.AlgoliaAnalyticsObject=s,e[s]=e[s]||function(){
+      (e[s].queue=e[s].queue||[]).push(arguments)},i=a.createElement(t),c=a.getElementsByTagName(t)[0],
+      i.async=1,i.src=n,c.parentNode.insertBefore(i,c)
+      }(window,document,"script",ALGOLIA_INSIGHTS_SRC,"aa");
+
       aa('init', {
         appId: 'B1G2GM9NG0',
         apiKey: 'aadef574be1f9252bb48d4ea09b5cfe5',
