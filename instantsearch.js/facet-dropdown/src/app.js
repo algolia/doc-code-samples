@@ -15,7 +15,6 @@ const search = instantsearch({
 const MOBILE_WIDTH = 375;
 
 const brandDropdown = createDropdown(instantsearch.widgets.refinementList, {
-  // closeOnChange: true,
   closeOnChange: () => window.innerWidth >= MOBILE_WIDTH,
   cssClasses: { root: 'my-BrandDropdown' },
 });
@@ -23,7 +22,6 @@ const brandDropdown = createDropdown(instantsearch.widgets.refinementList, {
 const refinementListDropdown = createDropdown(
   instantsearch.widgets.refinementList,
   {
-    // closeOnChange: true,
     closeOnChange: () => window.innerWidth >= MOBILE_WIDTH,
   }
 );
@@ -44,13 +42,13 @@ const priceDropdown = createDropdown(instantsearch.widgets.rangeSlider, {
 const priceMenuDropdown = createDropdown(instantsearch.widgets.numericMenu, {
   buttonText({ items }) {
     const refinedItem = (items || []).find(
-      (item) => item.label !== 'All' && item.isRefined
+      item => item.label !== 'All' && item.isRefined
     );
     return refinedItem ? `Price (${refinedItem.label})` : 'Price Menu';
   },
   buttonClassName({ items }) {
     const isRefined = (items || []).find(
-      (item) => item.label !== 'All' && item.isRefined
+      item => item.label !== 'All' && item.isRefined
     );
     return isRefined && 'ais-Dropdown-button--refined';
   },
