@@ -136,8 +136,6 @@ jobs:
            path: "instantsearch.js/routing-seo-friendly"
       - build_project:
            path: "instantsearch.js/secured-api-keys"
-      - build_project:
-           path: "instantsearch.js/e-commerce"
 
   build_vue_projects:
     executor: node9
