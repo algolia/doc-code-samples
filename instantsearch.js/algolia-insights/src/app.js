@@ -19,17 +19,17 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      item: (hit, bindEvent) => `
+      item: (hit, { sendEvent }) => `
         <div>
           <img src="${hit.image}" align="left" alt="${hit.name}" />
           <div class="hit-name">
             ${hit.name}
           </div>
           <div>
-           <button ${bindEvent('click', hit, 'my-click-event')}>
+           <button onclick=${sendEvent('click', hit, 'my-click-event')}>
              Click event
            </button>
-           <button ${bindEvent('conversion', hit, 'my-conversion-event')}>
+           <button onclick=${sendEvent('conversion', hit, 'my-conversion-event')}>
              Conversion event
            </button>
           </div>
