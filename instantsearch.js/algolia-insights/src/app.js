@@ -26,10 +26,10 @@ search.addWidgets([
             ${hit.name}
           </div>
           <div>
-           <button onclick=${sendEvent('click', hit, 'my-click-event')}>
+           <button onclick=${() => sendEvent('click', hit, 'my-click-event')}>
              Click event
            </button>
-           <button onclick=${sendEvent('conversion', hit, 'my-conversion-event')}>
+           <button onclick=${() => sendEvent('conversion', hit, 'my-conversion-event')}>
              Conversion event
            </button>
           </div>
