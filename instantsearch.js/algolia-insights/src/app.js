@@ -19,19 +19,24 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      item: (hit, { sendEvent }) => `
+      item: (hit, { html, sendEvent }) => html`
         <div>
           <img src="${hit.image}" align="left" alt="${hit.name}" />
           <div class="hit-name">
             ${hit.name}
           </div>
           <div>
-           <button onclick=${() => sendEvent('click', hit, 'my-click-event')}>
-             Click event
-           </button>
-           <button onclick=${() => sendEvent('conversion', hit, 'my-conversion-event')}>
-             Conversion event
-           </button>
+            <button
+              onclick="${() => sendEvent('click', hit, 'my-click-event')}"
+            >
+              Click event
+            </button>
+            <button
+              onclick="${() =>
+                sendEvent('conversion', hit, 'my-conversion-event')}"
+            >
+              Conversion event
+            </button>
           </div>
         </div>
       `,
@@ -42,9 +47,11 @@ search.addWidgets([
   }),
 ]);
 
-search.use(instantsearch.middlewares.createInsightsMiddleware({
-  insightsClient: window.aa,
-}));
+search.use(
+  instantsearch.middlewares.createInsightsMiddleware({
+    insightsClient: window.aa,
+  })
+);
 window.aa('setUserToken', 'my-user-token');
 
 search.start();
