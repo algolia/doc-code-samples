@@ -1,22 +1,5 @@
-# nuxt
+# Vue Instantsearch nuxt sample
 
-> Vue InstantSearch & Nuxt
+This sample shows how to integrate Vue InstantSearch with the Nuxt framework.
 
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+You can find this demo on [the InstantSearch repository](https://github.com/algolia/instantsearch/tree/master/examples/vue/nuxt), or on [CodeSandbox](https://codesandbox.io/s/github/algolia/instantsearch/tree/master/examples/vue/nuxt).
