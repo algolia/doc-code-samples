@@ -1,26 +1,9 @@
-# vue-instantsearch-v2-starter
+# Vue InstantSearch getting started sample
 
-## Project setup
-```
-yarn install
-```
+Also available in [InstantSearch.js](../../instantsearch.js/getting-started/), [React InstantSearch](../../react-instantsearch/getting-started/), [React InstantSearch Hooks](../../react-instantsearch-hooks/getting-started/) and [Angular InstantSearch](../../angular-instantsearch/getting-started/)
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+---
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+This sample shows how to get started on building your search experience by easily adding common InstantSearch widgets. 
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
+You can find this demo on [the InstantSearch repository](https://github.com/algolia/instantsearch/tree/master/examples/vue/getting-started), or on [CodeSandbox](https://codesandbox.io/s/github/algolia/instantsearch/tree/master/examples/vue/getting-started).

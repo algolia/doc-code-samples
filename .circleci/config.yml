@@ -49,8 +49,6 @@ jobs:
       - build_project:
           path: "angular-instantsearch/geo-search"
       - build_project:
-          path: "angular-instantsearch/getting-started"
-      - build_project:
           path: "angular-instantsearch/infinite-scroll"
       - build_project:
           path: "angular-instantsearch/multi-index-autocomplete"
@@ -79,8 +77,6 @@ jobs:
            path: "react-instantsearch/autocomplete-results-page"
       - build_project:
            path: "react-instantsearch/extending-widgets"
-      - build_project:
-           path: "react-instantsearch/getting-started"
       - build_project:
            path: "react-instantsearch/infinite-scroll"
       - build_project:
@@ -114,8 +110,6 @@ jobs:
            path: "instantsearch.js/geo-search-custom-marker"
       - build_project:
            path: "instantsearch.js/geo-search-hits"
-      - build_project:
-           path: "instantsearch.js/getting-started"
       - build_project:
            path: "instantsearch.js/infinite-scroll"
       - build_project:
@@ -151,8 +145,6 @@ jobs:
          path: "vue-instantsearch/extending-widgets"
       - build_project:
          path: "vue-instantsearch/geo-search"
-      - build_project:
-         path: "vue-instantsearch/getting-started"
       - build_project:
          path: "vue-instantsearch/infinite-scroll"
       - build_project:
