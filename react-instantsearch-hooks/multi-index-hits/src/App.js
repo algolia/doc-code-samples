@@ -19,7 +19,11 @@ const searchClient = algoliasearch(
 function App() {
   return (
     <div className="container">
-      <InstantSearch indexName="instant_search" searchClient={searchClient}>
+      <InstantSearch
+        indexName="instant_search"
+        searchClient={searchClient}
+        insights={true}
+      >
         <SearchBox />
 
         <Index indexName="instant_search">

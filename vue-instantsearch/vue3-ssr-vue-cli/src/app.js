@@ -20,6 +20,7 @@ export function createApp({ renderToString, context } = {}) {
         renderToString,
         indexName: 'instant_search',
         searchClient,
+        insights: true,
         routing: {
           router: {
             read() {

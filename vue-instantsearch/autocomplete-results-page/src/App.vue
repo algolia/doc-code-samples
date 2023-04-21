@@ -14,6 +14,7 @@
       <ais-instant-search
         :search-client="searchClient"
         index-name="demo_ecommerce"
+        :insights="true"
       >
         <ais-index index-name="demo_ecommerce">
           <ais-configure

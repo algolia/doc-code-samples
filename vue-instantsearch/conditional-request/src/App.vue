@@ -18,6 +18,7 @@
       <ais-instant-search
         :search-client="searchClient"
         index-name="instant_search"
+        :insights="true"
       >
         <div class="search-panel">
           <div class="search-panel__results">

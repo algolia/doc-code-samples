@@ -19,9 +19,11 @@ const searchClient = algoliasearch(
 function App() {
   return (
     <div className="container">
-      <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
-        <InsightsMiddleware />
-
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="demo_ecommerce"
+        insights={true}
+      >
         <div className="search-panel">
           <div className="search-panel__filters">
             <RefinementList attribute="brand" />

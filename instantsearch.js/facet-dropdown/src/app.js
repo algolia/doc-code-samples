@@ -10,6 +10,7 @@ const searchClient = algoliasearch(
 const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
+  insights: true,
 });
 
 const MOBILE_WIDTH = 375;

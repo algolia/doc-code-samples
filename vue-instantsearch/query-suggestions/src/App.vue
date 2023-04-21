@@ -14,6 +14,7 @@
       <ais-instant-search
         :search-client="searchClient"
         index-name="instant_search"
+        :insights="true"
       >
         <ais-index index-name="instant_search_demo_query_suggestions">
           <ais-configure :hitsPerPage="5" />

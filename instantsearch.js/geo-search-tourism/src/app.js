@@ -10,6 +10,7 @@ $script(
       ),
       indexName: 'airbnb',
       routing: true,
+      insights: true,
     });
 
     search.addWidgets([

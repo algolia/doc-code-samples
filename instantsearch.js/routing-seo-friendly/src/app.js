@@ -23,6 +23,7 @@ const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
   routing: searchRouting,
+  insights: true,
 });
 
 search.addWidgets([

@@ -9,6 +9,7 @@ const searchClient = algoliasearch('B1G2GM9NG0', SERVER_DATA.ALGOLIA_API_KEY);
 const search = instantsearch({
   indexName: 'demo_ecommerce',
   searchClient,
+  insights: true,
 });
 
 search.addWidgets([

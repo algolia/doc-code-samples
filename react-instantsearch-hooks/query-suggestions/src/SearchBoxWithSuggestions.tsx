@@ -62,6 +62,7 @@ export function SearchBoxWithSuggestions() {
       plugins={plugins}
       initialState={initialState}
       onReset={onReset}
+      insights={true}
     />
   );
 }

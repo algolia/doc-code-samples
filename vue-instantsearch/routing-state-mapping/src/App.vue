@@ -15,6 +15,7 @@
         :search-client="searchClient"
         index-name="demo_ecommerce"
         :routing="routing"
+        :insights="true"
       >
         <div class="search-panel">
           <div class="search-panel__filters">

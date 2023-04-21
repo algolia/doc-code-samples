@@ -40,7 +40,11 @@ const searchClient = {
 function App() {
   return (
     <div className="container">
-      <InstantSearch indexName="instant_search" searchClient={searchClient}>
+      <InstantSearch
+        indexName="instant_search"
+        searchClient={searchClient}
+        insights={true}
+      >
         <SearchBox />
         <Hits hitComponent={Hit} />
       </InstantSearch>

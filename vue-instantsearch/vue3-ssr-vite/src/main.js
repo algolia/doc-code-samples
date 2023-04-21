@@ -24,6 +24,7 @@ export function createApp({ renderToString, context } = {}) {
       createServerRootMixin({
         searchClient,
         indexName: 'instant_search',
+        insights: true,
         routing: {
           router: {
             read() {

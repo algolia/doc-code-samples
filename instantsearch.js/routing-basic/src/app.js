@@ -21,6 +21,7 @@ const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
   routing: true,
+  insights: true,
 });
 
 search.addWidgets([

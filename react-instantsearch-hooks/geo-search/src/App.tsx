@@ -28,7 +28,11 @@ export function App() {
       </header>
 
       <div className="container">
-        <InstantSearch searchClient={searchClient} indexName="airports">
+        <InstantSearch
+          searchClient={searchClient}
+          indexName="airports"
+          insights={true}
+        >
           <SearchBox
             placeholder="Search for airports..."
             className="searchbox"
