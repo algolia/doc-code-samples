@@ -13,6 +13,7 @@ injectScript(
     const search = instantsearch({
       indexName: 'airports',
       searchClient,
+      insights: true,
     });
 
     search.addWidgets([

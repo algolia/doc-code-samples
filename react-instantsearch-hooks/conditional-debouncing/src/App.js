@@ -30,7 +30,11 @@ function App() {
 
   return (
     <div className="container">
-      <InstantSearch indexName="instant_search" searchClient={searchClient}>
+      <InstantSearch
+        indexName="instant_search"
+        searchClient={searchClient}
+        insights={true}
+      >
         <SearchBox queryHook={queryHook} />
         <Hits hitComponent={Hit} />
       </InstantSearch>

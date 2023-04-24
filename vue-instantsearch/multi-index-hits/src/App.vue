@@ -14,6 +14,7 @@
       <ais-instant-search
         :search-client="searchClient"
         index-name="instant_search_price_desc"
+        :insights="true"
       >
         <ais-search-box v-model="query" />
         <ais-configure
@@ -27,7 +28,7 @@
           </template>
         </ais-hits>
         <hr />
-        <ais-index :search-client="searchClient" index-name="instant_search">
+        <ais-index index-name="instant_search">
           <ais-hits>
             <template slot="item" slot-scope="{ item }">
               <h3><ais-highlight :hit="item" attribute="name" /></h3>

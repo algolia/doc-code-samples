@@ -8,6 +8,7 @@ const searchClient = algoliasearch(
 const search = instantsearch({
   indexName: 'demo_ecommerce',
   searchClient,
+  insights: true,
 });
 
 search.addWidgets([

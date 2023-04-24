@@ -11,7 +11,11 @@
     </header>
 
     <div class="container">
-      <ais-instant-search :search-client="searchClient" index-name="airports">
+      <ais-instant-search
+        :search-client="searchClient"
+        index-name="airports"
+        :insights="true"
+      >
         <ais-search-box placeholder="Search here…" class="searchbox" />
         <app-map />
       </ais-instant-search>

@@ -15,7 +15,11 @@ function App({ searchClient }) {
   return (
     <div className="ais-InstantSearch">
       <h1>React InstantSearch e-commerce demo</h1>
-      <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
+      <InstantSearch
+        indexName="demo_ecommerce"
+        searchClient={searchClient}
+        insights={true}
+      >
         <div className="left-panel">
           <ClearRefinements />
           <h2>Brands</h2>

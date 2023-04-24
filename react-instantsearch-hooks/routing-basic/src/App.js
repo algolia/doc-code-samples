@@ -29,6 +29,7 @@ function App() {
         searchClient={searchClient}
         indexName="instant_search"
         routing={routing}
+        insights={true}
       >
         <div className="search-panel">
           <div className="search-panel__filters">

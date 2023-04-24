@@ -14,7 +14,7 @@
       <ais-instant-search
         :search-client="searchClient"
         index-name="instant_search"
-        :middlewares="middlewares"
+        :insights="true"
       >
         <div class="search-panel">
           <div class="search-panel__filters">
@@ -59,11 +59,6 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import { createInsightsMiddleware } from 'instantsearch.js/es/middlewares';
-
-const insightsMiddleware = createInsightsMiddleware({
-  insightsClient: window.aa,
-});
 
 export default {
   data() {
@@ -72,7 +67,6 @@ export default {
         'latency',
         '6be0576ff61c053d5f9a3225e2a90f76'
       ),
-      middlewares: [insightsMiddleware],
     };
   },
   methods: {

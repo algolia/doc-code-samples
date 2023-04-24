@@ -16,7 +16,11 @@ import { searchClient } from './searchClient';
 export function App() {
   return (
     <div className="container">
-      <InstantSearch searchClient={searchClient} indexName="instant_search">
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="instant_search"
+        insights={true}
+      >
         <Configure hitsPerPage={16} />
 
         <SearchBoxWithSuggestions />

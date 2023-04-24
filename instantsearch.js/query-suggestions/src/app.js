@@ -67,6 +67,7 @@ const autocomplete = instantsearch.connectors.connectAutocomplete(
 const suggestions = instantsearch({
   indexName: 'instant_search_demo_query_suggestions',
   searchClient,
+  insights: true,
 });
 
 suggestions.addWidgets([
@@ -95,6 +96,7 @@ suggestions.addWidgets([
 const search = instantsearch({
   indexName: 'instant_search',
   searchClient,
+  insights: true,
 });
 
 search.addWidgets([

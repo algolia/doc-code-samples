@@ -71,6 +71,7 @@ function Search({ serverState, serverUrl }: SearchProps) {
             },
           }),
         }}
+        insights={true}
       >
         <SearchErrorToast />
 

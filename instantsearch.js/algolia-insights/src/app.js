@@ -3,6 +3,7 @@
 const search = instantsearch({
   indexName: 'demo_ecommerce',
   searchClient: algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5'),
+  insights: true,
 });
 
 search.addWidgets([
@@ -46,12 +47,5 @@ search.addWidgets([
     container: '#pagination',
   }),
 ]);
-
-search.use(
-  instantsearch.middlewares.createInsightsMiddleware({
-    insightsClient: window.aa,
-  })
-);
-window.aa('setUserToken', 'my-user-token');
 
 search.start();

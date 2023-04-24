@@ -74,6 +74,7 @@ search.addWidgets([
 const suggestions = instantsearch({
   indexName: 'demo_ecommerce',
   searchClient,
+  insights: true,
 });
 
 suggestions.addWidgets([
