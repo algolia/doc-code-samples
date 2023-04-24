@@ -10,7 +10,7 @@
     "@algolia/autocomplete-plugin-algolia-insights" "1.9.1"
     "@algolia/autocomplete-shared" "1.9.0"
 
-"@algolia/autocomplete-js@1", "@algolia/autocomplete-js@1.9.1":
+"@algolia/autocomplete-js@1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-js/-/autocomplete-js-1.9.1.tgz#7dd32ce13acacad78c906c5153dd208a02cd8619"
   integrity sha512-Vqo0c4fOz2tYGrGq1IquV63+PckHibzGn+0gGnnaHnOmlQFCSL+jJOfa+c7Yh3ZXKoKlbhJ82ZwW1Zo1dqUBvQ==
