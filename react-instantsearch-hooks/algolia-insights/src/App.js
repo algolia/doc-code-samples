@@ -8,7 +8,6 @@ import {
 } from 'react-instantsearch-hooks-web';
 import algoliasearch from 'algoliasearch/lite';
 
-import { InsightsMiddleware } from './InsightsMiddleware';
 import './App.css';
 
 const searchClient = algoliasearch(
