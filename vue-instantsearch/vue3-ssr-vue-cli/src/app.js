@@ -60,10 +60,12 @@ export function createApp({ renderToString, context } = {}) {
                   callback(routeState);
                 }
               };
-              window.addEventListener('popstate', this._onPopState);
+              typeof window === 'object' &&
+                window.addEventListener('popstate', this._onPopState);
             },
             dispose() {
-              window.removeEventListener('popstate', this._onPopState);
+              typeof window === 'object' &&
+                window.removeEventListener('popstate', this._onPopState);
               this.write();
             },
           },
