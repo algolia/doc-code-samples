@@ -1,9 +1,6 @@
 version: 2.1
 
 executors:
-  node9:
-    docker:
-      - image: circleci/node:9
   node14:
     docker:
       - image: cimg/node:14.17.0
@@ -68,7 +65,7 @@ jobs:
           path: "angular-instantsearch/secured-api-keys"
 
   build_react_projects:
-    executor: node9
+    executor: node14
     steps:
       - checkout
       - build_project:
@@ -128,7 +125,7 @@ jobs:
            path: "instantsearch.js/secured-api-keys"
 
   build_vue_projects:
-    executor: node9
+    executor: node14
     steps:
       - checkout
       - build_project:

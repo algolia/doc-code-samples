@@ -12,7 +12,7 @@
     "instantsearch.css": "7.3.1",
     "instantsearch.js": "4.55.0",
     "qs": "6.7.0",
-    "vue": "2.6.10",
+    "vue": "2.7.14",
     "vue-instantsearch": "4.9.0",
     "vue-router": "3.0.6"
   },
@@ -24,6 +24,6 @@
     "babel-eslint": "10.0.1",
     "eslint": "5.9.0",
     "eslint-plugin-vue": "5.2.2",
-    "vue-template-compiler": "2.6.10"
+    "vue-template-compiler": "2.7.14"
   }
 }
