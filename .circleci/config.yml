@@ -81,8 +81,6 @@ jobs:
       - build_project:
            path: "react-instantsearch/multi-index-hits"
       - build_project:
-           path: "react-instantsearch/places"
-      - build_project:
            path: "react-instantsearch/query-suggestions"
       - build_project:
            path: "react-instantsearch/routing-basic"
@@ -113,8 +111,6 @@ jobs:
            path: "instantsearch.js/multi-index-autocomplete"
       - build_project:
            path: "instantsearch.js/multi-index-hits"
-      - build_project:
-           path: "instantsearch.js/places"
       - build_project:
            path: "instantsearch.js/query-suggestions"
       - build_project:

@@ -1,26 +1,3 @@
-# vue
+# Places sample
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
+Places is no longer available. [Read our blog post announcement](https://www.algolia.com/blog/product/sunsetting-our-places-feature/) for more information, and alternatives.
