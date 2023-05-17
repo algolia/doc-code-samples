@@ -1,5 +1,7 @@
 # vue-instantsearch-v2-starter
 
+[![Edit extending-widgets](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/extending-widgets)
+
 ## Project setup
 ```
 yarn install

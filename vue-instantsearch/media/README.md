@@ -1,5 +1,7 @@
 # Vue Instantsearch media sample
 
+[![Edit media](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/media)
+
 Also available in [InstantSearch](../../instantsearch.js/media/), [Angular InstantSearch](../../angular-instantsearch/media/) and [React InstantSearch](../../react-instantsearch/media/)
 
 ---

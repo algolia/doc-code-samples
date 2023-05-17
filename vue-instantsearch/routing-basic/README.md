@@ -1,5 +1,7 @@
 # vue-instantsearch-routing-basic
 
+[![Edit routing-basic](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/routing-basic)
+
 ## Project setup
 ```
 yarn install

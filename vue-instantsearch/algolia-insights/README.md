@@ -1,5 +1,7 @@
 # vue-instantsearch-v2-starter
 
+[![Edit algolia-insights](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/algolia-insights)
+
 ## Project setup
 ```
 yarn install

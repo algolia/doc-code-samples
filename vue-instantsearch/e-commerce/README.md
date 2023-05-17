@@ -1,5 +1,7 @@
 # Vue InstantSearch e-commerce sample
 
+[![Edit e-commerce](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/e-commerce)
+
 Also available in [InstantSearch.js](../../instantsearch.js/e-commerce/), [Angular InstantSearch](../../angular-instantsearch/e-commerce/) and [React InstantSearch](../../react-instantsearch/e-commerce/)
 
 ---

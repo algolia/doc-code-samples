@@ -1,5 +1,7 @@
 # Geo-search example with Vue InstantSearch and Google Maps
 
+[![Edit geo-search](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/geo-search)
+
 This example shows you how to add Geo search capabilities to your Vue InstantSearch implementation and displaying the found results via Google Maps.
 
 <p align="center"><img src="capture.jpg" alt="A capture of the Geo-search example with Vue InstantSearch and Google Maps demo" /></p>

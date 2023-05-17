@@ -1,5 +1,7 @@
 # vue-instantsearch-v2-starter
 
+[![Edit autocomplete-results-page](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/autocomplete-results-page)
+
 ## Project setup
 ```
 yarn install

@@ -1,5 +1,7 @@
 # vue-instantsearch-v2-starter
 
+[![Edit infinite-scroll](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/infinite-scroll)
+
 ## Project setup
 ```
 yarn install
