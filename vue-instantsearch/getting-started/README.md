@@ -1,6 +1,6 @@
 # Vue InstantSearch getting started sample
 
-[![Edit getting-started](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/getting-started)
+[![Edit getting-started](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/instantsearch/tree/master/examples/vue/getting-started)
 
 Also available in [InstantSearch.js](../../instantsearch.js/getting-started/), [React InstantSearch](../../react-instantsearch/getting-started/), [React InstantSearch Hooks](../../react-instantsearch-hooks/getting-started/) and [Angular InstantSearch](../../angular-instantsearch/getting-started/)
 
