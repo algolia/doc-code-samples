@@ -1,5 +1,7 @@
 # Instantsearch e-commerce sample
 
+[![Edit e-commerce](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/instantsearch/tree/master/examples/js/e-commerce)
+
 Also available in [React InstantSearch](../../react-instantsearch/e-commerce/), [Angular InstantSearch](../../angular-instantsearch/e-commerce/) and [Vue InstantSearch](../../vue-instantsearch/e-commerce/)
 
 ---

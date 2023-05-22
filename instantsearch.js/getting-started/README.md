@@ -1,5 +1,7 @@
 # InstantSearch getting started sample
 
+[![Edit getting-started](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/instantsearch/tree/master/examples/js/getting-started)
+
 Also available in [React InstantSearch](../../react-instantsearch/getting-started/), [React InstantSearch Hooks](https://github.com/algolia/instantsearch/tree/master/examples/react-hooks/getting-started/), [Angular InstantSearch](../../angular-instantsearch/getting-started/) and [Vue InstantSearch](../../vue-instantsearch/getting-started/)
 
 ---

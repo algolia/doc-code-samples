@@ -71,7 +71,8 @@
               "browserTarget": "getting-started:build:production"
             },
             "development": {
-              "browserTarget": "getting-started:build:development"
+              "browserTarget": "getting-started:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

@@ -1,5 +1,7 @@
 # getting-started
 
+[![Edit getting-started](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/algolia/doc-code-samples/tree/master/angular-instantsearch/getting-started)
+
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 
 ## Get started

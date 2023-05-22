@@ -71,7 +71,8 @@
               "browserTarget": "extending-widgets:build:production"
             },
             "development": {
-              "browserTarget": "extending-widgets:build:development"
+              "browserTarget": "extending-widgets:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

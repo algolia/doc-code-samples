@@ -1,5 +1,7 @@
 # secured-api-keys
 
+[![Edit secured-api-keys](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/secured-api-keys)
+
 ## Project setup
 ```
 yarn install

@@ -1,5 +1,7 @@
 # facet-dropdown
 
+[![Edit facet-dropdown](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch-hooks/facet-dropdown)
+
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 
 ## Get started

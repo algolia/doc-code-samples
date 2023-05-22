@@ -1,5 +1,7 @@
 # conditional-debouncing
 
+[![Edit conditional-debouncing](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch-hooks/conditional-debouncing)
+
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 
 ## Get started

@@ -1,5 +1,7 @@
 # extending-widgets
 
+[![Edit extending-widgets](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/algolia/doc-code-samples/tree/master/angular-instantsearch/extending-widgets)
+
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 
 ## Get started

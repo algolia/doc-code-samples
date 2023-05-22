@@ -71,7 +71,8 @@
               "browserTarget": "geo-search:build:production"
             },
             "development": {
-              "browserTarget": "geo-search:build:development"
+              "browserTarget": "geo-search:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

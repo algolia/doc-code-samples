@@ -66,7 +66,8 @@
               "browserTarget": "debounced-search-box:build:production"
             },
             "development": {
-              "browserTarget": "debounced-search-box:build:development"
+              "browserTarget": "debounced-search-box:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

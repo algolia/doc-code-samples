@@ -72,7 +72,8 @@
               "browserTarget": "autocomplete-results-page:build:production"
             },
             "development": {
-              "browserTarget": "autocomplete-results-page:build:development"
+              "browserTarget": "autocomplete-results-page:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

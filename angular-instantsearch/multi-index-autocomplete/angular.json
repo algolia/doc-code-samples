@@ -72,7 +72,8 @@
               "browserTarget": "multi-index-autocomplete:build:production"
             },
             "development": {
-              "browserTarget": "multi-index-autocomplete:build:development"
+              "browserTarget": "multi-index-autocomplete:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

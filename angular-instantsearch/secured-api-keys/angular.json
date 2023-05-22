@@ -71,7 +71,8 @@
               "browserTarget": "secured-api-keys:build:production"
             },
             "development": {
-              "browserTarget": "secured-api-keys:build:development"
+              "browserTarget": "secured-api-keys:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

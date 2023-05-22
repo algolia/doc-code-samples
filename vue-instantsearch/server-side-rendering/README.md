@@ -1,5 +1,7 @@
 # ssr
 
+[![Edit server-side-rendering](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/server-side-rendering)
+
 ## Project setup
 ```
 yarn install

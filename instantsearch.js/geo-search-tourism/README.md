@@ -1,5 +1,7 @@
 # Instantsearch tourism sample
 
+[![Edit geo-search-tourism](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/instantsearch.js/geo-search-tourism)
+
 Also available in [React InstantSearch](../../react-instantsearch/geo-search-tourism/)
 
 ---

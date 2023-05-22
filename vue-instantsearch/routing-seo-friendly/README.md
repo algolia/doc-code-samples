@@ -1,5 +1,7 @@
 # vue-instantsearch-routing-full-url
 
+[![Edit routing-seo-friendly](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/routing-seo-friendly)
+
 ## Project setup
 ```
 yarn install

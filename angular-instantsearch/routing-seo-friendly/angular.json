@@ -71,7 +71,8 @@
               "browserTarget": "routing-seo-friendly:build:production"
             },
             "development": {
-              "browserTarget": "routing-seo-friendly:build:development"
+              "browserTarget": "routing-seo-friendly:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

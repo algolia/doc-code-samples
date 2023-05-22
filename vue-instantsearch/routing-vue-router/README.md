@@ -1,5 +1,7 @@
 # vue-instantsearch-v2-starter
 
+[![Edit routing-vue-router](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/vue-instantsearch/routing-vue-router)
+
 ## Project setup
 ```
 yarn install

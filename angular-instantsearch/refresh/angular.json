@@ -71,7 +71,8 @@
               "browserTarget": "refresh:build:production"
             },
             "development": {
-              "browserTarget": "refresh:build:development"
+              "browserTarget": "refresh:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"
