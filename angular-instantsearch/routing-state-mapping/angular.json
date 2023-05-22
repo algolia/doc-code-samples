@@ -71,7 +71,8 @@
               "browserTarget": "routing-state-mapping:build:production"
             },
             "development": {
-              "browserTarget": "routing-state-mapping:build:development"
+              "browserTarget": "routing-state-mapping:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

@@ -72,7 +72,8 @@
               "browserTarget": "query-suggestions:build:production"
             },
             "development": {
-              "browserTarget": "query-suggestions:build:development"
+              "browserTarget": "query-suggestions:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

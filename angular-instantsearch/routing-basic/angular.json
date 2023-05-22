@@ -71,7 +71,8 @@
               "browserTarget": "routing-basic:build:production"
             },
             "development": {
-              "browserTarget": "routing-basic:build:development"
+              "browserTarget": "routing-basic:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

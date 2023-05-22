@@ -71,7 +71,8 @@
               "browserTarget": "algolia-insights:build:production"
             },
             "development": {
-              "browserTarget": "algolia-insights:build:development"
+              "browserTarget": "algolia-insights:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

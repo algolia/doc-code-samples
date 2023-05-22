@@ -71,7 +71,8 @@
               "browserTarget": "conditional-request:build:production"
             },
             "development": {
-              "browserTarget": "conditional-request:build:development"
+              "browserTarget": "conditional-request:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

@@ -1,6 +1,6 @@
 # Angular Instantsearch media sample
 
-[![Edit media](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/fix-angular-12/angular-instantsearch/media)
+[![Edit media](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/algolia/doc-code-samples/tree/master/angular-instantsearch/media)
 
 Also available in [InstantSearch.js](../../instantsearch.js/media/), [React InstantSearch](../../react-instantsearch/media/) and [Vue InstantSearch](../../vue-instantsearch/media/)
 

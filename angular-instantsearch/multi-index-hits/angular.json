@@ -71,7 +71,8 @@
               "browserTarget": "multi-index-hits:build:production"
             },
             "development": {
-              "browserTarget": "multi-index-hits:build:development"
+              "browserTarget": "multi-index-hits:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

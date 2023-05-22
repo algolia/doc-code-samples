@@ -71,7 +71,8 @@
               "browserTarget": "infinite-scroll:build:production"
             },
             "development": {
-              "browserTarget": "infinite-scroll:build:development"
+              "browserTarget": "infinite-scroll:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

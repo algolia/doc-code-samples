@@ -1,6 +1,6 @@
 # multi-index-autocomplete
 
-[![Edit multi-index-autocomplete](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/fix-angular-12/angular-instantsearch/multi-index-autocomplete)
+[![Edit multi-index-autocomplete](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/algolia/doc-code-samples/tree/master/angular-instantsearch/multi-index-autocomplete)
 
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 

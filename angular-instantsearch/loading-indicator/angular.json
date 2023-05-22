@@ -71,7 +71,8 @@
               "browserTarget": "loading-indicator:build:production"
             },
             "development": {
-              "browserTarget": "loading-indicator:build:development"
+              "browserTarget": "loading-indicator:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

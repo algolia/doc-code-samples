@@ -1,6 +1,6 @@
 # Angular Instantsearch e-commerce sample
 
-[![Edit e-commerce](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/fix-angular-12/angular-instantsearch/e-commerce)
+[![Edit e-commerce](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/algolia/doc-code-samples/tree/master/angular-instantsearch/e-commerce)
 
 Also available in [InstantSearch.js](../../instantsearch.js/e-commerce/), [React InstantSearch](../../react-instantsearch/e-commerce/) and [Vue InstantSearch](../../vue-instantsearch/e-commerce/)
 
