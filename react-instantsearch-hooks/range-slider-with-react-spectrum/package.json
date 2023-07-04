@@ -6,7 +6,6 @@
     "@adobe/react-spectrum": "3.28.0",
     "algoliasearch": "^4.13.0",
     "instantsearch.css": "^7.4.5",
-    "instantsearch.js": "4.55.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-instantsearch-hooks-web": "6.43.0",
