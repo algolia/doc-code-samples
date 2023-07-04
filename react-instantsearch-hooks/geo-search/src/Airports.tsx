@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
 import { useSearchBox } from 'react-instantsearch-hooks-web';
-import { useGeoSearch } from './useGeoSearch';
+import { useGeoSearch } from 'react-instantsearch-hooks';
 
 import type { GeoHit } from 'instantsearch.js/es/connectors/geo-search/connectGeoSearch';
 

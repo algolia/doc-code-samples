@@ -12,7 +12,8 @@
     "leaflet": "1.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-instantsearch-hooks-web": "6.43.0",
+    "react-instantsearch-hooks": "file:../../../instantsearch/packages/react-instantsearch-hooks",
+    "react-instantsearch-hooks-web": "file:../../../instantsearch/packages/react-instantsearch-hooks-web",
     "react-leaflet": "4.0.1"
   },
   "devDependencies": {

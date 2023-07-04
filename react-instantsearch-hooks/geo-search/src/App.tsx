@@ -2,6 +2,7 @@ import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox } from 'react-instantsearch-hooks-web';
 import { MapContainer, TileLayer } from 'react-leaflet';
+import './env';
 
 import { Airports } from './Airports';
 
