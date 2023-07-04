@@ -5,9 +5,8 @@ import {
   Pagination,
   RefinementList,
   SearchBox,
-  useConnector,
+  useRange,
 } from 'react-instantsearch-hooks-web';
-import connectRange from 'instantsearch.js/es/connectors/range/connectRange';
 import * as Slider from '@radix-ui/react-slider';
 import algoliasearch from 'algoliasearch/lite';
 
@@ -46,12 +45,8 @@ function App() {
   );
 }
 
-function useRangeSlider(props) {
-  return useConnector(connectRange, props);
-}
-
 function RangeSlider(props) {
-  const { start, range, canRefine, refine } = useRangeSlider(props);
+  const { start, range, canRefine, refine } = useRange(props);
   const { min, max } = range;
   const [value, setValue] = useState([min, max]);
 
