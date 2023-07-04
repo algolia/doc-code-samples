@@ -1,0 +1,45 @@
+.slider-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track {
+  position: relative;
+  flex-grow: 1;
+  background-color: #dfe2ee;
+  height: 3px;
+  border-radius: 9999px;
+}
+
+.slider-range {
+  position: absolute;
+  background-color: #3a4570;
+  height: 100%;
+}
+
+.slider-thumb {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #c4c8d8;
+  box-shadow: 0 2px 5px 0 #e3e5ec;
+  border-radius: 9999px;
+}
+
+.slider-thumb:after {
+  position: absolute;
+  top: 1.5rem;
+  content: attr(aria-valuenow);
+  font-size: 0.8rem;
+}
+
+.slider-thumb[aria-label='Minimum']:after {
+  left: 0;
+}
+
+.slider-thumb[aria-label='Maximum']:after {
+  right: 0;
+}
