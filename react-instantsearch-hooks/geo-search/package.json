@@ -8,12 +8,10 @@
   },
   "dependencies": {
     "algoliasearch": "4",
-    "instantsearch.js": "4.55.0",
     "leaflet": "1.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-instantsearch-hooks": "file:../../../instantsearch/packages/react-instantsearch-hooks",
-    "react-instantsearch-hooks-web": "file:../../../instantsearch/packages/react-instantsearch-hooks-web",
+    "react-instantsearch-hooks-web": "https://pkg.csb.dev/algolia/instantsearch/commit/366d9ce4/react-instantsearch-hooks-web",
     "react-leaflet": "4.0.1"
   },
   "devDependencies": {
@@ -21,6 +19,7 @@
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "parcel": "2.5.0",
+    "process": "^0.11.10",
     "typescript": "4.7.4"
   }
 }
