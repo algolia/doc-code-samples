@@ -11,7 +11,7 @@
     "leaflet": "1.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-instantsearch-hooks-web": "https://pkg.csb.dev/algolia/instantsearch/commit/366d9ce4/react-instantsearch-hooks-web",
+    "react-instantsearch-hooks-web": "6.46.0",
     "react-leaflet": "4.0.1"
   },
   "devDependencies": {
