@@ -90,7 +90,7 @@ export function createDropdown(
       setTimeout(() => {
         state.windowClickListener = event => {
           // Close if the outside is clicked
-          if (!rootElem.contains(event.target)) {
+          if (!event.composedPath().includes(rootElem)) {
             close();
           }
         };
