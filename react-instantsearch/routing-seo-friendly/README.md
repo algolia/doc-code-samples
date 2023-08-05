@@ -1,6 +1,6 @@
-# routing-basic
+# routing-seo-friendly
 
-[![Edit routing-seo-friendly](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch/routing-seo-friendly)
+[![Edit routing-seo-friendly](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch-hooks/routing-seo-friendly)
 
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 
@@ -19,3 +19,5 @@ Alternatively, you may use [Yarn](https://http://yarnpkg.com/):
 yarn
 yarn start
 ```
+
+Open http://localhost:3000 to see your app.

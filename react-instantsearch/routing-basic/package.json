@@ -1,30 +1,36 @@
 {
   "name": "routing-basic",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
+  "dependencies": {
+    "algoliasearch": "^4.13.0",
+    "instantsearch.css": "^7.4.5",
+    "instantsearch.js": "4.55.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-instantsearch-hooks-web": "6.43.0",
+    "react-scripts": "5.0.1"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "build": "react-scripts build"
   },
-  "dependencies": {
-    "algoliasearch": "4.12.1",
-    "qs": "6.7.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "react-instantsearch-dom": "6.0.0",
-    "react-router-dom": "5.0.0",
-    "react-scripts": "1.1.5"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "devDependencies": {
-    "eslint": "4.19.1",
-    "eslint-config-algolia": "13.3.0",
-    "eslint-config-prettier": "4.1.0",
-    "eslint-plugin-import": "2.17.3",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.12.4",
-    "prettier": "1.19.1",
-    "prop-types": "15.7.2"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,56 +1,42 @@
-import React, { Component } from 'react';
-import { connectInfiniteHits } from 'react-instantsearch-dom';
-import PropTypes from 'prop-types';
-import Hit from './Hit';
+import React, { useEffect, useRef } from 'react';
+import { useInfiniteHits } from 'react-instantsearch-hooks-web';
 
-class InfiniteHits extends Component {
-  static propTypes = {
-    hits: PropTypes.arrayOf(PropTypes.object).isRequired,
-    hasMore: PropTypes.bool.isRequired,
-    refineNext: PropTypes.func.isRequired,
-  };
+export function InfiniteHits({ hitComponent: HitComponent, ...props }) {
+  const { hits, isLastPage, showMore } = useInfiniteHits(props);
+  const sentinelRef = useRef(null);
 
-  sentinel = null;
+  useEffect(() => {
+    if (sentinelRef.current !== null) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isLastPage) {
+            showMore();
+          }
+        });
+      });
 
-  onSentinelIntersection = entries => {
-    const { hasMore, refineNext } = this.props;
+      observer.observe(sentinelRef.current);
 
-    entries.forEach(entry => {
-      if (entry.isIntersecting && hasMore) {
-        refineNext();
-      }
-    });
-  };
+      return () => {
+        observer.disconnect();
+      };
+    }
+  }, [isLastPage, showMore]);
 
-  componentDidMount() {
-    this.observer = new IntersectionObserver(this.onSentinelIntersection);
-
-    this.observer.observe(this.sentinel);
-  }
-
-  componentWillUnmount() {
-    this.observer.disconnect();
-  }
-
-  render() {
-    const { hits } = this.props;
-
-    return (
-      <div className="ais-InfiniteHits">
-        <ul className="ais-InfiniteHits-list">
-          {hits.map(hit => (
-            <li key={hit.objectID} className="ais-InfiniteHits-item">
-              <Hit hit={hit} />
-            </li>
-          ))}
-          <li
-            className="ais-InfiniteHits-sentinel"
-            ref={c => (this.sentinel = c)}
-          />
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <div className="ais-InfiniteHits">
+      <ul className="ais-InfiniteHits-list">
+        {hits.map((hit) => (
+          <li key={hit.objectID} className="ais-InfiniteHits-item">
+            <HitComponent hit={hit} />
+          </li>
+        ))}
+        <li
+          className="ais-InfiniteHits-sentinel"
+          ref={sentinelRef}
+          aria-hidden="true"
+        />
+      </ul>
+    </div>
+  );
 }
-
-export default connectInfiniteHits(InfiniteHits);

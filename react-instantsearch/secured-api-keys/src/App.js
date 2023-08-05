@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   InstantSearch,
   Hits,
@@ -9,14 +8,18 @@ import {
   ClearRefinements,
   RefinementList,
   Configure,
-} from 'react-instantsearch-dom';
+} from 'react-instantsearch-hooks-web';
 import './App.css';
 
 function App({ searchClient }) {
   return (
     <div className="ais-InstantSearch">
       <h1>React InstantSearch e-commerce demo</h1>
-      <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
+      <InstantSearch
+        indexName="demo_ecommerce"
+        searchClient={searchClient}
+        insights={true}
+      >
         <div className="left-panel">
           <ClearRefinements />
           <h2>Brands</h2>
@@ -33,10 +36,6 @@ function App({ searchClient }) {
   );
 }
 
-App.propTypes = {
-  searchClient: PropTypes.object.isRequired,
-};
-
 function Hit(props) {
   return (
     <div>
@@ -51,9 +50,5 @@ function Hit(props) {
     </div>
   );
 }
-
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-};
 
 export default App;
