@@ -1,11 +1,7 @@
 import { useCallback, useMemo } from 'react';
 
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
-import {
-  useInstantSearch,
-  useMenu,
-  useSearchBox,
-} from 'react-instantsearch-hooks-web';
+import { useInstantSearch, useMenu, useSearchBox } from 'react-instantsearch';
 
 import { Autocomplete } from './Autocomplete';
 import { searchClient } from './searchClient';

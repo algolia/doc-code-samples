@@ -4,7 +4,7 @@ import {
   Highlight,
   Hits,
   InstantSearch,
-} from 'react-instantsearch-hooks-web';
+} from 'react-instantsearch';
 
 import './App.css';
 

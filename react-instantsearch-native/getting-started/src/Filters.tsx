@@ -12,7 +12,7 @@ import {
   useClearRefinements,
   useCurrentRefinements,
   useRefinementList,
-} from 'react-instantsearch-hooks';
+} from 'react-instantsearch';
 
 type FiltersProps = {
   isModalOpen: boolean;

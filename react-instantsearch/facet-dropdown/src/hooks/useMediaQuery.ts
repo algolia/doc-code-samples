@@ -27,7 +27,7 @@ export function useMediaQuery(query: string): boolean {
     return () => {
       matchMedia.removeEventListener('change', handleChange);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react/exhaustive-deps
   }, [query]);
 
   return matches;

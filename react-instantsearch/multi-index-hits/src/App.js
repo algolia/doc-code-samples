@@ -6,7 +6,7 @@ import {
   Index,
   InstantSearch,
   SearchBox,
-} from 'react-instantsearch-hooks-web';
+} from 'react-instantsearch';
 
 import 'instantsearch.css/themes/algolia.css';
 import './App.css';

@@ -1,6 +1,6 @@
 import { renderToString } from 'react-dom/server';
 import algoliasearch from 'algoliasearch/lite';
-import type { InstantSearchServerState } from 'react-instantsearch-hooks-web';
+import type { InstantSearchServerState } from 'react-instantsearch';
 import {
   DynamicWidgets,
   Hits,
@@ -10,8 +10,8 @@ import {
   RefinementList,
   SearchBox,
   useInstantSearch,
-} from 'react-instantsearch-hooks-web';
-import { getServerState } from 'react-instantsearch-hooks-server';
+  getServerState,
+} from 'react-instantsearch';
 import { history } from 'instantsearch.js/cjs/lib/routers/index.js';
 import instantSearchStyles from 'instantsearch.css/themes/satellite-min.css';
 

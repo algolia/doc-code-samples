@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useInstantSearch } from 'react-instantsearch-hooks-web';
+import { useInstantSearch } from 'react-instantsearch';
 
 type NoResultsBoundaryProps = {
   children: ReactNode;

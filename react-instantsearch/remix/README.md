@@ -1,6 +1,6 @@
 # Welcome to Remix!
 
-[![Edit remix](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch-hooks/remix)
+[![Edit remix](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch/remix)
 
 - [Remix Docs](https://remix.run/docs)
 

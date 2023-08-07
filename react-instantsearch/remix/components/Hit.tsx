@@ -1,5 +1,5 @@
 import type { Hit as AlgoliaHit } from 'instantsearch.js';
-import { Highlight } from 'react-instantsearch-hooks-web';
+import { Highlight } from 'react-instantsearch';
 
 type HitProps = {
   hit: AlgoliaHit<{

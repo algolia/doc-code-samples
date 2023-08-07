@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useRange } from 'react-instantsearch-hooks-web';
+import { useRange } from 'react-instantsearch';
 import * as Slider from '@radix-ui/react-slider';
 
 import './RangeSlider.css';

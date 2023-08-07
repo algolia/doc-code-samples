@@ -8,7 +8,7 @@ import {
   ClearRefinements,
   RefinementList,
   Configure,
-} from 'react-instantsearch-hooks-web';
+} from 'react-instantsearch';
 import './App.css';
 
 function App({ searchClient }) {
