@@ -1,43 +1,69 @@
-import algoliasearch from 'algoliasearch/lite';
-import React, { Component } from 'react';
 import {
-  ClearRefinements,
-  Configure,
+  Highlight,
   Hits,
   InstantSearch,
   Pagination,
   RefinementList,
   SearchBox,
-} from 'react-instantsearch-dom';
+} from 'react-instantsearch-hooks-web';
+import algoliasearch from 'algoliasearch/lite';
+
 import './App.css';
-import { HitWithInsights } from './HitWithInsights';
 
 const searchClient = algoliasearch(
   'B1G2GM9NG0',
   'aadef574be1f9252bb48d4ea09b5cfe5'
 );
 
-class App extends Component {
-  render() {
-    return (
-      <div className="ais-InstantSearch">
-        <h1>React InstantSearch e-commerce demo</h1>
-        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
-          <div className="left-panel">
-            <ClearRefinements />
-            <h2>Brands</h2>
+function App() {
+  return (
+    <div className="container">
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="demo_ecommerce"
+        insights={true}
+      >
+        <div className="search-panel">
+          <div className="search-panel__filters">
             <RefinementList attribute="brand" />
-            <Configure hitsPerPage={8} clickAnalytics />
           </div>
-          <div className="right-panel">
-            <SearchBox />
-            <Hits hitComponent={HitWithInsights} />
-            <Pagination />
+
+          <div className="search-panel__results">
+            <SearchBox className="searchbox" placeholder="Search" />
+            <Hits hitComponent={Hit} />
+
+            <div className="pagination">
+              <Pagination />
+            </div>
           </div>
-        </InstantSearch>
-      </div>
-    );
-  }
+        </div>
+      </InstantSearch>
+    </div>
+  );
+}
+
+function Hit({ hit, sendEvent }) {
+  return (
+    <div>
+      <Highlight attribute="name" hit={hit} />
+      <button
+        type="button"
+        onClick={() => {
+          sendEvent('click', hit, 'Product Added');
+        }}
+      >
+        Add to cart
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          sendEvent('conversion', hit, 'Product Ordered');
+        }}
+      >
+        Order
+      </button>
+    </div>
+  );
 }
 
 export default App;

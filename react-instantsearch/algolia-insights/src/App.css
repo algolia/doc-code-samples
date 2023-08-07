@@ -1,58 +1,60 @@
-body {
-  font-family: sans-serif;
-  padding: 1em;
+em {
+  background: cyan;
+  font-style: normal;
 }
 
-.ais-SearchBox {
-  margin: 1em 0;
-}
-
-.ais-Pagination {
-  margin-top: 1em;
-}
-
-.left-panel {
-  float: left;
-  width: 250px;
-}
-
-.right-panel {
-  margin-left: 260px;
-}
-
-.ais-InstantSearch {
-  max-width: 960px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.ais-Hits-item {
-  margin-bottom: 1em;
-  width: calc(50% - 1rem);
-}
-
-.ais-Hits-item img {
-  margin-right: 1em;
-}
-
-.hit-name {
-  margin-bottom: 0.5em;
-}
-
-.hit-description {
-  color: #888;
-  font-size: 14px;
-  margin-bottom: 0.5em;
-}
-
-.hit-action {
-  margin-top: 1em;
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(to right, #8e43e7, #00aeff);
   color: #fff;
-  background-color: #0096db;
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
-  padding: 0.3rem 0.5rem;
-  font-size: 0.8rem;
-  transition: background-color 0.2s ease-out;
+  margin-bottom: 1rem;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.header-title::after {
+  content: ' ▸ ';
+  padding: 0 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.search-panel__filters {
+  flex: 1;
+}
+
+.search-panel__results {
+  flex: 3;
+}
+
+.searchbox {
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  margin: 2rem auto;
+  text-align: center;
 }

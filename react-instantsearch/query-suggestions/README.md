@@ -1,6 +1,6 @@
-# react-querysuggestions
+# query-suggestions
 
-[![Edit query-suggestions](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch/query-suggestions)
+[![Edit query-suggestions](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/algolia/doc-code-samples/tree/master/react-instantsearch-hooks/query-suggestions)
 
 _This project was generated with [create-instantsearch-app](https://github.com/algolia/create-instantsearch-app) by [Algolia](https://algolia.com)._
 
@@ -19,5 +19,3 @@ Alternatively, you may use [Yarn](https://http://yarnpkg.com/):
 yarn
 yarn start
 ```
-
-Open http://localhost:3000 to see your app.

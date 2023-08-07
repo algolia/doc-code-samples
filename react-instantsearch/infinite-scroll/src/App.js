@@ -1,27 +1,47 @@
 import algoliasearch from 'algoliasearch/lite';
-import React, { Component } from 'react';
-import { InstantSearch, SearchBox, Configure } from 'react-instantsearch-dom';
-import InfiniteHits from './InfiniteHits';
+import {
+  Highlight,
+  InstantSearch,
+  SearchBox,
+  Snippet,
+} from 'react-instantsearch-hooks-web';
+
+import { InfiniteHits } from './InfiniteHits';
+
+import 'instantsearch.css/themes/algolia.css';
 import './App.css';
 
 const searchClient = algoliasearch(
-  'B1G2GM9NG0',
-  'aadef574be1f9252bb48d4ea09b5cfe5'
+  'latency',
+  '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
-class App extends Component {
-  render() {
-    return (
-      <div className="ais-InstantSearch">
-        <h1>React InstantSearch infinite scroll demo</h1>
-        <InstantSearch indexName="demo_ecommerce" searchClient={searchClient}>
-          <Configure hitsPerPage={16} />
-          <SearchBox />
-          <InfiniteHits minHitsPerPage={16} />
-        </InstantSearch>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="container">
+      <InstantSearch
+        indexName="instant_search"
+        searchClient={searchClient}
+        insights={true}
+      >
+        <SearchBox />
+        <InfiniteHits hitComponent={Hit} />
+      </InstantSearch>
+    </div>
+  );
+}
+
+function Hit({ hit }) {
+  return (
+    <article>
+      <h2>
+        <Highlight attribute="name" hit={hit} />
+      </h2>
+      <p>
+        <Snippet attribute="description" hit={hit} />
+      </p>
+    </article>
+  );
 }
 
 export default App;

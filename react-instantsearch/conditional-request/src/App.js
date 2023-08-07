@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import {
-  InstantSearch,
-  Hits,
-  SearchBox,
-  Pagination,
   Highlight,
-} from 'react-instantsearch-dom';
-import PropTypes from 'prop-types';
+  Hits,
+  InstantSearch,
+  SearchBox,
+} from 'react-instantsearch-hooks-web';
+
+import 'instantsearch.css/themes/algolia.css';
 import './App.css';
 
 const algoliaClient = algoliasearch(
@@ -38,65 +37,27 @@ const searchClient = {
   },
 };
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <header className="header">
-          <h1 className="header-title">
-            <a href="/">conditional-request</a>
-          </h1>
-          <p className="header-subtitle">
-            using{' '}
-            <a href="https://github.com/algolia/react-instantsearch">
-              React InstantSearch
-            </a>
-          </p>
-        </header>
-
-        <div className="container">
-          <InstantSearch searchClient={searchClient} indexName="instant_search">
-            <div className="search-panel">
-              <div className="search-panel__results">
-                <p>
-                  The request is only triggered once the query is not empty.
-                </p>
-
-                <SearchBox
-                  className="searchbox"
-                  translations={{
-                    placeholder: '',
-                  }}
-                />
-                <Hits hitComponent={Hit} />
-
-                <div className="pagination">
-                  <Pagination />
-                </div>
-              </div>
-            </div>
-          </InstantSearch>
-        </div>
-      </div>
-    );
-  }
-}
-
-function Hit(props) {
+function App() {
   return (
-    <article>
-      <h1>
-        <Highlight attribute="name" hit={props.hit} />
-      </h1>
-      <p>
-        <Highlight attribute="description" hit={props.hit} />
-      </p>
-    </article>
+    <div className="container">
+      <InstantSearch
+        indexName="instant_search"
+        searchClient={searchClient}
+        insights={true}
+      >
+        <SearchBox />
+        <Hits hitComponent={Hit} />
+      </InstantSearch>
+    </div>
   );
 }
 
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-};
+function Hit({ hit }) {
+  return (
+    <div>
+      <Highlight attribute="name" hit={hit} />
+    </div>
+  );
+}
 
 export default App;
