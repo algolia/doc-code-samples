@@ -1,10 +1,5 @@
 import algoliasearch from 'algoliasearch/lite';
-import {
-  Highlight,
-  Hits,
-  InstantSearch,
-  SearchBox,
-} from 'react-instantsearch-hooks-web';
+import { Highlight, Hits, InstantSearch, SearchBox } from 'react-instantsearch';
 
 import 'instantsearch.css/themes/algolia.css';
 import './App.css';

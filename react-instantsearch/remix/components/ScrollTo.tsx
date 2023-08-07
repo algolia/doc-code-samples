@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from 'react';
 import React, { useEffect, useRef } from 'react';
-import { useInstantSearch } from 'react-instantsearch-hooks-web';
+import { useInstantSearch } from 'react-instantsearch';
 
 type ScrollToProps = ComponentProps<'div'> & {
   children: ReactNode;

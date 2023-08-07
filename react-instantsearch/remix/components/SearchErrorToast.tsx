@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as Toast from '@radix-ui/react-toast';
-import { useInstantSearch } from 'react-instantsearch-hooks-web';
+import { useInstantSearch } from 'react-instantsearch';
 
 export function SearchErrorToast() {
   const { use } = useInstantSearch();

@@ -5,10 +5,10 @@
   "dependencies": {
     "algoliasearch": "^4.13.0",
     "instantsearch.css": "^7.4.5",
-    "instantsearch.js": "4.55.0",
+    "instantsearch.js": "4.56.8",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-instantsearch-hooks-web": "6.43.0",
+    "react-instantsearch": "7.0.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {

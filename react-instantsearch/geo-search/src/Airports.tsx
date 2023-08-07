@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { DivIcon } from 'leaflet';
-import { useSearchBox, useGeoSearch } from 'react-instantsearch-hooks-web';
-import type { GeoHit } from 'react-instantsearch-hooks-web';
+import { useSearchBox, useGeoSearch } from 'react-instantsearch';
+import type { GeoHit } from 'react-instantsearch';
 
 type Airport = {
   airport_id: string;

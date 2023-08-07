@@ -5,7 +5,7 @@ import {
   Pagination,
   RefinementList,
   SearchBox,
-} from 'react-instantsearch-hooks-web';
+} from 'react-instantsearch';
 import algoliasearch from 'algoliasearch/lite';
 
 import './App.css';

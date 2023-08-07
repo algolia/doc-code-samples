@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useInfiniteHits } from 'react-instantsearch-hooks-web';
+import { useInfiniteHits } from 'react-instantsearch';
 
 export function InfiniteHits({ hitComponent: HitComponent, ...props }) {
   const { hits, isLastPage, showMore } = useInfiniteHits(props);

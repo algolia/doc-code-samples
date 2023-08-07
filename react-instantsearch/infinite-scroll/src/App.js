@@ -4,7 +4,7 @@ import {
   InstantSearch,
   SearchBox,
   Snippet,
-} from 'react-instantsearch-hooks-web';
+} from 'react-instantsearch';
 
 import { InfiniteHits } from './InfiniteHits';
 

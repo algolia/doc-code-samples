@@ -11,10 +11,7 @@ import type {
   CurrentRefinementsRenderState,
 } from 'instantsearch.js/es/connectors/current-refinements/connectCurrentRefinements';
 import type { UiState } from 'instantsearch.js';
-import {
-  useCurrentRefinements,
-  useInstantSearch,
-} from 'react-instantsearch-hooks-web';
+import { useCurrentRefinements, useInstantSearch } from 'react-instantsearch';
 
 import { Panel } from './Panel';
 import { useCloseDropdown } from '../hooks/useCloseDropdown';

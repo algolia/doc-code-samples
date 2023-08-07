@@ -9,7 +9,7 @@ import {
   RangeInput,
   RefinementList,
   SearchBox,
-} from 'react-instantsearch-hooks-web';
+} from 'react-instantsearch';
 import type { Hit as AlgoliaHit } from 'instantsearch.js';
 
 import { FacetDropdown } from './components/FacetDropdown';
@@ -50,7 +50,7 @@ export function App() {
         <p className="header-subtitle">
           using{' '}
           <a href="https://github.com/algolia/react-instantsearch">
-            React InstantSearch Hooks
+            React InstantSearch
           </a>
         </p>
       </header>

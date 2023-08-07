@@ -1,6 +1,6 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox } from 'react-instantsearch-hooks-web';
+import { InstantSearch, SearchBox } from 'react-instantsearch';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
 import { Airports } from './Airports';
@@ -22,7 +22,7 @@ export function App() {
         <p className="header-subtitle">
           using{' '}
           <a href="https://github.com/algolia/react-instantsearch">
-            React InstantSearch Hooks
+            React InstantSearch
           </a>
         </p>
       </header>
