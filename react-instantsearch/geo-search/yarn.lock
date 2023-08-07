@@ -1541,7 +1541,7 @@ react-instantsearch-core@7.0.0:
     instantsearch.js "4.56.8"
     use-sync-external-store "^1.0.0"
 
-react-instantsearch@6.47.0.0:
+react-instantsearch@7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/react-instantsearch/-/react-instantsearch-7.0.0.tgz#93cf4831fd1a7a82b282ec7b1bb93fcb366b36db"
   integrity sha512-GulJ8QFj6LELlzwm09Ec0c7NFJdcZl9DCizWevzCss7Dwdkh0Nmo6WQZ99KHIFo5opL+fDQn3OckIUjIP5vGvQ==
@@ -1569,7 +1569,7 @@ react@18.2.0:
   dependencies:
     loose-envify "^1.1.0"
 
-regenerator-runtime@^0.13.11, regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
+regenerator-runtime@^0.13.11, regenerator-runtime@^0.13.7:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
   integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
