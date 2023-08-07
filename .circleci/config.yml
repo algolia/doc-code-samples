@@ -87,7 +87,7 @@ jobs:
       - build_project:
           path: 'react-instantsearch/range-slider-with-radix-ui'
       - build_project:
-          path: 'react-instantsearch/range-slider-whith-react-spectrum'
+          path: 'react-instantsearch/range-slider-with-react-spectrum'
       - build_project:
           path: 'react-instantsearch/remix'
       - build_project:
