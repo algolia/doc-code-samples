@@ -7,11 +7,11 @@ type ScrollToProps = ComponentProps<'div'> & {
 };
 
 export function ScrollTo({ children, ...props }: ScrollToProps) {
-  const { use } = useInstantSearch();
+  const { addMiddlewares } = useInstantSearch();
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    return use(() => {
+    return addMiddlewares(() => {
       return {
         onStateChange() {
           const isFiltering = document.body.classList.contains('filtering');
@@ -27,7 +27,7 @@ export function ScrollTo({ children, ...props }: ScrollToProps) {
         },
       };
     });
-  }, [use]);
+  }, [addMiddlewares]);
 
   return (
     <div {...props} ref={containerRef}>

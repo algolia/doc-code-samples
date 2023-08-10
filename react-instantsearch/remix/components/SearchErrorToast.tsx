@@ -3,11 +3,11 @@ import * as Toast from '@radix-ui/react-toast';
 import { useInstantSearch } from 'react-instantsearch';
 
 export function SearchErrorToast() {
-  const { use } = useInstantSearch();
+  const { addMiddlewares } = useInstantSearch();
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    return use(({ instantSearchInstance }) => {
+    return addMiddlewares(({ instantSearchInstance }) => {
       function handleError(searchError: Error) {
         setError(searchError);
       }
@@ -21,7 +21,7 @@ export function SearchErrorToast() {
         },
       };
     });
-  }, [use]);
+  }, [addMiddlewares]);
 
   if (!error) {
     return null;
