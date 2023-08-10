@@ -59,10 +59,10 @@ function DropdownMiddleware({
   closeOnChange,
   close,
 }: MiddlewareProps) {
-  const { use } = useInstantSearch();
+  const { addMiddlewares } = useInstantSearch();
 
   useEffect(() =>
-    use(() => ({
+    addMiddlewares(() => ({
       onStateChange() {
         const shouldCloseOnChange =
           closeOnChange === true ||
