@@ -1,0 +1,89 @@
+<ais-instantsearch [config]="config">
+  <main class="search-container">
+    <div class="right-panel">
+      <div id="hits">
+        <!-- Uncomment the following widget to add hits list -->
+        <!-- <ais-hits class="ais-Hits">
+          <ng-template let-hits="hits" let-results="results">
+            <div *ngIf="hits.length === 0">
+              No results found for
+              <strong>{{results.query}}</strong>.
+            </div>
+            <div class="ais-Hits-list">
+              <div class="ais-Hits-item" *ngFor="let hit of hits">
+                <article>
+                  <div class="post-img">
+                    <a [href]="hit.permalink">
+                      <img [src]="hit.image">
+                    </a>
+                  </div>
+                  <div class="post-content">
+                    <div class="post-date">
+                      {{hit.post_date_formatted}}
+                    </div>
+                    <h2 class="entry-title">
+                      <a [href]="hit.permalink" rel="bookmark" [innerHTML]="hit._highlightResult.post_title.value"></a>
+                    </h2>
+                    <div class="post-excerpt" [innerHTML]="hit._snippetResult.content.value"></div>
+                    <div class="entry-meta clear">
+                      <div class="author-gravatar">
+                        <img [src]="hit.author_image_url" width="40" height="40">
+                      </div>
+                      <div class="entry-author-content">
+                        <div class="author-name" [innerHTML]="hit._highlightResult.author_name.value"></div>
+                        <div class="post-meta-info">
+                          <span [innerHTML]="hit.time_to_read"></span>
+                          min read in
+                          <span *ngFor="let category of hit._highlightResult.categories; let i = index" [innerHTML]="category.value + (i !== hit._highlightResult.categories.length - 1 ? ', ' : '')"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </ng-template>
+        </ais-hits> -->
+      </div>
+      <div id="searchbox">
+        <!-- Uncomment the following widget to add a search bar -->
+        <!-- <ais-search-box placeholder="Search articles"></ais-search-box> -->
+      </div>
+      <div id="stats">
+        <!-- Uncomment the following widget to add search stats -->
+        <!-- <ais-stats>
+          <ng-template let-state="state">
+            <div *ngIf="state.nbHits > 0">
+              <span role="img" aria-label="emoji">⚡️</span>
+              <strong>{{state.nbHits}}</strong>
+              results found
+              <span *ngIf="state.query.trim().length > 0">
+                for
+                <strong>"{{state.query.trim()}}"</strong>
+              </span>
+              in
+              <strong>{{state.processingTimeMS}}ms</strong>
+            </div>
+          </ng-template>
+        </ais-stats> -->
+      </div>
+      <div id="pagination">
+        <!-- Uncomment the following widget to add pagination -->
+        <!-- <ais-pagination></ais-pagination> -->
+      </div>
+    </div>
+    <div class="left-panel">
+      <div id="categories">
+        <!-- Uncomment the following widget to add categories list -->
+        <!-- <ais-panel header="Categories">
+          <ais-refinement-list attribute="categories" autoHideContainer="false"></ais-refinement-list>
+        </ais-panel> -->
+      </div>
+    </div>
+  </main>
+</ais-instantsearch>
+<footer>
+  Source Code on
+  <a href="https://github.com/algolia/doc-onboarding">GitHub</a> | Powered by
+  <a href="https://www.algolia.com">Algolia</a>
+</footer>

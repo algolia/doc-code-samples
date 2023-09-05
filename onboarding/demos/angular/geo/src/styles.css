@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100%;
+  padding: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  overflow-y: scroll;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  background: #f0f2f5;
+  flex-direction: column;
+}
+
+app-root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+ais-instantsearch {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+a {
+  color: #5468ff;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1007px) {
+  .search-container {
+    width: 100%;
+  }
+}
+
+.ais-Hits-item,
+.ais-SearchBox-input {
+  height: auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ais-SearchBox-input:focus {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.left-panel {
+  flex: 0 0 240px;
+}
+
+.right-panel {
+  width: calc(100% - 256px);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#searchbox {
+  flex-grow: 0;
+}
+
+#searchbox,
+#stats {
+  flex-grow: 0;
+}
+
+.ais-SearchBox-form {
+  position: relative;
+}
+
+.ais-SearchBox {
+  flex-grow: 0;
+  margin-bottom: 8px;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  position: absolute;
+  top: 0;
+  left: inherit;
+  margin: 14px 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ais-SearchBox-submit svg,
+.ais-SearchBox-reset svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+.ais-SearchBox-submit svg {
+  fill: #5468ff;
+}
+
+.ais-SearchBox-reset svg {
+  fill: #ed5a6a;
+}
+
+.ais-SearchBox-submit {
+  right: 0;
+}
+
+.ais-SearchBox-reset {
+  background: none;
+  padding: 0;
+  border: none;
+  right: 30px;
+}
+
+.ais-SearchBox-input {
+  width: 100%;
+  padding: 8px 16px;
+  font-weight: normal;
+  border: 0;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#stats {
+  flex-grow: 0;
+  margin-bottom: 16px;
+}
+
+.ais-Stats {
+  font-size: 12px;
+  color: #697782;
+  opacity: 1;
+}
+
+#hits {
+  display: block;
+  margin-right: 24px;
+  flex-grow: 1;
+}
+
+.ais-Hits-item {
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.ais-Hits-item .hit-airport-code,
+.ais-Hits-item .hit-location,
+.ais-Hits-item .hit-name {
+  margin: 0;
+}
+
+.ais-Hits-item .hit-name {
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ais-Hits-item .hit-location {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #999;
+}
+
+.ais-Hits-item:last-child {
+  margin-bottom: 0;
+}
+
+ais-geo-hits {
+  height: 100%;
+  margin-bottom: 24px;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  order: 1;
+}
+
+#mapInner {
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  flex-grow: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Placeholders */
+
+#searchbox:empty:before,
+#hits:empty:before,
+#map:empty:before,
+#stats:empty:before {
+  display: block;
+  color: #999;
+  padding: 16px;
+}
+
+#searchbox:empty,
+#hits:empty,
+#map:empty,
+#stats:empty {
+  padding: 0;
+  background: none;
+  border: dashed 3px #ddd;
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+#searchbox:empty,
+#stats:empty,
+#map:empty {
+  margin-bottom: 24px;
+}
+
+#searchbox:empty:before {
+  content: "Uncomment the searchBox widget to add a search bar.";
+}
+
+#hits:empty:before {
+  content: "Uncomment the hits widget to add hits list.";
+}
+
+#stats:empty:before {
+  content: "Uncomment the stats widget to add search stats.";
+}
+
+#map:empty:before {
+  content: "Uncomment the map widget to add a map.";
+}

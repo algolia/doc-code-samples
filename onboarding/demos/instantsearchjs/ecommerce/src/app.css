@@ -1,0 +1,450 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100%;
+  padding: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  overflow-y: scroll;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  background: #f0f2f5;
+  flex-direction: column;
+}
+
+footer {
+  flex-grow: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+a {
+  color: #5468ff;
+}
+
+.ais-Highlight-highlighted,
+.ais-Snippet-highlighted {
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1007px) {
+  .search-container {
+    width: 100%;
+  }
+}
+
+#brands .ais-SearchBox-input {
+  box-shadow: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+}
+
+#categories,
+#brands {
+  margin-bottom: 24px;
+}
+
+#categories,
+#brands,
+#price {
+  margin-right: 24px;
+  padding: 8px 0;
+}
+
+#categories,
+#brands,
+#price,
+.ais-Hits-item,
+.ais-SearchBox-input {
+  height: auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ais-SearchBox-input:focus {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.left-panel {
+  flex: 0 0 290px;
+}
+
+.right-panel {
+  width: calc(100% - 306px);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search box */
+
+#searchbox {
+  flex-grow: 0;
+  margin-bottom: 8px;
+}
+
+#searchbox,
+#stats {
+  flex-grow: 0;
+}
+
+.ais-SearchBox {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  position: absolute;
+  top: 0;
+  left: inherit;
+  margin: 14px 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ais-SearchBox-submit svg,
+.ais-SearchBox-reset svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+.ais-SearchBox-submit svg {
+  fill: #5468ff;
+}
+
+.ais-SearchBox-reset svg {
+  fill: #ed5a6a;
+}
+
+.ais-SearchBox-submit {
+  right: 0;
+}
+
+.ais-SearchBox-reset {
+  background: none;
+  padding: 0;
+  border: none;
+  right: 30px;
+}
+
+.ais-SearchBox-input {
+  width: 100%;
+  padding: 8px 16px;
+  font-weight: normal;
+  border: none;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Stats */
+
+#stats {
+  flex-grow: 0;
+  margin-bottom: 16px;
+}
+
+.ais-Stats {
+  font-size: 12px;
+  color: #697782;
+}
+
+/* Hits */
+
+#hits {
+  flex-grow: 1;/
+}
+
+.ais-Hits {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ais-Hits-item {
+  margin-bottom: 24px;
+}
+
+.hit {
+  display: flex;
+  padding: 16px;
+}
+
+.hit-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hit-image {
+  display: flex;
+  margin-right: 24px;
+}
+
+.hit-image img {
+  width: auto;
+  max-height: 176px;
+}
+
+.hit-name {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+.hit-price {
+  font-size: 16px;
+}
+
+.hit-description {
+  color: rgb(153, 153, 153);
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+/* Panel */
+
+.ais-Panel-header {
+  font-weight: bolder;
+  margin: 0;
+  padding: 0 16px 8px;
+  font-size: inherit;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
+}
+
+/* Refinement list */
+
+.ais-RefinementList-item,
+.ais-RefinementList-noResults,
+.ais-RefinementList--noRefinement {
+  padding: 8px 16px;
+}
+
+.ais-RefinementList--noRefinement:after {
+  content: 'No results';
+}
+
+.ais-RefinementList--noRefinement .ais-RefinementList-searchBox {
+  display: none;
+}
+
+.ais-RefinementList-label {
+  cursor: pointer;
+}
+
+.ais-RefinementList-count {
+  background: none;
+  padding: 0;
+  font-size: 12px;
+  line-height: 24px;
+  color: #999;
+  float: right;
+}
+
+.ais-RefinementList-checkbox {
+  margin: 0;
+}
+
+.ais-RefinementList-labelText {
+  margin-left: 0.6em;
+}
+
+.ais-RefinementList-item--selected {
+  font-weight: bold;
+}
+
+/* Range Slider */
+
+.ais-RangeSlider {
+  padding: 0 11px 0 16px;
+}
+
+.ais-RangeSlider .rheostat-handle {
+  width: 19px;
+  height: 19px;
+  border: solid 2px #5468ff;
+}
+
+.ais-RangeSlider .rheostat {
+  margin: 32px 0;
+}
+
+.ais-RangeSlider .rheostat-horizontal .rheostat-handle {
+  top: -6px;
+}
+
+.ais-RangeSlider .rheostat-horizontal .rheostat-progress {
+  height: 5px;
+  top: 1px;
+  background: #5468ff;
+}
+
+.ais-RangeSlider .rheostat-marker {
+  display: none;
+}
+
+.ais-RangeSlider .rheostat-background {
+  height: 3px;
+  top: 2px;
+  width: 100%;
+  background-color: #ddd;
+  border: 0;
+}
+
+.ais-RangeSlider .rheostat-tooltip {
+  font-size: 0.8em;
+}
+
+/* Pagination */
+
+#pagination {
+  order: 1;
+}
+
+.ais-Pagination-list {
+  display: flex;
+  margin: 0 0 16px;
+  padding: 0;
+  background: none;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  flex-wrap: wrap;
+}
+
+.ais-Pagination-link {
+  display: block;
+}
+
+.ais-Pagination-item,
+.ais-Pagination-item--disabled {
+  flex: 0 0 40px;
+  width: auto;
+  height: auto;
+  margin: 4px;
+  background-color: #5468ff;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.1s linear;
+}
+
+.ais-Pagination-item--disabled {
+  display: none;
+}
+
+.ais-Pagination-item:hover,
+.ais-Pagination-item--selected {
+  background-color: #3a46a1;
+}
+
+.ais-Pagination-item .ais-Pagination-link,
+.ais-Pagination-item--disabled .ais-Pagination-link {
+  padding: 6px 16px;
+  text-decoration: none;
+  color: #fff;
+  line-height: 20px;
+}
+
+/* Placeholders */
+
+#searchbox:empty:before,
+#hits:empty:before,
+#categories:empty:before,
+#stats:empty:before,
+#pagination:empty:before,
+#brands:empty:before,
+#price:empty:before {
+  display: block;
+  color: #999;
+  padding: 16px;
+}
+
+#searchbox:empty,
+#hits:empty,
+#categories:empty,
+#stats:empty,
+#pagination:empty,
+#brands:empty,
+#price:empty {
+  padding: 0;
+  background: none;
+  border: dashed 3px #ddd;
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+#searchbox:empty,
+#hits:empty,
+#categories:empty,
+#brands:empty,
+#pagination:empty {
+  margin-bottom: 24px;
+}
+
+#searchbox:empty:before {
+  content: "Uncomment the searchBox widget to add a search bar.";
+}
+
+#hits:empty:before {
+  content: "Uncomment the hits widget to add hits list.";
+}
+
+#stats:empty:before {
+  content: "Uncomment the stats widget to add search stats.";
+}
+
+#categories:empty:before {
+  content: "Uncomment the refinementList widget for categories to add categories list.";
+}
+
+#pagination:empty:before {
+  content: "Uncomment the pagination widget to add pagination.";
+}
+
+#brands:empty:before {
+  content: "Uncomment the refinementList widget for brands to add brands list.";
+}
+
+#price:empty:before {
+  content: "Uncomment the rangeSlider widget to add price range.";
+}

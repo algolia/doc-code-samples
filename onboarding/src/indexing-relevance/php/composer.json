@@ -1,0 +1,5 @@
+{
+    "require": {
+        "algolia/algoliasearch-client-php": "1.28.0"
+    }
+}

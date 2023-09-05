@@ -1,0 +1,25 @@
+{
+  "name": "algolia-instantsearch-react-geo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "parcel build index.html",
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "algoliasearch": "4.17.1",
+    "leaflet": "1.9.4",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-instantsearch-hooks-web": "6.44.1",
+    "react-leaflet": "4.2.1"
+  },
+  "devDependencies": {
+    "@types/leaflet": "1.9.3",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "parcel": "2.9.1",
+    "process": "0.11.10",
+    "typescript": "5.0.4"
+  }
+}
