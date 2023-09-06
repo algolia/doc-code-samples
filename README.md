@@ -1,14 +1,14 @@
 # doc-code-samples
 
-This repository holds all code examples shown on the [Algolia.com documentation website](https://algolia.com/doc).
+This repository holds code examples shown on the [Algolia.com documentation website](https://algolia.com/doc) that can be run in [CodeSandbox](https://codesandbox.io/).
 
 ## InstantSearch code samples
 
-All code samples in InstantSearch guides run on [CodeSandbox](https://codesandbox.io/). The full list is available [here](https://instantsearch-templates.netlify.com).
+All code samples in InstantSearch guides that run on [CodeSandbox](https://codesandbox.io/). The full list is available [here](https://instantsearch-templates.netlify.com).
 
 ## Interactive onboarding
 
-Code samples from the [Algolia interactive onboarding](https://algolia.com/doc/onboarding) are hosted in this repository.
+Datasets and code samples for the [Algolia interactive onboarding](https://algolia.com/doc/onboarding) are located in the `/onboarding` directory.
 
 | E-commerce                                                   | Geo                                                          | Media                                                        | Saas                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
