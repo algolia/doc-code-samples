@@ -1,10 +1,5 @@
-# Created by .ignore support plugin (hsz.mobi)
 .idea/
 .DS_Store
-src/indexing-relevance/java/target
-src/indexing-relevance/scala/project/target
-src/indexing-relevance/scala/target
-*.iml
 node_modules/
 npm-debug.log
 package-lock.json
