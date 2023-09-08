@@ -1,0 +1,90 @@
+<ais-instantsearch [config]="config">
+  <main class="search-container">
+    <div class="right-panel">
+      <div id="hits">
+        <!-- Uncomment the following widget to add hits list -->
+        <!-- <ais-hits>
+          <ng-template let-hits="hits" let-results="results">
+            <div *ngIf="hits.length === 0">
+              No results found for
+              <strong>{{results.query}}</strong>.
+            </div>
+            <div class="ais-hits" *ngFor="let hit of hits">
+              <div class="hit">
+                <div class="hit-image">
+                  <img src="{{hit.image}}" />
+                </div>
+                <div class="hit-content">
+                  <div>
+                    <div class="hit-name">
+                      <ais-highlight attribute="name" [hit]="hit">
+                      </ais-highlight>
+                    </div>
+                    <div class="hit-description">
+                      <p [innerHTML]="hit._snippetResult.description.value"></p>
+                    </div>
+                  </div>
+                  <div class="hit-price">${{hit.price}}</div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ais-hits> -->
+      </div>
+      <div id="searchbox">
+        <!-- Uncomment the following widget to add a search bar -->
+        <!-- <ais-search-box placeholder="Search for products"></ais-search-box> -->
+      </div>
+      <div id="stats">
+        <!-- Uncomment the following widget to add search stats -->
+        <!-- <ais-stats>
+          <ng-template let-state="state">
+            <div *ngIf="state.nbHits > 0">
+              <span role="img" aria-label="emoji">⚡️</span>
+              <strong>{{state.nbHits}}</strong>
+              results found
+              <span *ngIf="state.query.trim().length > 0">
+                for
+                <strong>"{{state.query.trim()}}"</strong>
+              </span>
+              in
+              <strong>{{state.processingTimeMS}}ms</strong>
+            </div>
+          </ng-template>
+        </ais-stats> -->
+      </div>
+      <div id="pagination">
+        <!-- Uncomment the following widget to add pagination -->
+        <!-- <ais-pagination></ais-pagination> -->
+      </div>
+    </div>
+    <div class="left-panel">
+      <div id="categories">
+        <!-- Uncomment the following widget to add categories list -->
+        <!-- <ais-panel header="Categories">
+          <ais-refinement-list attribute="categories">
+          </ais-refinement-list>
+        </ais-panel> -->
+      </div>
+      <div id="brands">
+        <!-- Uncomment the following widget to add brands list -->
+        <!-- <ais-panel header="Brands">
+          <ais-refinement-list attribute="brand" searchable="true" searchPlaceholder="Search for other...">
+          </ais-refinement-list>
+        </ais-panel> -->
+      </div>
+      <div id="price">
+        <!-- Uncomment the following widget to add price -->
+        <!-- <ais-panel header="Price">
+          <ais-range-slider attribute="price" pips="false">
+          </ais-range-slider>
+        </ais-panel> -->
+      </div>
+    </div>
+  </main>
+</ais-instantsearch>
+<footer>
+  Source Code on
+  <a href="https://github.com/algolia/doc-onboarding">GitHub</a> | Powered by
+  <a href="https://www.algolia.com">Algolia</a>
+</footer>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Algolia InstantSearch | Geo Search demo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@8/themes/reset-min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="src/app.css" />
+  </head>
+
+  <body>
+    <main class="search-container">
+      <div class="left-panel">
+        <div id="hits"></div>
+      </div>
+      <div class="right-panel">
+        <div id="searchbox"></div>
+        <div id="stats"></div>
+        <div id="map"></div>
+      </div>
+    </main>
+    <footer>
+      Source Code on
+      <a href="https://github.com/algolia/doc-onboarding" target="_blank"
+        >GitHub</a
+      >
+      - Powered by
+      <a href="https://www.algolia.com" target="_blank">Algolia</a>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+      integrity="sha256-F7emIId74fYoGrHzsnu3iClRHIbBMhMCbxDoA1cfMAY="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+      integrity="sha256-lz9C+x8+6w2rh56x5TrH5iYmE4Js2FiJS5h0tuMz7hQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBawL8VbstJDdU5397SUX7pEt9DslAwWgQ&callback=initMap"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
