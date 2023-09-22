@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import {
   FlatList,
   Platform,
@@ -14,7 +14,6 @@ import { Configure, InstantSearch } from 'react-instantsearch-core';
 import { InfiniteHits } from './src/InfiniteHits';
 import { SearchBox } from './src/SearchBox';
 import { Highlight } from './src/Highlight';
-import { Filters } from './src/Filters';
 import { ProductHit } from './types/ProductHit';
 
 const searchClient = algoliasearch(
@@ -23,24 +22,18 @@ const searchClient = algoliasearch(
 );
 
 export default function App() {
-  const [isModalOpen, setModalOpen] = useState(false);
   const listRef = useRef<FlatList>(null);
-
-  function scrollToTop() {
-    listRef.current?.scrollToOffset({ animated: false, offset: 0 });
-  }
-
   return (
     <SafeAreaView style={styles.safe}>
       <StatusBar style="light" />
       <View style={styles.container}>
         <InstantSearch searchClient={searchClient} indexName="instant_search">
           <Configure highlightPreTag="<mark>" highlightPostTag="</mark>" />
-          <SearchBox onChange={scrollToTop} />
-          <Filters
-            isModalOpen={isModalOpen}
-            onToggleModal={() => setModalOpen(!isModalOpen)}
-            onChange={scrollToTop}
+          <SearchBox
+            onChange={() =>
+              listRef.current?.scrollToOffset({ animated: false, offset: 0 })
+            }
+            suggestionsIndexName="instant_search_demo_query_suggestions"
           />
           <InfiniteHits ref={listRef} hitComponent={Hit} />
         </InstantSearch>
