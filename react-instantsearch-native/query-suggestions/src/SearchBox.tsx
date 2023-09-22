@@ -1,15 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { useSearchBox, UseSearchBoxProps } from 'react-instantsearch-core';
+import { Suggestions } from './Suggestions';
 
 type SearchBoxProps = UseSearchBoxProps & {
   onChange: (newValue: string) => void;
+  suggestionsIndexName: string;
 };
 
-export function SearchBox({ onChange, ...props }: SearchBoxProps) {
+export function SearchBox({
+  onChange,
+  suggestionsIndexName,
+  ...props
+}: SearchBoxProps) {
   const { query, refine } = useSearchBox(props);
   const [value, setValue] = useState(query);
   const inputRef = useRef<TextInput>(null);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   // Track when the value coming from the React state changes to synchronize
   // it with InstantSearch.
@@ -34,23 +41,36 @@ export function SearchBox({ onChange, ...props }: SearchBoxProps) {
   }, [query]);
 
   return (
-    <View style={styles.container}>
-      <TextInput
-        ref={inputRef}
-        style={styles.input}
-        value={value}
-        onChangeText={(newValue) => {
-          setValue(newValue);
-          onChange(newValue);
-        }}
-        clearButtonMode="while-editing"
-        autoCapitalize="none"
-        autoCorrect={false}
-        spellCheck={false}
-        autoComplete="off"
-        placeholder="Search for products..."
-      />
-    </View>
+    <>
+      <View style={styles.container}>
+        <TextInput
+          ref={inputRef}
+          style={styles.input}
+          value={value}
+          onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
+          onChangeText={(newValue) => {
+            setValue(newValue);
+            onChange(newValue);
+          }}
+          onFocus={() => setShowSuggestions(true)}
+          clearButtonMode="always"
+          autoCapitalize="none"
+          autoCorrect={false}
+          spellCheck={false}
+          autoComplete="off"
+          placeholder="Search for products..."
+        />
+      </View>
+      {showSuggestions && (
+        <Suggestions
+          indexName={suggestionsIndexName}
+          onSelect={(value) => {
+            setValue(value);
+            inputRef.current?.blur();
+          }}
+        />
+      )}
+    </>
   );
 }
 
@@ -58,6 +78,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#252b33',
     padding: 18,
+    zIndex: 1,
   },
   input: {
     height: 48,

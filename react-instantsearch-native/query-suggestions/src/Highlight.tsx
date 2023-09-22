@@ -8,7 +8,6 @@ import {
 
 type HighlightPartProps = {
   children: React.ReactNode;
-  isHighlighted: boolean;
   style: StyleProp<TextStyle>;
 };
 
@@ -47,7 +46,6 @@ export function Highlight<THit extends AlgoliaHit<Record<string, unknown>>>({
               {part.map((subPart, subPartIndex) => (
                 <HighlightPart
                   key={subPartIndex}
-                  isHighlighted={subPart.isHighlighted}
                   style={
                     subPart.isHighlighted
                       ? highlightedStyle
@@ -66,7 +64,6 @@ export function Highlight<THit extends AlgoliaHit<Record<string, unknown>>>({
         return (
           <HighlightPart
             key={partIndex}
-            isHighlighted={part.isHighlighted}
             style={part.isHighlighted ? highlightedStyle : nonHighlightedStyle}
           >
             {part.value}

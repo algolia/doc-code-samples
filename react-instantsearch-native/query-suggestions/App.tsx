@@ -23,7 +23,6 @@ const searchClient = algoliasearch(
 
 export default function App() {
   const listRef = useRef<FlatList>(null);
-
   return (
     <SafeAreaView style={styles.safe}>
       <StatusBar style="light" />
@@ -34,6 +33,7 @@ export default function App() {
             onChange={() =>
               listRef.current?.scrollToOffset({ animated: false, offset: 0 })
             }
+            suggestionsIndexName="instant_search_demo_query_suggestions"
           />
           <InfiniteHits ref={listRef} hitComponent={Hit} />
         </InstantSearch>
