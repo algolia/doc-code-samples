@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { useSearchBox, UseSearchBoxProps } from 'react-instantsearch-core';
 
@@ -8,39 +8,30 @@ type SearchBoxProps = UseSearchBoxProps & {
 
 export function SearchBox({ onChange, ...props }: SearchBoxProps) {
   const { query, refine } = useSearchBox(props);
-  const [value, setValue] = useState(query);
+  const [inputValue, setInputValue] = useState(query);
   const inputRef = useRef<TextInput>(null);
 
-  // Track when the value coming from the React state changes to synchronize
-  // it with InstantSearch.
-  useEffect(() => {
-    if (query !== value) {
-      refine(value);
-    }
-    // We don't want to track when the InstantSearch query changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value, refine]);
+  function setQuery(newQuery: string) {
+    setInputValue(newQuery);
+    refine(newQuery);
+  }
 
   // Track when the InstantSearch query changes to synchronize it with
   // the React state.
-  useEffect(() => {
-    // We bypass the state update if the input is focused to avoid concurrent
-    // updates when typing.
-    if (!inputRef.current?.isFocused() && query !== value) {
-      setValue(query);
-    }
-    // We don't want to track when the React state value changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  // We bypass the state update if the input is focused to avoid concurrent
+  // updates when typing.
+  if (query !== inputValue && !inputRef.current?.isFocused()) {
+    setInputValue(query);
+  }
 
   return (
     <View style={styles.container}>
       <TextInput
         ref={inputRef}
         style={styles.input}
-        value={value}
+        value={inputValue}
         onChangeText={(newValue) => {
-          setValue(newValue);
+          setQuery(newValue);
           onChange(newValue);
         }}
         clearButtonMode="while-editing"

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { useSearchBox, UseSearchBoxProps } from 'react-instantsearch-core';
 import { Suggestions } from './Suggestions';
@@ -14,31 +14,22 @@ export function SearchBox({
   ...props
 }: SearchBoxProps) {
   const { query, refine } = useSearchBox(props);
-  const [value, setValue] = useState(query);
+  const [inputValue, setInputValue] = useState(query);
   const inputRef = useRef<TextInput>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
-  // Track when the value coming from the React state changes to synchronize
-  // it with InstantSearch.
-  useEffect(() => {
-    if (query !== value) {
-      refine(value);
-    }
-    // We don't want to track when the InstantSearch query changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value, refine]);
+  function setQuery(newQuery: string) {
+    setInputValue(newQuery);
+    refine(newQuery);
+  }
 
   // Track when the InstantSearch query changes to synchronize it with
   // the React state.
-  useEffect(() => {
-    // We bypass the state update if the input is focused to avoid concurrent
-    // updates when typing.
-    if (!inputRef.current?.isFocused() && query !== value) {
-      setValue(query);
-    }
-    // We don't want to track when the React state value changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
+  // We bypass the state update if the input is focused to avoid concurrent
+  // updates when typing.
+  if (query !== inputValue && !inputRef.current?.isFocused()) {
+    setInputValue(query);
+  }
 
   return (
     <>
@@ -46,10 +37,10 @@ export function SearchBox({
         <TextInput
           ref={inputRef}
           style={styles.input}
-          value={value}
+          value={inputValue}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
           onChangeText={(newValue) => {
-            setValue(newValue);
+            setQuery(newValue);
             onChange(newValue);
           }}
           onFocus={() => setShowSuggestions(true)}
@@ -65,7 +56,7 @@ export function SearchBox({
         <Suggestions
           indexName={suggestionsIndexName}
           onSelect={(value) => {
-            setValue(value);
+            setQuery(value);
             inputRef.current?.blur();
           }}
         />
