@@ -129,7 +129,7 @@ jobs:
           path: 'instantsearch.js/secured-api-keys'
 
   build_vue_projects:
-    executor: node14
+    executor: node18
     steps:
       - checkout
       - build_project:
