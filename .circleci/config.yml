@@ -4,6 +4,9 @@ executors:
   node14:
     docker:
       - image: cimg/node:14.17.0
+  node18:
+    docker:
+      - image: cimg/node:18.19.0
 
 commands:
   build_project:
