@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "lint": "vue-cli-service lint",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service ssr:build",
-    "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service ssr:serve",
-    "ssr:serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service ssr:serve",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service ssr:build",
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service ssr:serve",
+    "ssr:serve": "export NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service ssr:serve",
     "start": "cross-env NODE_ENV=production vue-cli-service ssr:serve --mode production"
   },
   "dependencies": {

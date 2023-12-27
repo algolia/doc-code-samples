@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service build && node server.js",
-    "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service serve",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
