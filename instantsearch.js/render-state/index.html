@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css"
+    />
+    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="./src/app.css" />
+
+    <title>render-state</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="header-title">
+        <a href="/">render-state</a>
+      </h1>
+      <p class="header-subtitle">
+        using
+        <a
+          href="https://github.com/algolia/instantsearch/tree/master/packages/instantsearch.js"
+        >
+          InstantSearch.js
+        </a>
+      </p>
+    </header>
+
+    <div class="container">
+      <div class="search-panel">
+        <div class="search-panel__filters">
+          <div id="brand"></div>
+          <div id="categories"></div>
+          <p class="desc">
+            Categories menu disappears when there is no result.
+          </p>
+        </div>
+
+        <div class="search-panel__results">
+          <div id="searchbox"></div>
+          <div id="current-refinements"></div>
+          <button type="button" id="predefined-search-button" class="button">
+            Search products in "Pear" brand
+          </button>
+          <div id="empty-hits"></div>
+          <div id="hits"></div>
+
+          <div id="pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
