@@ -32,11 +32,8 @@ const emptyHits = connectHits(({ hits, widgetParams }) => {
     return;
   }
 
-  const refinementListsUiState = search.getUiState()[indexName].refinementList;
-  const isPearRefined =
-    refinementListsUiState &&
-    refinementListsUiState.brand &&
-    refinementListsUiState.brand.includes('Pear');
+  const brandUiState = search.getUiState()[indexName].refinementList?.brand;
+  const isPearRefined = brandUiState?.includes('Pear');
 
   if (!isPearRefined) {
     container.innerHTML = 'No results';
@@ -83,6 +80,7 @@ search.addWidgets([
   })(refinementList)({
     container: '#brand',
     attribute: 'brand',
+    sortBy: ['isRefined'],
   }),
   panel({
     templates: {
