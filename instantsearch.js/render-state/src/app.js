@@ -32,8 +32,10 @@ const emptyHits = connectHits(({ hits, widgetParams }) => {
     return;
   }
 
-  const brandUiState = search.getUiState()[indexName].refinementList?.brand;
-  const isPearRefined = brandUiState?.includes('Pear');
+  const brandState = search.renderState[indexName].refinementList.brand;
+  const isPearRefined =
+    brandState.items.filter((item) => item.label === 'Pear' && item.isRefined)
+      .length > 0;
 
   if (!isPearRefined) {
     container.innerHTML = 'No results';
