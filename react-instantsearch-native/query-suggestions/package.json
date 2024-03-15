@@ -23,7 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@expo/webpack-config": "^19.0.0",
-    "@types/react": "^18.0.5",
+    "@types/react": "18.2.22",
     "@types/react-native-vector-icons": "^6.4.14",
     "typescript": "5.1.3"
   }
