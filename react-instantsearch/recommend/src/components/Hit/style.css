@@ -1,0 +1,62 @@
+.Hit {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.Hit-link {
+  color: inherit;
+  text-decoration: none;
+  width: 150px;
+}
+
+.Hit-Image img {
+  max-width: 100%;
+  min-width: 150px;
+  min-height: 200px;
+  background-color: var(--auc-primary-color);
+}
+
+.Hit-Content {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.Hit-Name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+}
+
+.Hit-Description {
+  color: #555;
+}
+
+.Hit-Price {
+  font-weight: bold;
+}
+
+.Hit-Button {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #5468ff;
+  border-radius: 4px;
+  color: #141d61;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+  font-weight: 600;
+  position: relative;
+  width: 100%;
+}
+.Hit-Button:active {
+  background: #5468ff;
+  color: #fff;
+}
+
+.Hit-ButtonIcon {
+  position: absolute;
+  left: 6px;
+  top: 5px;
+}
