@@ -1,0 +1,33 @@
+<ul>
+  @for (brand of brands; track brand.value) {
+  <li>
+    <label>
+      <input
+        type="checkbox"
+        [value]="brand.value"
+        [checked]="brand.isRefined"
+        (change)="refineBrands(brand.value)"
+      />
+      <span>
+        {{ brand.label }}
+      </span>
+      <span>
+        {{ brand.count }}
+      </span>
+    </label>
+  </li>
+  }
+</ul>
+
+<ul>
+  @for (querySuggestion of querySuggestions; track querySuggestion) {
+  <li>
+    <a
+      (click)="$event.preventDefault(); refineQuery(querySuggestion)"
+      href="#"
+    >
+      {{ querySuggestion }}
+    </a>
+  </li>
+  }
+</ul>
