@@ -1,0 +1,15 @@
+<main class="main" style="display: flex">
+  <app-facets />
+  <div>
+    <input type="text" [value]="query" (input)="search($event.target.value)" />
+    <ul>
+      @for (hit of hits; track hit.objectId) {
+      <li>
+        <a routerLink="/product">
+          {{ hit.name }}
+        </a>
+      </li>
+      }
+    </ul>
+  </div>
+</main>
