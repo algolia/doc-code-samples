@@ -1,0 +1,28 @@
+.uic-ComparisonChart-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.uic-ComparisonChart-property {
+  display: flex;
+  height: 3.5rem;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border-bottom: 1px solid lightgrey;
+}
+
+.uic-ComparisonChart-heading {
+  display: flex;
+  height: 12.5rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.uic-ComparisonChart-propertiesColumn {
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+}

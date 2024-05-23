@@ -1,0 +1,96 @@
+.uic-BundleView-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 3fr 1fr;
+}
+
+.uic-BundleView-list {
+  display: grid;
+  gap: 0.5rem;
+  grid-auto-flow: column;
+  list-style: none;
+  margin: 0;
+  outline-color: var(--aui-primary-color);
+  outline-offset: 0.5rem;
+  padding: 0;
+  padding-bottom: 0.5rem;
+}
+
+.uic-BundleView-itemContainer {
+  align-items: center;
+  display: flex;
+}
+
+.uic-BundleView-itemContainer-hit {
+  opacity: 0.4;
+}
+
+.uic-BundleView-item--selected .uic-BundleView-itemContainer-hit {
+  opacity: 1;
+}
+
+.uic-BundleView-itemContainer {
+  align-items: center;
+  display: flex;
+}
+
+.uic-BundleView-plus {
+  color: #5468ff;
+  padding-left: 0.5rem;
+}
+
+.uic-BundleView-plus > svg {
+  height: 24px;
+  width: 24px;
+}
+
+.uic-BundleView-item * {
+  outline-color: var(--aui-primary-color);
+  outline-offset: 3px;
+}
+
+.uic-BundleView-item {
+  width: 200x;
+}
+
+.uic-BundleView-label {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.uic-BundleView-label:hover {
+  color: #5468ff;
+}
+
+.uic-BundleView-label-currentArticle,
+.uic-BundleView-label-price {
+  font-weight: bold;
+}
+
+.uic-BundleView-cart {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.uic-BundleView-addToCart {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #5468ff;
+  border-radius: 4px;
+  color: #141d61;
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  padding: 0;
+  padding: 6px;
+  position: relative;
+}
+
+.uic-BundleView-addToCart:active {
+  background: #5468ff;
+  color: #fff;
+}
