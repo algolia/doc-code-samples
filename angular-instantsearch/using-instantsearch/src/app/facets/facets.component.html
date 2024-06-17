@@ -24,7 +24,7 @@
   <li>
     <a
       (click)="$event.preventDefault(); refineQuery!(querySuggestion)"
-      href="#"
+      [href]="createURL(querySuggestion)"
     >
       {{ querySuggestion }}
     </a>

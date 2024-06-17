@@ -39,4 +39,15 @@ export class FacetsComponent {
       ]),
     ]);
   }
+
+  /**
+   * Creates the next URL for a selected query.
+   */
+  createURL(query: string) {
+    return this.InstantSearchService.instantSearchInstance.createURL({
+      instant_search: {
+        query,
+      },
+    });
+  }
 }
