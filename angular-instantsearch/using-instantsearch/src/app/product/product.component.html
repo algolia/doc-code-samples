@@ -1,1 +1,15 @@
-<p>product works!</p>
+<div *ngIf="hit">
+  <a routerLink="/">Back</a>
+  <h1>{{ hit.name }}</h1>
+  <p>{{ hit.description }}</p>
+  <p>$ {{ hit.price }}</p>
+
+  <h2>Related Products</h2>
+  <ul>
+    <li *ngFor="let item of relatedItems">
+      <a routerLink="/product" [queryParams]="{ objectID: item.objectID }">
+        {{ item.name }}
+      </a>
+    </li>
+  </ul>
+</div>
