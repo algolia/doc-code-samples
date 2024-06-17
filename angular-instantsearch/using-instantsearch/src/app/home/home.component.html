@@ -5,7 +5,7 @@
     <ul>
       @for (hit of hits; track hit.objectID) {
       <li>
-        <a routerLink="/product" [queryParams]="{ objectID: hit.objectID }">
+        <a routerLink="/product/{{ hit.objectID }}">
           {{ hit.name }}
         </a>
       </li>

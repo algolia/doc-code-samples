@@ -26,14 +26,7 @@ export class ProductComponent {
   constructor(
     private route: ActivatedRoute,
     private InstantSearchService: InstantSearchService
-  ) {
-    const objectID = route.snapshot.queryParamMap.get('objectID');
-    if (!objectID) {
-      throw new Error('objectID is required');
-    }
-
-    this.replaceWidgets(objectID);
-  }
+  ) {}
 
   replaceWidgets(objectID: string) {
     if (this.objectID === objectID) {
@@ -58,7 +51,7 @@ export class ProductComponent {
   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       this.replaceWidgets(params.objectID);
     });
   }

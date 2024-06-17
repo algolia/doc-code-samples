@@ -7,7 +7,7 @@
   <h2>Related Products</h2>
   <ul>
     <li *ngFor="let item of relatedItems">
-      <a routerLink="/product" [queryParams]="{ objectID: item.objectID }">
+      <a routerLink="/product/{{ item.objectID }}">
         {{ item.name }}
       </a>
     </li>
