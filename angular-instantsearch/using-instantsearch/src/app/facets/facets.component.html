@@ -6,7 +6,7 @@
         type="checkbox"
         [value]="brand.value"
         [checked]="brand.isRefined"
-        (change)="refineBrands(brand.value)"
+        (change)="refineBrands!(brand.value)"
       />
       <span>
         {{ brand.label }}
@@ -23,7 +23,7 @@
   @for (querySuggestion of querySuggestions; track querySuggestion) {
   <li>
     <a
-      (click)="$event.preventDefault(); refineQuery(querySuggestion)"
+      (click)="$event.preventDefault(); refineQuery!(querySuggestion)"
       href="#"
     >
       {{ querySuggestion }}

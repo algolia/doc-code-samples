@@ -1,11 +1,11 @@
 <main class="main" style="display: flex">
   <app-facets />
   <div>
-    <input type="text" [value]="query" (input)="search($event.target.value)" />
+    <input type="text" [value]="query" (input)="handleInput($event)" />
     <ul>
-      @for (hit of hits; track hit.objectId) {
+      @for (hit of hits; track hit.objectID) {
       <li>
-        <a routerLink="/product">
+        <a routerLink="/product" [queryParams]="{ objectID: hit.objectID }">
           {{ hit.name }}
         </a>
       </li>

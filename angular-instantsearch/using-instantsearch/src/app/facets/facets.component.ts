@@ -32,9 +32,9 @@ export class FacetsComponent {
       })({}),
       index({ indexName: 'instant_search_demo_query_suggestions' }).addWidgets([
         connectHits(({ hits }) => {
-          this.querySuggestions = (
-            hits as Array<Hit<BaseHit & { query: string }>>
-          ).map((hit) => hit.query);
+          this.querySuggestions = (hits as Array<Hit<{ query: string }>>).map(
+            (hit) => hit.query
+          );
         })({}),
       ]),
     ]);

@@ -32,6 +32,7 @@ export class InstantSearchService {
             }
             return window.location;
           },
+          cleanUrlOnDispose: false,
         }),
       },
     });
@@ -39,6 +40,10 @@ export class InstantSearchService {
 
   start() {
     this.instantSearchInstance.start();
+  }
+
+  dispose() {
+    this.instantSearchInstance.dispose();
   }
 
   addWidgets(widgets: Array<Widget | IndexWidget>) {

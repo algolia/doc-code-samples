@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { InstantSearchService } from '../instant-search.service';
 import { connectHits, connectSearchBox } from 'instantsearch.js/es/connectors';
-import { BaseHit } from 'instantsearch.js';
+import { Hit } from 'instantsearch.js';
 import { FacetsComponent } from '../facets/facets.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { FacetsComponent } from '../facets/facets.component';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  public hits?: BaseHit[];
+  public hits?: Hit[];
   public query?: string;
   public search?: (value: string) => void;
 
@@ -30,7 +30,17 @@ export class HomeComponent {
     ]);
   }
 
+  handleInput(event: Event) {
+    if (event.target instanceof HTMLInputElement) {
+      this.search!(event.target.value);
+    }
+  }
+
   ngAfterContentInit() {
     this.InstantSearchService.start();
+  }
+
+  ngOnDestroy() {
+    this.InstantSearchService.dispose();
   }
 }
