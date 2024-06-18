@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> We are deprecating the Angular InstantSearch package. For more information and alternative solutions, see [Migrating from Angular InstantSearch](https://alg.li/angular-deprecation).
+
 # Angular Instantsearch media sample
 
 [![Edit media](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/algolia/doc-code-samples/tree/master/angular-instantsearch/media)
