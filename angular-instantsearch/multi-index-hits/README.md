@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> We are deprecating the Angular InstantSearch package. For more information and alternative solutions, see [Migrating from Angular InstantSearch](https://alg.li/angular-deprecation).
+
 # multi-index-hits
 
 [![Edit multi-index-hits](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/algolia/doc-code-samples/tree/master/angular-instantsearch/multi-index-hits)
