@@ -3,25 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service serve",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider &&vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "algoliasearch": "3.35.1",
     "instantsearch.css": "7.3.1",
-    "instantsearch.js": "4.55.0",
     "vue": "2.7.14",
     "vue-instantsearch": "4.9.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "3.6.0",
-    "@vue/cli-plugin-eslint": "3.6.0",
-    "@vue/cli-service": "3.6.0",
-    "@vue/eslint-config-prettier": "4.0.1",
-    "babel-eslint": "10.0.1",
-    "eslint": "5.9.0",
-    "eslint-plugin-vue": "5.2.2",
-    "vue-template-compiler": "2.7.14"
+    "@vitejs/plugin-vue2": "2.3.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^3.0.0"
   }
 }

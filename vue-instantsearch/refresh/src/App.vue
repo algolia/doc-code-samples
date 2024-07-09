@@ -43,7 +43,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import AppRefresh from './components/Refresh';
+import AppRefresh from './components/Refresh.vue';
 
 export default {
   components: {

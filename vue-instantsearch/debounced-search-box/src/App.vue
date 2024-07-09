@@ -45,7 +45,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import AppDebouncedSearchBox from './components/DebouncedSearchBox';
+import AppDebouncedSearchBox from './components/DebouncedSearchBox.vue';
 
 export default {
   components: {
