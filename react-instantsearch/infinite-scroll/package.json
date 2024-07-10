@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "algoliasearch-v5": "npm:algoliasearch@5.0.0-beta.8",
+    "algoliasearch": "5.0.0-beta.8",
     "instantsearch.css": "^7.4.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

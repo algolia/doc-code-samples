@@ -1,5 +1,5 @@
 import { renderToString } from 'react-dom/server';
-import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { InstantSearchServerState } from 'react-instantsearch';
 import {
   DynamicWidgets,

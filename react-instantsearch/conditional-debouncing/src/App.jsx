@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import { Highlight, Hits, InstantSearch, SearchBox } from 'react-instantsearch';
 
 import 'instantsearch.css/themes/algolia.css';

@@ -9,7 +9,7 @@ import {
   rangeSlider,
 } from 'instantsearch.js/es/widgets';
 import { createInsightsMiddleware } from 'instantsearch.js/es/middlewares';
-import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
   'latency',

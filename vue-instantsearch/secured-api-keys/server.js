@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const express = require('express');
-const { algoliasearch } = require('algoliasearch-v5');
+const { algoliasearch } = require('algoliasearch');
 
 const app = express();
 const readFileAsync = util.promisify(fs.readFile);

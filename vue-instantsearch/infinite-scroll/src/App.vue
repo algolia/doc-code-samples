@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
 import AppInfiniteHits from './components/InfiniteHits.vue';
 

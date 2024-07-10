@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@adobe/react-spectrum": "3.28.0",
-    "algoliasearch-v5": "npm:algoliasearch@5.0.0-beta.8",
+    "algoliasearch": "5.0.0-beta.8",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-instantsearch": "7.12.1"

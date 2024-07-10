@@ -1,5 +1,5 @@
 import { createServerRootMixin } from 'vue-instantsearch/vue3/es';
-import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import { createSSRApp, h } from 'vue';
 import qs from 'qs';
 

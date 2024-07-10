@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 
 export default {
   data() {
