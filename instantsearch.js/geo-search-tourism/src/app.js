@@ -1,4 +1,5 @@
-/* global instantsearch algoliasearch $script */
+/* global instantsearch $script */
+const algoliasearch = window['algoliasearch/lite'].liteClient;
 
 $script(
   'https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyBawL8VbstJDdU5397SUX7pEt9DslAwWgQ',

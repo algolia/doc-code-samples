@@ -17,11 +17,11 @@
     "@remix-run/node": "1.6.5",
     "@remix-run/react": "1.6.5",
     "@remix-run/serve": "1.6.5",
-    "algoliasearch": "4.11.0",
+    "algoliasearch": "5.0.0-beta.8",
     "instantsearch.css": "7.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-instantsearch": "7.0.0"
+    "react-instantsearch": "7.12.1"
   },
   "devDependencies": {
     "@remix-run/dev": "1.6.5",

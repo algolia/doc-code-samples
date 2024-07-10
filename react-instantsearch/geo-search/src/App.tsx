@@ -1,5 +1,5 @@
 import React from 'react';
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import { InstantSearch, SearchBox } from 'react-instantsearch';
 import { MapContainer, TileLayer } from 'react-leaflet';
 

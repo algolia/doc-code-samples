@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
 import { VueAutosuggest } from 'vue-autosuggest';
 
@@ -103,7 +103,7 @@ export default {
             indexName === 'instant_search_demo_query_suggestions'
         )
         .map(({ hits }) => ({
-          data: hits.map(hit => {
+          data: hits.map((hit) => {
             const [category] =
               (hit.instant_search &&
                 hit.instant_search.facets.exact_matches.categories) ||
