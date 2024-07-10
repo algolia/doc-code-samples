@@ -26,7 +26,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import AppMap from './components/Map';
+import AppMap from './components/Map.vue';
 
 export default {
   components: { AppMap },

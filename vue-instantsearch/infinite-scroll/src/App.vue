@@ -35,7 +35,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import AppInfiniteHits from './components/InfiniteHits';
+import AppInfiniteHits from './components/InfiniteHits.vue';
 
 export default {
   components: { AppInfiniteHits },

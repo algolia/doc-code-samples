@@ -18,14 +18,14 @@ const securedApiKey = client.generateSecuredApiKey(
 );
 
 app.use(
-  express.static(path.join(__dirname, 'build'), {
+  express.static(path.join(__dirname, 'dist'), {
     index: false,
   })
 );
 
 app.get('/', async (_, res) => {
   const index = await readFileAsync(
-    path.join(__dirname, 'build', 'index.html'),
+    path.join(__dirname, 'dist', 'index.html'),
     'utf-8'
   );
 

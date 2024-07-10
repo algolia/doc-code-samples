@@ -41,7 +41,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import AppMenuSelect from './components/MenuSelect';
+import AppMenuSelect from './components/MenuSelect.vue';
 
 export default {
   components: { AppMenuSelect },

@@ -43,7 +43,7 @@
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/algolia-min.css';
-import AppLoadingIndicator from './components/LoadingIndicator';
+import AppLoadingIndicator from './components/LoadingIndicator.vue';
 
 export default {
   components: { AppLoadingIndicator },

@@ -68,7 +68,7 @@ jobs:
           path: 'angular-instantsearch/secured-api-keys'
 
   build_react_projects:
-    executor: node14
+    executor: node18
     steps:
       - checkout
       - build_project:
