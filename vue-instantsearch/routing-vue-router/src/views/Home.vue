@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
 import 'instantsearch.css/themes/algolia-min.css';
 
 export default {
@@ -67,7 +67,7 @@ export default {
             }).href;
           },
           onUpdate(cb) {
-            this._onPopState = event => {
+            this._onPopState = (event) => {
               const routeState = event.state;
               // at initial load, the state is read from the URL without
               // update. Therefore the state object is not there. In this

@@ -1,4 +1,5 @@
-/* global $ instantsearch algoliasearch */
+/* global $ instantsearch */
+const algoliasearch = window['algoliasearch/lite'].liteClient;
 
 const autocomplete = instantsearch.connectors.connectAutocomplete(
   ({ indices, refine, widgetParams }, isFirstRendering) => {

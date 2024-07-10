@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
 import 'instantsearch.css/themes/algolia-min.css';
 
@@ -103,9 +103,11 @@ const routing = {
       const category = getCategoryName(
         (pathnameMatches && pathnameMatches[1]) || ''
       );
-      const { query = '', page, brands = [] } = qsModule.parse(
-        location.search.slice(1)
-      );
+      const {
+        query = '',
+        page,
+        brands = [],
+      } = qsModule.parse(location.search.slice(1));
       // `qs` does not return an array when there's a single value.
       const allBrands = Array.isArray(brands)
         ? brands

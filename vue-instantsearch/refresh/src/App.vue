@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch-v5/lite';
 import 'instantsearch.css/themes/algolia-min.css';
 import AppRefresh from './components/Refresh.vue';
 

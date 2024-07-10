@@ -10,11 +10,11 @@
     "@algolia/autocomplete-js": "1.9.2",
     "@algolia/autocomplete-plugin-query-suggestions": "1.9.2",
     "@algolia/autocomplete-theme-classic": "1.9.2",
-    "algoliasearch": "4",
-    "instantsearch.js": "4.56.8",
+    "algoliasearch-v5": "npm:algoliasearch@5.0.0-beta.8",
+    "instantsearch.js": "4.73.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-instantsearch": "7.0.0"
+    "react-instantsearch": "7.12.1"
   },
   "devDependencies": {
     "@types/react": "17.0.45",
