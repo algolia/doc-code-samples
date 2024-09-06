@@ -1,4 +1,5 @@
-/* global instantsearch algoliasearch */
+/* global instantsearch */
+const algoliasearch = window['algoliasearch/lite'].liteClient;
 
 import searchRouting from './search-routing';
 

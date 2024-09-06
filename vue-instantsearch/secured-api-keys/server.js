@@ -4,18 +4,18 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const express = require('express');
-const algoliasearch = require('algoliasearch');
+const { algoliasearch } = require('algoliasearch');
 
 const app = express();
 const readFileAsync = util.promisify(fs.readFile);
 
 const client = algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5');
-const securedApiKey = client.generateSecuredApiKey(
-  'aadef574be1f9252bb48d4ea09b5cfe5',
-  {
+const securedApiKey = client.generateSecuredApiKey({
+  parentApiKey: 'aadef574be1f9252bb48d4ea09b5cfe5',
+  restrictions: {
     restrictIndices: 'demo_ecommerce',
-  }
-);
+  },
+});
 
 app.use(
   express.static(path.join(__dirname, 'dist'), {

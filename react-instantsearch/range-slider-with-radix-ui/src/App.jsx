@@ -5,7 +5,7 @@ import {
   RefinementList,
   SearchBox,
 } from 'react-instantsearch';
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 
 import { RangeSlider } from './RangeSlider';
 
