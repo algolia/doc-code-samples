@@ -109,13 +109,13 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      item: `
+      item: (hit, { html, components }) => html`
         <div>
           <header class="hit-name">
-            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
+            ${components.Highlight({ hit, attribute: 'name' })}
           </header>
           <p class="hit-description">
-            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
+            ${components.Highlight({ hit, attribute: 'description' })}
           </p>
         </div>
       `,

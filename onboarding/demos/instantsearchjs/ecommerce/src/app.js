@@ -21,7 +21,7 @@ search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      empty: 'No results.',
+      empty: () => 'No results.',
       item: hitTemplate,
     },
   })
@@ -60,7 +60,7 @@ search.addWidget(
 /* search.addWidget(
   instantsearch.widgets.panel({
     templates: {
-      header: 'Categories',
+      header: () => 'Categories',
     },
   })(instantsearch.widgets.refinementList)({
     container: '#categories',
@@ -73,7 +73,7 @@ search.addWidget(
 /* search.addWidget(
   instantsearch.widgets.panel({
     templates: {
-      header: 'Brands',
+      header: () => 'Brands',
     },
   })(instantsearch.widgets.refinementList)({
     container: '#brands',
@@ -87,7 +87,7 @@ search.addWidget(
 /* search.addWidget(
   instantsearch.widgets.panel({
     templates: {
-      header: 'Price',
+      header: () => 'Price',
     },
   })(instantsearch.widgets.rangeSlider)({
     container: '#price',

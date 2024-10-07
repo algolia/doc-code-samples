@@ -24,9 +24,9 @@ injectScript(
         container: '#maps',
         googleReference: window.google,
         templates: {
-          HTMLMarker: `
+          HTMLMarker: (hit, { html }) => html`
             <span class="marker">
-              {{ city }} - {{ airport_id }}
+              ${hit.city} - ${hit.airport_id}
             </span>
           `,
         },

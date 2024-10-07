@@ -21,8 +21,9 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits-instant-search',
     templates: {
-      item:
-        '{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}',
+      item: (hit, { html, components }) => html`
+        ${components.Highlight({ hit, attribute: 'name' })}
+      `
     },
   }),
   instantsearch.widgets
@@ -34,8 +35,9 @@ search.addWidgets([
       instantsearch.widgets.hits({
         container: '#hits-instant-search-price-desc',
         templates: {
-          item:
-            '{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}',
+          item: (hit, { html, components }) => html`
+            ${components.Highlight({ hit, attribute: 'name' })}
+          `
         },
       }),
     ]),

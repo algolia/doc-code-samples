@@ -7,13 +7,13 @@ const searchClient = algoliasearch(
 
 const categoryMenu = instantsearch.widgets.panel({
   templates: {
-    header: 'Category',
+    header: () => 'Category',
   },
 })(instantsearch.widgets.menu);
 
 const brandList = instantsearch.widgets.panel({
   templates: {
-    header: 'Brands',
+    header: () => 'Brands',
   },
 })(instantsearch.widgets.refinementList);
 
@@ -34,9 +34,9 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      item: `
+      item: (hit, { html, components }) => html`
         <div>
-          {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
+          ${components.Highlight({ hit, attribute: 'name' })}
         </div>
       `,
     },

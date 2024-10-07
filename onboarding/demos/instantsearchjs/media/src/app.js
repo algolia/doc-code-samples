@@ -21,7 +21,7 @@ search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      empty: 'No results found.',
+      empty: () => 'No results found.',
       item: hitTemplate,
     },
   })
@@ -60,7 +60,7 @@ search.addWidget(
 /* search.addWidget(
   instantsearch.widgets.panel({
     templates: {
-      header: 'Categories',
+      header: () => 'Categories',
     },
   })(instantsearch.widgets.refinementList)({
     container: '#categories',
