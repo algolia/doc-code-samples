@@ -38,8 +38,8 @@ $script(
           item: (hit, { html, components }) => html`
             <div class="hit col-sm-3">
               <div class="pictures-wrapper">
-                <img class="picture" src="${hit.picture_url}" />
-                <img class="profile" src="${hit.user.user.thumbnail_url}" />
+                <img class="picture" src=${hit.picture_url} />
+                <img class="profile" src=${hit.user.user.thumbnail_url} />
               </div>
               <div class="infos">
                 <h4 class="media-heading">${components.Highlight({ hit, attribute: 'name' })}</h4>
