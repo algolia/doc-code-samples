@@ -77,7 +77,7 @@ search.addWidgets([
   }),
   panel({
     templates: {
-      header: () => 'Brand',
+      header: 'Brand',
     },
   })(refinementList)({
     container: '#brand',
@@ -86,7 +86,7 @@ search.addWidgets([
   }),
   panel({
     templates: {
-      header: () => 'Categories',
+      header: 'Categories',
     },
     hidden({ items }) {
       return items.length === 0;

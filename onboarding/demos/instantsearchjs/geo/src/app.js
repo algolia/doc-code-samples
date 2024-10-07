@@ -66,7 +66,7 @@ search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      empty: () => 'No results.',
+      empty: 'No results.',
       item(hit, { html, components }) {
         return html`
           <div class="hit">

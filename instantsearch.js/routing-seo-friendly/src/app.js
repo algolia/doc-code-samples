@@ -9,13 +9,13 @@ const searchClient = algoliasearch(
 
 const categoryMenu = instantsearch.widgets.panel({
   templates: {
-    header: () => 'Category',
+    header: 'Category',
   },
 })(instantsearch.widgets.menu);
 
 const brandList = instantsearch.widgets.panel({
   templates: {
-    header: () => 'Brands',
+    header: 'Brands',
   },
 })(instantsearch.widgets.refinementList);
 

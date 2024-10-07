@@ -18,7 +18,7 @@ const search = instantsearch({
   instantsearch.widgets.hits({
     container: "#hits",
     templates: {
-      empty: () => "No results.",
+      empty: "No results.",
       allItems(res) {
         return hitTemplate(res);
       }
@@ -59,7 +59,7 @@ const search = instantsearch({
     attributeName: "type",
     autoHideContainer: false,
     templates: {
-      header: () => "Categories"
+      header: "Categories"
     }
   })
 ); */
