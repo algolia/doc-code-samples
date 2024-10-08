@@ -28,27 +28,24 @@ search.addWidgets([
   hits({
     container: '#hits',
     templates: {
-      item: (hit, bindEvent) => {
-        const result = `
+      item: (hit, { html, components, sendEvent }) => html`
         <article>
-          <h1>${instantsearch.highlight({ attribute: 'name', hit })}</h1>
-          <p>${instantsearch.highlight({ attribute: 'description', hit })}</p>
-          <button type="button" ${bindEvent('view', hit, 'View')}>
+          <h1>${components.Highlight({ hit, attribute: 'name' })}</h1>
+          <p>${components.Highlight({ hit, attribute: 'description' })}</p>
+          <button type="button" onClick="${() => sendEvent('view', hit, 'View')}">
             View Product
           </button>
-          <button type="button" ${bindEvent('click', hit, 'Favorite')}>
+          <button type="button" onClick="${() => sendEvent('click', hit, 'Favorite')}">
             Favorite
           </button>
-          <button type="button" ${bindEvent('conversion', hit, 'Add to Cart')}>
+          <button type="button" onClick="${() => sendEvent('conversion', hit, 'Add to Cart')}">
             Add to Cart
           </button>
-          <button type="button" ${bindEvent('conversion', hit, 'Order')}>
+          <button type="button" onClick="${() => sendEvent('conversion', hit, 'Order')}">
             Order Now
           </button>
         </article>
-      `;
-        return result;
-      },
+      `
     },
   }),
   refinementList({

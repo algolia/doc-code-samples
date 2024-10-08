@@ -35,15 +35,13 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      empty: `
-        {{#query}}
-          No results for <q>{{query}}</q>
-        {{/query}}
+      empty: ({ query }, { html }) => html`
+        No results for <q>${query}</q>
       `,
-      item: `
+      item: (hit, { html, components }) => html`
         <article>
-          <h1>{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</h1>
-          <p>{{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}</p>
+          <h1>${components.Highlight({ hit, attribute: 'name' })}</h1>
+          <p>${components.Highlight({ hit, attribute: 'description' })}</p>
         </article>
       `,
     },

@@ -22,17 +22,17 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      item: `
-      <div>
-        <header class="hit-name">
-          {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
-        </header>
-        <img src="{{image}}" align="left" />
-        <p class="hit-description">
-          {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
-        </p>
-        <p class="hit-price">\${{price}}</p>
-      </div>
+      item: (hit, { html, components }) => html`
+        <div>
+          <header class="hit-name">
+            ${components.Highlight({ hit, attribute: 'name' })}
+          </header>
+          <img src="${hit.image}" align="left" />
+          <p class="hit-description">
+            ${components.Highlight({ hit, attribute: 'description' })}
+          </p>
+          <p class="hit-price">\$${hit.price}</p>
+        </div>
       `,
     },
   }),

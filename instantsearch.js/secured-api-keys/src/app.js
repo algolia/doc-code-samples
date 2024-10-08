@@ -26,16 +26,16 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      item: `
+      item: (hit, { html, components }) => html`
         <div>
           <header class="hit-name">
-            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
+            ${components.Highlight({ hit, attribute: 'name' })}
           </header>
-          <img src="{{image}}" align="left" />
+          <img src="${hit.image}" align="left" />
           <p class="hit-description">
-            {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
+            ${components.Highlight({ hit, attribute: 'description' })}
           </p>
-          <p class="hit-price">\${{price}}</p>
+          <p class="hit-price">\$${hit.price}</p>
         </div>
       `,
     },

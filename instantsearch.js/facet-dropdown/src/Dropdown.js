@@ -35,7 +35,7 @@ export function createDropdown(
   const makeWidget = instantsearch.widgets.panel({
     cssClasses,
     templates: {
-      header: options => {
+      header: (options, { html }) => {
         const { widgetParams } = options;
 
         let text;
@@ -67,13 +67,13 @@ export function createDropdown(
           classNames.push(cssClasses.buttonRefined);
         }
 
-        return `
+        return html`
           <button type="button" class="${cx(...classNames)}">
             ${text}
           </button>
         `;
       },
-      footer: `<button type="button" class="${cssClasses.closeButton}">Apply</button>`,
+      footer: (_, { html }) => html`<button type="button" class="${cssClasses.closeButton}">Apply</button>`,
     },
   })(baseWidget);
 
