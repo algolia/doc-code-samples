@@ -1,4 +1,5 @@
-/* global algoliasearch instantsearch */
+/* global instantsearch */
+const algoliasearch = window['algoliasearch/lite'].liteClient;
 
 import { createDropdown } from './Dropdown';
 

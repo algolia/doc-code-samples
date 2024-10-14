@@ -1,5 +1,5 @@
 import { createSSRApp, h } from 'vue';
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import { createServerRootMixin } from 'vue-instantsearch/vue3/es';
 import qs from 'qs';
 import App from './App.vue';
@@ -49,7 +49,7 @@ export function createApp({ renderToString, context } = {}) {
               return router.resolve({ query: routeState }).href;
             },
             onUpdate(callback) {
-              this._onPopState = event => {
+              this._onPopState = (event) => {
                 const routeState = event.state;
                 // at initial load, the state is read from the URL without
                 // update. Therefore the state object is not there. In this

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import { IndexWidget, Widget } from 'instantsearch.js';
 import history from 'instantsearch.js/es/lib/routers/history';
 import InstantSearch from 'instantsearch.js/es/lib/InstantSearch';

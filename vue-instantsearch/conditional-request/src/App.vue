@@ -2,9 +2,7 @@
   <div>
     <header class="header">
       <h1 class="header-title">
-        <a href="/">
-          conditional-request
-        </a>
+        <a href="/"> conditional-request </a>
       </h1>
       <p class="header-subtitle">
         using
@@ -48,7 +46,7 @@
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 
 const algoliaClient = algoliasearch(
   'latency',

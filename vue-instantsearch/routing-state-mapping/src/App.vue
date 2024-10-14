@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch/lite';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import { history as historyRouter } from 'instantsearch.js/es/lib/routers';
 import 'instantsearch.css/themes/algolia-min.css';
 
