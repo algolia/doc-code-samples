@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@adobe/react-spectrum": "3.28.0",
+    "@adobe/react-spectrum": "3.39.0",
     "algoliasearch": "^4.13.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
