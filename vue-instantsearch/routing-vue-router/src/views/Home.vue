@@ -67,16 +67,8 @@ export default {
             }).href;
           },
           onUpdate(cb) {
-            this._onPopState = event => {
-              const routeState = event.state;
-              // at initial load, the state is read from the URL without
-              // update. Therefore the state object is not there. In this
-              // case we fallback and read the URL.
-              if (!routeState) {
-                cb(this.read());
-              } else {
-                cb(routeState);
-              }
+            this._onPopState = () => {
+              cb(this.read());
             };
             window.addEventListener('popstate', this._onPopState);
           },

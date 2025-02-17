@@ -49,16 +49,8 @@ export function createApp({ renderToString, context } = {}) {
               return router.resolve({ query: routeState }).href;
             },
             onUpdate(callback) {
-              this._onPopState = event => {
-                const routeState = event.state;
-                // at initial load, the state is read from the URL without
-                // update. Therefore the state object is not there. In this
-                // case we fallback and read the URL.
-                if (!routeState) {
-                  callback(this.read());
-                } else {
-                  callback(routeState);
-                }
+              this._onPopState = () => {
+                callback(this.read());
               };
               typeof window === 'object' &&
                 window.addEventListener('popstate', this._onPopState);
