@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@originjs/vite-plugin-commonjs": "^1.0.3",
-    "@vitejs/plugin-vue": "1.2.5",
+    "@vitejs/plugin-vue": "1.10.2",
     "@vitejs/plugin-vue-jsx": "1.1.6",
     "@vue/compiler-sfc": "3.1.5",
     "compression": "^1.7.4",
