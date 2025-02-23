@@ -1068,7 +1068,7 @@ algoliasearch-helper@3.16.1:
   dependencies:
     "@algolia/events" "^4.0.1"
 
-algoliasearch@4:
+algoliasearch@4.22.1:
   version "4.22.1"
   resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-4.22.1.tgz#f10fbecdc7654639ec20d62f109c1b3a46bc6afc"
   integrity sha512-jwydKFQJKIx9kIZ8Jm44SdpigFwRGPESaxZBaHSV0XWN2yBJAOT4mT7ppvlrpA4UGzz92pqFnVKr/kaZXrcreg==
