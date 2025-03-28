@@ -4,7 +4,7 @@ This repository holds code examples shown on the [Algolia.com documentation webs
 
 ## InstantSearch code samples
 
-All code samples in InstantSearch guides that run on [CodeSandbox](https://codesandbox.io/). The full list is available [here](https://instantsearch-templates.netlify.com).
+All code samples in InstantSearch guides that run on [CodeSandbox](https://codesandbox.io/). The full list is available [here](https://instantsearch-templates.netlify.app).
 
 ## Interactive onboarding
 
