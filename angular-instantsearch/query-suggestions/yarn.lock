@@ -1723,10 +1723,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@types/algoliasearch@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-4.0.0.tgz#129501dff14b70024439751beb3ec820417f566a"
-  integrity sha512-XMGE0h/dRV7qR6lR/zgGL01esc39pLHNl4m7gKZldrgoov/IaFJGfmmEJGxktlH63esWEtAiXzbjLfvEQXN15Q==
+"@types/algoliasearch@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-4.0.4.tgz#3ac3dbd60f0153fcd4c6dc10a17dc73e0b60fc54"
+  integrity sha512-vEWHnOZ02D3hhHK9MwH1D7x0GF2S9iI5e0ua4YC4ZGbBzFyN2GdrHolNGbn9D8JI0S7yL2h6HFUsSIha1FaEhQ==
   dependencies:
     algoliasearch "*"
 
