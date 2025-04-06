@@ -22,7 +22,7 @@
     "@angular/router": "6.0.3",
     "angular-instantsearch": "2.2.2",
     "core-js": "2.6.11",
-    "rxjs": "6.2.0",
+    "rxjs": "6.6.7",
     "zone.js": "0.8.28"
   },
   "devDependencies": {
