@@ -12,7 +12,7 @@
     "instantsearch.css": "7.3.1",
     "vue": "2.7.14",
     "vue-instantsearch": "4.9.0",
-    "vue-observe-visibility": "0.4.4"
+    "vue-observe-visibility": "0.4.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue2": "2.3.1",
