@@ -18,7 +18,7 @@
     "@angular/router": "13.2.1",
     "algoliasearch": "4.12.1",
     "angular-instantsearch": "4.1.0",
-    "core-js": "2.4.1",
+    "core-js": "2.6.12",
     "instantsearch.js": "^4.30.2",
     "nouislider": "10.1.0",
     "rxjs": "6.6.7",
