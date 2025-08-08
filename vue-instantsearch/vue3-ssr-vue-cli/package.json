@@ -13,18 +13,18 @@
     "core-js": "^3.6.5",
     "express": "4.17.2",
     "qs": "6.5.1",
-    "vue": "3.1.5",
+    "vue": "3.5.18",
     "vue-instantsearch": "4.9.0",
     "vue-router": "^4.0.10",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-node-externals": "^2.5.1"
   },
   "devDependencies": {
-    "@vue/server-renderer": "3.1.5",
+    "@vue/server-renderer": "3.5.18",
     "@vue/cli-plugin-babel": "4.5.13",
     "@vue/cli-plugin-eslint": "4.5.13",
     "@vue/cli-service": "4.5.13",
-    "@vue/compiler-sfc": "3.1.5",
+    "@vue/compiler-sfc": "3.5.18",
     "babel-eslint": "10.1.0",
     "eslint": "7.32.0",
     "eslint-plugin-vue": "7.16.0"

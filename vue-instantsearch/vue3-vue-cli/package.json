@@ -10,14 +10,14 @@
   "dependencies": {
     "algoliasearch": "4.12.1",
     "core-js": "^3.6.5",
-    "vue": "^3.1.2",
+    "vue": "^3.2.4",
     "vue-instantsearch": "4.9.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.1.2",
+    "@vue/compiler-sfc": "^3.2.4",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0"
