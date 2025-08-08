@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@radix-ui/react-slider": "1.1.2",
+    "@radix-ui/react-slider": "1.3.5",
     "algoliasearch": "^4.13.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
