@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "algoliasearch": "3.35.1",
-    "express": "4.17.2"
+    "express": "4.21.2"
   }
 }
