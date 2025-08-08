@@ -12,19 +12,19 @@
     "@vue/server-renderer": "3.1.5",
     "algoliasearch": "4.12.1",
     "qs": "6.5.1",
-    "vue": "^3.1.5",
+    "vue": "3.1.5",
     "vue-instantsearch": "4.9.0",
-    "vue-router": "^4.0.10"
+    "vue-router": "4.0.10"
   },
   "devDependencies": {
-    "@originjs/vite-plugin-commonjs": "^1.0.3",
+    "@originjs/vite-plugin-commonjs": "1.0.3",
     "@vitejs/plugin-vue": "1.2.5",
     "@vitejs/plugin-vue-jsx": "1.1.6",
     "@vue/compiler-sfc": "3.1.5",
-    "compression": "^1.7.4",
-    "cross-env": "^7.0.3",
+    "compression": "1.7.4",
+    "cross-env": "7.0.3",
     "express": "4.17.2",
-    "serve-static": "^1.14.1",
+    "serve-static": "1.14.1",
     "vite": "2.4.3"
   }
 }
