@@ -16,7 +16,7 @@
     "@angular/platform-browser": "10.2.5",
     "@angular/platform-browser-dynamic": "10.2.5",
     "@angular/router": "10.2.5",
-    "algoliasearch": "4.12.1",
+    "algoliasearch": "4.25.2",
     "angular-instantsearch": "4.1.0",
     "core-js": "2.4.1",
     "instantsearch.js": "^4.30.2",

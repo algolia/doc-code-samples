@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "algoliasearch": "4.12.1",
+    "algoliasearch": "4.25.2",
     "vue": "^3.0.5",
     "vue-instantsearch": "4.9.0"
   },

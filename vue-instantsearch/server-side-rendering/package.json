@@ -10,7 +10,7 @@
     "start": "cross-env NODE_ENV=production vue-cli-service ssr:serve --mode production"
   },
   "dependencies": {
-    "algoliasearch": "4.12.1",
+    "algoliasearch": "4.25.2",
     "instantsearch.css": "7.3.1",
     "vue": "2.7.14",
     "vue-instantsearch": "4.9.0",
