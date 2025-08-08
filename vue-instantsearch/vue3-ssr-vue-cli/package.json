@@ -14,7 +14,7 @@
     "express": "4.17.2",
     "qs": "6.5.1",
     "vue": "3.1.5",
-    "vue-instantsearch": "4.9.0",
+    "vue-instantsearch": "4.21.2",
     "vue-router": "^4.0.10",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-node-externals": "^2.5.1"
