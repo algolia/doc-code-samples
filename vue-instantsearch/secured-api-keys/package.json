@@ -11,12 +11,12 @@
     "algoliasearch": "3.35.1",
     "express": "4.17.2",
     "instantsearch.css": "7.3.1",
-    "vue": "2.7.14",
+    "vue": "2.7.16",
     "vue-instantsearch": "4.9.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue2": "2.3.1",
-    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/compiler-sfc": "^3.5.18",
     "vite": "^3.0.0"
   }
 }
