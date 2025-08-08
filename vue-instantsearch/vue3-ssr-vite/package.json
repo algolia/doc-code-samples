@@ -13,7 +13,7 @@
     "algoliasearch": "4.12.1",
     "qs": "6.5.1",
     "vue": "^3.1.5",
-    "vue-instantsearch": "4.9.0",
+    "vue-instantsearch": "4.21.2",
     "vue-router": "^4.0.10"
   },
   "devDependencies": {
