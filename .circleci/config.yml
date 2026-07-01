@@ -74,6 +74,10 @@ jobs:
       - build_project:
           path: 'react-instantsearch/algolia-insights'
       - build_project:
+          path: 'react-instantsearch/autocomplete'
+      - build_project:
+          path: 'react-instantsearch/autocomplete-mentions'
+      - build_project:
           path: 'react-instantsearch/conditional-debouncing'
       - build_project:
           path: 'react-instantsearch/conditional-request'
@@ -104,6 +108,10 @@ jobs:
     executor: node14
     steps:
       - checkout
+      - build_project:
+          path: 'instantsearch.js/autocomplete'
+      - build_project:
+          path: 'instantsearch.js/autocomplete-mentions'
       - build_project:
           path: 'instantsearch.js/autocomplete-results-page'
       - build_project:
