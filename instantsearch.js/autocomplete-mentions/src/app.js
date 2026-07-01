@@ -40,7 +40,44 @@ const isMention = (word) => /^@\w{1,15}$/.test(word);
 
 function hidePanel() {
   panel.hidden = true;
-  panel.innerHTML = '';
+  panel.replaceChildren();
+}
+
+// Build the suggestion rows with DOM APIs so that account data (handle, image)
+// is set through safe assignments instead of interpolated into an HTML string.
+function renderHits(hits) {
+  const items = hits.map((hit) => {
+    const item = document.createElement('li');
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'account-item';
+    button.dataset.handle = hit.handle;
+
+    const image = document.createElement('img');
+    image.src = hit.image;
+    image.alt = '';
+
+    const text = document.createElement('span');
+
+    const name = document.createElement('span');
+    name.className = 'account-name';
+    // `_highlightResult.value` is HTML-escaped by Algolia with only the
+    // highlighting tags added, so it's safe to render as markup here—this is
+    // what the `Highlight` component does internally.
+    name.innerHTML = hit._highlightResult.name.value;
+
+    const handle = document.createElement('span');
+    handle.className = 'account-handle';
+    handle.textContent = `@${hit.handle}`;
+
+    text.append(name, handle);
+    button.append(image, text);
+    item.append(button);
+    return item;
+  });
+
+  panel.replaceChildren(...items);
 }
 
 // Measure the caret's pixel position inside the textarea by rendering a hidden
@@ -141,7 +178,10 @@ const customAutocomplete = connectAutocomplete(
     ) {
       positionPanel();
       panel.hidden = false;
-      panel.innerHTML = '<li class="account-loading">Searching…</li>';
+      const loading = document.createElement('li');
+      loading.className = 'account-loading';
+      loading.textContent = 'Searching…';
+      panel.replaceChildren(loading);
       return;
     }
 
@@ -155,20 +195,7 @@ const customAutocomplete = connectAutocomplete(
 
     positionPanel();
     panel.hidden = false;
-    panel.innerHTML = hits
-      .map(
-        (hit) => `
-          <li>
-            <button type="button" class="account-item" data-handle="${hit.handle}">
-              <img src="${hit.image}" alt="" />
-              <span>
-                <span class="account-name">${hit._highlightResult.name.value}</span>
-                <span class="account-handle">@${hit.handle}</span>
-              </span>
-            </button>
-          </li>`
-      )
-      .join('');
+    renderHits(hits);
   }
 );
 
