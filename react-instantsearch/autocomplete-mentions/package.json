@@ -1,0 +1,20 @@
+{
+  "name": "autocomplete-mentions",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "algoliasearch": "^4.13.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-instantsearch": "7.38.0",
+    "textarea-caret": "3.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.1",
+    "vite": "5.3.3"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  }
+}
