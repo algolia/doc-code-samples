@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="shortcut icon" href="./favicon.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.18.0/themes/satellite-min.css" />
+  <link rel="stylesheet" href="./src/index.css">
+  <link rel="stylesheet" href="./src/app.css">
+
+  <title>InstantSearch.js - Federated autocomplete</title>
+</head>
+
+<body>
+  <main class="page">
+    <h1 class="page-title">Federated autocomplete</h1>
+    <p class="page-subtitle">
+      Recent searches and Query Suggestions on the left, product previews on the
+      right. Focus the input for the empty state, or type "phone" for the results
+      state.
+    </p>
+
+    <div id="autocomplete"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.104.0"></script>
+  <script src="./src/app.js"></script>
+</body>
+
+</html>
