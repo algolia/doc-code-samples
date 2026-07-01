@@ -1,6 +1,6 @@
 {
-  "short_name": "query-suggestions",
-  "name": "query-suggestions Sample",
+  "short_name": "autocomplete",
+  "name": "autocomplete Sample",
   "icons": [
     {
       "src": "favicon.png",
