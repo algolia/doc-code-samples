@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="shortcut icon" href="./favicon.png">
+
+  <link rel="stylesheet" href="./src/index.css">
+  <link rel="stylesheet" href="./src/app.css">
+
+  <title>InstantSearch.js - Autocomplete mentions</title>
+</head>
+
+<body>
+  <main class="page">
+    <h1 class="page-title">Headless mentions</h1>
+    <p class="page-subtitle">
+      A custom text box with "@" mention suggestions, built with the
+      <code>connectAutocomplete</code> connector. Type "@" followed by a few
+      letters.
+    </p>
+
+    <div class="compose">
+      <textarea id="compose" placeholder="What's happening?" maxlength="280"></textarea>
+      <ul id="mentions-panel" hidden></ul>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.104.0"></script>
+  <script src="./src/app.js"></script>
+</body>
+
+</html>

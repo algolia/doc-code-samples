@@ -1,0 +1,201 @@
+body {
+  background: #f5f5fa;
+  color: #21243d;
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.page-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+}
+
+.page-subtitle {
+  margin: 0 0 2rem;
+  color: #5a607f;
+  font-size: 0.9rem;
+}
+
+/* Widen the panel so two columns have room to breathe */
+.aa-Panel,
+.ais-Autocomplete-panel {
+  max-width: 720px;
+}
+
+/* Two-column federated layout */
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.25rem;
+  padding: 0.5rem;
+}
+
+.demo-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.demo-column + .demo-column {
+  border-left: 1px solid #eceef5;
+  padding-left: 1.25rem;
+}
+
+/* On narrow screens (detached mode) stack the sections in one column */
+@media (max-width: 680px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-column + .demo-column {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #eceef5;
+    padding-top: 1.25rem;
+  }
+}
+
+.demo-source-header {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5a607f;
+  margin: 0.75rem 0 0.35rem;
+}
+
+/* Product preview rows in the right column */
+.demo-product {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.demo-product-image {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #fff;
+  padding: 4px;
+  box-shadow: inset 0 0 0 1px #eceef5;
+}
+
+.demo-product-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.demo-product-name {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.demo-product-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  color: #5a607f;
+}
+
+.demo-empty {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #5a607f;
+}
+
+/* Category derived from the top matching product (typing state) */
+.demo-category {
+  padding: 0.5rem 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* Quick-access cards (empty-query state) */
+.demo-quick {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0.6rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  flex: 1;
+  list-style: none;
+}
+
+.demo-quick > li {
+  display: flex;
+  min-height: 92px;
+}
+
+.demo-quick-item {
+  position: relative;
+  display: block;
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+
+.demo-quick-item img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.demo-quick-title,
+.demo-quick-subtitle {
+  position: relative;
+  display: block;
+  padding: 0 0.6rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.demo-quick-title {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.demo-quick-subtitle {
+  font-size: 0.75rem;
+  opacity: 0.95;
+}
+
+/* "See all" link under the product previews */
+.demo-see-all {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.6rem;
+  border-radius: 6px;
+  background: #f5f5fa;
+  color: #3c4fe0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.demo-see-all:hover {
+  background: #eceef5;
+}
+
+/* Highlight styling for matched query text */
+.ais-Highlight-highlighted {
+  background: #fef3c7;
+  color: inherit;
+  border-radius: 2px;
+}
