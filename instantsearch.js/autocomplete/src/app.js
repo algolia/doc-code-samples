@@ -18,8 +18,7 @@ const sectionHeader = (title, html) => html`
 `;
 
 // Quick-access cards. In production these come from an Algolia Rule that
-// returns custom JSON on `results.userData`. The public demo index has no such
-// Rule, so this constant stands in for that data.
+// returns custom JSON on `results.userData`; this constant stands in for that data.
 const QUICK_ACCESS = [
   {
     title: 'Spring sale',
