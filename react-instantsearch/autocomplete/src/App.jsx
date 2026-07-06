@@ -13,8 +13,7 @@ const searchClient = algoliasearch(
   '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
-// Quick-access cards. In production these come from an Algolia Rule that
-// returns custom JSON on `results.userData`; this constant stands in for that data.
+// Quick-access cards shown in the empty state.
 const QUICK_ACCESS = [
   {
     title: 'Spring sale',
@@ -99,8 +98,7 @@ function App() {
             );
             const isEmptyQuery = products?.results?.query === '';
             const hasSuggestions = (suggestions?.hits?.length ?? 0) > 0;
-            const quickAccess =
-              products?.results?.userData?.[0]?.items ?? QUICK_ACCESS;
+            const quickAccess = QUICK_ACCESS;
             const categories = products?.results?.hits?.[0]?.categories ?? [];
             const nbHits = products?.results?.nbHits ?? 0;
 

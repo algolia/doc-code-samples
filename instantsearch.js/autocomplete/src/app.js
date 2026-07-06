@@ -17,8 +17,7 @@ const sectionHeader = (title, html) => html`
   <span class="ais-AutocompleteIndexHeaderLine"></span>
 `;
 
-// Quick-access cards. In production these come from an Algolia Rule that
-// returns custom JSON on `results.userData`; this constant stands in for that data.
+// Quick-access cards shown in the empty state.
 const QUICK_ACCESS = [
   {
     title: 'Spring sale',
@@ -86,7 +85,6 @@ search.addWidgets([
     // (each with its raw `results`), which is what makes the federated
     // behavior possible:
     //   - read `results.query` to switch between the empty and typing states
-    //   - read `results.userData` (Rule data) for the quick-access cards
     //   - read `results.hits[0]` to derive a category from the top product
     templates: {
       panel: ({ elements, indices }, { html }) => {
@@ -100,11 +98,10 @@ search.addWidgets([
         const productResults = (products && products.results) || {};
         const suggestionHits = (suggestions && suggestions.hits) || [];
         const topProduct = (productResults.hits && productResults.hits[0]) || {};
-        const userData = productResults.userData || [];
 
         const isEmptyQuery = productResults.query === '';
         const hasSuggestions = suggestionHits.length > 0;
-        const quickAccess = (userData[0] && userData[0].items) || QUICK_ACCESS;
+        const quickAccess = QUICK_ACCESS;
         const categories = topProduct.categories || [];
 
         return html`
