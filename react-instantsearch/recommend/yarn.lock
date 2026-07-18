@@ -171,12 +171,12 @@
     "@algolia/logger-common" "4.23.3"
     "@algolia/requester-common" "4.23.3"
 
-"@algolia/ui-components-horizontal-slider-react@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-horizontal-slider-react/-/ui-components-horizontal-slider-react-1.2.2.tgz#661a9f980c791f3a0f41ce4cc1ae6c94a3457d40"
-  integrity sha512-AaTKj7mutpqevirB56ZO5Qef+VSmugCc9UqVDbJeRBuai2nzdkd6Op40vigAK7BmKnpyMb7GLIDg1+dgCcXL1A==
+"@algolia/ui-components-horizontal-slider-react@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-horizontal-slider-react/-/ui-components-horizontal-slider-react-1.2.3.tgz#a307aa84b3790578e017d0e69297c8c0573d180f"
+  integrity sha512-KgPDqiWm2YVRcQP2QKuTD2TXY3gQshyvgQrkWFo6cPWPR4p1X5MHs2uyCbUulcg8KJJIJWIWuxhOdK526VmFWQ==
   dependencies:
-    "@algolia/ui-components-horizontal-slider-vdom" "1.2.2"
+    "@algolia/ui-components-horizontal-slider-vdom" "1.2.3"
     "@babel/runtime" "^7.0.0"
 
 "@algolia/ui-components-horizontal-slider-theme@1.2.2":
@@ -184,18 +184,18 @@
   resolved "https://registry.yarnpkg.com/@algolia/ui-components-horizontal-slider-theme/-/ui-components-horizontal-slider-theme-1.2.2.tgz#9d01d440bb02a3adddc969d375135dcabfdc2e54"
   integrity sha512-UUq3scJq3y0/y81tf81OVgO2VRmQbOu+gkRzGOueh0dhtHYPVLfT8skK1Crpb6s3TlODL8VxEz8c/sDRdw572Q==
 
-"@algolia/ui-components-horizontal-slider-vdom@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-horizontal-slider-vdom/-/ui-components-horizontal-slider-vdom-1.2.2.tgz#77e76e50bac855f2e96587001e7c656ed4a55b80"
-  integrity sha512-uYnHYT0lC4MCXvPKzpx5rJH3n9uc40enPiFsbKyMmDtQ3xrJM1Evc38h+lT6p7fDEKfevAzncfxJLOyBEt7Tgg==
+"@algolia/ui-components-horizontal-slider-vdom@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-horizontal-slider-vdom/-/ui-components-horizontal-slider-vdom-1.2.3.tgz#8b6f23aa108e268dc865484455c53b9e41bee1a8"
+  integrity sha512-NzrJZukSAGSdE2Hjj+aP0dlzrdrtCLvbWQ7Es0Jjquyb9HtdMRmVWQOfO5I+0UoaePimv67l1iKsEHw3pP20LA==
   dependencies:
-    "@algolia/ui-components-shared" "1.2.2"
+    "@algolia/ui-components-shared" "1.2.3"
     "@babel/runtime" "^7.0.0"
 
-"@algolia/ui-components-shared@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-shared/-/ui-components-shared-1.2.2.tgz#ec49246e2de7d0461cdeadf2e7742d2f2c7c0bd9"
-  integrity sha512-FYwEG5sbr8p4V8mqP0iUaKgmWfcrMXRXwp7e6iBuB65P/7QyL8pT4I6/iGb85Q5mNH+UtYYSmLZhKjEblllKEQ==
+"@algolia/ui-components-shared@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-shared/-/ui-components-shared-1.2.3.tgz#c27d448627583edc71cfc1864dd39d2a689d9ca1"
+  integrity sha512-Nk4stv4FW9qIpvmdkJMf6oS49xA8Ns/IAAYNngpaFFQTErZupegXvyr8W+6NVvBSzHzeE4H8YO7spg3xWR8e8A==
 
 "@babel/code-frame@^7.0.0":
   version "7.24.2"
