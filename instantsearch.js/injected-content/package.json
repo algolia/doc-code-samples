@@ -1,0 +1,18 @@
+{
+  "name": "injected-content",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.14.2",
+    "instantsearch.js": "^4.48.1",
+    "preact": "^10.5.14",
+    "htm": "^3.0.4"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "2.7.0",
+    "@parcel/transformer-webmanifest": "2.7.0",
+    "parcel": "2.0.1",
+    "typescript": "4.7.3"
+  }
+}

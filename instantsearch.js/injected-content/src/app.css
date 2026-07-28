@@ -1,0 +1,27 @@
+em {
+  background: cyan;
+  font-style: normal;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.search-panel__results {
+  flex: 1;
+}
+
+#maps {
+  margin-top: 1rem;
+  height: 500px;
+}
