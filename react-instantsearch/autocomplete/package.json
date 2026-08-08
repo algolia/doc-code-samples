@@ -7,7 +7,7 @@
     "instantsearch.css": "^8.18.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-instantsearch": "7.38.0"
+    "react-instantsearch": "7.42.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "4.3.1",
