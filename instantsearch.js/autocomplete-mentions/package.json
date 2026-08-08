@@ -19,7 +19,7 @@
     "prettier": "1.19.1"
   },
   "resolutions": {
-    "node-releases": "2.0.20",
+    "node-releases": "2.0.53",
     "path-scurry": "1.11.0"
   }
 }
