@@ -11,7 +11,7 @@
     "leaflet": "1.9.4",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-instantsearch-hooks-web": "6.44.1",
+    "react-instantsearch-hooks-web": "6.47.3",
     "react-leaflet": "4.2.1"
   },
   "devDependencies": {
