@@ -648,7 +648,7 @@ algoliasearch-helper@3.29.1:
   dependencies:
     "@algolia/events" "^4.0.1"
 
-algoliasearch@^4.13.1:
+algoliasearch@4.27.0:
   version "4.27.0"
   resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-4.27.0.tgz#cc4fcffb79013dd14b182f63b2182d59ab1eb050"
   integrity sha512-C88C5grLa5VOCp9eYZJt+q99ik7yNdm92l7Q9+4XK0Md8kL05Lg8l2v9ZVX0uMW3mH9pAFxMMXlLOvqNumA4lw==
@@ -860,7 +860,7 @@ instantsearch-ui-components@0.33.0:
     "@swc/helpers" "0.5.18"
     markdown-to-jsx "^7.7.15"
 
-instantsearch.css@^8.18.0:
+instantsearch.css@8.18.0:
   version "8.18.0"
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-8.18.0.tgz#6d58d60d19698ca2bd1ecc966f5fec8d5793ce1a"
   integrity sha512-7/WWu9fpPzQi5Z7Z//Lf9V4gmFU3TazneJkm7fJSApICOjLHhc3C65O84CilV+rkNIIaGuc9Kn5G1fHo3A08jQ==
@@ -985,7 +985,7 @@ qs@^6.5.1:
     es-define-property "^1.0.1"
     side-channel "^1.1.1"
 
-react-dom@^18.1.0:
+react-dom@18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.3.1.tgz#c2265d79511b57d479b3dd3fdfa51536494c5cb4"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -1018,17 +1018,17 @@ react-refresh@^0.14.2:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.2.tgz#3833da01ce32da470f1f936b9d477da5c7028bf9"
   integrity sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==
 
-"react@>= 0.14.0":
-  version "19.2.7"
-  resolved "https://registry.yarnpkg.com/react/-/react-19.2.7.tgz#1f47a1bfc06f8ec885752c6f4af14369a9f8260b"
-  integrity sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==
-
-react@^18.1.0:
+react@18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react/-/react-18.3.1.tgz#49ab892009c53933625bd16b2533fc754cab2891"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
   dependencies:
     loose-envify "^1.1.0"
+
+"react@>= 0.14.0":
+  version "19.2.7"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.2.7.tgz#1f47a1bfc06f8ec885752c6f4af14369a9f8260b"
+  integrity sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==
 
 rollup@^4.13.0:
   version "4.62.2"

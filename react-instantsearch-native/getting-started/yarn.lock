@@ -157,7 +157,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.22.20.tgz#8df6e96661209623f1975d66c35ffca66f3306d0"
   integrity sha512-BQYjKbpXjoXwFW5jGqiizJQQT/aC7pFm9Ok1OWssonuguICi264lbgMzRp2ZMmRSlfkX6DsWDDcsrctK8Rwfiw==
 
-"@babel/core@^7.13.16", "@babel/core@^7.20.0", "@babel/core@^7.20.2":
+"@babel/core@7.22.20", "@babel/core@^7.13.16", "@babel/core@^7.20.0", "@babel/core@^7.20.2":
   version "7.22.20"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.22.20.tgz#e3d0eed84c049e2a2ae0a64d27b6a37edec385b7"
   integrity sha512-Y6jd1ahLubuYweD/zJH+vvOY141v4f9igNQAQ+MBgq9JlHS2iTsZKn1aMsb3vGccZsXI16VzTBw52Xx0DWmtnA==
@@ -1613,7 +1613,7 @@
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-13.0.0.tgz#e2989b85e95a82bce216f88cf8fb583ab050ec95"
   integrity sha512-TI+l71+5aSKnShYclFa14Kum+hQMZ86b95SH6tQUG3qZEmLTarvWpKwqtTwQKqvlJSJrpFiSFu3eCuZokY6zWA==
 
-"@expo/webpack-config@^19.0.0":
+"@expo/webpack-config@19.0.0":
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/@expo/webpack-config/-/webpack-config-19.0.0.tgz#d8ce69bdb9a99089bb0672a7dc01dc96bebad390"
   integrity sha512-mX28BNyf4Cs0+4L44QQyhy5QMVfsYhOdB9Fpf3rp982KTKUsy01UFJ0irGI1jQ68jXrQn5/WU4u1pvN6DDao5Q==
@@ -4187,12 +4187,12 @@ expo-pwa@0.0.127:
     commander "2.20.0"
     update-check "1.5.3"
 
-expo-status-bar@~1.6.0:
+expo-status-bar@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.6.0.tgz#e79ffdb9a84d2e0ec9a0dc7392d9ab364fefa9cf"
   integrity sha512-e//Oi2WPdomMlMDD3skE4+1ZarKCJ/suvcB4Jo/nO427niKug5oppcPNYO+csR6y3ZglGuypS+3pp/hJ+Xp6fQ==
 
-expo@~49.0.11:
+expo@49.0.11:
   version "49.0.11"
   resolved "https://registry.yarnpkg.com/expo/-/expo-49.0.11.tgz#2ad565aaf0e4533c17e5dcbe0e0020da856cbca9"
   integrity sha512-4UtSnaVn4bAEsdp2Z2I8okCJEmAm2cj1Rl3ifm79fI4zMz3EqBaXMKs6OdMSTa6DWq3dZp8C/5dEKy/ynah0CA==
@@ -7233,7 +7233,7 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-web@~0.19.9:
+react-native-web@0.19.9:
   version "0.19.9"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.19.9.tgz#6ee43e6c64d886b1d739f100fed07927541ee003"
   integrity sha512-m69arZbS6FV+BNSKE6R/NQwUX+CzxCkYM7AJlSLlS8dz3BDzlaxG8Bzqtzv/r3r1YFowhnZLBXVKIwovKDw49g==
