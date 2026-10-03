@@ -179,10 +179,10 @@
     "@algolia/ui-components-horizontal-slider-vdom" "1.2.2"
     "@babel/runtime" "^7.0.0"
 
-"@algolia/ui-components-horizontal-slider-theme@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-horizontal-slider-theme/-/ui-components-horizontal-slider-theme-1.2.2.tgz#9d01d440bb02a3adddc969d375135dcabfdc2e54"
-  integrity sha512-UUq3scJq3y0/y81tf81OVgO2VRmQbOu+gkRzGOueh0dhtHYPVLfT8skK1Crpb6s3TlODL8VxEz8c/sDRdw572Q==
+"@algolia/ui-components-horizontal-slider-theme@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-horizontal-slider-theme/-/ui-components-horizontal-slider-theme-1.2.3.tgz#69dbe65af887f358553b77fadeceb13639419c82"
+  integrity sha512-r1kyB8pF7/Vc19HVDlOp03K2iHfPdrKAO4aSbCpAUwh+oJO2rWA4pVmEWG/wX3drEPYdoBW735oDfJ69zOHmLQ==
 
 "@algolia/ui-components-horizontal-slider-vdom@1.2.2":
   version "1.2.2"
