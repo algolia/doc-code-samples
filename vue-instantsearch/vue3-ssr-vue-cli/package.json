@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "algoliasearch": "4.12.1",
-    "core-js": "^3.6.5",
+    "core-js": "3.15.2",
     "express": "4.17.2",
     "qs": "6.5.1",
     "vue": "3.1.5",
     "vue-instantsearch": "4.9.0",
-    "vue-router": "^4.0.10",
-    "webpack-manifest-plugin": "^2.2.0",
-    "webpack-node-externals": "^2.5.1"
+    "vue-router": "4.0.10",
+    "webpack-manifest-plugin": "2.2.0",
+    "webpack-node-externals": "2.5.2"
   },
   "devDependencies": {
     "@vue/server-renderer": "3.1.5",
