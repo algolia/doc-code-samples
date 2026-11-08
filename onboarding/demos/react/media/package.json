@@ -17,6 +17,6 @@
     "@types/react-dom": "18.2.4",
     "parcel": "2.9.1",
     "process": "0.11.10",
-    "typescript": "^5.0.4"
+    "typescript": "5.0.4"
   }
 }
