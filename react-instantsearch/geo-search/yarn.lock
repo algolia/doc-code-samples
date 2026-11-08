@@ -896,10 +896,10 @@
     chrome-trace-event "^1.0.2"
     nullthrows "^1.1.1"
 
-"@react-leaflet/core@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/@react-leaflet/core/-/core-2.0.0.tgz"
-  integrity sha512-SQQ5DCQIaLzvslN6wCXs5OWqtlvk1Ubv2n5d7zTM8SDl9hM5Rr2wVy7/nOCIY958D75/ovhq6ZoSvT7GLCX6sg==
+"@react-leaflet/core@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@react-leaflet/core/-/core-2.1.0.tgz#383acd31259d7c9ae8fb1b02d5e18fe613c2a13d"
+  integrity sha512-Qk7Pfu8BSarKGqILj4x7bCSZ1pjuAPZ+qmRwH5S7mDS91VSbVVsJSrW4qA+GPrro8t69gFYVMWb1Zc4yFmPiVg==
 
 "@swc/helpers@^0.4.12":
   version "0.4.14"
@@ -1703,12 +1703,12 @@ react-instantsearch@7.0.0:
     instantsearch.js "4.56.8"
     react-instantsearch-core "7.0.0"
 
-react-leaflet@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/react-leaflet/-/react-leaflet-4.0.1.tgz"
-  integrity sha512-CpMQ99+52AklQofrGrVQHqHSyY41wqax1wT65XdyEkky/26V/j+Sv+fp0/wOaqPvdEMaSO/Ovj4dS7bGqtYpwQ==
+react-leaflet@4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-4.2.1.tgz#c300e9eccaf15cb40757552e181200aa10b94780"
+  integrity sha512-p9chkvhcKrWn/H/1FFeVSqLdReGwn2qmiobOQGO3BifX+/vV/39qhY8dGqbdcPh1e6jxh/QHriLXr7a4eLFK4Q==
   dependencies:
-    "@react-leaflet/core" "^2.0.0"
+    "@react-leaflet/core" "^2.1.0"
 
 react-refresh@^0.9.0:
   version "0.9.0"
